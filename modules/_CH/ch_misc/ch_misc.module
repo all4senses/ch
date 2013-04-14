@@ -3775,6 +3775,7 @@ $wp_categories = array (
     $query->leftJoin('wp_term_taxonomy', 'tt', 'tt.term_id = tr.term_taxonomy_id');
     $query->fields('tt', array('taxonomy'));
     $query->condition('tr.object_id', $result->ID);
+    $query->condition('tt.taxonomy', 'category');
     $terms = $query->execute()->fetchAllAssoc('term_taxonomy_id');
     
     //dpm($terms);
