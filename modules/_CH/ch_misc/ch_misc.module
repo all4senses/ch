@@ -2961,11 +2961,11 @@ function ch_misc_testPage() {
   //ch_misc_import_wp_features();
   //ch_misc_import_wp_equipment();
   
-  ch_misc_import_wp_blogPosts();
+  //ch_misc_import_wp_blogPosts();
   
   //ch_misc_import_wp_providers();
 
-  // ch_misc_import_wp_blogComments();
+  ch_misc_import_wp_blogComments();
   
   
       
@@ -2979,7 +2979,7 @@ function ch_misc_testPage() {
  */
 function ch_misc_import_wp_blogComments() {
   
-  $query = db_select('voip_comments', 'c')
+  $query = db_select('wp_comments', 'c')
     ->fields('c')
     ->condition('c.comment_approved', 1)
     ->condition('c.comment_approved', 'spam', '!=');
@@ -3021,6 +3021,12 @@ function ch_misc_import_wp_blogComments() {
     $comment->changed = $comment->created;
 
     dpm($comment);
+    
+    continue;
+    
+    
+    
+    
     
     ch_misc_comment_save($comment);
     
