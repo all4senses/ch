@@ -3779,6 +3779,9 @@ $wp_categories = array (
     $query->condition('tt.taxonomy', 'category');
     $terms = $query->execute()->fetchAllAssoc('term_id');
     
+    foreach ($terms as $key => $value) {
+      $terms[$key]['drupal_tid'] = @$drupal_categories[$wp_categories[$value->term_id]];
+    }
     //dpm($terms);
     
     $form_state['values'] = array(
@@ -3788,7 +3791,8 @@ $wp_categories = array (
       'changed' => strtotime($result->post_modified),
       'category' => @$drupal_categories[$wp_categories[$result->term_taxonomy_id]],
       'category_name' => @$wp_categories[$result->term_taxonomy_id],
-      'url_alias' => date('Y\/m', strtotime($result->post_date)) . '/' . $result->post_name,
+      //'url_alias' => date('Y\/m', strtotime($result->post_date)) . '/' . $result->post_name,
+      'url_alias' => 'blog/' . $result->post_name,
       'ID' => $result->ID,
       'terms' => $terms,
     );
