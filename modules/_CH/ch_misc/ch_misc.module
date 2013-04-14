@@ -3812,7 +3812,7 @@ $wp_categories = array (
     
     $form_states[] = $form_state;
     // Add only one node.
-    //ch_misc_createNode_BlogPost($form_state);
+    ch_misc_createNode_BlogPost($form_state);
     //break;
   }
   
