@@ -3868,7 +3868,11 @@ function ch_misc_createNode_BlogPost($form_state) {
   
   $node->field_old_id[$node->language][0]['value'] = $form_state['values']['ID'];
   
-  $node->field_categories[$node->language][0]['tid'] = $form_state['values']['category'];
+  //$node->field_categories[$node->language][0]['tid'] = $form_state['values']['category'];
+  
+  foreach ($form_state['values']['terms'] as $key => $value) {
+    $node->field_categories[$node->language][] = array('tid' => $value->drupal_tid);
+  }
   
   
   $node->path = array(
@@ -3877,8 +3881,8 @@ function ch_misc_createNode_BlogPost($form_state) {
     'pathauto' => 0,
   );
   
-  //dpm($node);
-  //return;
+  dpm($node);
+  return;
   
   if ($node = node_submit($node)) {
     node_save($node);
