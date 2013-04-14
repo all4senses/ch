@@ -3757,6 +3757,34 @@ $wp_categories = array (
   8 => 'Videos',
   4 => 'vps.net',
 );
+
+
+
+$drupal_tags = array (
+	'Cloud Computing Infographic' => 11,
+	'cloud hosting' => 12,
+	'Cloud Hosting History' => 13,
+	'Cloud Hosting Infographic' => 14,
+	'Cloud Hosting Timeline' => 15,
+	'Cloud Infographic' => 16,
+	'cloudsites' => 17,
+	'infographics' => 18,
+	'rackspace' => 19,
+	'vps.net' => 20,
+);
+
+$wp_tags = array (
+	14 => 'Cloud Computing Infographic',
+	15 => 'cloud hosting',
+	16 => 'Cloud Hosting History',
+	17 => 'Cloud Hosting Infographic',
+	18 => 'Cloud Hosting Timeline',
+	19 => 'Cloud Infographic',
+	6 => 'cloudsites',
+	20 => 'infographics',
+	5 => 'rackspace',
+	4 => 'vps.net',
+);
   
   
 //  $category_map = array(
@@ -3794,9 +3822,9 @@ $wp_categories = array (
     $query->condition('tt.taxonomy', 'post_tag');
     $tags = $query->execute()->fetchAllAssoc('term_id');
     
-//    foreach ($tags as $key => $value) {
-//      $tags[$key]->drupal_tid = @$drupal_categories[$wp_categories[$value->term_id]];
-//    }
+    foreach ($tags as $key => $value) {
+      $tags[$key]->drupal_tid = @$drupal_tags[$wp_tags[$value->term_id]];
+    }
     
     //dpm($terms);
     
