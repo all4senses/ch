@@ -3858,7 +3858,10 @@ $wp_tags = array (
     $form_states[] = $form_state;
     // Add only one node.
     ch_misc_createNode_BlogPost($form_state);
-    //break;
+    if ($result->ID == 49) {
+      break;
+    }
+    
   }
   
   dpm($form_states);
@@ -3930,8 +3933,8 @@ function ch_misc_createNode_BlogPost($form_state) {
     'pathauto' => 0,
   );
   
-  dpm($node);
-  return;
+//  dpm($node);
+//  return;
   
   if ($node = node_submit($node)) {
     node_save($node);
