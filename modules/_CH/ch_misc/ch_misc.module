@@ -2957,14 +2957,27 @@ function ch_misc_testPage() {
   $out = '<div>Start test...</div>';
 
   
-  /*
+  
   //ch_misc_import_wp_features();
   //ch_misc_import_wp_equipment();
   
-  //ch_misc_import_wp_blogPosts();
+  ch_misc_import_wp_blogPosts();
   
   //ch_misc_import_wp_providers();
 
+  // ch_misc_import_wp_blogComments();
+  
+  
+      
+  
+  return $out . '<br>End of Test';
+}
+
+
+/**
+ * Import blog comments.
+ */
+function ch_misc_import_wp_blogComments() {
   
   $query = db_select('voip_comments', 'c')
     ->fields('c')
@@ -3027,18 +3040,8 @@ function ch_misc_testPage() {
     //break;
     
   }
-  */
-  
-  $out = '<div class="test share"></div>';
-  
-  drupal_add_js('sites/all/libraries/jquery.plugins/stickyfloat/stickyfloat2.js');
-  $module_path = drupal_get_path('module', 'ch_misc');
-  drupal_add_js( $module_path . '/js/ch_floatingSocials.js'); 
-      
-  
-  return $out . '<br>End of Test';
-}
 
+}
 
 
 /**
@@ -3709,14 +3712,14 @@ function ch_misc_createNode_provider($form_state) {
  */
 function ch_misc_import_wp_blogPosts() { 
   
-  $query = db_select('voip_posts', 'vp')
-        ->fields('vp', array('ID', 'post_content', 'post_title', 'post_name', 'post_parent', 'post_date', 'post_modified'));
-  $query->leftJoin('voip_term_relationships', 'tr', 'tr.object_id = vp.ID');
+  $query = db_select('wp_posts', 'p')
+        ->fields('p', array('ID', 'post_content', 'post_title', 'post_name', 'post_parent', 'post_date', 'post_modified'));
+  $query->leftJoin('wp_term_relationships', 'tr', 'tr.object_id = p.ID');
   $query->fields('tr', array('term_taxonomy_id'));
   
-  $query->condition('vp.post_status', 'publish');
-  $query->condition('vp.post_type', 'post');
-  $query->condition('tr.term_taxonomy_id', 4); // 3 - Features, 4 - News
+  $query->condition('p.post_status', 'publish');
+  $query->condition('p.post_type', 'post');
+  //$query->condition('tr.term_taxonomy_id', 4); // 3 - Features, 4 - News
   
   $query->orderBy('ID');
   //$query->range(0, 20);
@@ -3724,10 +3727,39 @@ function ch_misc_import_wp_blogPosts() {
   
   dpm($results);
   
-  $category_map = array(
-    3 => 1, // Features
-    4 => 2, // News
-  );
+  
+
+$drupal_categories = array (  
+  'Articles' => 1,
+  'Conferences' => 2,
+  'Education' => 3,
+  'General' => 4,
+  'Rackspace CloudSites' => 5,
+  'State of the Cloud' => 6,
+  'Testimonials' => 7,
+  'Uncategorized' => 8,
+  'Videos' => 9,
+  'vps.net' => 10,
+);
+
+$wp_categories = array (  
+  7 => 'Articles',
+  13 => 'Conferences',
+  9 => 'Education',
+  12 => 'General',
+  11 => 'Rackspace CloudSites',
+  10 => 'State of the Cloud',
+  3 => 'Testimonials',
+  1 => 'Uncategorized',
+  8 => 'Videos',
+  4 => 'vps.net',
+);
+  
+  
+//  $category_map = array(
+//    3 => 1, // Features
+//    4 => 2, // News
+//  );
   
   foreach ($results as $result) {
     
@@ -3736,7 +3768,8 @@ function ch_misc_import_wp_blogPosts() {
       'post_date' => $result->post_date,
       'created' => strtotime($result->post_date),
       'changed' => strtotime($result->post_modified),
-      'category' => $category_map[$result->term_taxonomy_id],
+      'category' => $drupal_categories[$wp_categories[$result->term_taxonomy_id]],
+      'category_name' => $wp_categories[$result->term_taxonomy_id],
       'url_alias' => date('Y\/m', strtotime($result->post_date)) . '/' . $result->post_name,
       'ID' => $result->ID,
     );
@@ -3756,9 +3789,11 @@ function ch_misc_import_wp_blogPosts() {
     
     
     // Add only one node.
-    ch_misc_createNode_BlogPost($form_state);
+    //ch_misc_createNode_BlogPost($form_state);
     //break;
   }
+  
+  dpm($form_state);
 }
 
 
