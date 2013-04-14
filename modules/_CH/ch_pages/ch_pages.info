@@ -1,0 +1,6 @@
+name = CH Pages
+package = CH
+description = "Various functions and forms for pages"
+core = 7.x
+tags[] = CH
+files[] = ch_pages.module

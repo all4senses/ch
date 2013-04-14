@@ -1,0 +1,6 @@
+name = CH Misc
+package = CH
+description = "Miscelanious helper functions and hooks implementations"
+core = 7.x
+tags[] = CH
+files[] = ch_misc.module
