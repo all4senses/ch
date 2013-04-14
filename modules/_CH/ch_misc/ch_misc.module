@@ -3768,6 +3768,13 @@ $wp_categories = array (
   
   foreach ($results as $result) {
     
+    $query = db_select('wp_term_relationships', 'tr')
+        ->fields('tr', array('term_taxonomy_id'));
+    $query->condition('tr.object_id', $result->ID);
+    $terms = $query->execute()->fetchAllAssoc('term_taxonomy_id');
+    
+    //dpm($terms);
+    
     $form_state['values'] = array(
       'title' => $result->post_title,
       'post_date' => $result->post_date,
@@ -3777,6 +3784,7 @@ $wp_categories = array (
       'category_name' => $wp_categories[$result->term_taxonomy_id],
       'url_alias' => date('Y\/m', strtotime($result->post_date)) . '/' . $result->post_name,
       'ID' => $result->ID,
+      'terms' => $terms,
     );
     
     $form_state['values']['body']['und'][0]['value'] = str_replace('--', '-', $result->post_content);
