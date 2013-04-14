@@ -3777,11 +3777,27 @@ $wp_categories = array (
     $query->fields('t', array('name'));
     $query->condition('tr.object_id', $result->ID);
     $query->condition('tt.taxonomy', 'category');
-    $terms = $query->execute()->fetchAllAssoc('term_id');
+    $cats = $query->execute()->fetchAllAssoc('term_id');
     
-    foreach ($terms as $key => $value) {
-      $terms[$key]->drupal_tid = @$drupal_categories[$wp_categories[$value->term_id]];
+    foreach ($cats as $key => $value) {
+      $cats[$key]->drupal_cat_tid = @$drupal_categories[$wp_categories[$value->term_id]];
     }
+    
+    $query = db_select('wp_term_relationships', 'tr')
+        ->fields('tr', array('term_taxonomy_id'));
+    
+    $query->leftJoin('wp_term_taxonomy', 'tt', 'tt.term_taxonomy_id = tr.term_taxonomy_id');
+    $query->fields('tt', array('taxonomy', 'term_id'));
+    $query->leftJoin('wp_terms', 't', 't.term_id = tt.term_id');
+    $query->fields('t', array('name'));
+    $query->condition('tr.object_id', $result->ID);
+    $query->condition('tt.taxonomy', 'post_tag');
+    $tags = $query->execute()->fetchAllAssoc('term_id');
+    
+//    foreach ($tags as $key => $value) {
+//      $tags[$key]->drupal_tid = @$drupal_categories[$wp_categories[$value->term_id]];
+//    }
+    
     //dpm($terms);
     
     $form_state['values'] = array(
@@ -3789,12 +3805,13 @@ $wp_categories = array (
       'post_date' => $result->post_date,
       'created' => strtotime($result->post_date),
       'changed' => strtotime($result->post_modified),
-      'category' => @$drupal_categories[$wp_categories[$result->term_taxonomy_id]],
-      'category_name' => @$wp_categories[$result->term_taxonomy_id],
+      //'category' => @$drupal_categories[$wp_categories[$result->term_taxonomy_id]],
+      //'category_name' => @$wp_categories[$result->term_taxonomy_id],
       //'url_alias' => date('Y\/m', strtotime($result->post_date)) . '/' . $result->post_name,
       'url_alias' => 'blog/' . $result->post_name,
       'ID' => $result->ID,
-      'terms' => $terms,
+      'categories' => $cats,
+      'tags' => $tags,
     );
     
     $form_state['values']['body']['und'][0]['value'] = str_replace('--', '-', $result->post_content);
@@ -3813,7 +3830,7 @@ $wp_categories = array (
     $form_states[] = $form_state;
     // Add only one node.
     ch_misc_createNode_BlogPost($form_state);
-    break;
+    //break;
   }
   
   dpm($form_states);
@@ -3870,8 +3887,12 @@ function ch_misc_createNode_BlogPost($form_state) {
   
   //$node->field_categories[$node->language][0]['tid'] = $form_state['values']['category'];
   
-  foreach ($form_state['values']['terms'] as $key => $value) {
+  foreach ($form_state['values']['cats'] as $key => $value) {
     $node->field_categories[$node->language][] = array('tid' => $value->drupal_tid);
+  }
+  
+  foreach ($form_state['values']['tags'] as $key => $value) {
+    $node->field_tags[$node->language][] = array('tid' => $value->drupal_tid);
   }
   
   
@@ -3881,8 +3902,8 @@ function ch_misc_createNode_BlogPost($form_state) {
     'pathauto' => 0,
   );
   
-//  dpm($node);
-//  return;
+  dpm($node);
+  return;
   
   if ($node = node_submit($node)) {
     node_save($node);
