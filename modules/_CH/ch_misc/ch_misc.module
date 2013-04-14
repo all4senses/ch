@@ -3808,7 +3808,7 @@ $wp_tags = array (
     $cats = $query->execute()->fetchAllAssoc('term_id');
     
     foreach ($cats as $key => $value) {
-      $cats[$key]->drupal_cat_tid = @$drupal_categories[$wp_categories[$value->term_id]];
+      $cats[$key]->drupal_tid = @$drupal_categories[$wp_categories[$value->term_id]];
     }
     
     $query = db_select('wp_term_relationships', 'tr')
