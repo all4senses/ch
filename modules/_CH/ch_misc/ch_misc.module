@@ -3780,7 +3780,7 @@ $wp_categories = array (
     $terms = $query->execute()->fetchAllAssoc('term_id');
     
     foreach ($terms as $key => $value) {
-      $terms[$key]['drupal_tid'] = @$drupal_categories[$wp_categories[$value->term_id]];
+      $terms[$key]->drupal_tid = @$drupal_categories[$wp_categories[$value->term_id]];
     }
     //dpm($terms);
     
