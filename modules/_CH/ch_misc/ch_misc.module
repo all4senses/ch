@@ -3813,7 +3813,7 @@ $wp_categories = array (
     $form_states[] = $form_state;
     // Add only one node.
     ch_misc_createNode_BlogPost($form_state);
-    //break;
+    break;
   }
   
   dpm($form_states);
@@ -3881,8 +3881,8 @@ function ch_misc_createNode_BlogPost($form_state) {
     'pathauto' => 0,
   );
   
-  dpm($node);
-  return;
+//  dpm($node);
+//  return;
   
   if ($node = node_submit($node)) {
     node_save($node);
