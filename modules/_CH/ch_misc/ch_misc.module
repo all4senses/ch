@@ -3020,12 +3020,7 @@ function ch_misc_import_wp_blogComments() {
     $comment->created = strtotime($wp_comment->comment_date); // OPTIONAL. You can set any time you want here. Useful for backdated comments creation.
     $comment->changed = $comment->created;
 
-    dpm($comment);
-    
-    continue;
-    
-    
-    
+    //dpm($comment);
     
     
     ch_misc_comment_save($comment);
