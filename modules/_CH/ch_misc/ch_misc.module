@@ -3915,7 +3915,7 @@ function ch_misc_createNode_BlogPost($form_state) {
   
   //$node->field_categories[$node->language][0]['tid'] = $form_state['values']['category'];
   
-  foreach ($form_state['values']['cats'] as $key => $value) {
+  foreach ($form_state['values']['categories'] as $key => $value) {
     $node->field_categories[$node->language][] = array('tid' => $value->drupal_tid);
   }
   
