@@ -3728,7 +3728,7 @@ function ch_misc_import_wp_blogPosts() {
   //$query->range(0, 20);
   $results = $query->execute()->fetchAllAssoc('ID');
   
-  dpm($results);
+  //dpm($results);
   
   
 
@@ -3858,13 +3858,13 @@ $wp_tags = array (
     $form_states[] = $form_state;
     // Add only one node.
     ch_misc_createNode_BlogPost($form_state);
-    if ($result->ID == 49) {
-      break;
-    }
+//    if ($result->ID == 49) {
+//      break;
+//    }
     
   }
   
-  dpm($form_states);
+  //dpm($form_states);
 }
 
 
