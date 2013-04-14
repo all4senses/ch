@@ -3764,6 +3764,8 @@ $wp_categories = array (
 //    4 => 2, // News
 //  );
   
+  $form_states = array();
+  
   foreach ($results as $result) {
     
     $form_state['values'] = array(
@@ -3790,13 +3792,13 @@ $wp_categories = array (
       $form_state['values']['body']['und'][0]['summary'] = '';
     }
     
-    
+    $form_states[] = $form_state;
     // Add only one node.
     //ch_misc_createNode_BlogPost($form_state);
     //break;
   }
   
-  dpm($form_state);
+  dpm($form_states);
 }
 
 
