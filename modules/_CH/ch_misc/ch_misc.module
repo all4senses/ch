@@ -3770,13 +3770,14 @@ $wp_categories = array (
     
     $query = db_select('wp_term_relationships', 'tr')
         ->fields('tr', array('term_taxonomy_id'));
-    $query->leftJoin('wp_terms', 't', 't.term_id = tr.term_taxonomy_id');
-    $query->fields('t', array('name'));
+    
     $query->leftJoin('wp_term_taxonomy', 'tt', 'tt.term_taxonomy_id = tr.term_taxonomy_id');
-    $query->fields('tt', array('taxonomy'));
+    $query->fields('tt', array('taxonomy', 'term_id'));
+    $query->leftJoin('wp_terms', 't', 't.term_id = tt.term_id');
+    $query->fields('t', array('name'));
     $query->condition('tr.object_id', $result->ID);
     $query->condition('tt.taxonomy', 'category');
-    $terms = $query->execute()->fetchAllAssoc('term_taxonomy_id');
+    $terms = $query->execute()->fetchAllAssoc('term_id');
     
     //dpm($terms);
     
