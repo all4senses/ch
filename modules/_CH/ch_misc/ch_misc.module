@@ -1509,6 +1509,11 @@ function ch_misc_getArticleTeaserData($target, $body_full_markup, $nid, $charact
   
   if ($found_image) {
     
+    if (strpos($main_image['src'], 'http') !== FALSE) {
+      $main_image['src'] = str_replace('http://cloudhostinghq.com/wp-content', 'f/img/wp-content', $main_image['src']);
+      $main_image['src'] = str_replace('http://test.cloudhostinghq.com/wp-content', 'f/img/wp-content', $main_image['src']);
+    }
+    
     $main_image['src'] = str_replace('%20', ' ', $main_image['src']);
     if ($thumbnail_fid) {
       // if is used a separate thumbnail image field.
