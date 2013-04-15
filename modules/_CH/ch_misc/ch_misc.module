@@ -2972,9 +2972,12 @@ function ch_misc_testPage() {
   
   //ch_misc_import_wp_providers();
 
-  ch_misc_import_wp_blogComments();
+  //ch_misc_import_wp_blogComments();
   
+  $node = node_load(8);
+  dpm($node);
   
+  node_save($node);
       
   
   return $out . '<br>End of Test';
@@ -3880,6 +3883,47 @@ $wp_tags = array (
  * Creates a node blog_post.
  */
 function ch_misc_createNode_BlogPost($form_state) { 
+
+  
+  // Creating a node via drupal_form_submit()
+  // http://api.drupal.org/api/drupal/includes%21form.inc/function/drupal_form_submit/7
+  
+  /*
+  
+
+  
+  define('DRUPAL_ROOT', getcwd());
+  include_once 
+
+  DRUPAL_ROOT . '/includes/bootstrap.inc';
+  drupal_bootstrap(DRUPAL_BOOTSTRAP_FULL);
+  bootstrap_invoke_all('init');
+  ini_set('memory_limit', '512M');
+  //Authenticate as user 1
+  user_authenticate('user', 'password');
+  module_load_include('inc', 'node', 'node.pages');  // new for Drupal 6
+
+
+  $form_state = array();
+  $nodeTmp = array('type' => testimonial); // a variable holding the content type
+   
+
+   $form_state['values']['type'] = 'testimonial';
+   $form_state['values']['status'] = 1;
+   $form_state['values']['title'] = 'test1';   // the node's title
+   $form_state['values']['body'] = 'just my test node'; // the body, not required
+   $form_state['values']['field_name'] =  t('adham allam');
+   $form_state['values']['status'] = 1; //publish all imported nodes
+   $form_state['values']['promote'] = 1; //promote all imported nodes
+   $form_state['values']['sticky'] = 0; //remove sticky from imported nodes
+   $form_state['values']['image'] = array();
+   $form_state['values']['name'] = 'adham';
+   $form_state['values']['op'] = t('Save');  // this seems to be a required value
+  
+   drupal_form_submit('testimonial_node_form', $form_state, (object)$nodeTmp);
+  
+  */
+  
   
   global $user;
   
