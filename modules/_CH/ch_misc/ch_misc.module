@@ -1517,6 +1517,8 @@ function ch_misc_getArticleTeaserData($target, $body_full_markup, $nid, $charact
     else {
       $stream_path = ch_misc_getStreamUriFromRelativePath($main_image['src']);
       $main_image['uri'] = $stream_path;
+      
+      dpm($main_image);
       dpm('$stream_path = ' . $stream_path);
     }
     
