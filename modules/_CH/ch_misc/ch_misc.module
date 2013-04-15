@@ -1480,6 +1480,10 @@ function ch_misc_getArticleTeaserData($target, $body_full_markup, $nid, $charact
     $found_image = TRUE;
   }
   elseif (preg_match('/<img[^>]+>/i', $body_full_markup, $matches)) {
+    
+    dpm($body_full_markup);
+    dpm($matches);
+    
     $found_image = TRUE;
     preg_match_all('/(alt|title|src)="([^"]*)"/i',$matches[0], $matches);
     foreach ($matches[1] as $index => $key) {
@@ -1488,9 +1492,9 @@ function ch_misc_getArticleTeaserData($target, $body_full_markup, $nid, $charact
     $body_full_markup = preg_replace('/<img[^>]+>/i', '', $body_full_markup);
     
     // Set No image for externally linked image.
-    if ( (strpos($main_image['src'], 'http') !== FALSE && !strpos($main_image['src'], 'www.voip-weblog.com')) || !file_exists(str_replace('http://www.cloudhostinghq.com/', '', $main_image['src']))) {
+    if ( (strpos($main_image['src'], 'http') !== FALSE && !strpos($main_image['src'], 'cloudhostinghq.com')) || !file_exists(str_replace('http://cloudhostinghq.com/', '', $main_image['src'])) || !file_exists(str_replace('http://test.cloudhostinghq.com/', '', $main_image['src']))  ) {
       $found_image = FALSE;
-      //dpm($main_image);
+      dpm($main_image);
     }
   }
   elseif (preg_match('/\[video:.*v=(.*)\]/i', $body_full_markup, $matches)) {
