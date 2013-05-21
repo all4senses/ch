@@ -1634,7 +1634,7 @@ function ch_pages_form_alter(&$form, &$form_state, $form_id) {
               
               $form['s'][$service_type_key] = array(
                 '#type' => 'fieldset',
-                '#title' => t("$service_type_title serviСЃes"),
+                '#title' => t("$service_type_title services"),
                 '#collapsible' => TRUE,
                 '#collapsed' => TRUE,
                 '#states' => array(
