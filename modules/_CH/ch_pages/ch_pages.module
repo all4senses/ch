@@ -1774,13 +1774,13 @@ function ch_pages_form_alter(&$form, &$form_state, $form_id) {
 
                 // Add stars widgets to a Rating block
                 $module_path . '/js/ch_review_stars.js',
-                'sites/all/libraries/jquery.ui.stars/jquery.ui.stars.min.js',
+                'sites/all/libraries/jquery.plugins/jquery.ui.stars/jquery.ui.stars.min.js',
               );
 
               $form['#attached']['library'][] = array('system', 'ui.widget');
 
               $form['#attached']['css'] = array(
-                'sites/all/libraries/jquery.ui.stars/css/jquery.ui.stars.css',
+                'sites/all/libraries/jquery.plugins/jquery.ui.stars/css/jquery.ui.stars.css',
               );
 
 
@@ -2356,13 +2356,13 @@ function ch_pages_form_alter(&$form, &$form_state, $form_id) {
 
         // Add stars widgets to a Rating block
         $module_path . '/js/ch_review_stars.js',
-        'sites/all/libraries/jquery.ui.stars/jquery.ui.stars.min.js',
+        'sites/all/libraries/jquery.plugins/jquery.ui.stars/jquery.ui.stars.min.js',
       );
 
       $form['#attached']['library'][] = array('system', 'ui.widget');
 
       $form['#attached']['css'] = array(
-        'sites/all/libraries/jquery.ui.stars/css/jquery.ui.stars.css',
+        'sites/all/libraries/jquery.plugins/jquery.ui.stars/css/jquery.ui.stars.css',
       );
 
       
