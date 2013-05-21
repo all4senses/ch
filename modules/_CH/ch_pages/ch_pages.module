@@ -1582,7 +1582,7 @@ function ch_pages_form_alter(&$form, &$form_state, $form_id) {
               
       
               
-              
+      /*        
       $wp_fields = unserialize(WP_FIELDS);
       
       $form['wp_fields'] = array(
@@ -1612,7 +1612,7 @@ function ch_pages_form_alter(&$form, &$form_state, $form_id) {
                 }
             }
             
-      
+      */
             
             
             
