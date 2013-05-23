@@ -138,7 +138,7 @@
               <div class="data tabs">
                 
                 <?php 
-                              
+                      /*      
                       $wp_fields = unserialize(WP_FIELDS);
 
           //            911 Service:	Included
@@ -193,7 +193,7 @@
                         }
 
                       }
-
+                      */
                 ?>
                 
                 
