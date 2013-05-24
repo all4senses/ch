@@ -123,7 +123,7 @@ ul.header-links a.Submit.Reviews{background: url("images/block-head-red.png") re
 
 /* Footer */
 
-#footer {color: lightgray; height: 190px; padding: 5px 0;}
+#footer {color: lightgray; padding: 5px 0;}
 
 #footer .region-footer{width: 560px; margin: auto;}
 
@@ -1762,10 +1762,8 @@ body.one-sidebar.sidebar-second.page-get-iframe #main{background: none transpare
 #block-ch_blocks-send_msg_n_subscribe .form-actions, #block-ch-blocks-send-msg-n-subscribe .form-actions {float: right; margin: 0; width: 70px; height: 95px;}
 #block-ch_blocks-send_msg_n_subscribe .form-actions input, #block-ch-blocks-send-msg-n-subscribe .form-actions input {height: 100px; width: 100%; background: url("images/send-msg-btn.png") no-repeat scroll -3px 0 transparent; border: none; text-indent: -9999px; cursor: pointer;}
 
-/*#block-ch_blocks-social_links{position: absolute; top: 110px; left: 20px;}*/
-#block-ch_blocks-social_links {width: 445/*660*/px; margin: auto;}
 /*#block-ch_blocks-social_links .title {font-size: 12px; width: 220px; line-height: 18px; margin-bottom: 15px; color: #aaaaaa;}*/
-#block-ch_blocks-social_links .title {font-size: 12px; line-height: 18px;color: #aaaaaa;}
+#block-ch_blocks-social_links .title {font-size: 12px; line-height: 18px; color: #aaaaaa;}
 
 .social-links {position: relative; overflow: hidden;}
 
