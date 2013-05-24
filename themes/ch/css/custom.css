@@ -584,7 +584,7 @@ body.sidebar-second #sidebar-second{float: right; margin-right: 18px; padding: 1
 
 /* New style blocks */
 
-#all-content{background: white; box-shadow: 0 0 0px #DDD,0 20px 7px black;}
+#all-content{background: white; box-shadow: 0 0 0px #DDD,0 20px 7px black; min-height: 600px;}
 
 body.one-sidebar.sidebar-second #sidebar-second{background: none; padding: 14px 0 0 0; width: 300px; margin: 0;}
 body.front.one-sidebar.sidebar-second #sidebar-second{padding-top: 3px}
