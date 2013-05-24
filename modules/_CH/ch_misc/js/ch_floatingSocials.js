@@ -3,6 +3,7 @@
   Drupal.behaviors.ch_floatingSocials = {
     attach: function (context, settings) {
        
+          console.log('teeest');
           
        $(".float.share").stickyfloat({ 
          duration: 200, 
