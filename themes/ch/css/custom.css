@@ -11,7 +11,7 @@ body.one-sidebar.sidebar-second #main {background: white; padding: 5px 10px 10px
 a, a:focus{ -webkit-appearance: none; outline: none;}
 
 #c-top{background: url("images/top-back.png") repeat-x scroll 0 0 #2581c6; height: 115px;}
-.header{margin: auto; position: relative; width: 1100px;}
+.header{margin: auto; position: relative; width: 960px;}
 
 
 /* Make caption narrower */
@@ -67,7 +67,7 @@ input.blur, textarea.blur,
 
 
 
-#header, #navigation, #all-content, #footer-inside{width: 1100px; margin: auto;}
+#header, #navigation, #all-content, #footer-inside{width: 960px; margin: auto;}
 #footer-inside{position: relative; text-align: center; /*height: 353px;*/}
 
 #header{padding-top: 95px; z-index: 4;}
@@ -586,7 +586,7 @@ body.sidebar-second #sidebar-second{float: right; margin-right: 18px; padding: 1
 
 #all-content{background: white; box-shadow: 0 0 0px #DDD,0 20px 7px black;}
 
-body.one-sidebar.sidebar-second #sidebar-second{background: none; padding: 14px 0 0 0; width: 290px; margin: 0;}
+body.one-sidebar.sidebar-second #sidebar-second{background: none; padding: 14px 0 0 0; width: 300px; margin: 0;}
 body.front.one-sidebar.sidebar-second #sidebar-second{padding-top: 3px}
 
 .sidebar .top-line{display: none; background: none; height: 0; margin: 0;}
@@ -1471,11 +1471,11 @@ body.quote-page.v33 .messages{width: 890px; margin: auto; position: relative;}
 
 /*Same but without a line (from shadow) below the highlight region */
 #all-content-wrapper{overflow: hidden;}
-#all-content{background: white; margin: auto; padding: 0 0 0 0; width: 1100px; box-shadow: 0px 10px 60px #DDDDDD, 0 0px 47px #f3f3f3; margin-bottom: 40px;}
-#highlighted{background: white; margin: auto; padding: 0 0 0/*10px*/ 0; width: 1100px; box-shadow: 0 0 0px #DDDDDD, 0 20px 7px #000000;}
+#all-content{background: white; margin: auto; padding: 0 0 0 0; width: 960px; box-shadow: 0px 10px 60px #DDDDDD, 0 0px 47px #f3f3f3; margin-bottom: 40px;}
+#highlighted{background: white; margin: auto; padding: 0 0 0/*10px*/ 0; width: 960px; box-shadow: 0 0 0px #DDDDDD, 0 20px 7px #000000;}
 
 
-body.one-sidebar.sidebar-second #main {background: none repeat scroll 0 0 white; padding: 5px 10px 10px 10px; margin-left: 6px; width: 780px;}
+body.one-sidebar.sidebar-second #main {background: none repeat scroll 0 0 white; padding: 5px 10px 10px 10px; margin-left: 6px; width: 620px;}
 
 /* Old sidebar style*/
 
