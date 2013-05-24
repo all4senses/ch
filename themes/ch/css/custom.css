@@ -10,7 +10,7 @@ body.one-sidebar.sidebar-second #main {background: white; padding: 5px 10px 10px
 
 a, a:focus{ -webkit-appearance: none; outline: none;}
 
-#c-top{background: url("images/top-back.jpg") repeat-x scroll 0 0 #2581c6; height: 115px;}
+#c-top{background: url(/sites/all/themes/ch/css/images/top-back2.jpg) repeat-x scroll 0 0 #2581c6; height: 164px;}
 .header{margin: auto; position: relative; width: 960px;}
 
 
@@ -68,7 +68,7 @@ input.blur, textarea.blur,
 
 
 #header, #navigation, #all-content, #footer-inside{width: 960px; margin: auto;}
-#footer-inside{position: relative; text-align: center; /*height: 353px;*/}
+#footer-inside{position: relative;}
 
 #header{padding-top: 95px; z-index: 4;}
 
@@ -88,7 +88,7 @@ input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-s
 
 
 
-#header #logo-block{color: #C5C5C5; left: 0; position: absolute; top: 2px; z-index: 200;}
+#header #logo-block{color: #C5C5C5; left: 0; position: absolute; top: 45px; z-index: 200;}
 #header #logo{float: left; margin-bottom: 0;}
 #header #logo-block .descr{float: left;}
 #header #logo-block .title{font-size: 26px; font-weight: bold; margin-top: 10px;}
@@ -123,8 +123,7 @@ ul.header-links a.Submit.Reviews{background: url("images/block-head-red.png") re
 
 /* Footer */
 
-#footer {background: url("images/footer-back.jpg") repeat-x scroll 0 0 white; color: lightgray; height: 190px; padding: 5px 0;}
-#footer #in-touch{background: url("images/in-touch.png") no-repeat transparent; width: 170px; height: 70px; position: relative; top: -10px;}
+#footer {color: lightgray; height: 190px; padding: 5px 0;}
 
 #footer .region-footer{width: 560px; margin: auto;}
 
@@ -167,7 +166,7 @@ div.error{border: none;}
 
 
 ul.ch{margin-left: 0px; padding-left: 10px;}
-.block.block-om-maximenu{left: 0; position: absolute; top: 75px; z-index: 10;}
+.block.block-om-maximenu{left: 0; position: absolute; top: 118px; z-index: 10; width: 960px; background: url(/sites/all/themes/ch/css/images/main-menu-back.jpg) repeat-x scroll 0 0 #62b0f7; height: 45px; border-radius: 10px 10px 0 0;}
 
 
 .om-btitle {float: left; position: absolute; left: -180px;}
@@ -181,7 +180,7 @@ ul.ch{margin-left: 0px; padding-left: 10px;}
 
 .om-maximenu ul.om-menu li.om-leaf{top: -2px;}
 
-#om-menu-main-om-menu li.om-leaf{position: relative; background: url("images/menu-devisor.jpg") no-repeat scroll right 7px transparent; height: 42px; z-index: 400; /*padding: 0 43px 0 38px;*/}
+#om-menu-main-om-menu li.om-leaf{position: relative; /*background: url("images/menu-devisor.jpg") no-repeat scroll right 7px transparent;*/ height: 42px; z-index: 400; /*padding: 0 43px 0 38px;*/}
 #om-menu-main-om-menu li.om-leaf.first{padding-left: 0;}
 
 #om-menu-main-om-menu li.om-leaf.leaf-about-us .om-maximenu-middle{width: 120px;}
@@ -195,7 +194,7 @@ body.not-admin #om-menu-main-om-menu li.om-leaf.leaf-write-review{background: no
 .om-maximenu ul.om-menu li.om-leaf .om-link.link-e{padding: 4px 8px 8px 8px;}
 
 
-.om-maximenu ul.om-menu li.om-leaf a.om-link{padding: 4px 35px 10px; font-size: 15px; color: lightgray;}
+.om-maximenu ul.om-menu li.om-leaf a.om-link{padding: 4px 35px 10px; font-size: 15px; color: #355f84; text-shadow: 1px 1px 2px white; font-family: arial; font-weight: bold;}
 /*.om-maximenu ul.om-menu li.om-leaf.first a.om-link{border-radius: 5px 0 0 0;}*/
 
 .om-maximenu ul.om-menu li.om-leaf:hover om-link, 
@@ -1471,7 +1470,7 @@ body.quote-page.v33 .messages{width: 890px; margin: auto; position: relative;}
 
 /*Same but without a line (from shadow) below the highlight region */
 #all-content-wrapper{overflow: hidden;}
-#all-content{background: white; margin: auto; padding: 0 0 0 0; width: 960px; box-shadow: 0px 10px 60px #DDDDDD, 0 0px 47px #f3f3f3; margin-bottom: 40px;}
+#all-content{background: white; margin: auto; padding: 0 0 0 0; width: 960px; box-shadow: none;border: 1px solid lightgray; border-radius: 0 0 15px 15px;}
 #highlighted{background: white; margin: auto; padding: 0 0 0/*10px*/ 0; width: 960px; box-shadow: 0 0 0px #DDDDDD, 0 20px 7px #000000;}
 
 
@@ -1766,7 +1765,7 @@ body.one-sidebar.sidebar-second.page-get-iframe #main{background: none transpare
 /*#block-ch_blocks-social_links{position: absolute; top: 110px; left: 20px;}*/
 #block-ch_blocks-social_links {width: 445/*660*/px; margin: auto;}
 /*#block-ch_blocks-social_links .title {font-size: 12px; width: 220px; line-height: 18px; margin-bottom: 15px; color: #aaaaaa;}*/
-#block-ch_blocks-social_links .title {font-size: 12px; line-height: 18px; margin: 15px; color: #aaaaaa;/* width: 400px;*/}
+#block-ch_blocks-social_links .title {font-size: 12px; line-height: 18px;color: #aaaaaa;}
 
 .social-links {position: relative; overflow: hidden;}
 
