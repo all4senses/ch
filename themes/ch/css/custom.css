@@ -200,7 +200,7 @@ body.not-admin #om-menu-main-om-menu li.om-leaf.leaf-write-review{background: no
 
 
 .om-maximenu ul.om-menu li.om-leaf:hover {background: red;}
-#om-menu-main-om-menu li.om-leaf:hover a.om-link {background: url("/sites/all/themes/ch/css/images/main-menu-hover.png") repeat-x 0 6px; height: 28px !important; overflow: hidden; }
+#om-menu-main-om-menu li.om-leaf:hover a.om-link {background: url("/sites/all/themes/ch/css/images/main-menu-hover-a.jpg") repeat-x 0 0; height: 28px !important; overflow: hidden; }
 
 
 
