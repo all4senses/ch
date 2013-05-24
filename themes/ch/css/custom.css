@@ -176,18 +176,19 @@ ul.ch{margin-left: 0px; padding-left: 10px;}
 
 
 /* set constant position for om submenu block*/
-.om-maximenu.om-maximenu-block ul.om-menu {width: 960px; margin-left: 140px;}
+.om-maximenu.om-maximenu-block ul.om-menu {width: 960px;}
 
 .om-maximenu ul.om-menu li.om-leaf{top: -2px;}
 
-#om-menu-main-om-menu li.om-leaf{position: relative; /*background: url("images/menu-devisor.jpg") no-repeat scroll right 7px transparent;*/ height: 42px; z-index: 400; /*padding: 0 43px 0 38px;*/}
-#om-menu-main-om-menu li.om-leaf.first{padding-left: 0;}
+#om-menu-main-om-menu li.om-leaf{position: relative; height: 42px; z-index: 400; padding: 6px;}
+
 
 #om-menu-main-om-menu li.om-leaf.leaf-about-us .om-maximenu-middle{width: 120px;}
-  
+
+/*
 #om-menu-main-om-menu li.om-leaf.last,
 body.not-admin #om-menu-main-om-menu li.om-leaf.leaf-write-review{background: none;}
-
+*/
 
 .om-maximenu ul.om-menu li.om-leaf .om-link{line-height: 36px; color: #868686; /*font-weight: bold;*/ padding: 4px 14px 8px 14px;}
 
@@ -197,12 +198,9 @@ body.not-admin #om-menu-main-om-menu li.om-leaf.leaf-write-review{background: no
 .om-maximenu ul.om-menu li.om-leaf a.om-link{padding: 4px 35px 10px; font-size: 15px; color: #355f84; text-shadow: 1px 1px 2px white; font-family: arial; font-weight: bold;}
 /*.om-maximenu ul.om-menu li.om-leaf.first a.om-link{border-radius: 5px 0 0 0;}*/
 
-.om-maximenu ul.om-menu li.om-leaf:hover om-link, 
-.om-maximenu ul.om-menu li.om-leaf:hover a.om-link{color: white;}
 
-#om-menu-main-om-menu li.om-leaf:hover a.om-link
-/*.om-leaf a:hover */
-{background: url("/sites/all/themes/ch/css/images/main-menu-hover.png") repeat-x 0 6px; height: 28px !important; overflow: hidden; position: relative; left: -2px;}
+.om-maximenu ul.om-menu li.om-leaf:hover {background: red;}
+#om-menu-main-om-menu li.om-leaf:hover a.om-link {background: url("/sites/all/themes/ch/css/images/main-menu-hover.png") repeat-x 0 6px; height: 28px !important; overflow: hidden; }
 
 
 
