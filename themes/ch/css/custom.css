@@ -189,17 +189,17 @@ ul.ch{margin-left: 0px; padding-left: 10px;}
 body.not-admin #om-menu-main-om-menu li.om-leaf.leaf-write-review{background: none;}
 */
 
-.om-maximenu ul.om-menu li.om-leaf .om-link{line-height: 36px; color: #868686; /*font-weight: bold;*/ padding: 4px 14px 8px 14px;}
+.om-maximenu ul.om-menu li.om-leaf .om-link{line-height: 25px; color: #868686; /*font-weight: bold;*/ padding: 4px 14px 8px 14px;}
 
 .om-maximenu ul.om-menu li.om-leaf .om-link.link-e{padding: 4px 8px 8px 8px;}
 
 
-.om-maximenu ul.om-menu li.om-leaf a.om-link{padding: 4px 35px 10px; font-size: 15px; color: #355f84; text-shadow: 1px 1px 2px white; font-family: arial; font-weight: bold;}
+.om-maximenu ul.om-menu li.om-leaf a.om-link{padding: 12px 35px 10px; font-size: 15px; color: #355f84; text-shadow: 1px 1px 2px white; font-family: arial; font-weight: bold; display: block;}
 /*.om-maximenu ul.om-menu li.om-leaf.first a.om-link{border-radius: 5px 0 0 0;}*/
 
 
 .om-maximenu ul.om-menu li.om-leaf:hover {background: url("/sites/all/themes/ch/css/images/main-menu-hover-li.png") no-repeat center bottom transparent;}
-#om-menu-main-om-menu li.om-leaf:hover a.om-link {background: url("/sites/all/themes/ch/css/images/main-menu-hover-a.jpg") repeat-x 0 0; height: 28px !important; overflow: hidden; }
+#om-menu-main-om-menu li.om-leaf:hover a.om-link {background: url("/sites/all/themes/ch/css/images/main-menu-hover-a.jpg") repeat-x 0 0; height: 25px !important; overflow: hidden; border-radius: 0 0 5px 5px; border: 1px solid gray; padding-top: 0px; line-height: 35px; box-shadow: 3px 7px 7px -7px black;}
 
 
 
