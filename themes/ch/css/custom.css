@@ -1,12 +1,18 @@
 #listpositionsbody{-webkit-text-size-adjust: none; min-width: 1150px; position: relative;}
 
-/*body, #c-top, #all-content-wrapper, #footer{width: 100%; display: table;}*/
 
-/* Three columns layout */
-body.two-sidebars #sidebar-first {float: left; margin: 0 0 0 -857px; padding: 0; width: 180px;}
-body.two-sidebars #main {float: left; margin: 0 0 0 195px; padding: 0; width: 663px;}
-/* Two columns layout */
-body.one-sidebar.sidebar-second #main {background: white; padding: 5px 10px 10px 10px; width: 825px;}
+body.one-sidebar.sidebar-second #sidebar-second{background: none; padding: 14px 0 0 0; width: 300px; margin: 0;}
+body.front.one-sidebar.sidebar-second #sidebar-second{padding-top: 3px}
+
+#all-content-wrapper{overflow: hidden;}
+#all-content{background: white; margin: auto; padding: 0 0 0 0; width: 960px; box-shadow: none;border: 1px solid lightgray; border-radius: 0 0 15px 15px; min-height: 600px;}
+
+#highlighted{background: white; margin: auto; padding: 0 0 0/*10px*/ 0; width: 960px; box-shadow: 0 0 0px #DDDDDD, 0 20px 7px #000000;}
+
+body.one-sidebar.sidebar-second #main {background: none repeat scroll 0 0 white; padding: 5px 10px 10px 10px; margin-left: 6px; width: 620px;}
+
+.page-node #main .main-content{float: left;}
+
 
 a, a:focus{ -webkit-appearance: none; outline: none;}
 
@@ -580,10 +586,6 @@ body.sidebar-second #sidebar-second{float: right; margin-right: 18px; padding: 1
 
 /* New style blocks */
 
-#all-content{background: white; box-shadow: 0 0 0px #DDD,0 20px 7px black; min-height: 600px;}
-
-body.one-sidebar.sidebar-second #sidebar-second{background: none; padding: 14px 0 0 0; width: 300px; margin: 0;}
-body.front.one-sidebar.sidebar-second #sidebar-second{padding-top: 3px}
 
 .sidebar .top-line{display: none; background: none; height: 0; margin: 0;}
 
@@ -733,7 +735,6 @@ form .counter.exceeded{color: red;}
 
 
 /* Node page, including Article */
-.page-node #main .main-content{float: left; width: 780px; /*border: 1px solid lightgray; padding: 0 40px 10px; */ /*clear: both;*/}
 
 .page-node.node-type-blog-post #main .main-content{margin-bottom: 30px; padding-bottom: 30px; border-bottom: 1px dotted lightgray;}
   
@@ -1465,18 +1466,6 @@ body.quote-page.v33 .messages{width: 890px; margin: auto; position: relative;}
 
 
 
-/*Same but without a line (from shadow) below the highlight region */
-#all-content-wrapper{overflow: hidden;}
-#all-content{background: white; margin: auto; padding: 0 0 0 0; width: 960px; box-shadow: none;border: 1px solid lightgray; border-radius: 0 0 15px 15px;}
-#highlighted{background: white; margin: auto; padding: 0 0 0/*10px*/ 0; width: 960px; box-shadow: 0 0 0px #DDDDDD, 0 20px 7px #000000;}
-
-
-body.one-sidebar.sidebar-second #main {background: none repeat scroll 0 0 white; padding: 5px 10px 10px 10px; margin-left: 6px; width: 620px;}
-
-/* Old sidebar style*/
-
-/* Reset those data for separate quote pages */
-body.sidebar-second.node-type-quote #main{margin: 0; padding: 0;}
 
 
 /* Sitemap page */
