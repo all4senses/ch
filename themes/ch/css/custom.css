@@ -178,9 +178,8 @@ ul.ch{margin-left: 0px; padding-left: 10px;}
 /* set constant position for om submenu block*/
 .om-maximenu.om-maximenu-block ul.om-menu {width: 960px;}
 
-.om-maximenu ul.om-menu li.om-leaf{top: -2px;}
 
-#om-menu-main-om-menu li.om-leaf{position: relative; height: 42px; z-index: 400; padding: 0 0 6px 0;}
+#om-menu-main-om-menu li.om-leaf{position: relative; height: 42px; z-index: 400; padding: 0 0 3px 0;}
 
 
 #om-menu-main-om-menu li.om-leaf.leaf-about-us .om-maximenu-middle{width: 120px;}
@@ -199,7 +198,7 @@ body.not-admin #om-menu-main-om-menu li.om-leaf.leaf-write-review{background: no
 /*.om-maximenu ul.om-menu li.om-leaf.first a.om-link{border-radius: 5px 0 0 0;}*/
 
 
-.om-maximenu ul.om-menu li.om-leaf:hover {background: red;}
+.om-maximenu ul.om-menu li.om-leaf:hover {background: url("/sites/all/themes/ch/css/images/main-menu-hover-li.png") no-repeat center bottom transparent;}
 #om-menu-main-om-menu li.om-leaf:hover a.om-link {background: url("/sites/all/themes/ch/css/images/main-menu-hover-a.jpg") repeat-x 0 0; height: 28px !important; overflow: hidden; }
 
 
