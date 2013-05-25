@@ -179,7 +179,7 @@ ul.ch{margin-left: 0px; padding-left: 10px;}
 .om-maximenu.om-maximenu-block ul.om-menu {width: 960px;}
 
 
-#om-menu-main-om-menu li.om-leaf{position: relative; height: 42px; z-index: 400; padding: 0 0 3px 0;}
+#om-menu-main-om-menu li.om-leaf{position: relative; height: 42px; z-index: 400; padding: 0 0 3px 0; margin: 0 12px;}
 
 
 #om-menu-main-om-menu li.om-leaf.leaf-about-us .om-maximenu-middle{width: 120px;}
@@ -194,7 +194,7 @@ body.not-admin #om-menu-main-om-menu li.om-leaf.leaf-write-review{background: no
 .om-maximenu ul.om-menu li.om-leaf .om-link.link-e{padding: 4px 8px 8px 8px;}
 
 
-.om-maximenu ul.om-menu li.om-leaf a.om-link{padding: 12px 35px 10px; font-size: 15px; color: #355f84; text-shadow: 1px 1px 2px white; font-family: arial; font-weight: bold; display: block;}
+.om-maximenu ul.om-menu li.om-leaf a.om-link{padding: 12px 20px 10px; font-size: 15px; color: #355f84; text-shadow: 1px 1px 2px white; font-family: arial; font-weight: bold; display: block;}
 /*.om-maximenu ul.om-menu li.om-leaf.first a.om-link{border-radius: 5px 0 0 0;}*/
 
 
