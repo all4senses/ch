@@ -5607,6 +5607,7 @@ function ch_misc_getProviderQuickData($target, $data) {
 //        }
       }
       
+      /*
       if (!empty($all_data_quick[$data['data']->nid]['name'])) {
         //$out .= '<div class="link"><a href="' . $link . '" target="_blank">Visit website</a></div>';
         
@@ -5614,7 +5615,8 @@ function ch_misc_getProviderQuickData($target, $data) {
         
         $out .= '<div class="link">' . ch_misc_getTrackingUrl('Visit website', NULL, $data['data']->nid) . '</div>';
       }
-          
+      */
+      
       return $out;
       
     
