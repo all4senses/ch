@@ -398,7 +398,7 @@ border-radius: 0 10px 10px 0;
 }
 
 .view-display-id-page_chart_providers table thead th, .view-providers table thead th {
-background: #5eadf6;
+background: url("images/chart-th-back.jpg") repeat-x 0 0 #5eadf6;
 color: #00325e;
 }
 
