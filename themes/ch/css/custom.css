@@ -365,7 +365,7 @@ div.fivestar-widget-static .star span.on{background: url("images/sprite-2.png") 
 .view-providers table{margin-bottom: 0;}
 
 .view-display-id-page_chart_providers th,
-.view-providers th{background: #f3f8fb; color: #b8b8b8; height: 45px; text-align: center; font-size: 14px; font-weight: bold; padding: 0 5px; text-transform: uppercase;}
+.view-providers th{background: url(/sites/all/themes/ch/css/images/chart-th-back.jpg) repeat-x 0 0 transparent; color: #00325e; height: 39px; text-align: center; font-size: 12px; font-weight: bold; padding: 0 5px;}
 
 
 
@@ -390,17 +390,13 @@ div.fivestar-widget-static .star span.on{background: url("images/sprite-2.png") 
 
 
 .view-display-id-page_chart_providers table thead th:first-child, .view-providers table thead th:first-child {
-border-radius: 10px 0 0 10px;
+border-radius: 6px 0 0 6px;
 }
 
 .view-display-id-page_chart_providers table thead th:last-child, .view-providers table thead th:last-child {
-border-radius: 0 10px 10px 0;
+border-radius: 0 6px 6px 0;
 }
 
-.view-display-id-page_chart_providers table thead th, .view-providers table thead th {
-background: url("images/chart-th-back.jpg") repeat-x 0 0 #5eadf6;
-color: #00325e;
-}
 
 
 /* Providers directory*/
