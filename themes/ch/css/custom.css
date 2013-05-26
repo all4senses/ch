@@ -868,8 +868,6 @@ margin-top: 100px;
 #block-views-providers-block-chart-coupons td.views-field-php-3 a {text-align: left; color: gray; font-weight: normal;}
 #block-views-providers-block-chart-coupons td.views-field-php-3 a:hover {text-decoration: underline;}
 
-.view-id-providers thead {display: none;}
-
 
 .node-type-provider #main .main-content{padding: 0;}
 .node-type-provider #main .main-content .content{border:none; margin-top: 0; padding: 0;}
