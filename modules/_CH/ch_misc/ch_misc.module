@@ -5670,6 +5670,15 @@ function ch_misc_getProviderQuickData($target, $data) {
       
       
       
+    case 'sp': // space
+    case 'bw': // bandwidth
+      $out = '';
+      $all_data_quick = ch_misc_getProvidersDataQuick();
+      
+      $out = isset($all_data_quick[$data['data']->nid][$data['service_type']][$target]) ? $all_data_quick[$data['data']->nid][$data['service_type']][$target] : '';
+      
+      return $out;
+      
       
     case 'features':
       

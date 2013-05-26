@@ -2675,7 +2675,10 @@ function ch_pages_validateForm_provider(&$form, &$form_state) {
                 
         // Save collected Features and FEES data from temporary fields to a excessive field for using it from views
         $p_data_quick[$service_type_short]['plan'] = isset($service['pti']) ? $service['pti'] : '';
-
+        
+        $p_data_quick[$service_type_short]['sp'] = isset($service['sp']) ? $service['sp'] : '';
+        $p_data_quick[$service_type_short]['bw'] = isset($service['bw']) ? $service['bw'] : '';
+        
         // YouTube video ID
         if (isset($service['vr-y']) && $service['vr-y']) {
           // Allow to enter direct YouTube url and then parse it to save just a video ID.
@@ -2690,9 +2693,9 @@ function ch_pages_validateForm_provider(&$form, &$form_state) {
         }
 
         $p_data_quick[$service_type_short]['fees'] = array(
-          'back' => isset($service['mbg']) ? $service['mbg'] : '',
+          //'back' => isset($service['mbg']) ? $service['mbg'] : '',
           'monthly' => isset($service['fees']['mon']) ? $service['fees']['mon'] : '',
-          'setup' => isset($service['fees']['set']) ? $service['fees']['set'] : '',
+          //'setup' => isset($service['fees']['set']) ? $service['fees']['set'] : '',
         );
 
         if (isset($service['weights_' . $service_type_short . '_features'])) {
