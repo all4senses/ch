@@ -379,6 +379,8 @@ div.fivestar-widget-static .star span.on{background: url("images/sprite-2.png") 
 #all-content .view-providers td.active{background: transparent; padding: 5px 5px 8px; border-right: 1px solid #f4f4f4; text-align: center;}
 
 
+.view-display-id-page_chart_providers tr,
+.view-providers tr {border: none;}
 
 .view-display-id-page_chart_providers tr.even,
 .view-providers tr.even{background: #f9f9f9;}
