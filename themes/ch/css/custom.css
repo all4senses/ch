@@ -366,7 +366,7 @@ div.fivestar-widget-static .star span.on{background: url("images/sprite-2.png") 
 border-collapse: separate;
 border-spacing: 0 4px;
 border: 1px solid lightgray;
-padding: 10px;
+padding: 3px 7px 4px;
 border-radius: 5px;}
 
 .view-display-id-page_chart_providers th,
@@ -398,7 +398,7 @@ background: #c8ebff;
 
 .view-display-id-page_chart_providers tr.odd td, 
 .view-providers tr.even td {
-background: #ddfe1;
+background: #dddfe1;
 }
 
 .view-display-id-page_chart_providers tr.odd td:first-child, 
