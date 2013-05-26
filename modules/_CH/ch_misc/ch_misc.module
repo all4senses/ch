@@ -5555,10 +5555,8 @@ function ch_misc_getProviderQuickData($target, $data) {
     case 'logo_chart_iframe':
     
       $all_data_quick = ch_misc_getProvidersDataQuick();
-      //dpm($all_data_quick);
       $out = '';
       
-      //dpm($all_data_quick[$data['data']->nid]);
       if (!empty($all_data_quick[$data['data']->nid]['i_web'])) {
         $link = $all_data_quick[$data['data']->nid]['i_web'];
       }
@@ -5569,37 +5567,21 @@ function ch_misc_getProviderQuickData($target, $data) {
       if (!empty($all_data_quick[$data['data']->nid]['i_logo_uri'])) {
         
         if ($target == 'logo_chart') {
-          //$image = theme('image_style', array( 'path' =>  $all_data_quick[$data['data']->nid]['i_logo_uri'], 'style_name' => 'logo_provider_chart_main', 'alt' =>  $all_data_quick[$data['data']->nid]['i_logo_alt'], 'title' =>  $all_data_quick[$data['data']->nid]['i_logo_title']));
           $image_style_name = 'logo_provider_chart_main';
         } 
         elseif ($target == 'logo_chart_iframe') {
-          //$image = theme('image_style', array( 'path' =>  $all_data_quick[$data['data']->nid]['i_logo_uri'], 'style_name' => 'logo_provider_chart_iframe', 'alt' =>  $all_data_quick[$data['data']->nid]['i_logo_alt'], 'title' =>  $all_data_quick[$data['data']->nid]['i_logo_title']));
           $image_style_name = 'logo_provider_chart_iframe';
         }
         elseif ($target == 'logo_article') {
-          //$image = theme('image_style', array( 'path' =>  $all_data_quick[$data['data']->nid]['i_logo_uri'], 'style_name' => 'thumbnail', 'alt' =>  $all_data_quick[$data['data']->nid]['i_logo_alt'], 'title' =>  $all_data_quick[$data['data']->nid]['i_logo_title']));
           $image_style_name = 'thumbnail';
         }
         
-        //$image = theme('image_style', array( 'path' =>  $all_data_quick[$data['data']->nid]['i_logo_uri'], 'style_name' => $image_style_name, 'alt' =>  $all_data_quick[$data['data']->nid]['i_logo_alt'], 'title' =>  $all_data_quick[$data['data']->nid]['i_logo_title']));
         $image = theme('ch_misc_image_style', array('style_name' => $image_style_name, 'path' => $all_data_quick[$data['data']->nid]['i_logo_uri'], 'alt' =>  $all_data_quick[$data['data']->nid]['i_logo_alt'], 'title' =>  $all_data_quick[$data['data']->nid]['i_logo_title'] ));
         
-        ////$out = '<a href="' . $link . '" target="_blank">' . $image . '</a>';
-        
-        //////$out = '<a href="/click?p=' . urlencode($all_data_quick[$data['data']->nid]['name']) . '" rel="nofollow" target="_blank">' . $image . '</a>';
-        
-//        ch_misc_getTrackingUrl('Visit ' . $node->field_p_name['und'][0]['value'])
         $out = ch_misc_getTrackingUrl($image, NULL, $data['data']->nid);
-
       }
       else {
         if (!empty($all_data_quick[$data['data']->nid]['name'])) {
-          /////$out = '<a href="' . $link . '" target="_blank">' . $all_data_quick[$data['data']->nid]['name'] . '</a>';
-          
-          
-          ///////$out = '<a href="/click?p=' . urlencode($all_data_quick[$data['data']->nid]['name']) . '" rel="nofollow" target="_blank">' . $all_data_quick[$data['data']->nid]['name'] . '</a>';
-          
-          
           $out = ch_misc_getTrackingUrl($all_data_quick[$data['data']->nid]['name'], NULL, $data['data']->nid);
         }
 //        else {
