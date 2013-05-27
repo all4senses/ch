@@ -57,6 +57,11 @@ function ch_blocks_block_info() {
     'info' => 'Recomended sites',
     'cache' => DRUPAL_NO_CACHE,
   );
+  
+  $blocks['provider_table_in_var'] = array(
+    'info' => 'Provider table saved in Drupal variables',
+    'cache' => DRUPAL_CACHE_GLOBAL,
+  );
       
   return $blocks;
 }
@@ -113,6 +118,11 @@ function ch_blocks_block_view($delta = '') {
       $block['content'] = ch_blocks_get_recommendedSites_block();
       break;
     
+    case 'provider_table_in_var':
+      $block['subject'] = '';
+      $block['content'] = ch_blocks_getProvidersTableFromViews_withCaching();
+      break;
+    
   }
 
   return $block;
@@ -166,6 +176,21 @@ function ch_blocks_block_save($delta = '', $edit = array()) {
     variable_set('ch_recommendedSites_block', serialize($recommendedSites_block));
   }
   
+}
+
+
+/**
+ * Returns block with cached providers table.
+ */
+function ch_blocks_getProvidersTableFromViews_withCaching() {
+
+  if(!$providers = variable_get('ch_providers_table')) {
+    $block_data = array('module' => 'views', 'delta' => 'providers-block_providers_list_table', 'shadow' => FALSE);
+    $providers = ch_blocks_getBlockThemed($block_data);
+    variable_set('ch_providers_table', $providers);
+  }
+ 
+  return $providers;
 }
 
 

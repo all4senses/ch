@@ -2737,6 +2737,10 @@ function ch_pages_validateForm_provider(&$form, &$form_state) {
 //  //ch_misc_getProvidersDataQuick('all', TRUE);
    
   
+  
+  // Reset the providers_table saved generated view for the /providers page
+  variable_del('ср_providers_table');
+  
 }
 
 
