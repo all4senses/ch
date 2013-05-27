@@ -370,18 +370,18 @@ padding: 3px 7px 4px;
 border-radius: 5px;}
 
 .view-display-id-page_chart_providers th,
-.view-providers th{background: url(/sites/all/themes/ch/css/images/chart-th-back.jpg) repeat-x 0 0 transparent; color: #00325e; height: 39px; text-align: center; font-size: 12px; padding: 0 5px;}
+.view-providers th{background: url(/sites/all/themes/ch/css/images/chart-th-back.jpg) repeat-x 0 0 transparent; color: #00325e; height: 39px; text-align: center; font-size: 15px; padding: 0 5px;}
 
 
 
 .view-display-id-page_chart_providers th a,
-.view-providers th a{color: white; display: block; font-size: 14px; font-weight: bold;}
+.view-providers th a{color: white; display: block; font-size: 15px; font-weight: bold;}
 
 
 .view-display-id-page_chart_providers .view-providers td,
 #all-content .view-display-id-page_chart_providers td.active,
 #all-content .view-providers td, 
-#all-content .view-providers td.active{padding: 5px 5px 8px; text-align: center;}
+#all-content .view-providers td.active{padding: 5px 5px 8px; text-align: center; color: #00325e; font-size: 14px;}
 
 
 .view-display-id-page_chart_providers tr,
@@ -434,9 +434,11 @@ th.views-field-field-p-logo{width: 140px; padding-left: 7px;}
 #all-content .view-providers td.active.views-field-php{text-align: center; padding: 10px/* 0 10px 2px*/;}
 
 th.views-field-php{width: 150px;}
-
 th.views-field-php-1{width: 150px;}
-th.views-field-php-2 {width: 110px;}
+th.views-field-php-2{width: 70px;}
+th.views-field-php-3{width: 180px;}
+th.views-field-php-4{width: 50px;}
+th.views-field-php-5{width: 80px;}
 
 .views-field-php .link a {background: url("images/visit-site-btn.png") no-repeat 0 0 transparent; text-indent: -9999px; color: black; display: block; width: 103px; height: 25px; margin: auto;}
 .views-field-php img {margin: auto; display: block; margin-bottom: 4px;}
@@ -475,17 +477,13 @@ td.views-field-php-2{font-size: 17px; vertical-align: middle;}
 td.views-field-field-p-logo a{font-size: 20px; font-weight: bold;}
 
 
-th.views-field-php-4{width: 110px;}
 /* Correct a bit layout for separate admin pages with providers as blocks */
 .node-type-admin-page th.views-field-php-4{width: 140px;}
 
 td.views-field-php-4 a{font-weight: bold; font-size: 13px; color: #478AFD;}
 td.views-field-php-4 a:hover{text-decoration: underline;}
 
-th.views-field-php-5{border: none; width: 70px;}
 
-td.views-field-php-5,
-#all-content .view-providers td.views-field-php-5, #all-content .view-providers td.active.views-field-php-5{padding: 0;}
 
 td.views-field-php-5 a{background: #478AFD; border-radius: 3px; color: white; font-size: 12px; font-weight: bold; padding: 8px 3px;}
 
