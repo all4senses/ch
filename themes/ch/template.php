@@ -572,41 +572,25 @@ function ch_process_page(&$variables) {
     //dpm('not-teasers node------------');
     switch ($variables['node']->type) {
       case 'provider':
-        $variables['breadcrumb'] = theme('breadcrumb', array('breadcrumb' => array(l('Home', NULL), l('VoIP Providers', 'providers'), $variables['node']->field_p_name['und'][0]['value'] . ' Review')));
-        break;
-      case 'provider_type':
-        if ($variables['node']->title == 'Usage') {
-          $variables['breadcrumb'] = theme('breadcrumb', array('breadcrumb' => array(l('Home', NULL), l('Types Of VoIP', 'types'), $variables['node']->title)));
-        }
-        else {
-          $variables['breadcrumb'] = theme('breadcrumb', array('breadcrumb' => array(l('Home', NULL), l('Types Of VoIP', 'types'), l('VoIP Usage', 'usage'), $variables['node']->title)));
-        }
+        $variables['breadcrumb'] = theme('breadcrumb', array('breadcrumb' => array(l('Home', NULL), l('Providers', 'providers'), $variables['node']->field_p_name['und'][0]['value'] . ' Review')));
         break;
 //      case 'review':
 //        if (!empty($variables['node']->field_ref_provider['und'][0]['target_id'])) {
-//          $variables['breadcrumb'] = theme('breadcrumb', array('breadcrumb' => array(l('Home', NULL), l('VoIP Providers', 'providers'), l($variables['node']->field_r_provider_name['und'][0]['value'] . ' Review', 'node/' . $variables['node']->field_ref_provider['und'][0]['target_id']), $variables['node']->title )));
+//          $variables['breadcrumb'] = theme('breadcrumb', array('breadcrumb' => array(l('Home', NULL), l('Providers', 'providers'), l($variables['node']->field_r_provider_name['und'][0]['value'] . ' Review', 'node/' . $variables['node']->field_ref_provider['und'][0]['target_id']), $variables['node']->title )));
 //        }
 //        else {
-//          $variables['breadcrumb'] = theme('breadcrumb', array('breadcrumb' => array(l('Home', NULL), l('VoIP Providers', 'providers'), $variables['node']->title )));
+//          $variables['breadcrumb'] = theme('breadcrumb', array('breadcrumb' => array(l('Home', NULL), l('Providers', 'providers'), $variables['node']->title )));
 //        }
-//        break;
-//      case 'phone':
-//        //dpm($variables['node']);
-//        $variables['breadcrumb'] = theme('breadcrumb', array('breadcrumb' => array(l('Home', NULL), l('VoIP Reviews', 'providers/reviews'), l('VoIP Phone Reviews', 'voip-phone-reviews'), $variables['node']->title )));
-//        break;
-//      case 'phone_review':
-//        //dpm($variables['node']);
-//        $variables['breadcrumb'] = theme('breadcrumb', array('breadcrumb' => array(l('Home', NULL), l('VoIP Reviews', 'providers/reviews'), l('VoIP Phone Reviews', 'voip-phone-reviews'), l($variables['node']->field_p_name['und'][0]['value'], 'node/' . $variables['node']->field_ref_phone['und'][0]['target_id']), $variables['node']->title )));
 //        break;
       
 //      case 'article':
-//        $variables['breadcrumb'] = theme('breadcrumb', array('breadcrumb' => array(l('Home', NULL), l('VoIP Articles', 'articles'), l('Library', 'about-voip-services'), $variables['node']->title )));
+//        $variables['breadcrumb'] = theme('breadcrumb', array('breadcrumb' => array(l('Home', NULL), l('Articles', 'articles'), l('Library', 'about-voip-services'), $variables['node']->title )));
 //        break;
       case 'blog_post':
         $variables['breadcrumb'] = theme('breadcrumb', array('breadcrumb' => array(l('Home', NULL), l('Blog', 'blog'), $variables['node']->title )));
         break;
 //      case 'news_post':
-//        $variables['breadcrumb'] = theme('breadcrumb', array('breadcrumb' => array(l('Home', NULL), l('VoIP Articles', 'articles'), l('News', 'news'), $variables['node']->title )));
+//        $variables['breadcrumb'] = theme('breadcrumb', array('breadcrumb' => array(l('Home', NULL), l('Articles', 'articles'), l('News', 'news'), $variables['node']->title )));
 //        break;
     }
   }
@@ -615,7 +599,7 @@ function ch_process_page(&$variables) {
     //dpm('Tags cloud page ------------');
     switch ($_SERVER['REQUEST_URI']) {
       case '/articles/tags':
-        $variables['breadcrumb'] = theme('breadcrumb', array('breadcrumb' => array(l('Home', NULL), l('VoIP Library articles', 'about-voip-services'), 'VoIP Library tags' )));
+        $variables['breadcrumb'] = theme('breadcrumb', array('breadcrumb' => array(l('Home', NULL), l('Library articles', 'about-voip-services'), 'Library tags' )));
         break;
       case '/blog/tags':
         $variables['breadcrumb'] = theme('breadcrumb', array('breadcrumb' => array(l('Home', NULL), l('Blog', 'blog'), 'Blog tags' )));
@@ -626,17 +610,17 @@ function ch_process_page(&$variables) {
     }
   }
   */
-  elseif($current_tag_title) {
-    if (strpos($_SERVER['REQUEST_URI'], 'features/') != FALSE) {
-      $variables['breadcrumb'] = theme('breadcrumb', array('breadcrumb' => array(l('Home', NULL), l('Types Of VoIP', 'types'), l('VoIP Features', 'features'), $current_tag_title )));
-    }
-    elseif(strpos($_SERVER['REQUEST_URI'], 'equipment/') != FALSE) {
-      $variables['breadcrumb'] = theme('breadcrumb', array('breadcrumb' => array(l('Home', NULL), l('Types Of VoIP', 'types'), l('VoIP Equipment', 'equipment'), $current_tag_title )));
-    }
-    elseif (strpos($_SERVER['REQUEST_URI'], 'protocols/') != FALSE) {
-      $variables['breadcrumb'] = theme('breadcrumb', array('breadcrumb' => array(l('Home', NULL), l('Types Of VoIP', 'types'), l('VoIP Protocols', 'protocols'), $current_tag_title )));
-    }
-  }
+//  elseif($current_tag_title) {
+//    if (strpos($_SERVER['REQUEST_URI'], 'features/') != FALSE) {
+//      $variables['breadcrumb'] = theme('breadcrumb', array('breadcrumb' => array(l('Home', NULL), l('Types Of VoIP', 'types'), l('VoIP Features', 'features'), $current_tag_title )));
+//    }
+//    elseif(strpos($_SERVER['REQUEST_URI'], 'equipment/') != FALSE) {
+//      $variables['breadcrumb'] = theme('breadcrumb', array('breadcrumb' => array(l('Home', NULL), l('Types Of VoIP', 'types'), l('VoIP Equipment', 'equipment'), $current_tag_title )));
+//    }
+//    elseif (strpos($_SERVER['REQUEST_URI'], 'protocols/') != FALSE) {
+//      $variables['breadcrumb'] = theme('breadcrumb', array('breadcrumb' => array(l('Home', NULL), l('Types Of VoIP', 'types'), l('VoIP Protocols', 'protocols'), $current_tag_title )));
+//    }
+//  }
   /*
   elseif(strpos($_SERVER['REQUEST_URI'], '/tags/') != FALSE) {
     //dpm('Tag page ------------');
@@ -648,7 +632,7 @@ function ch_process_page(&$variables) {
     global $current_tag_title;
   
     if(strpos($_SERVER['REQUEST_URI'], 'articles/tags/') != FALSE) {
-      $variables['breadcrumb'] = theme('breadcrumb', array('breadcrumb' => array(l('Home', NULL), l('VoIP Library articles', 'about-voip-services'), l('Articles tags', 'articles/tags'), $current_tag_title )));
+      $variables['breadcrumb'] = theme('breadcrumb', array('breadcrumb' => array(l('Home', NULL), l('Library articles', 'about-voip-services'), l('Articles tags', 'articles/tags'), $current_tag_title )));
     }
     elseif (strpos($_SERVER['REQUEST_URI'], 'blog/tags/') != FALSE) {
       $variables['breadcrumb'] = theme('breadcrumb', array('breadcrumb' => array(l('Home', NULL), l('Blog', 'blog'), l('Blog tags', 'blog/tags'), $current_tag_title )));
@@ -794,7 +778,7 @@ function ch_form_alter(&$form, &$form_state, $form_id) {
     ///$form['actions']['submit']['#value'] = '';
     
     // Autohiding hint.
-    $default_search_text = t('Search VoIPNow');
+    $default_search_text = t('Search on site');
     $form['search_block_form']['#default_value'] = $default_search_text;
     $form['default_text']['#default_value'] = $default_search_text;
     // Cause a fatal error without it for anonymous.
