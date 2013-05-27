@@ -5650,8 +5650,8 @@ function ch_misc_getProviderQuickData($target, $data) {
       $all_data_quick = ch_misc_getProvidersDataQuick();
       
       if (!empty($all_data_quick[$data['data']->nid]['i_web'])) {
-        //$out = ch_misc_getTrackingUrl('Visit website', NULL, $data['data']->nid, NULL, 'site-link');
-        $out = ch_misc_getTrackingUrl('', NULL, $data['data']->nid, NULL, 'site-link');
+        $out = ch_misc_getTrackingUrl('Visit website', NULL, $data['data']->nid, NULL, 'site-link');
+        //$out = ch_misc_getTrackingUrl('', NULL, $data['data']->nid, NULL, 'site-link');
       }
       
       return $out;
