@@ -1,7 +1,7 @@
 #listpositionsbody{-webkit-text-size-adjust: none; min-width: 1150px; position: relative;}
 
 
-body.one-sidebar.sidebar-second #sidebar-second{background: none; padding: 14px 0 0 0; width: 300px; margin: 0;}
+body.one-sidebar.sidebar-second #sidebar-second{padding: 14px 0 0 0; width: 295px; margin: 0;}
 body.front.one-sidebar.sidebar-second #sidebar-second{padding-top: 3px}
 
 #all-content-wrapper{overflow: hidden;}
@@ -9,7 +9,7 @@ body.front.one-sidebar.sidebar-second #sidebar-second{padding-top: 3px}
 
 #highlighted{background: white; margin: auto; padding: 0 0 0/*10px*/ 0; width: 960px; box-shadow: 0 0 0px #DDDDDD, 0 20px 7px #000000;}
 
-body.one-sidebar.sidebar-second #main {background: none repeat scroll 0 0 white; padding: 5px 10px 10px 10px; margin-left: 6px; width: 620px;}
+body.one-sidebar.sidebar-second #main {background: none repeat scroll 0 0 white; padding: 5px 0 10px 10px; width: 650px;}
 
 .page-node #main .main-content{float: left;}
 
@@ -434,11 +434,11 @@ th.views-field-field-p-logo{width: 140px; padding-left: 7px;}
 #all-content .view-providers td.active.views-field-php{text-align: center; padding: 10px/* 0 10px 2px*/;}
 
 th.views-field-php{width: 150px;}
-th.views-field-php-1{width: 150px;}
+th.views-field-php-1{width: 95px;}
 th.views-field-php-2{width: 70px;}
-th.views-field-php-3{width: 180px;}
-th.views-field-php-4{width: 50px;}
-th.views-field-php-5{width: 80px;}
+th.views-field-php-3{width: 250px;}
+th.views-field-php-4{/*width: 50px;*/}
+th.views-field-php-5{/*width: 80px;*/}
 
 .views-field-php .link a {background: url("images/visit-site-btn.png") no-repeat 0 0 transparent; text-indent: -9999px; color: black; display: block; width: 103px; height: 25px; margin: auto;}
 .views-field-php img {margin: auto; display: block; margin-bottom: 4px;}
@@ -465,9 +465,8 @@ th.views-field-php-5{width: 80px;}
 /* Correct a bit layout for separate admin pages with providers as blocks */
 .node-type-admin-page th.views-field-php-1{width: 110px;}
 
-
-td.views-field-php-1, 
-td.views-field-php-3{font-size: 14px; font-weight: bold; color: #004286;}
+ 
+td.views-field-php-3{text-align: left; font-size: 10px;}
 
 
 td.views-field-php-2{font-size: 17px; vertical-align: middle;}
