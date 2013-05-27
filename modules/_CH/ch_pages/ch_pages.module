@@ -1664,12 +1664,6 @@ function ch_pages_form_alter(&$form, &$form_state, $form_id) {
                     
                   }
                   
-                  $form['s'][$service_type_key]['features'] = array(
-                      '#type' => 'textarea',
-                      '#title' => 'Features',
-                      '#default_value' => isset($p_data['s'][$service_type_key]['features']) ? $p_data['s'][$service_type_key]['features'] : '',
-                                          //$p_data['s']['re']['pti']
-                    );
                   
                   // Fees
                   $form['s'][$service_type_key]['fees'] = array(

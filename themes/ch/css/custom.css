@@ -454,6 +454,9 @@ th.views-field-php-5{/*width: 80px;*/}
 .view-providers .views-field-body
 {text-align: left; font-size: 13px; margin: 2px 0 2px 0;}
 
+
+.site-link {display: block; background: #f7c843; border-radius: 5px;}
+
 .view-display-id-page_chart_providers .site-link,
 .view-display-id-block_chart_all_providers .site-link {background: url("images/visit-site-btn2.png") no-repeat 0 0 transparent; text-indent: -9999px; color: black; display: block; width: 103px; height: 25px; margin: 0 auto 10px auto;}
 
