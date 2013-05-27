@@ -5645,6 +5645,17 @@ function ch_misc_getProviderQuickData($target, $data) {
       
       
       
+    case 'site_link':
+      
+      $all_data_quick = ch_misc_getProvidersDataQuick();
+      
+      if (!empty($all_data_quick[$data['data']->nid]['i_web'])) {
+        $out = ch_misc_getTrackingUrl('Visit website', NULL, $data['data']->nid, NULL, 'site-link');
+      }
+      
+      return $out;
+    
+      
       
     case 'review_and_site_links':
       
