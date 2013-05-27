@@ -200,7 +200,7 @@ body.not-admin #om-menu-main-om-menu li.om-leaf.leaf-write-review{background: no
 .om-maximenu ul.om-menu li.om-leaf .om-link.link-e{padding: 4px 8px 8px 8px;}
 
 
-.om-maximenu ul.om-menu li.om-leaf a.om-link{padding: 12px 20px 10px; font-size: 15px; color: #355f84; text-shadow: 1px 1px 2px white; font-family: arial; font-weight: bold; display: block; height: 25px !important; border: 1px solid transparent;}
+.om-maximenu ul.om-menu li.om-leaf a.om-link{padding: 12px 12px 10px; font-size: 15px; color: #355f84; text-shadow: 1px 1px 2px white; font-family: arial; font-weight: bold; display: block; height: 25px !important; border: 1px solid transparent;}
 /*.om-maximenu ul.om-menu li.om-leaf.first a.om-link{border-radius: 5px 0 0 0;}*/
 
 
