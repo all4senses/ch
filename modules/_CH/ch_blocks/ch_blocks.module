@@ -58,8 +58,8 @@ function ch_blocks_block_info() {
     'cache' => DRUPAL_NO_CACHE,
   );
   
-  $blocks['provider_table_in_var'] = array(
-    'info' => 'Provider table saved in Drupal variables',
+  $blocks['providers_table_in_var'] = array(
+    'info' => 'Providers table saved in Drupal variables',
     'cache' => DRUPAL_CACHE_GLOBAL,
   );
       
@@ -118,7 +118,7 @@ function ch_blocks_block_view($delta = '') {
       $block['content'] = ch_blocks_get_recommendedSites_block();
       break;
     
-    case 'provider_table_in_var':
+    case 'providers_table_in_var':
       $block['subject'] = '';
       $block['content'] = ch_blocks_getProvidersTableFromViews_withCaching();
       break;
