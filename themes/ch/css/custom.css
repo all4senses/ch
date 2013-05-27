@@ -455,7 +455,8 @@ th.views-field-php-5{/*width: 80px;*/}
 {text-align: left; font-size: 13px; margin: 2px 0 2px 0;}
 
 
-.site-link {color: black; display: block; background: #f7c843; border-radius: 5px; font-size: 14px; padding: 5px 0; box-shadow: 0px 1px 1px gray;}
+a.site-link {color: black; display: block; background: #f7c843; border-radius: 5px; font-size: 14px; padding: 5px 0; box-shadow: 0px 1px 1px gray;}
+a.site-link:hover {color: black;}
 
 .view-display-id-page_chart_providers .site-link,
 .view-display-id-block_chart_all_providers .site-link {background: url("images/visit-site-btn2.png") no-repeat 0 0 transparent; text-indent: -9999px; color: black; display: block; width: 103px; height: 25px; margin: 0 auto 10px auto;}
