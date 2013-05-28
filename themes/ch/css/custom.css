@@ -356,7 +356,7 @@ div.fivestar-widget-static .star{width: 15px; background: url("images/sprite-2.p
 div.fivestar-widget-static .star span.on{background: url("images/sprite-2.png") no-repeat scroll 0 -32px transparent;}
 
 #main .plan{color: #275FA6; font-size: 10px; font-weight: bold; margin: 0 0 0 2px;}
-#main .feature{background: url("images/sprite-2.png") no-repeat scroll 0 -1042px transparent; font-size: 11px; margin-bottom: 2px; padding-left: 20px; color: #777777;}
+#main .feature{background: url("images/sprite-2.png") no-repeat scroll 0 -1044px transparent; font-size: 11px; padding-left: 20px; color: #777777; line-height: 17px;}
 
 
 .view-display-id-page_chart_providers {margin: 0 0 50px 0;}
