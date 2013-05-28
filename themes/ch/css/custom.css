@@ -370,7 +370,7 @@ padding: 3px 7px 4px;
 border-radius: 5px;}
 
 .view-display-id-page_chart_providers th,
-.view-providers th{background: url(/sites/all/themes/ch/css/images/chart-th-back.jpg) repeat-x 0 0 transparent; color: #00325e; height: 39px; text-align: center; font-size: 15px; padding: 0 5px;}
+.view-providers th{background: url(/sites/all/themes/ch/css/images/chart-th-back.jpg) repeat-x 0 0 transparent; color: white; height: 39px; text-align: center; font-size: 13px; padding: 0 5px; font-weight: bold;}
 
 
 
