@@ -5672,7 +5672,7 @@ function ch_misc_getProviderQuickData($target, $data) {
       if (!empty($all_data_quick[$data['data']->nid]['i_web'])) {
         /////$out .= '<a class="site-link" href="/click?p=' . urlencode($all_data_quick[$data['data']->nid]['name']) . '" rel="nofollow" target="_blank">Visit website</a>';
         
-        $out .= ch_misc_getTrackingUrl('Visit website', NULL, $data['data']->nid, NULL, 'site-link');
+        $out .= ch_misc_getTrackingUrl('Visit site', NULL, $data['data']->nid, NULL, 'site-link');
       }
       
       //$out = '<a class="site-link" href="' . $link . '" target="_blank">Visit website</a>';
