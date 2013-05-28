@@ -455,7 +455,7 @@ th.views-field-php-5{/*width: 80px;*/}
 {text-align: left; font-size: 13px; margin: 2px 0 2px 0;}
 
 
-a.site-link {color: black; display: block; background: #f7c843; border-radius: 5px; font-size: 14px; padding: 5px 0; box-shadow: 0px 1px 1px gray;}
+a.site-link {color: black; display: block; background: url(/sites/all/themes/ch/css/images/visit-site-back.jpg) repeat-x 0 1px #f7c843; border-radius: 5px; font-size: 14px; padding: 5px 0 3px; box-shadow: 0px 1px 1px gray; width: 81px; margin: auto;}
 a.site-link:hover {color: black;}
 
 .review-link {font-size: 12px; margin-top: 5px; display: block; line-height: 12px;}
