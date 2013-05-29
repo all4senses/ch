@@ -1630,6 +1630,18 @@ function ch_misc_getArticleTeaserData($target, $body_full_markup, $nid, $charact
 }
 
 
+
+/**
+ * Implements a new view_mode.
+ */
+function ch_misc_entity_info_alter(&$entity_info) {
+  $entity_info['node']['view modes']['side_block_teaser'] = array(
+    'label' => t('Side block teaser'),
+    'custom settings' => TRUE,
+  );
+}
+
+
 /**
  * Rewrite links like /sites/default/files/pdfs/ to alias /pdfs/ (forward) and vise versa and others.
  */
