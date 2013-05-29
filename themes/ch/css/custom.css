@@ -852,9 +852,7 @@ margin-top: 100px;
 #main .view-taxonomy-term .views-row,
 #main .view-articles .views-row,
 #main .view-news .views-row,
-#main .view-blog .views-row
-/*{border: 1px solid lightgray; height: 198px; padding: 5px 10px; margin-bottom: 12px; overflow: hidden; width: 382px;}*/
-{border-bottom: 1px solid lightgray; padding: 5px 0; margin-bottom: 12px; width: 100%; float: left;}
+#main .view-blog .views-row {margin-bottom: 10px; width: 100%; float: left;}
 
 #main .view-taxonomy-term .views-row-odd,
 #main .view-articles .views-row-odd,
@@ -1136,7 +1134,7 @@ h1.preface{color: gray; font-size: 18px; font-weight: bold;}
 
 
 /* Articles teasers */
-.node-teaser{margin-bottom: 0; float: left;}
+.node-teaser{margin-bottom: 0; float: left; background: #f2f5f7; border-radius: 5px; padding: 10px;}
 .node-teaser h2 a, .node-teaser h3 a{color: #004286; font-size: 18px; line-height: 22px; font-weight: bold; margin: 0; border: medium none; padding: 0;}
 
 .front #main .node h2, .front #main .node h3{color: black; margin: 0; padding: 0; font-size: 18px; font-weight: bold;}
