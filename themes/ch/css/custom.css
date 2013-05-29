@@ -760,6 +760,9 @@ form .counter.exceeded{color: red;}
 .node-teaser .submitted a{margin: 0 0 0 3px;}
 .page-node .submitted a{margin: 0 0 0 5px;}
 
+.author {font-weight: bold; color: #7092d1;}
+
+
 .gplus{display: inline-block; background: url("images/gplus16.jpg") no-repeat scroll 0 0 transparent; text-indent: -9999px; width: 20px;}
 .page-node .submitted .gplus{background: url("images/gplus16.jpg") no-repeat scroll 0 2px transparent;}
 .page-node .submitted .gplus-hidden{margin: 0;}
@@ -1142,7 +1145,7 @@ h1.preface{color: gray; font-size: 18px; font-weight: bold;}
 .front #main .node h2, .front #main .node h3{color: black; margin: 0; padding: 0; font-size: 18px; font-weight: bold;}
 .front #main .node h2 a, .front #main .node h3 a{}
 
-#main .node-teaser .submitted{font-size: 12px; margin: 2px 0; padding-bottom: 5px;}
+#main .node-teaser .submitted{font-size: 12px; margin: 2px 0; padding-bottom: 5px; color: #d59057; font-weight: bold;}
 
 #main .node-teaser .links, #main footer .links{float: left;}
 #main .node-teaser .links{clear: both;}
@@ -1151,6 +1154,7 @@ h1.preface{color: gray; font-size: 18px; font-weight: bold;}
 
 #main .node-teaser .share{float: right;}
 
+.node-teaser header {border-bottom: 1px solid lightgray; padding-bottom: 10px; margin-bottom: 5px;}
 
 
 .content.teaser .thumb{width: 200px; height: 140px; float: left; margin-bottom: -47px; text-align: center; overflow: hidden; position: relative; top: -43px;}
