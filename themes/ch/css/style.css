@@ -49,14 +49,13 @@ body, p {
 }
 
 body {
-  background: #ededed;
   color: #222;
   font-family: Verdana,Arial,sans-serif/*{ffDefault}*/;
   /*
   font-size: 100%;
   line-height: 1.5;
   */
-   margin: 0;
+  margin: 0;
   padding: 0;
 }
 
