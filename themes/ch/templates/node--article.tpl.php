@@ -1,6 +1,25 @@
 <?php if (!$page): ?>
-  <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-  <!-- <div class="inside"> -->
+  
+  <?php 
+    if (empty($node->body['und'][0]['summary'])) {
+      if (!empty($node->field_a_teaser['und'][0]['value'])) {
+        $teaser_data['teaser'] = $node->field_a_teaser['und'][0]['value'];
+      }
+      else {
+        //$teaser_data = ch_misc_getArticleTeaserData('all', $content['body'][0]['#markup'], $node->nid);
+        $teaser_data = ch_misc_getArticleTeaserData('all', $node->body['und'][0]['value'], $node->nid);
+      }
+      
+      if (strpos($teaser_data['teaser'], 'class="thumb"') !== FALSE) {
+        $class_thumb_presented = ' with_thumb';
+      }
+      else {
+        $class_thumb_presented = '';
+      }
+    }
+  ?>
+  <article id="node-<?php print $node->nid; ?>" class="<?php print $classes . $class_thumb_presented; ?> clearfix"<?php print $attributes; ?>>
+ 
 <?php else: ?>
   <?php
 
@@ -119,21 +138,9 @@
               hide($content['body']);
 
               if (!empty($node->body['und'][0]['summary'])) {
-                //dpm('field_a_teaser is not empty');
-                //echo l('Read more »', 'node/' . $node->nid, array('attributes' => array('class' => array('more')))) . strip_tags($node->body['und'][0]['summary']);
                 echo l('Read more »', 'node/' . $node->nid, array('attributes' => array('class' => array('more')))) . $node->body['und'][0]['summary'];
               }
-              else 
-                {
-                //dpm('field_a_teaser IS empty');
-                if (!empty($node->field_a_teaser['und'][0]['value'])) {
-                  $teaser_data['teaser'] = $node->field_a_teaser['und'][0]['value'];
-                }
-                else {
-                  //$teaser_data = ch_misc_getArticleTeaserData('all', $content['body'][0]['#markup'], $node->nid);
-                  $teaser_data = ch_misc_getArticleTeaserData('all', $node->body['und'][0]['value'], $node->nid);
-                }
-                //echo l('Read more »', 'node/' . $node->nid, array('attributes' => array('class' => array('more')))) . $teaser_data['teaser'];
+              else {
                 echo $teaser_data['teaser'];
               }
             
