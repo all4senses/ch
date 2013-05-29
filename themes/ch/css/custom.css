@@ -456,10 +456,10 @@ th.views-field-php-5{/*width: 80px;*/}
 {text-align: left; font-size: 13px; margin: 2px 0 2px 0;}
 
 
-a.site-link {color: gray; display: block; background: url(/sites/all/themes/ch/css/images/visit-site-back.jpg) repeat-x 0 1px #f7c843; border-radius: 5px; font-size: 14px; padding: 5px 0 3px; box-shadow: 0px 1px 1px gray; width: 81px; margin: auto; font-family: arial; font-weight: bold;}
+a.site-link {color: gray; display: block; background: url(/sites/all/themes/ch/css/images/visit-site-back.jpg) repeat-x 0 1px #f7c843; border-radius: 5px; font-size: 14px; padding: 5px 0 3px; box-shadow: 0px 1px 1px gray; width: 81px; margin: 3px auto; font-family: arial; font-weight: bold;}
 a.site-link:hover {color: black;}
 
-.review-link {font-size: 12px; margin-top: 5px; display: block; line-height: 12px; font-family: arial; font-weight: bold;}
+.review-link {font-size: 12px; margin: 3px 0 5px 0; display: block; line-height: 12px; font-family: arial; font-weight: bold;}
 .review-link:hover {text-decoration: underline;}
 
 .view-display-id-page_chart_providers .site-link,
