@@ -72,7 +72,7 @@
               //$created_str = date('F d, Y \a\t g:ia', $node->created);
               //$created_str = date('m.d.Y', $node->created);
               //$created_str = date('F d, Y', $node->created);
-              $created_str = date('m d, Y', $node->created);
+              $created_str = date('F d, Y', $node->created);
               $created_rdf = preg_replace('|(.*)content=\"(.*)\"\s(.*)|', '$2', $date); //date('Y-m-d\TH:i:s', $node->created); 
               
               $extra_data['guest_author'] = NULL;
@@ -168,7 +168,7 @@
         <?php 
         
          if (!$page) {
-           echo '<div class="links">' . l('Comments' . ( ($user->uid && $node->comment_count) ? ' (' . $node->comment_count . ')' : ''), 'node/' . $node->nid, array('fragment' => 'comments')) . '</div>';
+           //echo '<div class="links">' . l('Comments' . ( ($user->uid && $node->comment_count) ? ' (' . $node->comment_count . ')' : ''), 'node/' . $node->nid, array('fragment' => 'comments')) . '</div>';
          }
          else {
            
