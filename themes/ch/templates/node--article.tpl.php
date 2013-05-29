@@ -71,7 +71,8 @@
 
               //$created_str = date('F d, Y \a\t g:ia', $node->created);
               //$created_str = date('m.d.Y', $node->created);
-              $created_str = date('F d, Y', $node->created);
+              //$created_str = date('F d, Y', $node->created);
+              $created_str = date('m d, Y', $node->created);
               $created_rdf = preg_replace('|(.*)content=\"(.*)\"\s(.*)|', '$2', $date); //date('Y-m-d\TH:i:s', $node->created); 
               
               $extra_data['guest_author'] = NULL;
@@ -97,24 +98,20 @@
               }
               
               if ($page) {
-                
-                
-
+     
                 $submitted = '<span property="dc:date dc:created" content="' . $created_rdf . '" datatype="xsd:dateTime" rel="sioc:has_creator">' .
                                 'By: ' .
-                                //'<a href="' . $author_url . '" title="View user profile." class="username" lang="' . $language->language . '" xml:lang="' . $language->language . '" about="' . $author_url . '" typeof="sioc:UserAccount" property="foaf:name">' .
-
-                                ////(!$extra_data['guest_author'] ? '<a href="' . $author_url . '" title="' . $author_title . '" class="username" lang="' . $language->language . '" xml:lang="' . $language->language . '" about="' . $author_url . '" typeof="sioc:UserAccount" property="foaf:name">' . $author_name . '</a>' . $gplus_profile : '<span class="guest-author">' . $author_name . '</span>') .
                                 (!$extra_data['guest_author'] ? '<span class="username" lang="' . $language->language . '" xml:lang="' . $language->language . '" typeof="sioc:UserAccount" property="foaf:name">' . $author_name . '</span>'  . $gplus_profile : '<span class="guest-author">' . $author_name . '</span>') .
-
-                                //($node->type == 'article' ? '' : '<span class="delim">|</span>' . $created_str) .
                                 ', on ' . $created_str .
 
                               '</span>';
                
 
                 echo '<span class="submitted">', $submitted, '</span>';
-              }              
+              }
+              else {
+                echo '<span class="submitted"><span class="author">', $author_name, '</span> - ', $created_str, '</span>';
+              }
             ?>
           
 
@@ -171,11 +168,7 @@
         <?php 
         
          if (!$page) {
-            global $user;
-            ////$submitted = 'By: <a href="' . $author_url . '" title="' . $author_title . '" >' . $author_name . '</a>, on ' . $created_str;
-            $submitted = 'By: <span class="author">' . $author_name . '</span>, on ' . $created_str;
-            //echo '<div class="links">' . l($content['field_categories'][0]['#title'], $content['field_categories'][0]['#href']). '<span class="delim">|</span><span class="submitted">', $submitted, '</span><span class="delim">|</span>' . l('Comments' . ( ($user->uid && $node->comment_count) ? ' (' . $node->comment_count . ')' : ''), 'node/' . $node->nid, array('fragment' => 'comments')) . '</div>';
-            echo '<div class="links"><span class="submitted">', $submitted, '</span><span class="delim">|</span>' . l('Comments' . ( ($user->uid && $node->comment_count) ? ' (' . $node->comment_count . ')' : ''), 'node/' . $node->nid, array('fragment' => 'comments')) . '</div>';
+           echo '<div class="links">' . l('Comments' . ( ($user->uid && $node->comment_count) ? ' (' . $node->comment_count . ')' : ''), 'node/' . $node->nid, array('fragment' => 'comments')) . '</div>';
          }
          else {
            
