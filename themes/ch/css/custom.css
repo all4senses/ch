@@ -865,7 +865,7 @@ margin-top: 100px;
 #main .view-taxonomy-term h2,
 #main .view-articles h2,
 #main .view-news h2,
-#main .view-blog h2{margin-top: 0; padding: 0; background: none; height: auto; margin: 0;}
+#main .view-blog h2{padding: 0; background: none; height: auto; margin: 0 0 3px 0;}
 
 
 
