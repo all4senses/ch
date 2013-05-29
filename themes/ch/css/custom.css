@@ -1157,7 +1157,7 @@ h1.preface{color: gray; font-size: 18px; font-weight: bold;}
 .node-teaser header {border-bottom: 1px solid lightgray; padding-bottom: 10px; margin-bottom: 5px;}
 
 
-.content.teaser .thumb{width: 200px; height: 140px; float: left; margin-bottom: -47px; text-align: center; overflow: hidden; position: relative; top: -43px;}
+.content.teaser .thumb{width: 200px; height: 140px; float: left; margin-bottom: -56px; text-align: center; overflow: hidden; position: relative; top: -56px;}
 .content.teaser .thumb.field {height: auto;}
 
 /* Fixes the bug where the deluxe textarea tag select box is broken, change display inline to display block */
