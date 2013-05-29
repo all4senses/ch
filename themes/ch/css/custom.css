@@ -1137,6 +1137,8 @@ h1.preface{color: gray; font-size: 18px; font-weight: bold;}
 .node-teaser{margin-bottom: 0; float: left; background: #f2f5f7; border-radius: 5px; padding: 10px; width: 100%;}
 .node-teaser h2 a, .node-teaser h3 a{color: #004286; font-size: 18px; line-height: 22px; font-weight: bold; margin: 0; border: medium none; padding: 0;}
 
+.node-teaser .more {background: url("images/arrow-circle-gray-right.png") no-repeat scroll right 0 transparent; display: block; float: right; margin-top: 5px; color: orange; font-weight: bold;}
+
 .front #main .node h2, .front #main .node h3{color: black; margin: 0; padding: 0; font-size: 18px; font-weight: bold;}
 .front #main .node h2 a, .front #main .node h3 a{}
 
