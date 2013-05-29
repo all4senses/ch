@@ -1617,7 +1617,7 @@ function ch_misc_getArticleTeaserData($target, $body_full_markup, $nid, $charact
   ////$teaser = substr_replace ($teaser, '...' . l('Read the rest of this entry »', 'node/' . $nid, array('attributes' => array('class' => array('more')))), $last_pos);
   
   //$teaser = substr_replace ($teaser, '... ' . l('Read more »', 'node/' . $nid, array('attributes' => array('class' => array('more')))), $last_pos);
-  $teaser = '<div class="teaser-content">' . substr_replace ($teaser, '... ' . l('Read more »', 'node/' . $nid, array('attributes' => array('class' => array('more')))), $last_pos) . '</div>';
+  $teaser = '<div class="teaser-content">' . substr_replace ($teaser, '... ' . l('Read more', 'node/' . $nid, array('attributes' => array('class' => array('more')))), $last_pos) . '</div>';
   
   
   if ($only_teaser) {
