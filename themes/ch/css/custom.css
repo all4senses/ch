@@ -345,6 +345,7 @@ h2, h3{color: gray; font-size: 18px; font-weight: bold; line-height: 18px; margi
 
 
 .with_thumb header {margin-left: 215px;}
+.with_thumb .teaser-content {margin-left: 215px;}
 
 /* Shadows */
 .shadow{background: url("images/shadow-bottom-right-t.png") no-repeat scroll 105% 2px transparent; height: 15px; margin-bottom: -15px; width: 100%;}
