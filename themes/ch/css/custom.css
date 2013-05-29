@@ -1153,7 +1153,7 @@ h1.preface{color: gray; font-size: 18px; font-weight: bold;}
 
 
 
-.content.teaser .thumb{width: 200px; height: 100px; float: left; margin: 5px 10px 5px 0; text-align: center; overflow: hidden; position: relative; top: -47px;}
+.content.teaser .thumb{width: 200px; height: 140px; float: left; margin-bottom: -47px; text-align: center; overflow: hidden; position: relative; top: -43px;}
 .content.teaser .thumb.field {height: auto;}
 
 
