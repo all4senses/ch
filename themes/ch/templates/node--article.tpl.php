@@ -30,6 +30,8 @@
   else {
     $side_block_teaser = FALSE;
   }
+  
+  dpm($teaser_data);
 ?>
 
 <?php if (!$page): ?>
