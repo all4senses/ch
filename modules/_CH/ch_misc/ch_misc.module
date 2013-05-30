@@ -1613,10 +1613,10 @@ function ch_misc_getArticleTeaserData($target, $body_full_markup, $nid, $charact
   $teaser_home = substr_replace ($teaser_home, '...', $last_pos);
   
   if ($found_image) {
-    $teaser_side_block_chars = 80;
+    $teaser_side_block_chars = 75;
   }
   else {
-    $teaser_side_block_chars = 120;
+    $teaser_side_block_chars = 115;
   }
   $teaser_side_block = trim(drupal_substr($teaser, 0, $teaser_side_block_chars));
   $last_pos = strrpos($teaser_side_block, ' ');
