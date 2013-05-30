@@ -348,17 +348,17 @@ h2, h3{color: gray; font-size: 18px; font-weight: bold; line-height: 18px; margi
 .with_thumb .teaser-content {margin-left: 215px;}
 
 
-.sidebar .block .content.teaser {border: none; padding: 0;}
+.sidebar .block .content.teaser {border: none; padding: 0; line-height: 17px;}
 
 .sidebar .block .content .views-row article a {color: #478afd; width: auto; margin: 0; padding: 0;}
 .sidebar .block .content .views-row article header a {font-size: 15px; line-height: 19px;}
 
-.sidebar .block .content .views-row article a.more {display: inline;}
+.sidebar .block .content .views-row article a.more {display: inline; margin-left: 3px;}
 
 .sidebar .with_thumb header,
 .sidebar .with_thumb .teaser-content {margin-left: 115px;}
 
-.sidebar .content.teaser .thumb {width: 100px; height: 110px; top: 5px; position: absolute;}
+.sidebar .content.teaser .thumb {width: 100px; height: 90px; top: 5px; position: absolute;}
 
 .sidebar header h2 {padding: 0; margin-bottom: 0;}
 .sidebar header .submitted {font-size: 10px; font-size: 12px; color: gray;}
