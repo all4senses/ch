@@ -358,7 +358,7 @@ h2, h3{color: gray; font-size: 18px; font-weight: bold; line-height: 18px; margi
 
 .sidebar .content.teaser .thumb {width: 100px; height: 140px; top: 10px; position: absolute;}
 
-.sidebar .content.teaser .submitted {font-size: 10px;}
+.sidebar header .submitted {font-size: 10px;}
 
 /* Shadows */
 .shadow{background: url("images/shadow-bottom-right-t.png") no-repeat scroll 105% 2px transparent; height: 15px; margin-bottom: -15px; width: 100%;}
