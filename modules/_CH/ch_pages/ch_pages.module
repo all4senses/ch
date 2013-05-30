@@ -2471,7 +2471,8 @@ function ch_pages_validateForm_article(&$form, &$form_state) {
   
   $extra_data = array(
     'title' => $form_state['values']['title'], 
-    'teaser_block' => $teaser_data['teaser_block'], 
+    'teaser_block' => $teaser_data['teaser_block'],
+    'teaser_side_block' => $teaser_data['teaser_side_block'],
     'teaser_home' => $teaser_data['teaser_home']
   );
   
