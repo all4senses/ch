@@ -57,7 +57,7 @@
     }
     
     //if (strpos($teaser_data['teaser'], 'class="thumb') !== FALSE) {
-    if (strpos($teaser_data['teaser'], 'class="thumb') !== FALSE) {
+    if ($teaser_data['teaser_main_image']) {
       $class_thumb_presented = ' with_thumb';
     }
     else {
