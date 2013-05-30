@@ -23,13 +23,19 @@
     $gplus_profile = ($authorExtendedData->field_u_gplus_profile_value) ? '<a class="gplus-hidden" title="Google+ profile of ' . $author_name . '" href="' . $authorExtendedData->field_u_gplus_profile_value . '?rel=author"></a>' : '';
     $author_title = t('!author\'s profile', array('!author' => $author_name));
   }
+  
+  if($view_mode == 'side_block_teaser') {
+    $side_block_teaser = TRUE;
+  }
+  else {
+    $side_block_teaser = FALSE;
+  }
 ?>
 
 <?php if (!$page): ?>
   
   <?php 
-    if($view_mode == 'side_block_teaser') {
-      //dpm($extra_data);
+    if($side_block_teaser) {
       if (!empty($extra_data['teaser_side_block'])) {
         $teaser_data['teaser'] = $extra_data['teaser_side_block'];
       }
@@ -119,7 +125,12 @@
                 echo '<span class="submitted">', $submitted, '</span>';
               }
               else {
-                echo '<span class="submitted"><span class="author">', $author_name, '</span> - ', $created_str, '</span>';
+                if ($side_block_teaser) {
+                  echo '<span class="submitted">', $created_str, '</span>';
+                }
+                else {
+                  echo '<span class="submitted"><span class="author">', $author_name, '</span> - ', $created_str, '</span>';
+                }
               }
             ?>
           
