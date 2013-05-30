@@ -83,7 +83,11 @@
           
 
       <?php if (!$page): ?>
-        <?php echo $teaser_data['teaser_main_image']; ?>
+        <?php 
+          if (!empty($teaser_data['teaser_main_image'])) {
+            echo $teaser_data['teaser_main_image']; 
+          }
+        ?>
         <header>
       <?php endif; ?>
 
