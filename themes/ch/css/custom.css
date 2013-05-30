@@ -1147,9 +1147,13 @@ h1.preface{color: gray; font-size: 18px; font-weight: bold;}
 
 .node-teaser header {border-bottom: 1px solid lightgray; padding-bottom: 10px; margin-bottom: 5px;}
 
-
+/*
 article .thumb{width: 200px; height: 140px; float: left; margin-bottom: -56px; text-align: center; overflow: hidden; position: relative; top: -56px;}
 article .thumb.field {height: auto;}
+*/
+
+article .thumb {width: 200px; float: left; margin: 0 10px 5px 0; text-align: center;}
+
 
 /* Fixes the bug where the deluxe textarea tag select box is broken, change display inline to display block */
 .field-name-field-tags div {display: block;}
