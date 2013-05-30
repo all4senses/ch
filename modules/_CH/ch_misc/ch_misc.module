@@ -1638,7 +1638,7 @@ function ch_misc_getArticleTeaserData($target, $body_full_markup, $nid, $charact
     return $main_image_html . $teaser;
   }
   else {
-    return array('teaser' => $main_image_html . $teaser, 'teaser_side_block' => $side_block_image_html . $teaser_side_block, 'teaser_block' => $teaser_block, 'teaser_home' => $main_image_html . $teaser_home, 'main_image' => $main_image);
+    return array('teaser' => $teaser, 'teaser_side_block' => $teaser_side_block, 'teaser_block' => $teaser_block, 'teaser_home' => $main_image_html . $teaser_home, 'main_image' => $main_image, 'side_block_image_html' => $side_block_image_html);
   }
   
 }

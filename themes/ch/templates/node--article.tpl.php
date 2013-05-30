@@ -39,22 +39,24 @@
   <?php 
     if($side_block_teaser) {
       if (!empty($extra_data['teaser_side_block'])) {
-        $teaser_data['teaser'] = $extra_data['teaser_side_block'];
+        $teaser_data = $extra_data;
       }
       else {
         $teaser_data = ch_misc_getArticleTeaserData('all', $node->body['und'][0]['value'], $node->nid);
-        $teaser_data['teaser'] = $teaser_data['teaser_side_block'];
       }
+      $teaser_data['teaser'] = $extra_data['teaser_side_block'];
+      $teaser_data['main_image'] = $extra_data['side_block_main_image'];
     }
     elseif (empty($node->body['und'][0]['summary'])) {
-      if (!empty($node->field_a_teaser['und'][0]['value'])) {
-        $teaser_data['teaser'] = $node->field_a_teaser['und'][0]['value'];
+      if (!empty($extra_data['teaser'])) {
+        $teaser_data = $extra_data;
       }
       else {
         $teaser_data = ch_misc_getArticleTeaserData('all', $node->body['und'][0]['value'], $node->nid);
       }
     }
     
+    //if (strpos($teaser_data['teaser'], 'class="thumb') !== FALSE) {
     if (strpos($teaser_data['teaser'], 'class="thumb') !== FALSE) {
       $class_thumb_presented = ' with_thumb';
     }
@@ -77,10 +79,11 @@
 
  
   
- 
+
           
 
       <?php if (!$page): ?>
+        <?php echo $teaser_data['main_image']; ?>
         <header>
       <?php endif; ?>
 
