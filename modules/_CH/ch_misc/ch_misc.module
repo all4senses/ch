@@ -1491,7 +1491,8 @@ function ch_misc_getArticleTeaserData($target, $body_full_markup, $nid, $charact
     // Set No image for externally linked image.
     if ( (strpos($main_image['src'], 'http') !== FALSE && !strpos($main_image['src'], 'cloudhostinghq.com')) || (!file_exists(str_replace('http://cloudhostinghq.com/', '', $main_image['src'])) && !file_exists(str_replace('http://test.cloudhostinghq.com/', '', $main_image['src'])))  ) {
       $found_image = FALSE;
-      //dpm($main_image);
+      dpm($main_image);
+      dpm('$found_image = FALSE');
     }
   }
   elseif (preg_match('/\[video:.*v=(.*)\]/i', $body_full_markup, $matches)) {
@@ -1503,7 +1504,7 @@ function ch_misc_getArticleTeaserData($target, $body_full_markup, $nid, $charact
     $body_full_markup = preg_replace('|\[video:.*(http.*)\]|', '<a href="$1"> [Watch a video] </a>', $body_full_markup);
   }
   
-  dpm($main_image);
+  //dpm($main_image);
   
   
   if ($found_image) {
