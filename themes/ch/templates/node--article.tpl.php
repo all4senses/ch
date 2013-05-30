@@ -31,7 +31,7 @@
     $side_block_teaser = FALSE;
   }
   
-  dpm($teaser_data);
+  dpm($extra_data);
 ?>
 
 <?php if (!$page): ?>
