@@ -53,7 +53,7 @@
       }
     }
     
-    if (strpos($teaser_data['teaser'], 'class="thumb"') !== FALSE) {
+    if (strpos($teaser_data['teaser'], 'class="thumb') !== FALSE) {
       $class_thumb_presented = ' with_thumb';
     }
     else {
