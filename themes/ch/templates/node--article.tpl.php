@@ -23,18 +23,15 @@
     $gplus_profile = ($authorExtendedData->field_u_gplus_profile_value) ? '<a class="gplus-hidden" title="Google+ profile of ' . $author_name . '" href="' . $authorExtendedData->field_u_gplus_profile_value . '?rel=author"></a>' : '';
     $author_title = t('!author\'s profile', array('!author' => $author_name));
   }
-  
-  
-  dpm($view_mode);
 ?>
 
 <?php if (!$page): ?>
   
   <?php 
     if($view_mode == 'side_block_teaser') {
-      dpm($extra_data);
-      if (!empty($node->field_a_teaser['und'][0]['value'])) {
-        $teaser_data['teaser'] = $node->field_a_teaser['und'][0]['value'];
+      //dpm($extra_data);
+      if (!empty($extra_data['teaser_side_block'])) {
+        $teaser_data['teaser'] = $extra_data['teaser_side_block'];
       }
       else {
         $teaser_data = ch_misc_getArticleTeaserData('all', $node->body['und'][0]['value'], $node->nid);
