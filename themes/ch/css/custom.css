@@ -356,7 +356,7 @@ h2, h3{color: gray; font-size: 18px; font-weight: bold; line-height: 18px; margi
 .sidebar .with_thumb header,
 .sidebar .with_thumb .teaser-content {margin-left: 115px;}
 
-.sidebar .content.teaser .thumb {width: 100px; height: 140px; top: 10px;}
+.sidebar .content.teaser .thumb {width: 100px; height: 140px; top: 10px; position: absolute;}
 
 .sidebar .content.teaser .submitted {font-size: 10px;}
 
