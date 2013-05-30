@@ -1465,6 +1465,7 @@ function ch_misc_curl_file_from_remote_site_likeBrowser($url, $file_local_abs)
 function ch_misc_getArticleTeaserData($target, $body_full_markup, $nid, $characters_num = NULL, $only_teaser = FALSE, $thumbnail_fid = NULL) {
  
   $main_image_html = NULL;
+  $side_block_image_html = NULL;
   $main_image = NULL;
   $matches = NULL;
   $found_image = NULL;
