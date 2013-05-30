@@ -350,6 +350,9 @@ h2, h3{color: gray; font-size: 18px; font-weight: bold; line-height: 18px; margi
 .sidebar .with_thumb header,
 .sidebar .with_thumb .teaser-content {margin-left: 115px;}
 */
+.with_thumb header {margin-left: 215px;}
+.sidebar .with_thumb header {margin-left: 115px;}
+
 
 .sidebar .block .content.teaser {border: none; padding: 0; line-height: 17px;}
 
