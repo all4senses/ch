@@ -1607,7 +1607,7 @@ function ch_misc_getArticleTeaserData($target, $body_full_markup, $nid, $charact
   
   $teaser_side_block = trim(drupal_substr($teaser, 0, 200));// . '...';
   $last_pos = strrpos($teaser_side_block, ' ');
-  $teaser_side_block = '<div class="teaser-content">' . substr_replace ($teaser_side_block, '...', $last_pos) . '</div>';
+  $teaser_side_block = '<div class="teaser-content">' . substr_replace ($teaser_side_block, '...' . l('Read more', 'node/' . $nid, array('attributes' => array('class' => array('more')))), $last_pos) . '</div>';
   
   
   $teaser_home = trim(drupal_substr($teaser, 0, 200));// . '...';

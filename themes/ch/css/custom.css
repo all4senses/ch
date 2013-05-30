@@ -348,7 +348,7 @@ h2, h3{color: gray; font-size: 18px; font-weight: bold; line-height: 18px; margi
 .with_thumb .teaser-content {margin-left: 215px;}
 
 
-.sidebar .block .content.teaser {border: none;}
+.sidebar .block .content.teaser {border: none; padding: 0;}
 
 .sidebar .block .content .views-row article a {width: auto; margin: 0; padding: 0;}
 
