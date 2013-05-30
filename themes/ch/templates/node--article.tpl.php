@@ -1,21 +1,57 @@
+<?php 
+  $created_str = date('F d, Y', $node->created);
+  $created_rdf = preg_replace('|(.*)content=\"(.*)\"\s(.*)|', '$2', $date); //date('Y-m-d\TH:i:s', $node->created); 
+
+  $extra_data['guest_author'] = NULL;
+  if (!empty($node->field_extra_data['und'][0]['value'])) {
+    $extra_data = unserialize($node->field_extra_data['und'][0]['value']);
+    //dpm($extra_data);
+    $extra_data['guest_author'] = $author_name = !empty($extra_data['guest_author']) ? $extra_data['guest_author'] : NULL;
+  }
+
+  if (!$extra_data['guest_author']) {
+    $authorExtendedData = ch_misc_loadUserExtendedData($node->uid);
+    $author_name = $authorExtendedData->realname;
+  }
+
+  global $language;
+
+  if (!$extra_data['guest_author']) {
+    $author_url = url('user/' . $node->uid);
+    //$gplus_profile = (isset($author->field_u_gplus_profile['und'][0]['safe_value']) && $author->field_u_gplus_profile['und'][0]['safe_value']) ? ' <a class="gplus" title="Google+ profile of ' . $author_name . '" href="' . $author->field_u_gplus_profile['und'][0]['safe_value'] . '?rel=author">(G+)</a>' : '';
+    ////$gplus_profile = ($authorExtendedData->field_u_gplus_profile_value) ? ' <a class="gplus" title="Google+ profile of ' . $author_name . '" href="' . $authorExtendedData->field_u_gplus_profile_value . '?rel=author">(G+)</a>' : '';
+    $gplus_profile = ($authorExtendedData->field_u_gplus_profile_value) ? '<a class="gplus-hidden" title="Google+ profile of ' . $author_name . '" href="' . $authorExtendedData->field_u_gplus_profile_value . '?rel=author"></a>' : '';
+    $author_title = t('!author\'s profile', array('!author' => $author_name));
+  }
+?>
+
 <?php if (!$page): ?>
   
   <?php 
-    if (empty($node->body['und'][0]['summary'])) {
+    if($view_mode == 'side_block_teaser') {
+      dpm($extra_data);
       if (!empty($node->field_a_teaser['und'][0]['value'])) {
         $teaser_data['teaser'] = $node->field_a_teaser['und'][0]['value'];
       }
       else {
-        //$teaser_data = ch_misc_getArticleTeaserData('all', $content['body'][0]['#markup'], $node->nid);
         $teaser_data = ch_misc_getArticleTeaserData('all', $node->body['und'][0]['value'], $node->nid);
+        $teaser_data['teaser'] = $teaser_data['teaser_side_block'];
       }
-      
-      if (strpos($teaser_data['teaser'], 'class="thumb"') !== FALSE) {
-        $class_thumb_presented = ' with_thumb';
+    }
+    elseif (empty($node->body['und'][0]['summary'])) {
+      if (!empty($node->field_a_teaser['und'][0]['value'])) {
+        $teaser_data['teaser'] = $node->field_a_teaser['und'][0]['value'];
       }
       else {
-        $class_thumb_presented = '';
+        $teaser_data = ch_misc_getArticleTeaserData('all', $node->body['und'][0]['value'], $node->nid);
       }
+    }
+    
+    if (strpos($teaser_data['teaser'], 'class="thumb"') !== FALSE) {
+      $class_thumb_presented = ' with_thumb';
+    }
+    else {
+      $class_thumb_presented = '';
     }
   ?>
   <article id="node-<?php print $node->nid; ?>" class="<?php print $classes . $class_thumb_presented; ?> clearfix"<?php print $attributes; ?>>
@@ -69,33 +105,6 @@
 
           <?php 
 
-              //$created_str = date('F d, Y \a\t g:ia', $node->created);
-              //$created_str = date('m.d.Y', $node->created);
-              //$created_str = date('F d, Y', $node->created);
-              $created_str = date('F d, Y', $node->created);
-              $created_rdf = preg_replace('|(.*)content=\"(.*)\"\s(.*)|', '$2', $date); //date('Y-m-d\TH:i:s', $node->created); 
-              
-              $extra_data['guest_author'] = NULL;
-              if (!empty($node->field_extra_data['und'][0]['value'])) {
-                $extra_data = unserialize($node->field_extra_data['und'][0]['value']);
-                //dpm($extra_data);
-                $extra_data['guest_author'] = $author_name = !empty($extra_data['guest_author']) ? $extra_data['guest_author'] : NULL;
-              }
-
-              if (!$extra_data['guest_author']) {
-                $authorExtendedData = ch_misc_loadUserExtendedData($node->uid);
-                $author_name = $authorExtendedData->realname;
-              }
-
-              global $language;
-
-              if (!$extra_data['guest_author']) {
-                $author_url = url('user/' . $node->uid);
-                //$gplus_profile = (isset($author->field_u_gplus_profile['und'][0]['safe_value']) && $author->field_u_gplus_profile['und'][0]['safe_value']) ? ' <a class="gplus" title="Google+ profile of ' . $author_name . '" href="' . $author->field_u_gplus_profile['und'][0]['safe_value'] . '?rel=author">(G+)</a>' : '';
-                ////$gplus_profile = ($authorExtendedData->field_u_gplus_profile_value) ? ' <a class="gplus" title="Google+ profile of ' . $author_name . '" href="' . $authorExtendedData->field_u_gplus_profile_value . '?rel=author">(G+)</a>' : '';
-                $gplus_profile = ($authorExtendedData->field_u_gplus_profile_value) ? '<a class="gplus-hidden" title="Google+ profile of ' . $author_name . '" href="' . $authorExtendedData->field_u_gplus_profile_value . '?rel=author"></a>' : '';
-                $author_title = t('!author\'s profile', array('!author' => $author_name));
-              }
               
               if ($page) {
      

@@ -1546,7 +1546,14 @@ function ch_misc_getArticleTeaserData($target, $body_full_markup, $nid, $charact
       ////$main_image_html = theme('image_style', array( 'path' => $stream_path, 'style_name' => $style_name));
       //$main_image['src_themed'] = image_style_url($style_name, $stream_path);
     }
+    
+    
     $main_image_html = theme('image_style', array( 'path' => $stream_path, 'style_name' => $style_name));
+    $side_block_image_html = theme('image_style', array( 'path' => $stream_path, 'style_name' => 'article_thumbnail_side_block'));
+    
+    $main_image_html = '<div class="thumb' . ($thumbnail_fid ? ' field' : '') . '">' . $main_image_html . '</div>';
+    $side_block_image_html = '<div class="thumb' . ($thumbnail_fid ? ' field' : '') . '">' . $side_block_image_html . '</div>';
+    
     
     // Image for sharing.
     if ($image_size[0] / $image_size[1] > 1) {
@@ -1565,8 +1572,6 @@ function ch_misc_getArticleTeaserData($target, $body_full_markup, $nid, $charact
       //$main_image['src_themed'] = image_style_url('share', $stream_path);
     }
     $main_image['src_themed'] = image_style_url($style_name_share, $stream_path);
-    
-    $main_image_html = '<div class="thumb' . ($thumbnail_fid ? ' field' : '') . '">' . $main_image_html . '</div>';
     
     //$main_image_html = theme('image_style', array( 'path' => $stream_path, 'style_name' => 'article_thumbnail'));
     
@@ -1597,7 +1602,12 @@ function ch_misc_getArticleTeaserData($target, $body_full_markup, $nid, $charact
   
   $teaser_block = trim(drupal_substr($teaser, 0, 200));// . '...';
   $last_pos = strrpos($teaser_block, ' ');
-  $teaser_block = substr_replace ($teaser_block, '...', $last_pos);
+  $teaser_block = '<div class="teaser-content">' . substr_replace ($teaser_block, '...', $last_pos) . '</div>';
+  
+  $teaser_side_block = trim(drupal_substr($teaser, 0, 200));// . '...';
+  $last_pos = strrpos($teaser_side_block, ' ');
+  $teaser_side_block = '<div class="teaser-content">' . substr_replace ($teaser_side_block, '...', $last_pos) . '</div>';
+  
   
   $teaser_home = trim(drupal_substr($teaser, 0, 200));// . '...';
   $last_pos = strrpos($teaser_home, ' ');
@@ -1624,7 +1634,7 @@ function ch_misc_getArticleTeaserData($target, $body_full_markup, $nid, $charact
     return $main_image_html . $teaser;
   }
   else {
-    return array('teaser' => $main_image_html . $teaser, 'teaser_block' => $teaser_block, 'teaser_home' => $main_image_html . $teaser_home, 'main_image' => $main_image);
+    return array('teaser' => $main_image_html . $teaser, 'teaser_side_block' => $side_block_image_html . $teaser_side_block, 'teaser_block' => $teaser_block, 'teaser_home' => $main_image_html . $teaser_home, 'main_image' => $main_image);
   }
   
 }
