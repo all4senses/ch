@@ -370,7 +370,7 @@ h2, h3{color: gray; font-size: 18px; font-weight: bold; line-height: 18px; margi
 .sidebar article {margin-bottom: 10px !important; border-bottom: 2px dotted lightgray;}
 .sidebar .views-row-last article {border: none;}
 */
-.sidebar article {margin-bottom: 10px !important; border-top: 2px dotted lightgray; padding-top: 10px; overflow: hidden;}
+.sidebar article {margin-bottom: 7px !important; border-top: 2px dotted lightgray; padding-top: 10px; overflow: hidden;}
 .sidebar .views-row-first article {border: none;}
 
 
