@@ -351,12 +351,14 @@ h2, h3{color: gray; font-size: 18px; font-weight: bold; line-height: 18px; margi
 .sidebar .block .content.teaser {border: none; padding: 0;}
 
 .sidebar .block .content .views-row article a {width: auto; margin: 0; padding: 0;}
+.sidebar .block .content .views-row article header a {color: #478afd;}
 
 .sidebar .with_thumb header,
 .sidebar .with_thumb .teaser-content {margin-left: 115px;}
 
 .sidebar .content.teaser .thumb {width: 100px; height: 140px; margin-bottom: -80px; top: -80px;}
 
+.sidebar .content.teaser .submitted {font-size: 10px;}
 
 /* Shadows */
 .shadow{background: url("images/shadow-bottom-right-t.png") no-repeat scroll 105% 2px transparent; height: 15px; margin-bottom: -15px; width: 100%;}
