@@ -588,7 +588,7 @@ body.sidebar-second #sidebar-second{float: right; margin-right: 18px; padding: 1
 
 .sidebar #block-views-articles-block-1 .content,
 /*.sidebar .block .content{padding: 5px 5px 0 0;}*/
-.sidebar .block .content{padding: 5px 5px 0 0; padding: 5px 5px 0 5px; border: 2px solid lightgray;}
+.sidebar .block .content{padding: 5px 5px 0 0; padding: 5px 5px 0 5px; border: 2px solid lightgray; border-radius: 0 0 7px 7px;}
 
 
 
