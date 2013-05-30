@@ -361,7 +361,7 @@ h2, h3{color: gray; font-size: 18px; font-weight: bold; line-height: 18px; margi
 .sidebar header h2 {padding: 0; margin-bottom: 0;}
 .sidebar header .submitted {font-size: 10px; font-size: 12px; color: gray;}
 
-.sidebar article {margin-bottom: 10px;}
+.sidebar article {margin-bottom: 10px !important;}
 
 
 /* Shadows */
