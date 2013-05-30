@@ -2475,6 +2475,7 @@ function ch_pages_validateForm_article(&$form, &$form_state) {
     'teaser_block' => $teaser_data['teaser_block'],
     'teaser_side_block' => $teaser_data['teaser_side_block'],
     'main_image' => $teaser_data['main_image'],
+    'teaser_main_image' => $teaser_data['teaser_main_image'],
     'side_block_main_image' => $teaser_data['side_block_main_image'],
     'teaser_home' => $teaser_data['teaser_home']
   );

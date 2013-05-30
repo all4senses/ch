@@ -45,7 +45,7 @@
         $teaser_data = ch_misc_getArticleTeaserData('all', $node->body['und'][0]['value'], $node->nid);
       }
       $teaser_data['teaser'] = $extra_data['teaser_side_block'];
-      $teaser_data['main_image'] = $extra_data['side_block_main_image'];
+      $teaser_data['teaser_main_image'] = $extra_data['side_block_main_image'];
     }
     elseif (empty($node->body['und'][0]['summary'])) {
       if (!empty($extra_data['teaser'])) {
@@ -83,7 +83,7 @@
           
 
       <?php if (!$page): ?>
-        <?php echo $teaser_data['main_image']; ?>
+        <?php echo $teaser_data['teaser_main_image']; ?>
         <header>
       <?php endif; ?>
 
