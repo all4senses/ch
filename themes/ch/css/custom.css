@@ -343,10 +343,13 @@ h2, h3{color: gray; font-size: 18px; font-weight: bold; line-height: 18px; margi
 .content.teaser,
 .content.teaser p{font-size: 13px; line-height: 19px; color: black; margin: 5px 0 5px 0;}
 
-
+/*
 .with_thumb header,
 .with_thumb .teaser-content {margin-left: 215px;}
 
+.sidebar .with_thumb header,
+.sidebar .with_thumb .teaser-content {margin-left: 115px;}
+*/
 
 .sidebar .block .content.teaser {border: none; padding: 0; line-height: 17px;}
 
@@ -355,10 +358,7 @@ h2, h3{color: gray; font-size: 18px; font-weight: bold; line-height: 18px; margi
 
 .sidebar .block .content .views-row article a.more {display: inline; margin-left: 3px;}
 
-.sidebar .with_thumb header,
-.sidebar .with_thumb .teaser-content {margin-left: 115px;}
-
-.sidebar .content.teaser .thumb {width: 100px; height: 90px; top: 5px; position: absolute;}
+.sidebar article .thumb {width: 100px; height: 90px; top: 5px; position: absolute;}
 
 .sidebar header h2 {padding: 0; margin-bottom: 0;}
 .sidebar header .submitted {font-size: 10px; font-size: 12px; color: gray;}
@@ -1148,8 +1148,8 @@ h1.preface{color: gray; font-size: 18px; font-weight: bold;}
 .node-teaser header {border-bottom: 1px solid lightgray; padding-bottom: 10px; margin-bottom: 5px;}
 
 
-.content.teaser .thumb{width: 200px; height: 140px; float: left; margin-bottom: -56px; text-align: center; overflow: hidden; position: relative; top: -56px;}
-.content.teaser .thumb.field {height: auto;}
+article .thumb{width: 200px; height: 140px; float: left; margin-bottom: -56px; text-align: center; overflow: hidden; position: relative; top: -56px;}
+article .thumb.field {height: auto;}
 
 /* Fixes the bug where the deluxe textarea tag select box is broken, change display inline to display block */
 .field-name-field-tags div {display: block;}
