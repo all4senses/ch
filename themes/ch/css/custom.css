@@ -356,10 +356,12 @@ h2, h3{color: gray; font-size: 18px; font-weight: bold; line-height: 18px; margi
 .sidebar .with_thumb header,
 .sidebar .with_thumb .teaser-content {margin-left: 115px;}
 
-.sidebar .content.teaser .thumb {width: 100px; height: 140px; top: 10px; position: absolute;}
+.sidebar .content.teaser .thumb {width: 100px; height: 140px; top: 5px; position: absolute;}
 
 .sidebar header h2 {padding: 0; margin-bottom: 0;}
 .sidebar header .submitted {font-size: 10px; font-size: 12px; color: gray;}
+
+.sidebar article {margin-bottom: 10px;}
 
 
 /* Shadows */
