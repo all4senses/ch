@@ -350,7 +350,7 @@ h2, h3{color: gray; font-size: 18px; font-weight: bold; line-height: 18px; margi
 .sidebar .with_thumb header,
 .sidebar .with_thumb .teaser-content {margin-left: 115px;}
 */
-.with_thumb header {margin-left: 215px;}
+.with_thumb header {margin-left: 210px;}
 .sidebar .with_thumb header {margin-left: 115px;}
 
 
@@ -366,8 +366,12 @@ h2, h3{color: gray; font-size: 18px; font-weight: bold; line-height: 18px; margi
 .sidebar header h2 {padding: 0; margin-bottom: 0;}
 .sidebar header .submitted {font-size: 10px; font-size: 12px; color: gray;}
 
+/*
 .sidebar article {margin-bottom: 10px !important; border-bottom: 2px dotted lightgray;}
 .sidebar .views-row-last article {border: none;}
+*/
+.sidebar article {margin-bottom: 10px !important; border-top: 2px dotted lightgray; padding-top: 10px;}
+.sidebar .views-row-first article {border: none;}
 
 
 /* Shadows */
