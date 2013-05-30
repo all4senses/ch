@@ -1503,6 +1503,8 @@ function ch_misc_getArticleTeaserData($target, $body_full_markup, $nid, $charact
     $body_full_markup = preg_replace('|\[video:.*(http.*)\]|', '<a href="$1"> [Watch a video] </a>', $body_full_markup);
   }
   
+  dpm($main_image);
+  
   
   if ($found_image) {
     
