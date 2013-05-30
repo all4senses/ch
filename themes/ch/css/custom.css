@@ -351,7 +351,7 @@ h2, h3{color: gray; font-size: 18px; font-weight: bold; line-height: 18px; margi
 .sidebar .with_thumb .teaser-content {margin-left: 115px;}
 */
 .with_thumb header {margin-left: 210px;}
-.sidebar .with_thumb header {margin-left: 115px;}
+.sidebar .with_thumb header {margin-left: 110px;}
 
 
 .sidebar .block .content.teaser {border: none; padding: 0; line-height: 17px;}
@@ -361,7 +361,7 @@ h2, h3{color: gray; font-size: 18px; font-weight: bold; line-height: 18px; margi
 
 .sidebar .block .content .views-row article a.more {display: inline; margin-left: 3px;}
 
-.sidebar article .thumb {width: 100px; height: 90px; top: 5px; position: absolute;}
+.sidebar article .thumb {width: 100px; max-height: 90px; }
 
 .sidebar header h2 {padding: 0; margin-bottom: 0;}
 .sidebar header .submitted {font-size: 10px; font-size: 12px; color: gray;}
@@ -370,7 +370,7 @@ h2, h3{color: gray; font-size: 18px; font-weight: bold; line-height: 18px; margi
 .sidebar article {margin-bottom: 10px !important; border-bottom: 2px dotted lightgray;}
 .sidebar .views-row-last article {border: none;}
 */
-.sidebar article {margin-bottom: 10px !important; border-top: 2px dotted lightgray; padding-top: 10px;}
+.sidebar article {margin-bottom: 10px !important; border-top: 2px dotted lightgray; padding-top: 10px; overflow: hidden;}
 .sidebar .views-row-first article {border: none;}
 
 
