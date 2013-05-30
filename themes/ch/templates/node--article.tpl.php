@@ -23,6 +23,9 @@
     $gplus_profile = ($authorExtendedData->field_u_gplus_profile_value) ? '<a class="gplus-hidden" title="Google+ profile of ' . $author_name . '" href="' . $authorExtendedData->field_u_gplus_profile_value . '?rel=author"></a>' : '';
     $author_title = t('!author\'s profile', array('!author' => $author_name));
   }
+  
+  
+  dpm($view_mode);
 ?>
 
 <?php if (!$page): ?>
