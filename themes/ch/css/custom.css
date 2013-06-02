@@ -717,7 +717,7 @@ form .counter.exceeded{color: red;}
 .ch-edit-review-page .form-item-rating-recommend.form-type-radios{margin: 0 0 80px 200px; clear: both;}
 
 .ch-edit-review-page #edit-ureview .label.left{float: left; margin: 0 20px 0 145px;}
-.ch-edit-review-page #edit-rating-recommend div{float: left; margin-right: 0px; margin-top: 0; width: 70px;}
+.ch-edit-review-page #edit-rating-recommend div{float: left; margin-right: 0px; margin-top: 0; width: 50px;}
 
 .ch-edit-review-page .form-item-rating-recommend input{margin: 0;}
 
@@ -994,7 +994,7 @@ margin-top: 100px;
 
 
 .node-type-provider #write-revew-header{background: url("images/p_sprite_1.png") no-repeat -8px -78px transparent; height: 230px; position: relative;}
-.node-type-provider input#edit-submit--2{background: url("images/p_sprite_1.png") no-repeat 0 -335px transparent; border: none; height: 60px; width: 290px; text-indent: -9999px; margin: 0 0 0 220px; cursor: pointer;}
+.node-type-provider input#edit-submit--2{background: url("images/p_sprite_1.png") no-repeat 0 -335px transparent; border: none; height: 60px; width: 290px; text-indent: -9999px; margin: 0 0 0 150px; cursor: pointer;}
 
 
 #write-revew-header .voters {position: absolute; top: 170px; color: black; width: 200px; left: 310px;}
@@ -1012,20 +1012,20 @@ margin-top: 100px;
 #write-revew-header .voters.NA {left: 275px;}
 #write-revew-header .recommend.NA {left: 276px;}
 
-.node-type-provider #edit-ureview {background: white; width: 715px; border-radius: 10px; margin: 20px auto; padding: 10px 0;}
+.node-type-provider #edit-ureview {background: white; width: 615px; border-radius: 10px; margin: 20px auto; padding: 10px 0;}
 
 .node-type-provider .rate-caption {background: #e7e7e7; padding: 5px 0 5px 210px; width: 250px; margin: 0 0 0 130px; border-radius: 5px 5px 0 0;}
 .node-type-provider #edit-votes {width: 440px !important; background: #e7e7e7; padding: 0 10px 10px 10px; margin: 0 0 10px 130px; overflow: hidden; border-radius: 0 0 5px 5px;}
 
 .node-type-provider .text-format-wrapper {margin: 0 0 10px 25px !important;}
-.node-type-provider .form-type-textarea{width: 665px;}
+.node-type-provider .form-type-textarea{width: 565px;}
 .node-type-provider .text-format-wrapper textarea{height: 90px; background: #e7e7e7; border: none; padding: 10px;}
 
-.node-type-provider .review-userblock {padding: 20px 10px 5px 10px; background: white; margin: 0 0 0 10px; border-radius: 10px 10px 0 0; width: 695px;}
-.node-type-provider .review-userblock label {float: left; margin: 3px 10px 0 140px;}
+.node-type-provider .review-userblock {padding: 20px 10px 5px 10px; background: white; margin: 0 0 0 10px; border-radius: 10px 10px 0 0; width: 500px;}
+.node-type-provider .review-userblock label {float: left; margin: 3px 10px 0 80px;}
 .node-type-provider .review-userblock input {border-radius: 3px; border: none; background: #f8f8f8; padding: 5px 5px 5px 10px; box-shadow: inset 2px 2px 8px -1px gray; width: 300px;}
 
-.node-type-provider .form-actions {background: white; width: 715px; margin: 0 auto 10px; padding: 0 0 20px 0; border-radius: 0 0 10px 10px;}
+.node-type-provider .form-actions {background: white; width: 515px; margin: 0 auto 10px; padding: 0 0 20px 0; border-radius: 0 0 10px 10px;}
 
 
 
