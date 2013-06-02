@@ -134,6 +134,9 @@
                   }
                   
                   ?>
+                  
+                  <li><a href="#tabs-3"><?php echo 'Write Review'; ?></a></li>
+                  
                 </ul>
                 
                 <?php if ($page && isset($content['reviews_entity_view_1']) && $content['reviews_entity_view_1']): ?>
@@ -201,6 +204,42 @@
                     echo '</div>';
                   }
                   ?>
+                
+                
+                
+                
+                
+                <div id="tabs-3">
+                  
+                  <div id="write-revew-header">
+                    
+                    <div class="votes_overall">
+                      <?php 
+                        if (!empty($node->vr_rating_overall)) {
+                          $stars_overall = theme('vr_misc_fivestar_static', array('rating' => $node->vr_rating_overall * 20, 'stars' => 5, 'tag' => 'overall', 'widget' => array('name' => 'stars', 'css' => 'stars.css')));
+                          echo '<div class="rating_overall"><span class="title">Rating: ' . $node->vr_rating_overall . ' out of 5</span>' . $stars_overall . '</div>';
+                          echo '<div class="voters"><div class="title">Number of Reviews:</div><div class="count" property="v:count">' . $node->vr_voters . '</div></div>'; 
+                          echo '<div class="recommend"><div class="title">Would recommend: </div><div class="data">' . $node->vr_recommend . '% of Users' . '</div></div>'; 
+                        }
+                        else {
+                          echo '<div class="rating_overall NA"><span class="title">Rating: N/A</span></div>';
+                          echo '<div class="voters NA"><div class="title">Number of Reviews: </div><div class="count">N/A</div></div>'; 
+                          echo '<div class="recommend NA"><div class="title">Would recommend: </div><div class="data">N/A</div></div>'; 
+                        }
+                      ?>
+                    </div>
+                  </div>
+
+                  <?php 
+                  
+                    echo $node->addProviderReviewForm;
+                  
+                  ?>
+                  
+                  <div class="bottom-clear"></div>
+                </div>
+                
+                
                
                 <div class="bottom-clear"></div>
                 

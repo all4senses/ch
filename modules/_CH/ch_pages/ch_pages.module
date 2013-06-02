@@ -3377,7 +3377,7 @@ function ch_pages_node_view($node, $view_mode) {
         }
         
         
-        $node->addProviderReviewForm = render(drupal_get_form('vr_pages_addProviderReview_form', $node));
+        $node->addProviderReviewForm = render(drupal_get_form('ch_pages_addProviderReview_form', $node));
         
         
         // Add tabs.
@@ -3465,6 +3465,175 @@ function ch_pages_node_view($node, $view_mode) {
   if ($view_mode == 'full') {
     ch_misc_addSocialShareData_toPage($node);
   }
+}
+
+
+
+
+/**
+ * Implements hook_form().
+ *
+ * Add a provider review form for the main provider page.
+ * 
+ * @return $form
+ *   Return nothing.
+ */
+function ch_pages_addProviderReview_form($form, &$form_state, $node) {
+  
+  global $user;
+  $user = user_load($user->uid);
+  
+  $form['provider_nid'] = array(
+    '#type' => 'hidden',
+    '#value' => $node->nid,
+  );
+  $form['provider_name'] = array(
+    '#type' => 'hidden',
+    '#value' => $node->field_p_name['und'][0]['value'],
+  );
+  
+  
+  
+  $form['user'] = array(
+    '#type' => 'container',
+    '#attributes' => array('class' => array('review-userblock')),
+  );
+  
+//  $form['user']['caption'] = array(
+//    '#markup' => '<div class="caption">' . ($node->userReviews ? 'Submit Your Review:' : 'Be the First to Review!') . '</div>',
+//  );
+  
+  $form['user']['fname'] = array(
+    '#type' => 'textfield',
+    '#title' => 'First Name',
+    '#default_value' => $user->uid ? $user->field_u_fname['und'][0]['value'] : NULL,
+    //'#description' => '',
+    '#required' => TRUE,
+    '#attributes' => array('title' => 'First Name'),
+  );
+  $form['user']['lname'] = array(
+    '#type' => 'textfield',
+    '#title' => 'Last Name',
+    '#default_value' => $user->uid ? $user->field_u_lname['und'][0]['value'] : NULL,
+    //'#description' => '',
+    '#required' => TRUE,
+    '#attributes' => array('title' => 'Last Name'),
+  );
+  
+  $form['user']['email'] = array(
+    '#type' => 'textfield',
+    '#title' => 'Your Email',
+    '#default_value' => $user->uid ? $user->mail : NULL,
+    //'#description' => '',
+    '#required' => TRUE,
+    //'#access' => $user->uid ? FALSE : TRUE,
+    '#attributes' => array('title' => 'Your Email'),
+  );
+  
+//  if ($user->uid) {
+//    $form['user']['email_autofilled'] = array(
+//      '#type' => 'item',
+//      '#title' => t('Your Email'),
+//      '#markup' => $user->mail,
+//    );
+//  }
+    
+  
+  
+  
+      // Rate and vote group.
+      $rating_options = array('' => FALSE, '20' => 'Horrible', '40' => 'Bad', '60' => 'OK', '80' => 'Good', '100' => 'Excellent');
+      $weight = 8;
+     
+      //$vote_keys = array('features', 'sound', 'rely', 'money', 'service');
+      $vote_keys = array('sound' => SOUND, 'install' => INSTALL, 'service' => CUSTOMER, 'rely' => RELY, 'features' => FEATURES, 'money' => PRICE, );
+      $votes = array();
+      $form['ureview'] = array(
+        '#type' => 'container',
+        '#weight' => -4,
+      );
+          
+          $form['ureview']['votes'] = array(
+              '#type' => 'container',
+              '#prefix' => '<div class="rate-caption"><div class="col-2">Click Stars To Start Reviewing</div><div class="col-3">Rate it</div></div>',
+          );
+          foreach ($vote_keys as $vote_key => $vote_title) {
+            $form['ureview']['votes']['rating_' . $vote_key] = array(
+              '#type' => 'select',
+              '#options' => $rating_options,
+              '#default_value' => $rating_options[''],
+              '#prefix' => '<div class="vote"><div class="vote-title">' . $vote_title . '</div>',
+              '#suffix' => '<div class="choice" id="edit-rating-' . $vote_key . '-choice">Rate it!</div></div>',
+            );
+          }
+      
+          $rating_recommend_options = $rating_options = array('100' => 'Yes', '0' => 'No');
+          $form['ureview']['rating_recommend'] = array(
+              '#type' => 'radios',
+              '#options' => $rating_recommend_options,
+              '#default_value' => FALSE,
+              '#prefix' => '<div class="label left">' . t(RECOMMEND) . '</div>',
+          );
+          
+          
+  $form['ureview']['review'] = array(
+    '#type' => 'text_format',
+    '#title' => 'Your Review',
+    '#format' => 'filtered_html',
+    '#rows' => $user->uid ? 8 : 4, // 4 for the case with captcha
+    '#default_value' => '',
+    '#required' => TRUE,
+  );
+  
+  
+  // Generate an approval code for email verification, only for not registered users.
+  $form['field_r_approvecode'] = array(
+    '#type' => 'hidden',
+    '#default_value' => $user->uid ? '' : md5(time()),
+  );
+ 
+  $form['user_ip'] = array(
+    '#type' => 'hidden',
+    '#value' => $_SERVER['REMOTE_ADDR'],
+  );
+  
+  
+
+
+  // Add stars widgets to a Rating block
+  $module_path = drupal_get_path('module', 'ch_pages');
+
+  $form['#attached']['js'] = array(
+
+    // Add hints inside some fields
+    $module_path . '/js/ch_review_fieldHints.js',
+
+    // Add stars widgets to a Rating block
+    $module_path . '/js/ch_review_stars.js',
+    'sites/all/libraries/jquery.plugins/jquery.ui.stars/jquery.ui.stars.min.js',
+  );
+
+  $form['#attached']['library'][] = array('system', 'ui.widget');
+
+  $form['#attached']['css'] = array(
+    'sites/all/libraries/jquery.plugins/jquery.ui.stars/css/jquery.ui.stars.css',
+  );
+
+  // Use defined styles for reviews.
+  $form['#attributes']['class'][] = 'ch-edit-review-page';
+
+  
+  
+  $form['actions'] = array('#type' => 'actions');
+  $form['actions']['submit'] = array(
+    '#type' => 'submit',
+    '#value' => 'Submit Review',
+  ); 
+  
+  // Send a user to the right tab with a reviews.
+  $form['#action'] = url('node/' . $node->nid, array('fragment' => 'user-reviews'));
+  
+  return $form;
 }
 
 
