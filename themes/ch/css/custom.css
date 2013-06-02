@@ -907,6 +907,11 @@ margin-top: 100px;
 .node-type-provider #main .main-content{padding: 0;}
 .node-type-provider #main .main-content .content{border:none; margin-top: 0; padding: 0;}
 
+
+.node-type-provider .logo-share{float: left; width: 180px;}
+.node-type-provider .image{float: right; overflow: hidden; text-align: center;}
+
+
 .basic-info{float: left; margin-left: 40px; width: 300px; font-size: 15px;}
 .basic-info .title{margin-right: 10px; font-weight: bold;}
 
