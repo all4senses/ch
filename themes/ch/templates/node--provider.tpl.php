@@ -115,93 +115,100 @@
               <div class="bottom-clear"></div>
               
 
-                 
-                      
+                       
               <div class="data tabs">
                 
-                <?php 
-                      /*      
-                      $wp_fields = unserialize(WP_FIELDS);
-
-          //            911 Service:	Included
-          //            International Calling:	Yes
-          //            Guarantee:	30-day money back
-          //            Plans:	Residential, Business
-
-                      $quick_stats_out = '';
-                      $quick_stats_keys = array('fe_911_Service', 'fe_International_Calling', 'fe_Guarantee');
-
-                      $quick_stats_plans_keys = array('fe_Residential', 'fe_Small_Business', 'fe_Enterprise', 'fe_Mid_Size_Business');
-
-                      $plans = '';
-                      foreach ($quick_stats_plans_keys as $quick_stats_plans_key) {
-                        if(!empty($node->p_data['wp_fields']['Features'][$quick_stats_plans_key])) {
-                          $plans .= ($plans ? ', ' : '') . $wp_fields['Features'][$quick_stats_plans_key];
-                        }
-                      }
-
-                      foreach ($quick_stats_keys as $quick_stats_key) {
-                        if (!empty($node->p_data['wp_fields']['Features'][$quick_stats_key])) {
-                          $quick_stats_out .= '<div><span class="title">' . $wp_fields['Features'][$quick_stats_key] . ':</span> ' . $node->p_data['wp_fields']['Features'][$quick_stats_key] . '</div>';
-                        }
-                        else {
-                          $quick_stats_out .= '<div><span class="title">' . $wp_fields['Features'][$quick_stats_key] . ':</span> No</div>'; 
-                        }
-                      }
-
-
-                      foreach ($node->p_data['wp_fields']['Features'] as $key => $feature) {
-                        if ($feature) {
-                          $features[] = '<span class="title">' . $wp_fields['Features'][$key] . ':</span> ' . $feature;
-                        }
-                      }
-
-                      if (!empty($features)) {
-
-                        //dpm($features);
-                        $rows = count($features);
-                        $features_count = 0;
-                        $features_out = '';
-                        for ($i = 0; $i < 3; $i++) {
-                          $features_out .= '<div>';
-                          for ($j = 0; $j < ($rows / 3); $j++) {
-                            if (!isset($features[$features_count])) {
-                              $features_out .= '</div>';
-                              break 2; 
-                            }
-                            $features_out .= '<div>' . $features[$features_count++] . '</div>';
-                          }
-                          $features_out .= '</div>';
-                        }
-
-                      }
-                      */
-                ?>
-                
-                
                 <ul>
-                  <li><a href="#tabs-1"><?php echo 'Review'; ?></a></li>
+                  <?php if ($page && isset($content['reviews_entity_view_1']) && $content['reviews_entity_view_1']): ?>
+                    <li><a href="#tabs-0"><?php echo t('!p User Reviews', array('!p' => isset($node->field_p_name['und'][0]['value']) ? $node->field_p_name['und'][0]['value'] : 'Provider' )); ?></a></li>
+                  <?php endif; ?>
+                    
+                  <li><a href="#tabs-1"><?php echo t('!p Rundown', array('!p' => isset($node->field_p_name['und'][0]['value'] /*$content['field_p_name'][0]['#markup']*/) ? /*'<span property="v:itemreviewed">' .*/ $node->field_p_name['und'][0]['value'] /*$content['field_p_name'][0]['#markup']*/ /*. '</span>'*/ : t(' Provider') )); ?></a></li>
+                  
                   <?php 
-                    if (!empty($features)) {
-                      echo '<li><a href="#tabs-2">Quick Stats</a></li>
-                            <li><a href="#tabs-3">List Features</a></li>';
-                    }
+                  
+                  if (!empty($node->p_data['provider_options']) && (!isset($node->p_data['provider_options']['enabled']) || !empty($node->p_data['provider_options']['enabled']))) {
+                    echo '<li><a href="#tabs-2">Options</a></li>';
+                  }
+                  
                   ?>
                 </ul>
+                
+                <?php if ($page && isset($content['reviews_entity_view_1']) && $content['reviews_entity_view_1']): ?>
+                  <div id="tabs-0">
+                    <div class="reviews">
+                        <a id="reviews"></a>
+
+                      <?php echo render($content['reviews_entity_view_1']); ?>
+
+                    </div>
+                  </div>
+                <?php endif; ?>
+                
                 <div id="tabs-1">
                   <?php echo render($content['body']); ?>
                 </div>
+                
+                
+                
                 <?php 
-                    if (!empty($features)) {
-                      echo '<div id="tabs-2"><div>', $quick_stats_out, '<div><span class="title">Plans:</span> ',  $plans, '</div></div></div>',
-                           //'<div id="tabs-3"><div class="title">List of Features Available on ' , $node->field_p_name['und'][0]['value'], '</div>', $features_out, '</div>';
-                           '<div id="tabs-3">', $features_out, '</div>';
-                    }
-                ?>
-                
-                
+                  if (!empty($node->p_data['provider_options']) && (!isset($node->p_data['provider_options']['enabled']) || !empty($node->p_data['provider_options']['enabled']))) {
+                    
+                  
+                    echo '<div id="tabs-2">';
+
+                      $provider_options = '';
+
+                      unset($node->p_data['provider_options']['enabled']);
+
+                      foreach ($node->p_data['provider_options'] as $options_set => $options_data) {
+
+                        $provider_options .= '<tr></tr><tr class="caption"><td colspan="2">' . $options_set . '</td></tr>';
+
+                        $odd = TRUE;
+
+                        foreach ($options_data as $option_title => $option_value) {
+                          if (strpos($option_title, '-text-')) {
+                            continue;
+                          }
+                          $option_title = str_replace('Num ', '# ', $option_title);
+                          $option_value = (is_int($option_value) ? ($option_value ? 'Yes' : 'No') : ($option_value ? $option_value : 'N/A'));
+                          if ($odd) {
+                            $odd = FALSE;
+                            $row_class = 'even';
+                          }
+                          else {
+                            $odd = TRUE;
+                            $row_class = 'odd';
+                          }
+
+                          if ($option_value == 'Yes' && !empty($options_data[$option_title . ' -text-'])) {
+                            $additional_text = ' <span>' . $options_data[$option_title . ' -text-'] . '</span>';
+                          }
+                          else {
+                            $additional_text = '';
+                          }
+                          if (is_array($option_value)) {
+                            $option_value = $option_value['value'];
+                          }
+                          $provider_options .= '<tr class="' . $row_class . '"><td class="title">' . $option_title . '</td><td class="value' . ($option_value == 'Yes' ? ' yes' : ($option_value == 'No' ? ' no' : '')) . '"><div class="check">' . $option_value . '</div><span>' . $additional_text . '</span></td></tr>';
+                        }
+                      }
+                      echo '<table class="specs"><tbody>' . $provider_options . '</tbody></table>';
+
+                    echo '</div>';
+                  }
+                  ?>
+               
+                <div class="bottom-clear"></div>
                 
               </div> <?php // End of <div class="data tabs"> ?>
+              
+              
+              
+              
+              
+              
               
           <?php echo render($content['metatags']); //ch_misc_renderMetatags_newOrder($content['metatags']);?>
           
