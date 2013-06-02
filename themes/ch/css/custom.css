@@ -993,6 +993,27 @@ margin-top: 100px;
 
 
 
+.node-type-provider #write-revew-header{background: url("images/p_sprite_1.png") no-repeat -8px -78px transparent; height: 230px; position: relative;}
+.node-type-provider input#edit-submit--2{background: url("images/p_sprite_1.png") no-repeat 0 -335px transparent; border: none; height: 60px; width: 290px; text-indent: -9999px; margin: 0 0 0 220px; cursor: pointer;}
+
+
+#write-revew-header .voters {position: absolute; top: 170px; color: black; width: 200px; left: 310px;}
+.node-type-provider .votes_overall .title {float: left; margin-right: 10px;}
+
+#write-revew-header .voters .count,
+#write-revew-header .recommend .data {color: white;}
+#write-revew-header .recommend {position: absolute; top: 195px; color: black; left: 265px; width: 300px;}
+
+#write-revew-header .rating_overall {position: absolute; width: 240px; top: 20px; color: white; right: 10px;}
+/*#write-revew-header*/ .rating_overall .title{font-weight: normal !important;}
+#write-revew-header .rating_overall .fivestar{margin-top: 2px;}
+
+#write-revew-header .rating_overall.NA {width: 95px;}
+#write-revew-header .voters.NA {left: 275px;}
+#write-revew-header .recommend.NA {left: 276px;}
+
+
+
 
 
 .ch_votes{float: left; width: 280px; margin: 0 10px 0 30px;}
