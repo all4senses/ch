@@ -1587,38 +1587,83 @@ function ch_pages_form_alter(&$form, &$form_state, $form_id) {
       
               
       
-              
-      /*        
-      $wp_fields = unserialize(WP_FIELDS);
+            
+      $provider_options = unserialize(PROVIDER_OPTIONS);
       
-      $form['wp_fields'] = array(
+      $form['provider_options'] = array(
         '#type' => 'fieldset',
-        '#title' => 'WP Fields',
+        '#title' => 'Provider options',
         '#collapsible' => TRUE,
         '#collapsed' => TRUE,
         '#tree' => TRUE,
-        '#weight' => 14,
+        '#weight' => 11,
       );
-      
-            foreach ($wp_fields as $wp_group_title => $wp_group) {
-              
-              $form['wp_fields'][$wp_group_title] = array(
-                '#type' => 'fieldset',
-                '#title' => $wp_group_title,
-                '#collapsible' => TRUE,
-                '#collapsed' => TRUE,
-              );
-              
-                foreach ($wp_group as $wp_key => $wp_title) {
-                  $form['wp_fields'][$wp_group_title][$wp_key] = array(
-                      '#type' => ($wp_group_title == 'Marketing' ? 'textarea' : 'textfield'),
-                      '#title' => $wp_title,
-                      '#default_value' => isset($p_data['wp_fields'][$wp_group_title][$wp_key]) ? $p_data['wp_fields'][$wp_group_title][$wp_key] : '',
-                    );
-                }
-            }
+            $form['provider_options']['enabled'] = array(
+              '#title' => 'Enable Option Tab',
+              '#type' => 'checkbox',
+              '#default_value' => isset($p_data['provider_options']['enabled']) ? $p_data['provider_options']['enabled'] : NULL,
+            );
             
-      */
+            foreach ($provider_options as $options_set => $options_data) {
+              
+                  $form['provider_options'][$options_set] = array(
+                    '#type' => 'fieldset',
+                    '#title' => $options_set,
+                    '#collapsible' => TRUE,
+                    '#collapsed' => TRUE,
+                    '#states' => array(
+                                'invisible' => array(
+                                    ':input[name="' . "provider_options[enabled]" . '"]' => array('checked' => FALSE),
+
+                              ),
+                          ),
+                  );
+      
+                  
+                  foreach ($options_data as $option_title => $option_type) {
+                    
+                      $form['provider_options'][$options_set][$option_title] = array(
+                        '#title' => $option_title,
+                        '#type' => $option_type,
+                        '#default_value' => isset($p_data['provider_options'][$options_set][$option_title]) ? $p_data['provider_options'][$options_set][$option_title] : NULL,
+                      );
+                      
+                      if ($option_type == 'textarea') {
+                        $form['provider_options'][$options_set][$option_title]['#default_value'] = !empty($p_data['provider_options'][$options_set][$option_title]) ? (is_array($p_data['provider_options'][$options_set][$option_title]) ? $p_data['provider_options'][$options_set][$option_title]['value'] : $p_data['provider_options'][$options_set][$option_title]) : NULL;
+                        $form['provider_options'][$options_set][$option_title]['#type'] = 'text_format';
+                        $form['provider_options'][$options_set][$option_title]['#format'] = 'full_html';//'filtered_html'; //'gv_full_html'; 
+                      }
+                      
+                      if ($option_type == 'checkbox') {
+                        
+                        $form['provider_options'][$options_set][$option_title]['#prefix'] = '<div style="overflow: hidden;"><div style="float: left;">';
+                        $form['provider_options'][$options_set][$option_title]['#suffix'] = '</div>';
+                        
+                        $form['provider_options'][$options_set][$option_title . ' -text-'] = array(
+                          //'#title' => $option_title . ' -text-',
+                          '#type' => 'textfield',
+                          '#default_value' => isset($p_data['provider_options'][$options_set][$option_title . ' -text-']) ? $p_data['provider_options'][$options_set][$option_title . ' -text-'] : NULL,
+                            
+                          '#states' => array(
+                                'invisible' => array(
+                                    ':input[name="' . "provider_options[$options_set][$option_title]" . '"]' => array('checked' => FALSE),
+
+                              ),
+                          ),
+                          '#attributes' => array('class' => array('-text-'), 'style' => 'background: #eee; border: none; padding: 3px;'),
+                          '#prefix' => '<div style="float: left; margin-left: 20px;">',
+                          '#suffix' => '</div></div>',
+                            
+                            
+                            
+                        );
+                      }
+                    
+                  }
+                  
+            }            
+      
+            
             
             
             
