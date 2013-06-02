@@ -954,6 +954,47 @@ margin-top: 100px;
 .data.tabs #tabs-1 p {margin: 0 0 10px 0;}
 
 
+
+.specs{font-size: 16px;}
+.specs tr {/*height: 30px;*/ border: none;}
+.tabs .specs tr {height: 30px;}
+.specs td {padding-left: 5px;}
+
+.specs .even {background: none;}
+.specs .odd {background: #eee;}
+
+
+.specs .reviews a {background: url(/sites/all/themes/gv_orange/css/images/rect-btn-orange.png) no-repeat 12px 0 transparent; color: white; display: block; width: 110px; height: 22px; margin: auto; font-size: 12px; padding: 4px 20px 2px 1px; font-weight: bold;}
+.specs .visit a {background: url(/sites/all/themes/gv_orange/css/images/rect-btn-blue.png) no-repeat 12px 0 transparent; color: white; display: block; width: 110px; height: 22px; margin: auto; font-size: 12px; padding: 5px 20px 1px 1px; font-weight: bold;}
+.specs .logos .back a{padding: 4px 0 0px 18px; text-indent: 20px !important;}
+
+#main .block .specs td.option {font-size: 12px; overflow: hidden; padding: 2px 5px;}
+#main .block .specs.p3 td.option{min-width: 210px;}
+#main .block .specs.p2 td.option{min-width: 320px;}
+
+#main .block .specs td.title{width: 140px; font-size: 12px; color: gray; padding: 2px 5px;}
+
+.specs .yes .check {background: url(/sites/all/themes/gv_orange/css/images/check-green.png) no-repeat scroll 0 0 transparent; text-indent: -9999px; width: 20px; margin: auto;}
+.tabs .specs .yes .check {margin: 0 10px 0 0; float: left;}
+
+.specs .no .check {text-indent: -9999px;}
+
+.tabs .specs td.title {width: 240px;}
+
+.specs thead tr,
+.specs thead th {text-align: center; border-bottom: 3px solid lightgray; padding: 8px 0 3px !important;}
+
+.specs .reviews, .specs .visit{height: 37px;}
+.overall .title, .specs .reviews .title, .specs .visit .title, .specs .caption {font-weight: bold; font-size: 12px;}
+.specs tr.divider {height: 30px;}
+.specs .reviews {background: #e7e7e7;}
+.specs .caption, .specs .overall, .specs .overall .title {background: #76a9ef !important; color: white !important;}
+.specs p{margin: 0;}
+
+
+
+
+
 .ch_votes{float: left; width: 280px; margin: 0 10px 0 30px;}
 .ch_votes .caption{background: none repeat scroll 0 0 #478AFD; color: white; font-weight: bold; padding: 7px 0 6px 10px;}
 .ch_votes .caption span{float: left; margin-right: 10px;}
