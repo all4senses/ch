@@ -12,7 +12,7 @@ body.front.one-sidebar.sidebar-second #sidebar-second{padding-top: 3px}
 
 body.one-sidebar.sidebar-second #main {background: none repeat scroll 0 0 white; padding: 5px 0 10px 10px; width: 650px;}
 
-.page-node #main .main-content{float: left;}
+/*.page-node #main .main-content{float: left;}*/
 
 
 a, a:focus{ -webkit-appearance: none; outline: none;}
