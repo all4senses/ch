@@ -44,6 +44,7 @@
           
            <?php if ($page): ?>
           
+          <div style="overflow: hidden;">
               <div class="logo-info">
                 
                 <?php
@@ -89,7 +90,7 @@
                 ?>  
                 
               </div>
-          
+             <div> 
               
               <!--<div class="bottom-clear"></div> -->
 
