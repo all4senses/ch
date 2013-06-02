@@ -17,10 +17,9 @@
     
     
           <h1<?php //print $title_attributes; 
-                //echo 'property="dc:title v:summary"'; 
                 echo ' property="v:summary"'; 
                 if (!$node->status) {echo ' class="not-published"';}?> ><?php 
-                  print $title; //t('Our Take on !p Business VoIP Provider', array('!p' => $node->field_p_name['und'][0]['value'] /*$content['field_p_name'][0]['#markup']*/) )
+                  print $title; 
                 ?></h1>
    
    
@@ -45,95 +44,80 @@
           
            <?php if ($page): ?>
           
-              <div class="images">
-                <?php
+              <div class="logo-share">
                 
-                  //dpm($content);
-                  //dpm($node);
-                  
+                <?php
                   if (isset($content['field_p_logo'][0]['#item']['uri'])) {
-                    ////echo '<div class="logo"><a href="' . $node->p_data['info']['i_web'] . '" target="_blank">' . theme('image_style', array( 'path' =>  $content['field_p_logo'][0]['#item']['uri'], 'style_name' => 'logo_provider_page', 'alt' => $content['field_p_logo'][0]['#item']['alt'], 'title' => $content['field_p_logo'][0]['#item']['title'], 'attributes' => array('rel' => 'v:photo'))) . '</a></div>'; 
-                    //////echo '<div class="logo"><a href="/click?p=' . urlencode($node->field_p_name['und'][0]['value']) . '" target="_blank" rel="nofollow">' . theme('image_style', array( 'path' =>  $content['field_p_logo'][0]['#item']['uri'], 'style_name' => 'logo_provider_page', 'alt' => $content['field_p_logo'][0]['#item']['alt'], 'title' => $content['field_p_logo'][0]['#item']['title'], 'attributes' => array('rel' => 'v:photo'))) . '</a></div>'; 
-                    
-                    echo '<div class="logo">' . ch_misc_getTrackingUrl(theme('image_style', array( 'path' =>  $content['field_p_logo'][0]['#item']['uri'], 'style_name' => 'logo_provider_page', 'alt' => $content['field_p_logo'][0]['#item']['alt'], 'title' => $content['field_p_logo'][0]['#item']['title'], 'attributes' => array('rel' => 'v:photo')))), '</div>';
+                    echo '<div class="logo">' . ch_misc_getTrackingUrl(theme('image_style', array( 'path' =>  $content['field_p_logo'][0]['#item']['uri'], 'style_name' => 'logo_provider_page', 'alt' => $content['field_p_logo'][0]['#item']['alt'], 'title' => $content['field_p_logo'][0]['#item']['title'], 'attributes' => array('rel' => 'v:photo')))) . '</div>';
                   }
                   else {
-                    //echo render($title_prefix), '<h2', $title_attributes,'>', $node->field_p_name['und'][0]['value'] /*$content['field_p_name'][0]['#markup']*/, '</h2>', render($title_suffix);
+                    echo render($title_prefix), '<h2', $title_attributes,'>', $node->field_p_name['und'][0]['value'] /*$content['field_p_name'][0]['#markup']*/, '</h2>', render($title_suffix);
                   }
-                  $url = 'http://cloudhostinghq.com'. url('node/' . $node->nid);
                   
-                  //$goto_link = 'click';
-                  //$goto_link_query = array('p' => urlencode($node->field_p_name['und'][0]['value'])/*, 'url' => urlencode($node->p_data['info']['i_web'])*/);
-                    
+                ?>
+                
+                <div class="share main">
+                  
+                </div> <!-- main share buttons -->
+                
+              </div> <!-- <div class="logo share">-->
+                
+              <div class="basic-info" rel="v:itemreviewed">
+                <div typeof="Organization">
+                  <div class="caption"><?php echo t('!p Corporate Info:', array('!p' => '<span property="v:itemreviewed">' . $node->field_p_name['und'][0]['value'] /*$content['field_p_name'][0]['#markup']*/ . '</span>')); ?></div>
+                  <div><?php echo '<span class="title">Headquarters:</span><span property="v:address">' . $node->p_data['info']['i_heads'] . '</span>'; ?></div>
+                  <div><?php echo '<span class="title">Founded In:</span>' . $node->p_data['info']['i_founded']; ?></div>
+                  <div><?php echo '<span class="title">Service Availability:</span>' . $node->p_data['info']['i_availability']; ?></div>
+                  <div>
+                    <?php 
+                      if (!$node->p_data['info']['i_web_hide'] && !empty($node->p_data['info']['i_web'])) {
+                        $goto_link_title = (isset($node->p_data['info']['i_web_display']) && $node->p_data['info']['i_web_display']) ? $node->p_data['info']['i_web_display'] : str_replace(array('http://', 'https://'), '', $node->p_data['info']['i_web']);
+                        echo '<span class="title">Website:</span>' . ch_misc_getTrackingUrl($goto_link_title, NULL, NULL, NULL, NULL, array('key' => 'rel', 'value' => 'v:url'));
+                      }
+                      ?>
+                  </div>
+                </div>
+              </div>
+             
+              <div class="image">
+                <?php
                   if (isset($content['field_p_image'][0]['#item']['uri'])) {
-                    
-//                    echo '<div class="image"><a href="' , $node->p_data['info']['i_web'] , '" target="_blank">' , theme('image_style', array( 'path' =>  $content['field_p_image'][0]['#item']['uri'], 'style_name' => 'image_provider_page', 'alt' =>  $content['field_p_image'][0]['#item']['alt'], 'title' =>  $content['field_p_image'][0]['#item']['title'])) , '</a></div>', 
-//                         '<div class="site">' , l('Visit ' . $node->field_p_name['und'][0]['value'] /*$content['field_p_name'][0]['#markup']*/, $node->p_data['info']['i_web'], array('external' => TRUE, 'attributes' => array('target' => '_blank'))) , '</div>';
-                    
-                    
-                    ////echo '<div><a href="' , $node->p_data['info']['i_web'] , '" target="_blank">' , theme('image_style', array( 'path' =>  $content['field_p_image'][0]['#item']['uri'], 'style_name' => 'image_provider_page', 'alt' =>  $content['field_p_image'][0]['#item']['alt'], 'title' =>  $content['field_p_image'][0]['#item']['title'])) , '</a></div>', 
-                    //////echo '<div class="image"><a href="/click?p=', urlencode($node->field_p_name['und'][0]['value']), '" rel="nofollow" target="_blank">' , theme('image_style', array( 'path' =>  $content['field_p_image'][0]['#item']['uri'], 'style_name' => 'image_provider_page', 'alt' =>  $content['field_p_image'][0]['#item']['alt'], 'title' =>  $content['field_p_image'][0]['#item']['title'])) , '</a></div>';
-                    
-                    
-                    ///////echo '<div class="image"><a href="/click?p=', urlencode($node->field_p_name['und'][0]['value']), '" rel="nofollow" target="_blank">' , theme('image_style', array( 'path' =>  $content['field_p_image'][0]['#item']['uri'], 'style_name' => 'image_provider_page', 'alt' =>  $content['field_p_image'][0]['#item']['alt'], 'title' =>  $content['field_p_image'][0]['#item']['title'])) , '</a></div>';
-                    
-                    echo '<div class="image">' . ch_misc_getTrackingUrl(theme('image_style', array( 'path' =>  $content['field_p_image'][0]['#item']['uri'], 'style_name' => 'image_provider_page', 'alt' =>  $content['field_p_image'][0]['#item']['alt'], 'title' =>  $content['field_p_image'][0]['#item']['title']))), '</div>';
-                    
-                    
-                    
+                    echo '<div>' . ch_misc_getTrackingUrl(theme('image_style', array( 'path' =>  $content['field_p_image'][0]['#item']['uri'], 'style_name' => 'image_provider_page', 'alt' =>  $content['field_p_image'][0]['#item']['alt'], 'title' =>  $content['field_p_image'][0]['#item']['title']))), '</div>';
                   }
-
-                  //$goto_link = 'click' . $_SERVER['REDIRECT_URL'];
                   
                   if (!$node->p_data['info']['i_web_hide'] && !empty($node->p_data['info']['i_web'])) {
-                      echo   //'<div class="site">' , l('Visit ' . $node->field_p_name['und'][0]['value'], $node->p_data['info']['i_web'], array('external' => TRUE, 'attributes' => array('target' => '_blank'))) , '</div>';
-                         //'<div class="site">' , l('Visit ' . $node->field_p_name['und'][0]['value'], $goto_link, array('query' => $goto_link_query, 'attributes' => array('rel' => 'nofollow', 'target' => '_blank'))) , '</div>';
-                         /////'<div class="site">' , l('Visit ' . $node->field_p_name['und'][0]['value'], $goto_link, array('query' => $goto_link_query, 'attributes' => array('rel' => 'nofollow', 'target' => '_blank'))) , '</div>';
-                         ///////'<div class="site">' , l('Visit ' . $node->field_p_name['und'][0]['value'], $goto_link, array('attributes' => array('rel' => 'nofollow', 'target' => '_blank'))) , '</div>';
-                      
-                        //'<div class="site">' , ch_misc_getTrackingUrl('Visit ' . $node->field_p_name['und'][0]['value']) , '</div>';
-                      '<div class="site">' , ch_misc_getTrackingUrl('Visit ' . $node->field_p_name['und'][0]['value']) , '</div>';
+                    echo '<div class="site">' , ch_misc_getTrackingUrl('Visit ' . $node->field_p_name['und'][0]['value']), '</div>';
                   }
                 ?>  
                 
               </div>
           
-          
+              
+              <div class="bottom-clear"></div>
 
-                    <?php /*if (!empty($node->p_data['ereview']['editor_rating_overall']))*/ { ?>
-                  
-                        <div class="pros-and-cons">
-                            <?php 
-                            if (!empty($node->p_data['ereview']['pros_and_cons']['Advantages'])) {
-                              echo '<div class="title">Advantages</div><div class="text">' . $node->p_data['ereview']['pros_and_cons']['Advantages'] . '</div>'; 
-                            }
-                            if (!empty($node->p_data['ereview']['pros_and_cons']['Disadvantages'])) {
-                              echo '<div class="title">Disadvantages</div><div class="text">' . $node->p_data['ereview']['pros_and_cons']['Disadvantages'] . '</div>';
-                            }
-                            if (!empty($node->p_data['ereview']['pros_and_cons']['Verdict'])) {
-                              echo '<div class="title">Verdict</div><div class="text">' . $node->p_data['ereview']['pros_and_cons']['Verdict'] . '</div>';
-                            }
-                            ?>
-                        </div>
+              <?php if (isset($content['ch_ratings']) && $content['ch_ratings']): ?>
 
-                      <?php /*
-                        <div class="ch_votes editor">
-                          <?php $editor_overall_rating = number_format($node->p_data['ereview']['editor_rating_overall'] * 0.05, 1); ?>
-                          <?php echo '<div class="caption"><span><span property="v:reviewer">Editor</span>\'s Overall Rating:</span> <span property="v:rating">' , $editor_overall_rating, '</span>' , '<div class="bottom-clear"></div></div>' , render($node->editor->content['ch_ratings']); ?>
-                          <div class="rate-other">
-                            <div class="text"><?php echo '<div class="title">' . t('Recommend') . ': </div><div class="data">' . $node->editor->ch_recommend . '</div>'?></div>
-                            <?php echo '<div class="voters editor"><div class="count" property="v:count">' . (!empty($node->ch_voters) ? $node->ch_voters : 1) . '</div></div>';?>
-                          </div>
-                        </div>
-                        */
-                      ?>
-
-                  <?php } ?>
+                  <div class="ch_votes"><?php echo '<div class="caption">Overall Consumer Ratings</div>' . render($content['ch_ratings']); ?></div>
+                  <div class="overall"> 
+                    <div class="text">
+                      <?php echo '<a id="write-review" href="/voip-provider-submit-user-review?id=' . $node->nid . '"><img src="/sites/default/files/writeareview.png" /></a><div class="voters"><div class="title">' . 'Number of Reviews' . ':</div><div class="count" property="v:count"><a href="#reviews">' . $node->gv_voters . '</a></div></div>'; ?>
+                      <?php echo '<div id="positive">' . $node->ch_recommends['positive'] . ' Positive reviews</div><div id="negative">' . $node->ch_recommends['negative'] . ' Negative reviews</div>' ?>
+                      <?php echo '<div class="recommend"><div class="title">Would recommend: </div><div class="data">' . $node->ch_recommend . '% of Users' . '</div></div>'; ?>
+                      <div class="title"><?php $node->field_p_name['und'][0]['value'] /*$content['field_p_name'][0]['#markup']*/ . ' Overall Rated:'; ?></div>
+                    </div>
+                    <div class="star-big">
+                      <?php echo '<div class="count" content="' . $node->ch_rating_overall . '" property="v:rating">' . $node->ch_rating_overall . '</div>' . '<div class="descr">Out of 5 stars</div>'; ?>
+                    </div>
+                  </div>
+              
+              <? else: ?>
+                  <?php echo '<a id="write-review" href="/voip-provider-submit-user-review?id=' . $node->nid . '"><img src="/sites/default/files/writeareview.png" /></a>'; ?>
+              <?php endif; // end of if ($page && isset($content['gv_ratings']) && $content['gv_ratings']): ?>
+              
+              <div class="bottom-clear"></div>
               
 
-          
-              <!-- <div class="bottom-clear"></div> -->
-              
+                 
                       
               <div class="data tabs">
                 
