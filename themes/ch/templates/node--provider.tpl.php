@@ -44,7 +44,7 @@
           
            <?php if ($page): ?>
           
-              <div class="logo-share">
+              <div class="logo-info">
                 
                 <?php
                   if (isset($content['field_p_logo'][0]['#item']['uri'])) {
@@ -56,29 +56,27 @@
                   
                 ?>
                 
-                <div class="share main">
-                  
-                </div> <!-- main share buttons -->
+                <div class="basic-info" rel="v:itemreviewed">
+                  <div typeof="Organization">
+                    <div class="caption"><?php echo t('!p Corporate Info:', array('!p' => '<span property="v:itemreviewed">' . $node->field_p_name['und'][0]['value'] /*$content['field_p_name'][0]['#markup']*/ . '</span>')); ?></div>
+                    <div><?php echo '<span class="title">Headquarters:</span><span property="v:address">' . $node->p_data['info']['i_heads'] . '</span>'; ?></div>
+                    <div><?php echo '<span class="title">Founded In:</span>' . $node->p_data['info']['i_founded']; ?></div>
+                    <div><?php echo '<span class="title">Service Availability:</span>' . $node->p_data['info']['i_availability']; ?></div>
+                    <div>
+                      <?php 
+                        if (!$node->p_data['info']['i_web_hide'] && !empty($node->p_data['info']['i_web'])) {
+                          $goto_link_title = (isset($node->p_data['info']['i_web_display']) && $node->p_data['info']['i_web_display']) ? $node->p_data['info']['i_web_display'] : str_replace(array('http://', 'https://'), '', $node->p_data['info']['i_web']);
+                          echo '<span class="title">Website:</span>' . ch_misc_getTrackingUrl($goto_link_title, NULL, NULL, NULL, NULL, array('key' => 'rel', 'value' => 'v:url'));
+                        }
+                        ?>
+                    </div>
+                  </div>
+                </div>
+
                 
               </div> <!-- <div class="logo share">-->
                 
-              <div class="basic-info" rel="v:itemreviewed">
-                <div typeof="Organization">
-                  <div class="caption"><?php echo t('!p Corporate Info:', array('!p' => '<span property="v:itemreviewed">' . $node->field_p_name['und'][0]['value'] /*$content['field_p_name'][0]['#markup']*/ . '</span>')); ?></div>
-                  <div><?php echo '<span class="title">Headquarters:</span><span property="v:address">' . $node->p_data['info']['i_heads'] . '</span>'; ?></div>
-                  <div><?php echo '<span class="title">Founded In:</span>' . $node->p_data['info']['i_founded']; ?></div>
-                  <div><?php echo '<span class="title">Service Availability:</span>' . $node->p_data['info']['i_availability']; ?></div>
-                  <div>
-                    <?php 
-                      if (!$node->p_data['info']['i_web_hide'] && !empty($node->p_data['info']['i_web'])) {
-                        $goto_link_title = (isset($node->p_data['info']['i_web_display']) && $node->p_data['info']['i_web_display']) ? $node->p_data['info']['i_web_display'] : str_replace(array('http://', 'https://'), '', $node->p_data['info']['i_web']);
-                        echo '<span class="title">Website:</span>' . ch_misc_getTrackingUrl($goto_link_title, NULL, NULL, NULL, NULL, array('key' => 'rel', 'value' => 'v:url'));
-                      }
-                      ?>
-                  </div>
-                </div>
-              </div>
-             
+                          
               <div class="image">
                 <?php
                   if (isset($content['field_p_image'][0]['#item']['uri'])) {
