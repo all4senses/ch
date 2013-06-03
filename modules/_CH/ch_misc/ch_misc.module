@@ -4990,37 +4990,33 @@ function ch_misc_tokens($type, $tokens, array $data = array(), array $options = 
  */
 function ch_misc_votingapi_metadata_alter(&$data) {
   $data['tags'] += array(
-    'sound' => array(
-      'name' => t(SOUND),
-      'description' => t('Sound Quality Rating for a provider.'),
-    ),
-    'install' => array(
-      'name' => t(INSTALL),
-      'description' => t('Installation Process Rating for a provider.'),
+    'control' => array(
+      'name' => CONTROL,
+      'description' => 'Control Panel Interface Rating for a provider.',
     ),
     'service' => array(
-      'name' => t(CUSTOMER),
-      'description' => t('Value for Customer Service Rating for a provider.'),
+      'name' => CUSTOMER,
+      'description' => 'Customer Support Rating for a provider.',
     ),
     'rely' => array(
-      'name' => t(RELY),
-      'description' => t('Reliability Rating for a provider.'),
+      'name' => RELY,
+      'description' => 'Reliability & Uptime Rating for a provider.',
     ),
     'features' => array(
-      'name' => t(FEATURES),
-      'description' => t('Features Rating for a provider.'),
+      'name' => FEATURES,
+      'description' => 'Features Rating for a provider.',
     ),
     'money' => array(
-      'name' => t(PRICE),
-      'description' => t('Value for Money Rating for a provider.'),
+      'name' => PRICE,
+      'description' => 'Price Value Rating for a provider.',
     ),
     'recommend' => array(
-      'name' => t(RECOMMEND),
-      'description' => t('Value for Would you recommend this VoIP provider. Yes or No.'),
+      'name' => RECOMMEND,
+      'description' => 'Value for Would you recommend this provider. Yes or No.',
     ),
     'overall' => array(
-      'name' => t(OVERALL),
-      'description' => t('Average overall value for all providers rates.'),
+      'name' => OVERALL,
+      'description' => 'Average overall value for all providers rates.',
     ),
   );
 }
