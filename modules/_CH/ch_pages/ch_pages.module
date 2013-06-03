@@ -3546,7 +3546,6 @@ function ch_pages_addProviderReview_form($form, &$form_state, $node) {
       $weight = 8;
      
       //$vote_keys = array('sound' => SOUND, 'install' => INSTALL, 'service' => CUSTOMER, 'rely' => RELY, 'features' => FEATURES, 'money' => PRICE, );
-      
       $vote_keys = array('control' => CONTROL, 'service' => CUSTOMER, 'rely' => RELY, 'features' => FEATURES, 'money' => PRICE, );
       
       
@@ -3681,8 +3680,12 @@ function ch_pages_node_delete($node) {
 function ch_pages_addRatingsToNodeThemed($node, $votes, $counts = NULL, $semicolon = '') {
   $overall_vote = NULL;
   if ($votes) {
-    //$rating_titles = array('features' => FEATURES, 'sound' => SOUND, 'service' => CUSTOMER, 'money' => PRICE, 'rely' => RELY, 'recommend' => RECOMMEND);
-    $rating_titles = array('sound' => SOUND, 'install' => INSTALL, 'service' => CUSTOMER, 'rely' => RELY, 'features' => FEATURES, 'money' => PRICE, 'overall' => OVERALL, 'recommend' => RECOMMEND);
+    
+    //$rating_titles = array('sound' => SOUND, 'install' => INSTALL, 'service' => CUSTOMER, 'rely' => RELY, 'features' => FEATURES, 'money' => PRICE, 'overall' => OVERALL, 'recommend' => RECOMMEND);
+    $rating_titles = array('control' => CONTROL, 'service' => CUSTOMER, 'rely' => RELY, 'features' => FEATURES, 'money' => PRICE, 'overall' => OVERALL, 'recommend' => RECOMMEND);
+      
+    
+    
     $node->content['ch_ratings'] = array(
         '#markup' => '',
         //'#prefix' => '<div class="ch_votes">',
