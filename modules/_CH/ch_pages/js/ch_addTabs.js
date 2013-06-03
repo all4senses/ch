@@ -8,6 +8,9 @@
              
         $( "a#write-review" ).click(function(){
           console.log('write-review!');
+          
+          $( ".data.tabs" ).tabs( "option", "active", 2 );
+          
         });
         
     }
