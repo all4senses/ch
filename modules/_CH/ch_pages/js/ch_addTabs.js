@@ -11,7 +11,7 @@
           
           //$( ".data.tabs" ).tabs( "option", "active", 2 );
           
-          $( ".data.tabs" ).tabs( { selected: index } );
+          $( ".data.tabs" ).tabs( { selected: 2 } );
           return false;
           
           
