@@ -5,6 +5,10 @@
 
         //console.log('Tabs!');
         $( ".data.tabs" ).tabs();
+             
+        $( "a#write-review" ).click(function(){
+          console.log('write-review!');
+        });
         
     }
   };
