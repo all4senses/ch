@@ -8,14 +8,9 @@
           captionEl: $('#edit-rating-features-choice'),
           cancelShow: false
         });
-        $('.form-item-rating-install').stars({
+        $('.form-item-rating-control').stars({
           inputType: "select",
-          captionEl: $('#edit-rating-install-choice'),
-          cancelShow: false
-        });
-        $('.form-item-rating-sound').stars({
-          inputType: "select",
-          captionEl: $('#edit-rating-sound-choice'),
+          captionEl: $('#edit-rating-control-choice'),
           cancelShow: false
         });
         $('.form-item-rating-rely').stars({
