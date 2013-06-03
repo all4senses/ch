@@ -7,11 +7,16 @@
         $( ".data.tabs" ).tabs();
              
         $( "a#write-review" ).click(function(){
-          console.log('write-review!');
           
-          //$( ".data.tabs" ).tabs( "option", "active", 2 );
           
           $( ".data.tabs" ).tabs( { selected: 2 } );
+          
+          
+          var aTag = $("a[name='write-review-tab']");
+          $('html,body').animate({scrollTop: aTag.offset().top},'slow');
+          
+          
+          
           return false;
           
           
