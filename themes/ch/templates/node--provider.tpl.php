@@ -123,7 +123,7 @@
               <div class="bottom-clear"></div>
               
 
-                       
+              <a name="provider-tabs"></a>         
               <div class="data tabs">
                 
                 <ul>
@@ -220,7 +220,7 @@
                   <div id="write-revew-header">
                     
                     <div class="votes_overall">
-                      <a name="write-review-tab"></a>
+                      
                       <?php 
                         if (!empty($node->vr_rating_overall)) {
                           $stars_overall = theme('vr_misc_fivestar_static', array('rating' => $node->vr_rating_overall * 20, 'stars' => 5, 'tag' => 'overall', 'widget' => array('name' => 'stars', 'css' => 'stars.css')));
