@@ -9,8 +9,13 @@
         $( "a#write-review" ).click(function(){
           console.log('write-review!');
           
-          $( ".data.tabs" ).tabs( "option", "active", 2 );
+          //$( ".data.tabs" ).tabs( "option", "active", 2 );
+          
+          $( ".data.tabs" ).tabs( { selected: index } );
           return false;
+          
+          
+          
           
         });
         
