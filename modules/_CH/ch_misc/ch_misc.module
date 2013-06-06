@@ -44,12 +44,14 @@ function ch_misc_menu() {
   
   
   // Old version.
+  /*
   $items['click'] = array(
     'title' => 'Redirect to an external link',
     'page callback' => 'ch_misc_goToExternalUrl',
     'access arguments' => array('access content'),
     'type' => MENU_CALLBACK,
   ); 
+  */
   
   $items['click/%'] = array(
     'title' => 'Redirect to an external link',
@@ -342,6 +344,12 @@ function ch_misc_getTrackingUrl($title_or_wrapped_object, $subpath = NULL, $nid 
       $subpath = $_SERVER['REDIRECT_URL'];
     }
   }
+  
+  
+  // Make a path looks like /go/nextiva
+  $subpath = str_replace('reviews/', '', $subpath);
+  
+  
   $trackingUrl = '<a href="/click' . $subpath . '" target = "_blank"' . ($a_class ? ' class="' . $a_class . '"' : '') . '>' . $title_or_wrapped_object . '</a>';
   
   return $trackingUrl;
@@ -351,6 +359,7 @@ function ch_misc_getTrackingUrl($title_or_wrapped_object, $subpath = NULL, $nid 
 /**
  * Track a click.
  */
+/* Old version
 function ch_misc_trackClick_ajax() {
   
   $status = TRUE;
@@ -390,8 +399,9 @@ function ch_misc_trackClick_ajax() {
 
   }
   
-  drupal_json_output(array('status' => $status, /*'data' => $output*/));
+  drupal_json_output(array('status' => $status));
 }
+*/
 
 
 /**
@@ -399,13 +409,15 @@ function ch_misc_trackClick_ajax() {
  */
 function ch_misc_goToExternalUrl2() {
 
-  $args = arg();
+   $args = arg();
   
-  if ($args[1] == 'providers' && !empty($args[2])) {
+  //if ($args[1] == 'providers' && !empty($args[2])) 
+  {
     
     $query = db_select('url_alias', 'a')
         ->fields('a', array('source'));
-    $query->condition('a.alias', $args[1] .  '/' . $args[2]);
+    //$query->condition('a.alias', $args[1] .  '/' . $args[2]);
+    $query->condition('a.alias', $args[1]);
     $node_id = str_replace('node/', '', $query->execute()->fetchField());
 
     $query = db_select('field_data_field_p_data_quick', 'pd');
@@ -432,7 +444,7 @@ function ch_misc_goToExternalUrl2() {
 //              'user' => array('name' => $user->name, 'hostname' => $user->hostname),
 //            ));
 
-            db_insert('ch_track_links')
+            db_insert('vr_track_links')
               ->fields(array(
                 'object_id' => $object_id,
                 'type' => 'provider_link',
@@ -440,7 +452,7 @@ function ch_misc_goToExternalUrl2() {
                 'url' => $url,
                 'timestamp' => time(),
                   
-                'referer' => @$_SESSION['ch_current_http_referer'],
+                'referer' => @$_SESSION['vr_current_http_referer'],
                 'click_page' => @$_SERVER['HTTP_REFERER'],
                 'uname' => isset($user->name) ? $user->name : '',
                 'ip' => $user->hostname,
@@ -458,6 +470,7 @@ function ch_misc_goToExternalUrl2() {
   drupal_goto(@$_SERVER['HTTP_REFERER']);
   
   return '';
+
 }
 
 
@@ -1632,9 +1645,9 @@ function ch_misc_getArticleTeaserData($target, $body_full_markup, $nid, $charact
   $last_pos = strrpos($teaser, ' ');
   
   // $teaser = substr_replace ($teaser, '...' . l(t('Read More'), 'node/' . $nid, array('attributes' => array('class' => array('more')))) , $last_pos, strlen($matches[1]));
-  ////$teaser = substr_replace ($teaser, '...' . l('Read the rest of this entry »', 'node/' . $nid, array('attributes' => array('class' => array('more')))), $last_pos);
+  ////$teaser = substr_replace ($teaser, '...' . l('Read the rest of this entry В»', 'node/' . $nid, array('attributes' => array('class' => array('more')))), $last_pos);
   
-  //$teaser = substr_replace ($teaser, '... ' . l('Read more »', 'node/' . $nid, array('attributes' => array('class' => array('more')))), $last_pos);
+  //$teaser = substr_replace ($teaser, '... ' . l('Read more В»', 'node/' . $nid, array('attributes' => array('class' => array('more')))), $last_pos);
   $teaser = '<div class="teaser-content">' . substr_replace ($teaser, '... ' . l('Read more', 'node/' . $nid, array('attributes' => array('class' => array('more')))), $last_pos) . '</div>';
   
   
@@ -3471,7 +3484,7 @@ $wp_tags = array (
     if (preg_match('/(.*)<!--more-->(.*)/s', $form_state['values']['body']['und'][0]['value'], $matches)) {
       //dpm($matches);
       ////$form_state['values']['body']['und'][0]['value'] = $matches[1] . /*'<span id="more"></span>' .*/ $matches[2];
-      ////////$form_state['values']['body']['und'][0]['summary'] = $matches[1] . '<p><a href="/' . $form_state['values']['url_alias'] . '#more" class="more-link">Read the rest of this entry »</a></p>';
+      ////////$form_state['values']['body']['und'][0]['summary'] = $matches[1] . '<p><a href="/' . $form_state['values']['url_alias'] . '#more" class="more-link">Read the rest of this entry В»</a></p>';
       $form_state['values']['body']['und'][0]['summary'] = $matches[1];
       //$body_full_markup = preg_replace('|\[video:.*(http.*)\]|', '<a href="$1"> [Watch a video] </a>', $body_full_markup);
     }
@@ -5328,7 +5341,7 @@ function ch_misc_getProviderQuickData($target, $data) {
         $out = theme('ch_misc_fivestar_static', array('rating' => $all_data_quick[$data['data']->nid]['erating'], 'stars' => 5, 'tag' => 'overall', 'widget' => array('name' => 'stars', 'css' => 'stars.css')));
       }
       
-      $out .= '<div class="link">' . l('Read review »', 'node/' . $data['data']->nid) . '</div>';
+      $out .= '<div class="link">' . l('Read review В»', 'node/' . $data['data']->nid) . '</div>';
       
       return $out;
       
