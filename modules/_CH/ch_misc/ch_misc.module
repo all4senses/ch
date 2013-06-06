@@ -409,15 +409,17 @@ function ch_misc_trackClick_ajax() {
  */
 function ch_misc_goToExternalUrl2() {
 
-   $args = arg();
+  $args = arg();
   
-  //if ($args[1] == 'providers' && !empty($args[2])) 
-  {
+  //dpm($args);
+  
+  //if ($args[1] == 'reviews' && !empty($args[2])) {
+  if (!empty($args[1])) {
     
     $query = db_select('url_alias', 'a')
         ->fields('a', array('source'));
     //$query->condition('a.alias', $args[1] .  '/' . $args[2]);
-    $query->condition('a.alias', $args[1]);
+    $query->condition('a.alias', 'reviews/' . $args[1]);
     $node_id = str_replace('node/', '', $query->execute()->fetchField());
 
     $query = db_select('field_data_field_p_data_quick', 'pd');
@@ -425,6 +427,8 @@ function ch_misc_goToExternalUrl2() {
     $query->fields('pd', array('entity_id', 'field_p_data_quick_value'));
     $p_data_quick = $query->execute()->fetchObject();
 
+    //dpm($p_data_quick);
+    
     if ($p_data_quick) {
       
       $object_id = $p_data_quick->entity_id;
@@ -444,7 +448,7 @@ function ch_misc_goToExternalUrl2() {
 //              'user' => array('name' => $user->name, 'hostname' => $user->hostname),
 //            ));
 
-            db_insert('vr_track_links')
+            db_insert('ch_track_links')
               ->fields(array(
                 'object_id' => $object_id,
                 'type' => 'provider_link',
@@ -452,7 +456,7 @@ function ch_misc_goToExternalUrl2() {
                 'url' => $url,
                 'timestamp' => time(),
                   
-                'referer' => @$_SESSION['vr_current_http_referer'],
+                'referer' => @$_SESSION['gv_current_http_referer'],
                 'click_page' => @$_SERVER['HTTP_REFERER'],
                 'uname' => isset($user->name) ? $user->name : '',
                 'ip' => $user->hostname,
@@ -470,7 +474,6 @@ function ch_misc_goToExternalUrl2() {
   drupal_goto(@$_SERVER['HTTP_REFERER']);
   
   return '';
-
 }
 
 
