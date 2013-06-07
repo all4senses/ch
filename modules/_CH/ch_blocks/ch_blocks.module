@@ -62,6 +62,32 @@ function ch_blocks_block_info() {
     'info' => 'Providers table saved in Drupal variables',
     'cache' => DRUPAL_CACHE_GLOBAL,
   );
+  
+  
+  
+  // Aquire blocks for all prefaces with defined bottoms.
+  $query = db_select('node', 'n');
+  $query->leftJoin('field_data_field_preface_bottom', 'pb', 'pb.entity_id = n.nid');
+  $query->fields('pb', array('entity_id'));
+  $query->leftJoin('field_data_field_preface_key', 'pk', 'pk.entity_id = pb.entity_id');
+  $query->fields('pk', array('field_preface_key_value'));
+  $query->condition('pb.delta', 0);
+  $query->condition('pb.field_preface_bottom_value', 1, '>=');
+  $query->isNotNull('pk.field_preface_key_value');
+  
+  $prefaces_v_bottoms = $query->execute()->fetchAllAssoc('entity_id');
+
+  variable_set('ch_prefaces_w_bottoms', serialize($prefaces_v_bottoms));
+ 
+  foreach ($prefaces_v_bottoms as $prefaces_v_bottom) {
+    
+    $blocks['bottom_of_' . $prefaces_v_bottom->field_preface_key_value] = array(
+      'info' => 'Bottom of ' . $prefaces_v_bottom->field_preface_key_value,
+      'cache' => DRUPAL_NO_CACHE,
+    );
+  
+  }
+  
       
   return $blocks;
 }
@@ -122,6 +148,22 @@ function ch_blocks_block_view($delta = '') {
       $block['subject'] = '';
       $block['content'] = ch_blocks_getProvidersTableFromViews_withCaching();
       break;
+    
+    
+    
+    default:
+      
+      // Aquire blocks for all prefaces with defined bottoms.
+      $prefaces_v_bottoms = unserialize(variable_get('ch_prefaces_w_bottoms'));
+      foreach ($prefaces_v_bottoms as $prefaces_v_bottom) {
+
+        if ($delta == 'bottom_of_' . $prefaces_v_bottom->field_preface_key_value) {
+          $block['subject'] = '';
+          $block['content'] = ch_misc_getPrefaceBottomSection(NULL, $prefaces_v_bottom->entity_id);
+        }
+        
+      }
+
     
   }
 
