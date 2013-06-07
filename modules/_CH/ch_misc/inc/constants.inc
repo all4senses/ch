@@ -45,7 +45,8 @@ $provider_options = array(
           
           'Services & Performance' => array(
               'Monthly Cost of Cheapest Service' => 'textfield',
-              'Requires Contract' => 'textfield',
+              'Requires Contract' => 'checkbox',
+              'Money Back Guarantee' => 'textfield',
               'Managed Support Included' => 'checkbox',
               'Managed Backup' => 'checkbox',
               '3rd Party Application Support' => 'checkbox',
