@@ -159,7 +159,7 @@ function ch_blocks_block_view($delta = '') {
 
         if ($delta == 'bottom_of_' . $prefaces_v_bottom->field_preface_key_value) {
           $block['subject'] = '';
-          $block['content'] = 'xxx';//ch_misc_getPrefaceBottomSection(NULL, $prefaces_v_bottom->entity_id);
+          $block['content'] = ch_misc_getPrefaceBottomSection(NULL, $prefaces_v_bottom->entity_id);
         }
         
       }

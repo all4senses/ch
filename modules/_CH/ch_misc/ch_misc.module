@@ -1174,8 +1174,13 @@ function ch_misc_getPrefaceMainSection($key) {
  * Get prefaces bottom section rendered.
  *
  */
-function ch_misc_getPrefaceBottomSection($key) {
-  $node = ch_misc_getPrefaceByKey($key);
+function ch_misc_getPrefaceBottomSection($key, $nid = NULL) {
+  if ($nid) {
+    $node = node_load($nid);
+  }
+  else {
+    $node = ch_misc_getPrefaceByKey($key);
+  }
   $node_view = node_view($node, 'full');
 
   return render($node_view['field_preface_bottom']);
