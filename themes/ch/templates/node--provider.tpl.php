@@ -135,7 +135,7 @@
                   
                   <?php 
                   
-                  if (!empty($node->p_data['provider_options']) && (!isset($node->p_data['provider_options']['enabled']) || !empty($node->p_data['provider_options']['enabled']))) {
+                  if ($user->uid && !empty($node->p_data['provider_options']) && (!isset($node->p_data['provider_options']['enabled']) || !empty($node->p_data['provider_options']['enabled']))) {
                     echo '<li><a href="#tabs-2">Available Options</a></li>';
                   }
                   
@@ -163,7 +163,7 @@
                 
                 
                 <?php 
-                  if (!empty($node->p_data['provider_options']) && (!isset($node->p_data['provider_options']['enabled']) || !empty($node->p_data['provider_options']['enabled']))) {
+                  if ($user->uid && !empty($node->p_data['provider_options']) && (!isset($node->p_data['provider_options']['enabled']) || !empty($node->p_data['provider_options']['enabled']))) {
                     
                   
                     echo '<div id="tabs-2">';
