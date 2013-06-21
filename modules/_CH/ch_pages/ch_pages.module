@@ -3637,6 +3637,221 @@ function ch_pages_addProviderReview_form($form, &$form_state, $node) {
 
 
 /**
+ * Implements hook_form_validate().
+ *
+ * @return $form
+ *   Return nothing.
+ */
+function ch_pages_addProviderReview_form_validate(&$form, &$form_state) {
+
+  //drupal_set_message('In Validate!', 'warning');
+  //dpm($form_state['values']);
+    
+  global $user;
+  
+  // Clear hints, if any.
+  $fields_to_clear_hints = array('fname' => array('hint' => 'First Name'), 'lname' => array('hint' => 'Last Name'), 'email' => array('hint' => 'Your Email'));
+  foreach ($fields_to_clear_hints as $fname => $fdata) {
+   
+    if ($form_state['values'][$fname] == $fdata['hint']) {
+      
+      // This clear the field.
+      $form[$fname]['#value'] = NULL;
+      
+      // Just in case.
+      // BUT! It causes fatal eror with #parent index absence
+      //form_set_value($form[$fdata['set']][$fname], array('#value' => NULL), $form_state);
+      
+      // Just in case on more.
+      $form_state['values'][$fname] = NULL;
+      
+      if (isset($form[$fname]['#required']) && $form[$fname]['#required']) {
+        form_set_error($fname, 'Please fill the field "' . ($form[$fname]['#title'] ? $form[$fname]['#title'] : $fdata['title'] ) . '"');
+      }
+    }
+    
+  }
+
+  // Check if a not logged in user has entered an email which is already is taken with one of our registered user.
+  if (!$user->uid && isset($form_state['values']['email']) && $form_state['values']['email']) {
+    if (ch_misc_emailIsRegistered($form_state['values']['email'])) {
+      form_set_error('email',t('Sorry, an email You have entered is already registered in our system. If it is your email, please !login and proceed with submitting this review as a logged in user.', array('!login' => l('Log in', 'user/login', array('query' => array('destination' => url($_GET['q'])))))));
+      return;
+    }
+  }
+
+  
+  //$rating_options = array('performance' => PERFORMANCE, 'voice' => VOICE, 'install' => INSTALL, 'use_ease' => USE_EASE, 'durability' => DURABILITY, 'features' => FEATURES, 'price' => PRICE, 'recommend' => RECOMMEND_PHONE);
+  //$rating_options = array('sound' => SOUND, 'install' => INSTALL, 'service' => CUSTOMER, 'rely' => RELY, 'features' => FEATURES, 'money' => PRICE, 'recommend' => RECOMMEND);
+  
+  $rating_options = array('control' => CONTROL, 'service' => CUSTOMER, 'rely' => RELY, 'features' => FEATURES, 'money' => PRICE, 'recommend' => RECOMMEND);
+  
+  foreach ($rating_options as $rating_option => $rating_option_title) {
+    if ($form_state['values']['rating_' . $rating_option] === FALSE) {
+      form_set_error($rating_option, 'Please make your choice for "' . $rating_option_title . '"');
+    }
+  }
+  
+  // Check if an author of this review has already submitted a review for a selected phone.
+  $review = ch_misc_userHasSubmittedReview($form_state['values']['provider_nid'], $user->uid, $form_state['values']['email'], NULL, NULL);
+
+  if ($review) {
+    $text =  'You have already submitted a review for this provider';
+    if($user->uid || !$review->field_r_notapproved_value) {
+      $text .= ': ' . l($review->title, 'node/' . $review->nid);
+    }
+    if($review->field_r_notapproved_value) {
+      $text .= '. But it\'s not yet approved by our administrators.';
+    }
+    form_set_error('field_ref_provider', $text);
+  } // End of if ($review) {
+  
+}
+
+
+/**
+ * Implements hook_form_submit().
+ *
+ * @return $form
+ *   Return nothing.
+ */
+function ch_pages_addProviderReview_form_submit(&$form, &$form_state) {
+  
+  //drupal_set_message('On Submit, Ok!', 'warning');
+  
+  ch_pages_createNode_providerReview($form_state);
+}
+
+
+/**
+ * Create a provider_review node programmatically.
+ *
+ * @return $form
+ *   Return nothing.
+ */
+function ch_pages_createNode_providerReview($form_state, $uid = 'NA', $not_approved = 'NA', $title = NULL) {
+  
+  global $user;
+  
+  $node = new stdClass();
+  $node->type = 'review';
+  node_object_prepare($node);
+  
+  $node->title = $title ? $title : 'Unapproved review ' . time();
+  $node->language = LANGUAGE_NONE;
+  $node->uid = ($uid == 'NA') ? $user->uid : $uid;
+  $node->status = 0;
+  $node->promote = 0;
+  $node->sticky = 0;
+  $node->comment = 0;
+  
+  $node->body[$node->language][0] = $form_state['values']['review'];
+  $node->body[$node->language][0]['summary'] = '';
+  $node->body[$node->language][0]['safe_summary'] = '';
+  $node->body[$node->language][0]['safe_value'] = check_plain($form_state['values']['review']['value']);
+  
+  $user_mail = /*$user->uid ? $user->mail : */$form_state['values']['email'];
+  $node->field_r_email[$node->language][0] = array(
+    'value' => $user_mail,
+    'safe_value' => check_plain($user_mail),
+    'format' => NULL,
+  );
+  $node->field_r_fname[$node->language][0] = array(
+    'value' => $form_state['values']['fname'],
+    'safe_value' => check_plain($form_state['values']['fname']),
+    'format' => NULL,
+  );
+  $node->field_r_lname[$node->language][0] = array(
+    'value' => $form_state['values']['lname'],
+    'safe_value' => check_plain($form_state['values']['lname']),
+    'format' => NULL,
+  );
+  $node->field_r_notapproved[$node->language][0]['value'] = ($not_approved == 'NA') ? 1 : $not_approved;
+  $node->field_r_rating_overall[$node->language][0]['value'] = NULL;
+  $node->field_ref_provider[$node->language][0]['target_id'] = $form_state['values']['provider_nid'];
+  
+  //$node->field_old_review[$node->language][0]['value'] = isset($form_state['values']['field_old_review']) ? $form_state['values']['field_old_review'] : FALSE;
+  
+  $node->field_r_approvecode[$node->language][0] = array(
+    'value' => $form_state['values']['field_r_approvecode'],
+    'safe_value' => check_plain($form_state['values']['field_r_approvecode']),
+    'format' => NULL,
+  );
+  
+  $node->field_p_name[$node->language][0] = array(
+    'value' => $form_state['values']['provider_name'],
+    'safe_value' => check_plain($form_state['values']['provider_name']),
+    'format' => NULL,
+  );
+  
+  
+  
+  // Prepare votes to save in a temporary field (it may be not used, but just in case and for a code simplifying).
+  //$rating_options = array('performance' => PERFORMANCE, 'voice' => VOICE, 'install' => INSTALL, 'use_ease' => USE_EASE, 'durability' => DURABILITY, 'features' => FEATURES, 'price' => PRICE, 'recommend' => RECOMMEND_PHONE);
+  //$rating_options = array('sound' => SOUND, 'install' => INSTALL, 'service' => CUSTOMER, 'rely' => RELY, 'features' => FEATURES, 'money' => PRICE, 'recommend' => RECOMMEND);
+  
+  $rating_options = array('control' => CONTROL, 'service' => CUSTOMER, 'rely' => RELY, 'features' => FEATURES, 'money' => PRICE, 'recommend' => RECOMMEND);
+  
+  $votes = array();
+  foreach ($rating_options as $vote_key => $vote_title) {
+    if(isset($form_state['values']['rating_' . $vote_key])) {
+      $votes[$vote_key] = $form_state['values']['rating_' . $vote_key];
+    }
+  }
+  
+  
+  // Save votes to the temporary votes field.
+  // It maybe reset later on (in node_save hook). But just for the sake of a code simplifying.
+  // On node_presave it field may be cleared and its data will be pushed to Voting API tables.
+  // OR it its data may remain, if the review is not approved OR it's for not listed provider  
+  $node->field_ratings_oprovider[$node->language][0] = array(
+    'value' => serialize($votes),
+    'safe_value' => check_plain(serialize($votes)),
+    'format' => NULL,
+  );
+
+  
+  
+  // Save several vars in the field
+  $field_r_data = serialize(array(/*'lines' => $form_state['values']['lines'], 'pros' => $form_state['values']['pros'], 'cons' => $form_state['values']['cons'], */'user_ip' => $form_state['values']['user_ip']));
+  
+  $node->field_r_data[$node->language][0] = array(
+    'value' => $field_r_data,
+    'safe_value' => check_plain($field_r_data),
+    'format' => NULL,
+  );
+  
+  //dpm($node);
+  //return;
+  
+  if ($node = node_submit($node)) {
+    node_save($node);
+    //drupal_set_message('Saved, Ok!', 'warning');
+    
+    
+    // Show a Success message and Send notifications.
+    $text = '<span class="review"><span class="success">Your review has been successfully submitted. Thank you for your time and efforts in sharing your much appreciated feedback.</span> <span class="approve">It will be published as soon as our administrators have approved it.</span> <span class="contact">If we may be of any further assistance please email us at contact@getvoip.com</span>';
+    // Send verification code to approve email for an unregistered user.
+    if (!$user->uid) {
+      ch_misc_sendMessage('email_verification', array('verification_code' => $form_state['values']['field_r_approvecode'] . '=' . urlencode($form_state['values']['email']), 'email' => $form_state['values']['email']));
+      $text .= '<div class="emailed">To assist in getting your review published faster, we have sent you an email verification with 1-click instructions for immediate publishing of your review.</div>';
+    }
+    $text .= '</span>';
+    drupal_set_message($text);
+
+    // Notify all admins.
+    ch_misc_sendMessage('new_review_admin_notify', array('provider_name' => $form_state['values']['provider_name']));
+  }
+  
+}
+
+
+
+
+
+
+
+/**
  * Implements hook_node_delete().
  *
  * @return void
