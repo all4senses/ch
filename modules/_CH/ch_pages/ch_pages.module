@@ -3831,7 +3831,7 @@ function ch_pages_createNode_providerReview($form_state, $uid = 'NA', $not_appro
     
     
     // Show a Success message and Send notifications.
-    $text = '<span class="review"><span class="success">Your review has been successfully submitted. Thank you for your time and efforts in sharing your much appreciated feedback.</span> <span class="approve">It will be published as soon as our administrators have approved it.</span> <span class="contact">If we may be of any further assistance please email us at contact@getvoip.com</span>';
+    $text = '<span class="review"><span class="success">Your review has been successfully submitted. Thank you for your time and efforts in sharing your much appreciated feedback.</span> <span class="approve">It will be published as soon as our administrators have approved it.</span> <span class="contact">If we may be of any further assistance please email us at contact@cloudhostinghq.com</span>';
     // Send verification code to approve email for an unregistered user.
     if (!$user->uid) {
       ch_misc_sendMessage('email_verification', array('verification_code' => $form_state['values']['field_r_approvecode'] . '=' . urlencode($form_state['values']['email']), 'email' => $form_state['values']['email']));
