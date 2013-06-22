@@ -116,7 +116,7 @@
               <? else: ?>
                   <?php 
                   //echo '<a id="write-review" href="/voip-provider-submit-user-review?id=' . $node->nid . '"><img src="/f/img/writeareview.png" /></a>'; 
-                  echo '<a id="write-review" href="' . url('node/' . $node->nid, array('fragment' => 'tabs-3')) . '"><img src="/f/img/writeareview.png" /></a>'; 
+                  echo '<a id="write-review-first" href="' . url('node/' . $node->nid, array('fragment' => 'tabs-3')) . '"><img src="/f/img/writeareview.png" /></a>'; 
                   ?>
               <?php endif; // end of if ($page && isset($content['ch_ratings']) && $content['ch_ratings']): ?>
               
