@@ -101,8 +101,8 @@
                   <div class="overall"> 
                     <div class="text">
                       <?php 
-                      //echo '<a id="write-review" href="/voip-provider-submit-user-review"><img src="/sites/default/files/writeareview.png" /></a><div class="voters"><div class="title">' . 'Number of Reviews' . ':</div><div class="count" property="v:count"><a href="#reviews">' . $node->gv_voters . '</a></div></div>'; 
-                      echo '<a id="write-review" href="' . url('node/' . $node->nid) . '"><img src="/sites/default/files/writeareview.png" /></a><div class="voters"><div class="title">' . 'Number of Reviews' . ':</div><div class="count" property="v:count"><a href="#reviews">' . $node->gv_voters . '</a></div></div>'; 
+                      //echo '<a id="write-review" href="/voip-provider-submit-user-review"><img src="/sites/default/files/writeareview.png" /></a><div class="voters"><div class="title">' . 'Number of Reviews' . ':</div><div class="count" property="v:count"><a href="#reviews">' . $node->ch_voters . '</a></div></div>'; 
+                      echo '<a id="write-review" href="' . url('node/' . $node->nid) . '"><img src="/sites/default/files/writeareview.png" /></a><div class="voters"><div class="title">' . 'Number of Reviews' . ':</div><div class="count" property="v:count"><a href="#reviews">' . $node->ch_voters . '</a></div></div>'; 
                       ?>
                       <?php echo '<div id="positive">' . $node->ch_recommends['positive'] . ' Positive reviews</div><div id="negative">' . $node->ch_recommends['negative'] . ' Negative reviews</div>' ?>
                       <?php echo '<div class="recommend"><div class="title">Would recommend: </div><div class="data">' . $node->ch_recommend . '% of Users' . '</div></div>'; ?>
@@ -118,7 +118,7 @@
                   //echo '<a id="write-review" href="/voip-provider-submit-user-review?id=' . $node->nid . '"><img src="/f/img/writeareview.png" /></a>'; 
                   echo '<a id="write-review" href="' . url('node/' . $node->nid, array('fragment' => 'tabs-3')) . '"><img src="/f/img/writeareview.png" /></a>'; 
                   ?>
-              <?php endif; // end of if ($page && isset($content['gv_ratings']) && $content['gv_ratings']): ?>
+              <?php endif; // end of if ($page && isset($content['ch_ratings']) && $content['ch_ratings']): ?>
               
               <div class="bottom-clear"></div>
               

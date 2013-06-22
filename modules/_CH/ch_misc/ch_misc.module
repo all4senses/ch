@@ -141,6 +141,33 @@ function ch_misc_menu() {
 }
 
 
+/**
+ * Returns recommendations counts for pos and neg.
+ */
+function ch_misc_getVotesRecommendPosVsNeg($nid) {
+  
+    $query = db_select('votingapi_vote', 'v')
+      ->fields('v', array('value'));
+    $query->condition('entity_id', $nid);
+    $query->condition('value_type', 'percent');
+    $query->condition('tag', 'recommend');
+    
+    $results = $query->execute()->fetchCol();
+
+    $recommend = array('positive' => 0, 'negative' => 0);
+    foreach ($results as $result) {
+      if ($result) {
+        $recommend['positive'] += 1;
+      }
+      else {
+        $recommend['negative'] += 1;
+      }
+    }
+        
+    return $recommend;
+}
+
+
 function ch_misc_securimage_show_ajax() {
 
   //require_once dirname(__FILE__) . '/securimage.php';

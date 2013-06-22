@@ -3358,7 +3358,8 @@ function ch_pages_node_view($node, $view_mode) {
         $counts = votingapi_select_results($criteria);
         $node->ch_voters = isset($counts[0]['value']) ? $counts[0]['value'] : '';
         ch_pages_addRatingsToNodeThemed($node, $votes, $counts);
-
+        
+        $node->gv_recommends = ch_misc_getVotesRecommendPosVsNeg($node->nid);
         
         // Get Editor's ratings
         if (!empty($p_data['ereview']['editor_ratings'])) {
