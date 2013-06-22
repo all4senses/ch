@@ -110,7 +110,7 @@ function ch_misc_menu() {
     'type' => MENU_CALLBACK,
   );
     
-  
+  */
   $items['admin/content/reviews-to-approve'] = array(
     'title' => 'Reviews to Approve',
     'page callback' => 'ch_misc_gotoReviewsToApprove',
@@ -118,7 +118,7 @@ function ch_misc_menu() {
     'access callback' => 'ch_misc_userIsAdmin',
     'type' => MENU_NORMAL_ITEM,
   );
-  */
+  
   $items['approve/%/%'] = array(
     'title' => 'Approve content',
     'page callback' => 'ch_misc_approveContent',
