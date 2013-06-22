@@ -2116,7 +2116,7 @@ function ch_pages_form_alter(&$form, &$form_state, $form_id) {
       
         // This TEMPORARY title will see only Administrators.
         if (!$current_user_is_admin) {
-          $form['title']['#default_value'] = 'Unapproved review';
+          $form['title']['#default_value'] = 'Unapproved review ' . time();
         }
         
         // Generate an approval code for email verification.
@@ -2879,7 +2879,8 @@ function ch_pages_validateForm_review(&$form, &$form_state) {
   
   
   // An Administrator MUST set the real title for the review.
-  if ($current_is_administrator && !$form_state['values']['field_r_notapproved']['und'][0]['value'] && strpos($form_state['values']['title'], 'Unapproved review') !== FALSE ) {
+  //if ($current_is_administrator && !$form_state['values']['field_r_notapproved']['und'][0]['value'] && strpos($form_state['values']['title'], 'Unapproved review') !== FALSE ) {
+  if ($current_is_administrator && strpos($form_state['values']['title'], 'Unapproved review') !== FALSE ) {
     form_set_error('title', 'Please set a new title for this review');
   }
   
