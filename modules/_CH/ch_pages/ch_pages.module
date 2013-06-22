@@ -2074,18 +2074,18 @@ function ch_pages_form_alter(&$form, &$form_state, $form_id) {
           // just for reference from a below call
           //$form['ureview']['rating_recommend']['#default_value'] = $recommend;
       
-          $form['ureview']['pros'] = array(
-            '#type' => 'textfield',
-            '#title' => t('Pros'),
-            '#default_value' => '',
-            '#attributes' => array('title' => t(PROS_HINT)),
-          );
-          $form['ureview']['cons'] = array(
-            '#type' => 'textfield',
-            '#title' => t('Cons'),
-            '#default_value' => '',
-            '#attributes' => array('title' => t(CONS_HINT)),
-          );
+//          $form['ureview']['pros'] = array(
+//            '#type' => 'textfield',
+//            '#title' => t('Pros'),
+//            '#default_value' => '',
+//            '#attributes' => array('title' => t(PROS_HINT)),
+//          );
+//          $form['ureview']['cons'] = array(
+//            '#type' => 'textfield',
+//            '#title' => t('Cons'),
+//            '#default_value' => '',
+//            '#attributes' => array('title' => t(CONS_HINT)),
+//          );
           
           
           //$form['body']['#weight'] = 2;
@@ -2818,7 +2818,7 @@ function ch_pages_validateForm_review(&$form, &$form_state) {
 
   
   // Clear hints, if any.
-  $fields_to_clear_hints = array('field_r_fname_temp' => array('hint' => FNAME_HINT, 'set' => 'about_you'), 'field_r_lname_temp' => array('hint' => LNAME_HINT, 'set' => 'about_you', 'title' => t('Last name')), 'field_r_email_temp' => array('hint' => EMAIL_HINT, 'set' => 'about_you'), 'pros' => array('hint' => PROS_HINT, 'set' => 'ureview'), 'cons' => array('hint' => CONS_HINT, 'set' => 'ureview'));
+  $fields_to_clear_hints = array('field_r_fname_temp' => array('hint' => FNAME_HINT, 'set' => 'about_you'), 'field_r_lname_temp' => array('hint' => LNAME_HINT, 'set' => 'about_you', 'title' => t('Last name')), 'field_r_email_temp' => array('hint' => EMAIL_HINT, 'set' => 'about_you')/*, 'pros' => array('hint' => PROS_HINT, 'set' => 'ureview'), 'cons' => array('hint' => CONS_HINT, 'set' => 'ureview')*/);
   foreach ($fields_to_clear_hints as $fname => $fdata) {
    
     if ($form_state['values'][$fname] == t($fdata['hint'])) {
@@ -2868,19 +2868,19 @@ function ch_pages_validateForm_review(&$form, &$form_state) {
   
   
   
-  if (!$form_state['values']['lines']) {
-    form_set_error('lines',t('Please set a numbers of lines'));
-  }
-  else {
-    // Save several vars in the field
-    $field_r_data = serialize(array('lines' => $form_state['values']['lines'], 'pros' => $form_state['values']['pros'], 'cons' => $form_state['values']['cons'], 'user_ip' => $form_state['values']['user_ip']));
-    form_set_value($form['field_r_data'], array('und' => array(0 => array('value' => $field_r_data))), $form_state);
-  }
+//  if (!$form_state['values']['lines']) {
+//    form_set_error('lines',t('Please set a numbers of lines'));
+//  }
+//  else {
+//    // Save several vars in the field
+//    $field_r_data = serialize(array('lines' => $form_state['values']['lines'], 'pros' => $form_state['values']['pros'], 'cons' => $form_state['values']['cons'], 'user_ip' => $form_state['values']['user_ip']));
+//    form_set_value($form['field_r_data'], array('und' => array(0 => array('value' => $field_r_data))), $form_state);
+//  }
   
   
   // An Administrator MUST set the real title for the review.
-  if ($current_is_administrator && !$form_state['values']['field_r_notapproved']['und'][0]['value'] && $form_state['values']['title'] == 'Unapproved review') {
-    form_set_error('title',t('Please set a new title for this review'));
+  if ($current_is_administrator && !$form_state['values']['field_r_notapproved']['und'][0]['value'] && strpos($form_state['values']['title'], 'Unapproved review') !== FALSE ) {
+    form_set_error('title', 'Please set a new title for this review');
   }
   
   // Rebuild field_r_notapproved from the temp field field_r_notapproved_checkbox.
@@ -2930,12 +2930,12 @@ function ch_pages_validateForm_review(&$form, &$form_state) {
     $review = ch_misc_userHasSubmittedReview($form_state['values']['field_ref_provider']['und'][0]['target_id'], $author_uid, $author_email, NULL, $current_review_nid);
   } // End of Or else reset the the temporary votes field.
   if ($review) {
-    $text =  t('You have already submitted a review for this provider');
+    $text =  'You have already submitted a review for this provider';
     if($user->uid || !$review->field_r_notapproved_value) {
       $text .= ': ' . l($review->title, 'node/' . $review->nid);
     }
     if($review->field_r_notapproved_value) {
-      $text .= '. ' . t('But it\'s not yet approved by our administrators.');
+      $text .= ". But it\'s not yet approved by our administrators.";
     }
     form_set_error('field_ref_provider', $text);
   } // End of if ($review) {
