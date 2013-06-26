@@ -1039,6 +1039,8 @@ margin-top: 100px;
 .ch_vote{clear: both; height: 30px;}
 .ch_vote .title{padding: 3px 0 3px 10px; float: left;}
 .ch_vote.even{background: #e9e9e9;}
+.ch_votes .NA {float: right; padding-right: 5px; color: lightgray;}
+
 
 .ch_vote .fivestar{float: right; margin-right: 10px; padding: 6px 0 5px;}
 
