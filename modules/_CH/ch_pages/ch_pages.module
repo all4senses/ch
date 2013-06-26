@@ -3919,7 +3919,9 @@ function ch_pages_addRatingsToNodeThemed($node, $votes, $counts = NULL, $semicol
     // Add a caption.
     $node->content['ch_ratings']['#markup'] = '<div class="data">' . $node->content['ch_ratings']['#markup'] . '</div>';
     
-    $node->ch_recommend = 0;
+    $node->ch_recommend = NULL;
+    
+    $node->ch_rating_overall = NULL;
     
   }
   else {
