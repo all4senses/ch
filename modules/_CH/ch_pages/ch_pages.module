@@ -2017,17 +2017,17 @@ function ch_pages_form_alter(&$form, &$form_state, $form_id) {
       
           $form['field_r_data']['#access'] = FALSE;
           
-          
-          $lines_options = array(1 => '1 - 5', 2 => '6 - 10', 3 => '11+');
-          $form['provider']['lines'] = array(
-            '#type' => 'radios',
-            //'#title' => t('How many lines do you have:'),
-            '#options' => $lines_options,
-            '#default_value' => FALSE,
-            '#weight' => 10,
-            '#prefix' => '<div class="label left">' . t('How many lines do you have:') . '</div>',
-          );
-          
+//          
+//          $lines_options = array(1 => '1 - 5', 2 => '6 - 10', 3 => '11+');
+//          $form['provider']['lines'] = array(
+//            '#type' => 'radios',
+//            //'#title' => t('How many lines do you have:'),
+//            '#options' => $lines_options,
+//            '#default_value' => FALSE,
+//            '#weight' => 10,
+//            '#prefix' => '<div class="label left">' . t('How many lines do you have:') . '</div>',
+//          );
+//          
           
       
           
@@ -2139,7 +2139,7 @@ function ch_pages_form_alter(&$form, &$form_state, $form_id) {
           $form['about_you']['field_r_email_temp']['#access'] = FALSE;
           $form['about_you']['email_autofilled'] = array(
               '#type' => 'item',
-              '#title' => t('Your email'),
+              '#title' => 'Your email',
               '#markup' => $user->mail,
           );
 
@@ -2178,7 +2178,7 @@ function ch_pages_form_alter(&$form, &$form_state, $form_id) {
             $provider_nid = NULL;
           }
           else {
-            $provider_id_source = t('your choice while viewing this provider\'s page');
+            $provider_id_source = 'your choice while viewing this provider\'s page';
           }
         }
         elseif ($_SERVER['HTTP_REFERER']) {
@@ -2307,7 +2307,7 @@ function ch_pages_form_alter(&$form, &$form_state, $form_id) {
             $form['provider']['field_r_oprovider']['#access'] = FALSE;  
             $form['provider']['provider_title_noedit'] = array(
               '#type' => 'item',
-              '#title' => t('Your VoIP Service Provider') . ' (*)',
+              '#title' => 'Your VoIP Service Provider (*)',
               '#markup' => '<div class="text">' . $form['provider']['field_r_oprovider']['und'][0]['value']['#default_value'] . '</div>',
               //'#weight' => -100,
             ); 
@@ -2375,7 +2375,7 @@ function ch_pages_form_alter(&$form, &$form_state, $form_id) {
           
           $form['provider']['provider_title_noedit'] = array(
             '#type' => 'item',
-            '#title' => t('Your VoIP Service Provider:'),
+            '#title' => 'Your VoIP Service Provider:',
             '#markup' => '<div class="text">' . l(html_entity_decode($provider_node->field_p_name['und'][0]['safe_value']), 'node/' . $provider_node->nid) . '</div>',
             //'#weight' => -100,
           );
