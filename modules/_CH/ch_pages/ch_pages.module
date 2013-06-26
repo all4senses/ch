@@ -1321,7 +1321,7 @@ function ch_pages_form_alter(&$form, &$form_state, $form_id) {
             );
             $form['bottom_text']['center_text'] = array(
               '#type' => 'textarea',
-              '#title' => t('РЎenter text'),
+              '#title' => t('Р РЋenter text'),
               //'#description' => t(''),
               '#default_value' => isset($data['bottom_text']['center_text']) ? $data['bottom_text']['center_text'] : '',
             );
@@ -3892,20 +3892,35 @@ function ch_pages_node_delete($node) {
  *   Return nothing.
  */
 function ch_pages_addRatingsToNodeThemed($node, $votes, $counts = NULL, $semicolon = '') {
+  
   $overall_vote = NULL;
-  if ($votes) {
-    
-    //$rating_titles = array('sound' => SOUND, 'install' => INSTALL, 'service' => CUSTOMER, 'rely' => RELY, 'features' => FEATURES, 'money' => PRICE, 'overall' => OVERALL, 'recommend' => RECOMMEND);
-    $rating_titles = array('control' => CONTROL, 'service' => CUSTOMER, 'rely' => RELY, 'features' => FEATURES, 'money' => PRICE, 'overall' => OVERALL, 'recommend' => RECOMMEND);
-      
-    
-    
-    $node->content['ch_ratings'] = array(
-        '#markup' => '',
-        //'#prefix' => '<div class="ch_votes">',
-        //'#suffix' => '</div>',
-    );
+  $rating_titles = array('control' => CONTROL, 'service' => CUSTOMER, 'rely' => RELY, 'features' => FEATURES, 'money' => PRICE, 'overall' => OVERALL, 'recommend' => RECOMMEND);
+  
+  $node->content['ch_ratings'] = array(
+      '#markup' => '',
+      //'#prefix' => '<div class="ch_votes">',
+      //'#suffix' => '</div>',
+  );
 
+  $zebra = 0;
+  $zebra_odd = array(1,3,5,7,9);
+    
+  if (!$votes) {
+
+    foreach ($rating_titles as $rating_tag => $rating_title) {
+      $zebra++;
+      $node->content['ch_ratings']['#markup'] .= '<div class="ch_vote ' . (in_array($zebra, $zebra_odd) ? 'odd' : 'even') .'"><div class="title">' . $rating_title . $semicolon . '</div>' 
+        . '</div>';
+    }
+    
+    // Add a caption.
+    $node->content['ch_ratings']['#markup'] = '<div class="data">' . $node->content['ch_ratings']['#markup'] . '</div>';
+    
+    $node->ch_recommend = 0;
+    
+  }
+  else {
+  
     //Sort votes.
     foreach ($rating_titles as $rating_tag => $rating_title) {
       foreach ($votes as $vote) {
