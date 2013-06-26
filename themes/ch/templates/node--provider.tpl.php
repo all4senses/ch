@@ -98,11 +98,15 @@
               <?php if (isset($content['ch_ratings']) && $content['ch_ratings']): ?>
 
                   <div class="ch_votes">
-                    <?php 
-                      echo '<div class="voters"><div class="title">Total Number of Reviews:</div><div class="count" property="v:count"><a href="#reviews">' . $node->ch_voters . '</a></div></div>';
+                    <?php
+                      if ($node->ch_voters) {
+                        echo '<div class="voters"><div class="title">Total Number of Reviews:</div><div class="count" property="v:count"><a href="#reviews">' . $node->ch_voters . '</a></div></div>';
                         //echo '<div id="positive">' . $node->ch_recommends['positive'] . ' Positive reviews</div><div id="negative">' . $node->ch_recommends['negative'] . ' Negative reviews</div>';
+                      }
                       echo '<div class="caption">Overall Consumer Ratings</div>' . render($content['ch_ratings']); 
-                      echo '<div class="recommend"><div class="title">Would recommend: </div><div class="data">' . $node->ch_recommend . '% of Users' . '</div></div>';
+                      if ($node->ch_voters) {
+                        echo '<div class="recommend"><div class="title">Would recommend: </div><div class="data">' . $node->ch_recommend . '% of Users' . '</div></div>';
+                      }
                     ?>
                   </div>
                   <div class="overall"> 
