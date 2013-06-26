@@ -97,25 +97,34 @@
 
               <?php if (isset($content['ch_ratings']) && $content['ch_ratings']): ?>
 
-                  <div class="ch_votes"><?php echo '<div class="caption">Overall Consumer Ratings</div>' . render($content['ch_ratings']); ?></div>
+                  <div class="ch_votes">
+                    <?php 
+                      echo '<div class="voters"><div class="title">Total Number of Reviews:</div><div class="count" property="v:count"><a href="#reviews">' . $node->ch_voters . '</a></div></div>';
+                        //echo '<div id="positive">' . $node->ch_recommends['positive'] . ' Positive reviews</div><div id="negative">' . $node->ch_recommends['negative'] . ' Negative reviews</div>';
+                      echo '<div class="caption">Overall Consumer Ratings</div>' . render($content['ch_ratings']); 
+                      echo '<div class="recommend"><div class="title">Would recommend: </div><div class="data">' . $node->ch_recommend . '% of Users' . '</div></div>';
+                    ?>
+                  </div>
                   <div class="overall"> 
-                    <div class="text">
-                      <?php 
-                      //echo '<a id="write-review" href="/voip-provider-submit-user-review"><img src="/sites/default/files/writeareview.png" /></a><div class="voters"><div class="title">' . 'Number of Reviews' . ':</div><div class="count" property="v:count"><a href="#reviews">' . $node->ch_voters . '</a></div></div>'; 
-                      echo '<a id="write-review" href="' . url('node/' . $node->nid, array('fragment' => 'tabs-3')) . '"><img src="/f/img/writeareview.png" /></a><div class="voters"><div class="title">' . 'Number of Reviews' . ':</div><div class="count" property="v:count"><a href="#reviews">' . $node->ch_voters . '</a></div></div>'; 
-                      ?>
-                      <?php echo '<div id="positive">' . $node->ch_recommends['positive'] . ' Positive reviews</div><div id="negative">' . $node->ch_recommends['negative'] . ' Negative reviews</div>' ?>
-                      <?php echo '<div class="recommend"><div class="title">Would recommend: </div><div class="data">' . $node->ch_recommend . '% of Users' . '</div></div>'; ?>
-                      <div class="title"><?php $node->field_p_name['und'][0]['value'] /*$content['field_p_name'][0]['#markup']*/ . ' Overall Rated:'; ?></div>
-                    </div>
                     <div class="star-big">
-                      <?php echo '<div class="count" content="' . $node->ch_rating_overall . '" property="v:rating">' . $node->ch_rating_overall . '</div>' . '<div class="descr">Out of 5 stars</div>'; ?>
+                      <?php 
+                        if ($node->ch_rating_overall) {
+                          echo '<div class="count" content="' . $node->ch_rating_overall . '" property="v:rating">' . $node->ch_rating_overall . '</div>' . '<div class="descr">Out of 5 stars</div>'; 
+                        }
+                        else {
+                          echo '<div class="descr be-first">Be the first to review</div>'; 
+                        }
+                      ?>
                     </div>
+                    <div class="text">
+                      <div class="title"><?php $node->field_p_name['und'][0]['value']  . ' Overall Rated:'; ?></div>
+                      <?php echo '<a id="write-review" href="' . url('node/' . $node->nid, array('fragment' => 'tabs-3')) . '"><img src="/f/img/writeareview.png" /></a>'; ?>
+                    </div>
+                    
                   </div>
               
               <? else: ?>
                   <?php 
-                  //echo '<a id="write-review" href="/voip-provider-submit-user-review?id=' . $node->nid . '"><img src="/f/img/writeareview.png" /></a>'; 
                   echo '<a id="write-review-first" href="' . url('node/' . $node->nid, array('fragment' => 'tabs-3')) . '"><img src="/f/img/writeareview.png" /></a>'; 
                   ?>
               <?php endif; // end of if ($page && isset($content['ch_ratings']) && $content['ch_ratings']): ?>

@@ -3913,6 +3913,7 @@ function ch_pages_addRatingsToNodeThemed($node, $votes, $counts = NULL, $semicol
       }
       $zebra++;
       $node->content['ch_ratings']['#markup'] .= '<div class="ch_vote ' . (in_array($zebra, $zebra_odd) ? 'odd' : 'even') .'"><div class="title">' . $rating_title . $semicolon . '</div>' 
+        . '<div class="NA">Not Yet Rated</div>'
         . '</div>';
     }
     
