@@ -3908,6 +3908,9 @@ function ch_pages_addRatingsToNodeThemed($node, $votes, $counts = NULL, $semicol
   if (!$votes) {
 
     foreach ($rating_titles as $rating_tag => $rating_title) {
+      if ($rating_tag == 'overall' || $rating_tag == 'recommend') {
+        continue;
+      }
       $zebra++;
       $node->content['ch_ratings']['#markup'] .= '<div class="ch_vote ' . (in_array($zebra, $zebra_odd) ? 'odd' : 'even') .'"><div class="title">' . $rating_title . $semicolon . '</div>' 
         . '</div>';
