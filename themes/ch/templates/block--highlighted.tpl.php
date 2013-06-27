@@ -10,5 +10,5 @@
       <?php print $content ?>
     </div>
   </div> <!-- /.inside -->
-  <div class="shadow"></div>
+  <!--<div class="shadow"></div> -->
 </section> <!-- /.block -->
