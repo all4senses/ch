@@ -1186,6 +1186,8 @@ function ch_pages_buildHome($name = NULL, $data  = NULL) {
   
 //  $out .='<div id="bottom-with-latest-articles" class="with-articles preface">';
 //  
+    dpm($seo_welcome_node_view['field_preface_bottom']);
+    
       $out .= render($seo_welcome_node_view['field_preface_bottom']);
 //
 //      // Get block for All latest articles (news, blogs)Top pick residential providers.
