@@ -207,13 +207,13 @@ function ch_blocks_block_configure($delta = '') {
     
       //dpm($recommendedSites_block);
 
-      $form['title'] = array(
+      $form['ch_title'] = array(
         '#type' => 'textfield', 
         '#title' => 'Title',
         '#default_value' => $data['title']['value'], 
       );
       
-      $form['body'] = array(
+      $form['ch_body'] = array(
         '#type' => 'text_format', 
         '#title' => t('Body'),
         '#default_value' => $data['body']['value'], 
@@ -236,7 +236,7 @@ function ch_blocks_block_save($delta = '', $edit = array()) {
       break;
     
     case 'home_banner':
-      $data = array('title' => $edit['title'], 'body' => $edit['body']);
+      $data = array('title' => $edit['ch_title'], 'body' => $edit['ch_body']);
       variable_set('ch_home_banner_block_data', serialize($data));
       break;
   }
