@@ -282,7 +282,7 @@ function ch_blocks_getAdBlock($ad_name) {
     
     case 'home_banner':
       //return '<a href="/voip-speed-test"><img alt="VoIP Speed Test Tool" title="VoIP Speed Test Tool" src="/f/speedtestbanner.png" /></a>';
-      return '<img alt="UNBIASED CLOUD HOSTING REVIEWS & COMPARISONS" title="UNBIASED CLOUD HOSTING REVIEWS & COMPARISONS" src="/sites/all/themes/ch/home_banner.jpg" />';
+      return '<img alt="UNBIASED CLOUD HOSTING REVIEWS & COMPARISONS" title="UNBIASED CLOUD HOSTING REVIEWS & COMPARISONS" src="/sites/all/themes/ch/css/images/home_banner.jpg" />';
   }
 }
 
