@@ -88,6 +88,12 @@ function ch_blocks_block_info() {
   
   }
   
+  
+  $blocks['home_banner'] = array(
+    'info' => 'Home banner',
+    'cache' => DRUPAL_CACHE_GLOBAL,
+  );
+  
       
   return $blocks;
 }
@@ -151,6 +157,13 @@ function ch_blocks_block_view($delta = '') {
     
     
     
+    case 'home_banner':
+      $block['subject'] = '';
+      $block['content'] = ch_blocks_getAdBlock('home_banner');
+      break;
+    
+    
+    
     default:
       
       // Aquire blocks for all prefaces with defined bottoms.
@@ -163,6 +176,8 @@ function ch_blocks_block_view($delta = '') {
         }
         
       }
+      
+      break;
 
     
   }
@@ -265,8 +280,9 @@ function ch_blocks_get_blogArchive() {
 function ch_blocks_getAdBlock($ad_name) {
   switch ($ad_name) {
     
-    case 'speedtest_page':
-      return '<a href="/voip-speed-test"><img alt="VoIP Speed Test Tool" title="VoIP Speed Test Tool" src="/f/speedtestbanner.png" /></a>';
+    case 'home_page':
+      //return '<a href="/voip-speed-test"><img alt="VoIP Speed Test Tool" title="VoIP Speed Test Tool" src="/f/speedtestbanner.png" /></a>';
+      return '<img alt="UNBIASED CLOUD HOSTING REVIEWS & COMPARISONS" title="UNBIASED CLOUD HOSTING REVIEWS & COMPARISONS" src="/sites/all/themes/ch/home_banner.jpg" />';
   }
 }
 
