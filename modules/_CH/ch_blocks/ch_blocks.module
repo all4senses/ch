@@ -193,27 +193,32 @@ function ch_blocks_block_configure($delta = '') {
   
   $form = array();
   
-  if ($delta == 'weekly_video') {
+  switch ($delta) {
+//    case 'weekly_video' :
+//      $form['youtube_video_id'] = array(
+//        '#type' => 'textfield', 
+//        '#title' => t('YouTube video id'),
+//        '#default_value' => variable_get('ch_weekly_video_block', NULL), 
+//      );
+//      break;
     
-    $form['youtube_video_id'] = array(
-      '#type' => 'textfield', 
-      '#title' => t('YouTube video id'),
-      '#default_value' => variable_get('ch_weekly_video_block', NULL), 
-    );
+    case 'home_banner':
+      $data = unserialize(variable_get('ch_home_banner_block_data', NULL));
     
-  }
-  elseif ($delta == 'recomended_sites') {
-    
-    $recommendedSites_block = unserialize(variable_get('ch_recommendedSites_block', NULL));
-    
-    //dpm($recommendedSites_block);
-    
-    $form['ch_body'] = array(
-      '#type' => 'text_format', 
-      '#title' => t('Body'),
-      '#default_value' => $recommendedSites_block['ch_body']['value'], 
-    );
-    
+      //dpm($recommendedSites_block);
+
+      $form['ch_title'] = array(
+        '#type' => 'textfield', 
+        '#title' => 'Title',
+        '#default_value' => $data['ch_title']['value'], 
+      );
+      
+      $form['ch_body'] = array(
+        '#type' => 'text_format', 
+        '#title' => t('Body'),
+        '#default_value' => $data['ch_body']['value'], 
+      );
+
   }
   
   return $form;
@@ -225,12 +230,15 @@ function ch_blocks_block_configure($delta = '') {
  */
 function ch_blocks_block_save($delta = '', $edit = array()) {
 
-  if ($delta == 'weekly_video') {
-    variable_set('ch_weekly_video_block', $edit['youtube_video_id']);
-  }
-  elseif ($delta == 'recomended_sites') {
-    $recommendedSites_block['ch_body'] = $edit['ch_body'];
-    variable_set('ch_recommendedSites_block', serialize($recommendedSites_block));
+  switch ($delta) {
+    case 'weekly_video':
+      variable_set('ch_weekly_video_block', $edit['youtube_video_id']);
+      break;
+    
+    case 'home_banner':
+      $data = array('ch_title' => $edit['ch_title'], 'ch_body' => $edit['ch_body']);
+      variable_set('ch_home_banner_block_data', serialize($data));
+      break;
   }
   
 }
@@ -281,7 +289,8 @@ function ch_blocks_getAdBlock($ad_name) {
   switch ($ad_name) {
     
     case 'home_banner':
-      //return '<a href="/voip-speed-test"><img alt="VoIP Speed Test Tool" title="VoIP Speed Test Tool" src="/f/speedtestbanner.png" /></a>';
+      $data = unserialize(variable_get('ch_home_banner_block_data', NULL));
+      dpm($data);
       return '<img alt="UNBIASED CLOUD HOSTING REVIEWS & COMPARISONS" title="UNBIASED CLOUD HOSTING REVIEWS & COMPARISONS" src="/sites/all/themes/ch/css/images/home-banner.jpg" />';
   }
 }
