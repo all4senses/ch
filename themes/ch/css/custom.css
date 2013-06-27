@@ -1616,3 +1616,9 @@ body.one-sidebar.sidebar-second.page-get-iframe #main{background: none transpare
 .ch-captcha #reload-btn img{width: 17px; height: 17px; float: none;}
 .ch-captcha #code{color: gray; font-size: 11px; clear: both; margin-top: 7px;}
 #ct_captcha {background: white;}
+
+
+
+/* Home banner block */
+#block-ch-blocks-home-banner h1 {position: absolute; left: 10px; top: 15px;}
+#block-ch-blocks-home-banner .banner_body {position: absolute; left: 10px; top: 120px;}
