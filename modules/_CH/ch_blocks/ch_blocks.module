@@ -210,7 +210,7 @@ function ch_blocks_block_configure($delta = '') {
       $form['ch_title'] = array(
         '#type' => 'textfield', 
         '#title' => 'Title',
-        '#default_value' => $data['title']['value'], 
+        '#default_value' => $data['title'], 
       );
       
       $form['ch_body'] = array(
