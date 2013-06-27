@@ -207,16 +207,16 @@ function ch_blocks_block_configure($delta = '') {
     
       //dpm($recommendedSites_block);
 
-      $form['ch_title'] = array(
+      $form['title'] = array(
         '#type' => 'textfield', 
         '#title' => 'Title',
-        '#default_value' => $data['ch_title']['value'], 
+        '#default_value' => $data['title']['value'], 
       );
       
-      $form['ch_body'] = array(
+      $form['body'] = array(
         '#type' => 'text_format', 
         '#title' => t('Body'),
-        '#default_value' => $data['ch_body']['value'], 
+        '#default_value' => $data['body']['value'], 
       );
 
   }
@@ -236,7 +236,7 @@ function ch_blocks_block_save($delta = '', $edit = array()) {
       break;
     
     case 'home_banner':
-      $data = array('ch_title' => $edit['ch_title'], 'ch_body' => $edit['ch_body']);
+      $data = array('title' => $edit['title'], 'body' => $edit['body']);
       variable_set('ch_home_banner_block_data', serialize($data));
       break;
   }
@@ -291,7 +291,8 @@ function ch_blocks_getAdBlock($ad_name) {
     case 'home_banner':
       $data = unserialize(variable_get('ch_home_banner_block_data', NULL));
       dpm($data);
-      return '<img alt="UNBIASED CLOUD HOSTING REVIEWS & COMPARISONS" title="UNBIASED CLOUD HOSTING REVIEWS & COMPARISONS" src="/sites/all/themes/ch/css/images/home-banner.jpg" />';
+      
+      return '<h1>' . $data['title'] . '</h1><div class="banner_body">' . $data['body'] . '</div><img alt="UNBIASED CLOUD HOSTING REVIEWS & COMPARISONS" title="UNBIASED CLOUD HOSTING REVIEWS & COMPARISONS" src="/sites/all/themes/ch/css/images/home-banner.jpg" />';
   }
 }
 
