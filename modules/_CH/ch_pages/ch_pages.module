@@ -1155,10 +1155,20 @@ function ch_pages_buildHome($name = NULL, $data  = NULL) {
 //     $block_data = array('module' => 'views', 'delta' => 'blog-block_home_blog_teasers');
 //     $out .= ch_blocks_getBlockThemed($block_data);
 //  
-    $block_data = array('module' => 'views', 'delta' => 'providers-block_top_ch_providers_table');
-    $out .= ch_blocks_getBlockThemed($block_data);
+    
+    
+    
+    
+    
+    
+    ////$block_data = array('module' => 'views', 'delta' => 'providers-block_top_ch_providers_table');
+    ////$out .= ch_blocks_getBlockThemed($block_data);
   
   
+    
+    
+    
+    
   // Content of a home page saved in db as a var.
   // $out .= theme($name, array('data' => $data));
   
