@@ -1140,6 +1140,7 @@ function ch_pages_buildHome($name = NULL, $data  = NULL) {
     
   $seo_welcome_node = ch_misc_getPrefaceByKey('front');
   $seo_welcome_node->title_no_link = TRUE;
+  $seo_welcome_node->title_h2 = TRUE;
   $seo_welcome_node_view = node_view($seo_welcome_node, 'full');
 
   // Uncomment to hide a main part of the preface from the main content region.
@@ -1186,8 +1187,6 @@ function ch_pages_buildHome($name = NULL, $data  = NULL) {
   
 //  $out .='<div id="bottom-with-latest-articles" class="with-articles preface">';
 //  
-    dpm($seo_welcome_node_view['field_preface_bottom']);
-    
       $out .= render($seo_welcome_node_view['field_preface_bottom']);
 //
 //      // Get block for All latest articles (news, blogs)Top pick residential providers.
