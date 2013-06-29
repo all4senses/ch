@@ -95,7 +95,7 @@
               
               <!--<div class="bottom-clear"></div> -->
 
-              <?php if (isset($content['ch_ratings']) && $content['ch_ratings']): ?>
+              <?php dpm($content); if (isset($content['ch_ratings']) && $content['ch_ratings']): ?>
 
                   <div class="ch_votes">
                     <?php
