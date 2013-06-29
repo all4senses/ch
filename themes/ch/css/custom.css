@@ -1033,7 +1033,7 @@ margin-top: 100px;
 
 
 
-.ch_votes{float: left; width: 280px; margin: 0 10px 0 30px; padding: 10px 8px; border: 1px solid lightgray; border-radius: 5px;}
+.ch_votes{float: left; width: 280px; margin: 0 10px 0 30px; padding: 10px 8px 6px; border: 1px solid lightgray; border-radius: 5px;}
 .ch_votes .caption{background: url(/sites/all/themes/ch/css/images/chart-th-back.jpg) repeat-x 0 bottom transparent; color: white; font-weight: bold; padding: 7px 0 6px 10px; border-radius: 5px; margin-bottom: 5px; }
 .ch_votes .caption span{float: left; margin-right: 10px;}
 .ch_votes .data{padding: 0 0 0px 0;}
@@ -1050,11 +1050,16 @@ margin-top: 100px;
 .node-type-provider .overall .voters{margin-bottom: 5px;}
 .node-type-provider .overall .text .title{float: left; margin-right: 10px; font-weight: bold;}
 .star-big{width: 140px; background: url("images/star-big.png") no-repeat; height: 150px; margin: 20px 0 0 120px; position: relative;}
-.star-big .count{font-size: 35px; font-weight: bold; left: 39px; position: absolute; top: 30px;}
+.star-big .count{font-size: 35px; font-weight: bold; left: 39px; position: absolute; top: 48px;}
 .star-big .descr{font-size: 12px; font-weight: bold; left: 35px; line-height: 13px; position: absolute; text-align: center; top: 73px; width: 60px;}
 .star-big .descr.be-first {top: 47px; font-size: 13px; line-height: 15px;}
 .overall #write-review-first, .overall #write-review {margin: 0 0 0 95px;}
 
+.ch_votes .voters {margin-bottom: 7px; font-size: 14px;}
+.ch_votes .voters .title {float: left; margin: 0 5px 0 40px; font-weight: bold;}
+
+.ch_votes .recommend {margin-top: 8px;}
+.ch_votes .recommend .title {font-weight: bold; float: left; margin: 0 5px 0 30px;}
 
 
 
