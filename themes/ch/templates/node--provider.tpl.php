@@ -95,7 +95,7 @@
               
               <!--<div class="bottom-clear"></div> -->
 
-              <?php dpm($content); if (isset($content['ch_ratings']) && $content['ch_ratings']): ?>
+              <?php dpm($content); dpm($node); if ($node->ch_voters): ?>
 
                   <div class="ch_votes">
                     <?php
