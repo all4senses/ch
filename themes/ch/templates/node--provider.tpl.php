@@ -95,8 +95,6 @@
               
               <!--<div class="bottom-clear"></div> -->
 
-              <?php dpm($content); dpm($node); if ($node->ch_voters): ?>
-
                   <div class="ch_votes">
                     <?php
                       if ($node->ch_voters) {
@@ -122,16 +120,11 @@
                     </div>
                     <div class="text">
                       <div class="title"><?php $node->field_p_name['und'][0]['value']  . ' Overall Rated:'; ?></div>
-                      <?php echo '<a id="write-review" href="' . url('node/' . $node->nid, array('fragment' => 'tabs-3')) . '"><img src="/f/img/writeareview.png" /></a>'; ?>
+                      <?php echo '<a id="' . ($node->ch_voters ? 'write-review' : 'write-review-first') . '" href="' . url('node/' . $node->nid, array('fragment' => 'tabs-3')) . '"><img src="/f/img/writeareview.png" /></a>'; ?>
                     </div>
                     
                   </div>
               
-              <? else: ?>
-                  <?php 
-                  echo '<a id="write-review-first" href="' . url('node/' . $node->nid, array('fragment' => 'tabs-3')) . '"><img src="/f/img/writeareview.png" /></a>'; 
-                  ?>
-              <?php endif; // end of if ($page && isset($content['ch_ratings']) && $content['ch_ratings']): ?>
               
               <div class="bottom-clear"></div>
               
