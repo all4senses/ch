@@ -1110,7 +1110,10 @@ h2.rcaption a, h3.rcaption a, /*.node-review*/ h3.rcaption a:hover{color: white;
 
 .node-review .ch_votes, .node-type-review .ch_votes{margin: 0; font-size: 15px;}
 .node-review .ch_votes .data, .node-type-review .ch_votes .data{border-bottom: none; border-top: none;}
-.node-review .ch_votes .rate-other, .node-type-review .ch_votes .rate-other{/*padding-right: 10px;*/ border: 1px solid gray; border-top: none;}
+
+/*.node-review .ch_votes .rate-other, .node-type-review .ch_votes .rate-other{border: 1px solid gray; border-top: none;}*/
+.node-review .ch_votes .rate-other, .node-type-review .ch_votes .rate-other{margin-top: 5px; font-size: 12px;}
+
 .node-review .ch_votes .rate-other .data, .node-type-review .ch_votes .rate-other .data{border: none;}
 .node-review .ch_votes .rate-other .text, .node-type-review .ch_votes .rate-other .text{/*background: none repeat scroll 0 0 #E9E9E9;*/ padding: 0;}
 .node-review .ch_votes .rate-other .text .title, .node-type-review .ch_votes .rate-other .text .title{ float: left; margin-right: 10px; padding-left: 10px;}
