@@ -94,6 +94,11 @@ function ch_blocks_block_info() {
     'cache' => DRUPAL_CACHE_GLOBAL,
   );
   
+  $blocks['home_services'] = array(
+    'info' => 'Home services select',
+    'cache' => DRUPAL_CACHE_GLOBAL,
+  );
+  
       
   return $blocks;
 }
@@ -162,6 +167,10 @@ function ch_blocks_block_view($delta = '') {
       $block['content'] = ch_blocks_getAdBlock('home_banner');
       break;
     
+    case 'home_services':
+      $block['subject'] = '';
+      $block['content'] = ch_blocks_getAdBlock('home_services');
+      break;
     
     
     default:
@@ -218,6 +227,30 @@ function ch_blocks_block_configure($delta = '') {
         '#title' => t('Body'),
         '#default_value' => $data['body']['value'], 
       );
+      
+      break;
+
+    
+    case 'home_services':
+      $data = unserialize(variable_get('ch_home_services_block_data', NULL));
+      
+      $form['ch_text'] = array(
+        '#type' => 'text_format', 
+        '#title' =>'CH text',
+        '#default_value' => $data['ch_text']['value'], 
+      );
+      $form['vps_text'] = array(
+        '#type' => 'text_format', 
+        '#title' =>'VPS text',
+        '#default_value' => $data['vps_text']['value'], 
+      );
+      $form['ds_text'] = array(
+        '#type' => 'text_format', 
+        '#title' =>'DS text',
+        '#default_value' => $data['ds_text']['value'], 
+      );
+      
+      break;
 
   }
   
@@ -238,6 +271,11 @@ function ch_blocks_block_save($delta = '', $edit = array()) {
     case 'home_banner':
       $data = array('title' => $edit['ch_title'], 'body' => $edit['ch_body']);
       variable_set('ch_home_banner_block_data', serialize($data));
+      break;
+    
+    case 'home_services':
+      $data = array('ch_text' => $edit['ch_text'], 'vps_text' => $edit['vps_text'], 'ds_text' => $edit['ds_text']);
+      variable_set('ch_home_services_block_data', serialize($data));
       break;
   }
   
@@ -290,9 +328,27 @@ function ch_blocks_getAdBlock($ad_name) {
     
     case 'home_banner':
       $data = unserialize(variable_get('ch_home_banner_block_data', NULL));
-      //dpm($data);
-      
       return '<h1>' . $data['title'] . '</h1><div class="banner_body">' . $data['body']['value'] . '</div><img alt="UNBIASED CLOUD HOSTING REVIEWS & COMPARISONS" title="UNBIASED CLOUD HOSTING REVIEWS & COMPARISONS" src="/sites/all/themes/ch/css/images/home-banner.jpg" />';
+      
+    case 'home_services':
+      $data = unserialize(variable_get('ch_home_services_block_data', NULL));
+      return '
+        <div class="sevice-block">
+          <img alt="Cloud Hosting" title="Cloud Hosting" src="/sites/all/themes/ch/css/images/ch-icon.png" />
+          <h3>Cloud Hosting</h3>
+          <div class="text">' . $data['ch_text']['value'] . '</div>
+        </div>
+        <div class="sevice-block">
+          <img alt="VPS Hosting" title="VPS Hosting" src="/sites/all/themes/ch/css/images/vps-icon.png" />
+          <h3>VPS Hosting</h3>
+          <div class="text">' . $data['vps_text']['value'] . '</div>
+        </div>
+        <div class="sevice-block">
+          <img alt="DS Hosting" title="DS Hosting" src="/sites/all/themes/ch/css/images/ds-icon.png" />
+          <h3>DS Hosting</h3>
+          <div class="text">' . $data['ds_text']['value'] . '</div>
+        </div>
+          ';
   }
 }
 
