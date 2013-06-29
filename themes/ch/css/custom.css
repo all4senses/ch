@@ -1624,7 +1624,9 @@ body.one-sidebar.sidebar-second.page-get-iframe #main{background: none transpare
 #block-ch-blocks-home-banner .banner_body {position: absolute; left: 10px; top: 120px; width: 450px;}
 
 /* Home services block */
-#block-ch-blocks-home-services .sevice-block {float: left; width: 259px; text-align: center; padding: 15px 30px 20px;}
+#block-ch-blocks-home-services .sevice-block {float: left; width: 260px; text-align: center; padding: 15px 30px 20px;}
 #block-ch-blocks-home-services .sevice-block.last {float: right;}
 #block-ch-blocks-home-services .sevice-block:hover {background: #f6f4f5;}
+#block-ch-blocks-home-services .top-bar {width: 100%; height: 5px; background: black;}
+#block-ch-blocks-home-services .sevice-block:hover .top-bar {background: #018def;}
 #block-ch-blocks-home-services .read-more {width: 110px; height: 38px; background: url(/sites/all/themes/ch/css/images/read-more.png) no-repeat scroll 0 0 transparent; display: block; margin: auto;}

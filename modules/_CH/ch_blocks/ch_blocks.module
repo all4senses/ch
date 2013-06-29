@@ -334,18 +334,21 @@ function ch_blocks_getAdBlock($ad_name) {
       $data = unserialize(variable_get('ch_home_services_block_data', NULL));
       return '
         <div class="sevice-block">
+          <div class="top-bar"></div>
           <img alt="Cloud Hosting" title="Cloud Hosting" src="/sites/all/themes/ch/css/images/ch-icon.png" />
           <h3>Cloud Hosting</h3>
           <div class="text">' . $data['ch_text']['value'] . '</div>
           <a href="/cloud" class="read-more"></a>
         </div>
         <div class="sevice-block">
+          <div class="top-bar"></div>
           <img alt="VPS Hosting" title="VPS Hosting" src="/sites/all/themes/ch/css/images/vps-icon.png" />
           <h3>VPS Hosting</h3>
           <div class="text">' . $data['vps_text']['value'] . '</div>
           <a href="/vps" class="read-more"></a>
         </div>
         <div class="sevice-block last">
+          <div class="top-bar"></div>
           <img alt="DS Hosting" title="DS Hosting" src="/sites/all/themes/ch/css/images/ds-icon.png" />
           <h3>DS Hosting</h3>
           <div class="text">' . $data['ds_text']['value'] . '</div>
