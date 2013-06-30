@@ -1586,10 +1586,10 @@ body.one-sidebar.sidebar-second.page-get-iframe #main{background: none transpare
 
 #block-ch_blocks-footer_links {overflow: hidden; display: block; clear: both; margin: 20px auto 0;}
 
-#block-ch_blocks-footer_links .col {float: left;}
+#block-ch_blocks-footer_links .col {float: left; margin-right: 30px;}
 #block-ch_blocks-footer_links .title {font-size: 13px; color: white;}
 
-#block-ch_blocks-footer_links ul {margin: 0;}
+#block-ch_blocks-footer_links ul {margin: 0; padding: 0;}
 #block-ch_blocks-footer_links li {}
 
 #block-ch_blocks-footer_links a {color: #aaaaaa; font-size: 13px;}
