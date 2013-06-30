@@ -4332,10 +4332,11 @@ function theme_ch_misc_submenuSimple_byColumns($vars) {
   $out = '';
   foreach ($vars['submenu']['below'] as $m) {
     $out .= '<div class="caption">' . $m['link']['link_title']. '</div>';
+    $sub = '';
     foreach ($m['below'] as $sub_m) {
-      $out .= '<li>' . l($sub_m['link']['link_title'], $sub_m['link']['link_path']) . '</li>';
+      $sub .= '<li>' . l($sub_m['link']['link_title'], $sub_m['link']['link_path']) . '</li>';
     }
-    $out = '<div class="col"><ul>' . $out . '</ul></div>';
+    $out .= '<div class="col"><ul>' . $sub . '</ul></div>';
   }
   
   return $out;
