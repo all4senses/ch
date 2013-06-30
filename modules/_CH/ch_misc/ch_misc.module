@@ -4329,6 +4329,13 @@ function theme_ch_misc_submenuSimple_byColumns($vars) {
   }
   dpm($vars);
   
+  $out = '';
+  foreach ($vars['submenu']['below'] as $m) {
+    $out .= '<div class="caption">' . $m['link']['link_title']. '</div>';
+  }
+  
+  return $out;
+  
   $level = isset($vars['level']) ? $vars['level'] : 0;
   $class = isset($vars['class']) ? $vars['class'] : 'om-links';
   $delimiter = isset($vars['delimiter']) ? $vars['delimiter'] : '';
