@@ -173,7 +173,7 @@ div.error{border: none;}
 
 
 ul.ch{margin-left: 0px; padding-left: 10px;}
-.block.block-om-maximenu{right: 0; position: absolute; top: 78px; z-index: 10; width: 650/*960*/px; /*background: url(images/main-menu-back.jpg) repeat-x scroll 0 0 #62b0f7;*/ height: 45px; border-radius: 10px 10px 0 0;}
+.block.block-om-maximenu{right: 0; position: absolute; top: 78px; z-index: 10; width: 660/*960*/px; /*background: url(images/main-menu-back.jpg) repeat-x scroll 0 0 #62b0f7;*/ height: 45px; border-radius: 10px 10px 0 0;}
 
 
 .om-btitle {float: left; position: absolute; left: -180px;}
@@ -186,7 +186,7 @@ ul.ch{margin-left: 0px; padding-left: 10px;}
 /*.om-maximenu.om-maximenu-block ul.om-menu {width: 960px;}*/
 
 
-#om-menu-main-om-menu li.om-leaf{position: relative; height: 42px; z-index: 400; padding: 0 8px 3px 0; margin: 0 2px; background: url(/sites/all/themes/ch/css/images/menu-devisor.png) no-repeat scroll right 7px transparent;}
+#om-menu-main-om-menu li.om-leaf{position: relative; height: 42px; z-index: 400; padding: 0 8px 3px 2px; margin: 0 2px; background: url(/sites/all/themes/ch/css/images/menu-devisor.png) no-repeat scroll right 11px transparent;}
 #om-menu-main-om-menu li.om-leaf.first {margin-left: 30px;}
 #om-menu-main-om-menu li.om-leaf.last {background: none;}
 
