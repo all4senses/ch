@@ -154,8 +154,11 @@
     <div id="footer-inside">
 
       <!--<div id="in-touch"></div> -->
-
+      
+      <div class="c">Copyright © 2013 Cloud Hosting HQ | All rights reserved.</div>
+      
       <?php 
+        
         echo render($page['footer']);
         
         //echo ch_blocks_getBlockThemed(array('module' => 'ch_blocks', 'delta' => 'send_msg_n_subscribe', 'no_subject' => TRUE/*, 'class' => 'block-om-maximenu'*/, 'shadow' => FALSE)/*, TRUE, '+31 day'*/ /*, ($user->uid ? '_logged' : NULL)*/);
@@ -165,7 +168,7 @@
         //echo '<div id="block-ch-blocks-follow-links"><div class="follow-us">Follow Us</div>', ch_blocks_get_headerLinks(), '</div>';
       ?>
       
-      <div class="c">Copyright © 2013 Cloud Hosting HQ | All rights reserved.</div>
+      
     </div>
   </footer> <!-- /#footer -->
 

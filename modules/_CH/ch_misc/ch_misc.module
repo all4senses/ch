@@ -4014,6 +4014,9 @@ function ch_misc_theme($existing, $type, $theme, $path) {
     'ch_misc_submenuSimple_twoColumns' => array(
       'variables' => array('vars' => null),
     ),
+    'ch_misc_submenuSimple_byColumns' => array(
+      'variables' => array('vars' => null),
+    ),
     'ch_misc_socialLinks' => array(
       'variables' => array('vars' => null),
     ),
@@ -4263,6 +4266,69 @@ function theme_ch_misc_submenuSimple_twoColumns($vars) {
   if(empty($vars['submenu']['below'])) {
     return NULL;
   }
+  $level = isset($vars['level']) ? $vars['level'] : 0;
+  $class = isset($vars['class']) ? $vars['class'] : 'om-links';
+  $delimiter = isset($vars['delimiter']) ? $vars['delimiter'] : '';
+  //$out = '<ul class="ch ' . $class . ' lvl-' . $level . '"><div class="col-1">';
+  $out = '<div class="ch ' . $class . ' lvl-' . $level . '"><div class="col-1">';
+  $count = 0;
+  $amount = count($vars['submenu']['below']);
+  $second = FALSE;
+  foreach ($vars['submenu']['below'] as $submenu) {
+    if (is_object($submenu)) {
+      $submenu = (array) $submenu;
+    }
+    if (isset($submenu['link']['hidden']) && $submenu['link']['hidden']) {
+      continue;
+    }
+    
+    if (!$second && $count > ($amount - 1)/2) {
+      $out .= '</div><div class="col-2">';
+      $second = TRUE;
+    }
+    
+    //$out .= ($count ? $delimiter : '') . '<li>';
+    $out .= ($count ? $delimiter : '') . '<div>';
+    if($level) {
+      for ($i = 0; $i < $level; $i++ ) {
+        $out .= '--';
+      }
+    }
+    $title = t($submenu['link']['link_title']);
+    if(isset($submenu['count']) && $submenu['count']) {
+      $title .= ' (' . $submenu['count'] . ')';
+    }
+    // If the field Description has '<nolink>' don't show link for this item
+    if(isset($submenu['link']['localized_options']['attributes']['title']) && strtolower($submenu['link']['localized_options']['attributes']['title']) == '<nolink>') {
+      $out .= $title;
+    }
+    else {
+      $out .= l($title, $submenu['link']['href']);
+    }
+    //$out .= '</li>';
+    $out .= '</div>';
+    if (!empty($submenu['below'])) {
+      // Recursion call.
+      //$out .= '<li>' . theme('ch_misc_submenuSimple', array('submenu' => $submenu, 'level' => ($level + 1), 'class' => $class, 'delimiter' => $delimiter )) . '</li>';
+      $out .= '<div>' . theme('ch_misc_submenuSimple', array('submenu' => $submenu, 'level' => ($level + 1), 'class' => $class, 'delimiter' => $delimiter )) . '</div>';
+    }
+    $count++;
+  }
+  //$out .= '</div></ul>';
+  $out .= '</div></div>';
+  return $out;
+}
+
+
+/**
+ * Simple theming of nested submenu, by columns.
+ */
+function theme_ch_misc_submenuSimple_byColumns($vars) {
+  if(empty($vars['submenu']['below'])) {
+    return NULL;
+  }
+  dpm($vars);
+  
   $level = isset($vars['level']) ? $vars['level'] : 0;
   $class = isset($vars['class']) ? $vars['class'] : 'om-links';
   $delimiter = isset($vars['delimiter']) ? $vars['delimiter'] : '';

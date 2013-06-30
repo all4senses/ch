@@ -400,7 +400,10 @@ function ch_blocks_get_footerLinks() {
     //$out = '<div class="title">' . l('Sitemap', 'sitemap') . '</div>' . theme('ch_misc_submenuSimple_twoColumns', array('submenu' => array('below' => $menu)/*, 'class' => 'menu', 'delimiter' => '<li> | </li>'*/)); // . '<div class="c">В© 2013 cloudhostinghq.com | All Rights Reserved</div>';
     
     ////$out = '<div class="title">' . l('Sitemap', 'sitemap') . '</div>' . theme('ch_misc_submenuSimple', array('submenu' => array('below' => $menu)/*, 'class' => 'menu', 'delimiter' => '<li> | </li>'*/)); // . '<div class="c">В© 2013 cloudhostinghq.com | All Rights Reserved</div>';
-    $out = theme('ch_misc_submenuSimple', array('submenu' => array('below' => $menu)/*, 'class' => 'menu'*/, 'delimiter' => '<li> | </li>')); // . '<div class="c">В© 2013 cloudhostinghq.com | All Rights Reserved</div>';
+    
+    //$out = theme('ch_misc_submenuSimple', array('submenu' => array('below' => $menu)/*, 'class' => 'menu'*/, 'delimiter' => '<li> | </li>')); // . '<div class="c">В© 2013 cloudhostinghq.com | All Rights Reserved</div>';
+    $out = theme('ch_misc_submenuSimple_byColumns', array('submenu' => array('below' => $menu)/*, 'class' => 'menu'*/, 'delimiter' => '<li> | </li>')); // . '<div class="c">В© 2013 cloudhostinghq.com | All Rights Reserved</div>';
+    
     
     cache_set($cid, $out, 'cache', strtotime('+31 day'));
   } 
