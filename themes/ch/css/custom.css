@@ -17,7 +17,7 @@ body.one-sidebar.sidebar-second #main {background: none repeat scroll 0 0 white;
 
 a, a:focus{ -webkit-appearance: none; outline: none;}
 
-#c-top{background: url(images/top-back3.jpg) repeat-x scroll 0 bottom #484848; height: 108px;}
+#c-top{background: url(images/top-back3.jpg) repeat-x scroll 0 bottom #484848; height: 125px;}
 .header{margin: auto; position: relative; width: 960px;}
 
 
@@ -95,7 +95,7 @@ input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-s
 
 
 
-#header #logo-block{color: #C5C5C5; left: 0; position: absolute; top: 3/*20*/px; z-index: 200;}
+#header #logo-block{color: #C5C5C5; left: 0; position: absolute; top: 8/*20*/px; z-index: 200;}
 #header #logo{float: left; margin-bottom: 0;}
 #header #logo-block .descr{float: left;}
 #header #logo-block .title{font-size: 26px; font-weight: bold; margin-top: 10px;}
@@ -173,7 +173,7 @@ div.error{border: none;}
 
 
 ul.ch{margin-left: 0px; padding-left: 10px;}
-.block.block-om-maximenu{/*left*/right: 0; position: absolute; top: 63px; z-index: 10; width: 620/*960*/px; /*background: url(images/main-menu-back.jpg) repeat-x scroll 0 0 #62b0f7;*/ height: 45px; border-radius: 10px 10px 0 0;}
+.block.block-om-maximenu{right: 0; position: absolute; top: 80px; z-index: 10; width: 620/*960*/px; /*background: url(images/main-menu-back.jpg) repeat-x scroll 0 0 #62b0f7;*/ height: 45px; border-radius: 10px 10px 0 0;}
 
 
 .om-btitle {float: left; position: absolute; left: -180px;}
