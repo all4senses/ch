@@ -1589,7 +1589,7 @@ body.one-sidebar.sidebar-second.page-get-iframe #main{background: none transpare
 #block-ch_blocks-footer_links .col {float: left; margin-right: 80px; min-width: 160px;}
 #block-ch_blocks-footer_links .title {font-size: 20px; color: white; margin-bottom: 20px;}
 
-#block-ch_blocks-footer_links ul {margin: 0; padding: 0;}
+#block-ch_blocks-footer_links ul {margin: 0;}
 #block-ch_blocks-footer_links li {list-style: disc; border-bottom: 1px dotted lightgray; padding: 7px 0 4px;}
 
 #block-ch_blocks-footer_links a {color: #aaaaaa; font-size: 15px;}
