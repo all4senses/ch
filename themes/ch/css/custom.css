@@ -208,7 +208,7 @@ body.not-admin #om-menu-main-om-menu li.om-leaf.leaf-write-review{background: no
 
 /*.om-maximenu ul.om-menu li.om-leaf:hover {background: url("images/main-menu-hover-li.png") no-repeat center bottom transparent;}*/
 #om-menu-main-om-menu li.om-leaf:hover a.om-link {color: black; text-shadow: none; background: url("images/main-menu-hover-a.jpg") repeat-x 0 0; overflow: hidden; border-radius: 0 0 5px 5px; border: 1px solid gray; padding-top: 5px; line-height: 38px; box-shadow: 3px 7px 7px -7px black; border-top: none; margin-top: 3px;}
-#om-menu-main-om-menu li.om-leaf:hover {background: none;}
+#om-menu-main-om-menu li.om-leaf:hover {/*background: none;*/}
 
 
 /*Make screen wide width for om submenu block */
