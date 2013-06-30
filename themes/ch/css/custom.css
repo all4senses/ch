@@ -130,7 +130,7 @@ ul.header-links a.Submit.Reviews{background: url("images/block-head-red.png") re
 
 /* Footer */
 
-#footer {color: lightgray; padding: 5px 0;}
+#footer {color: lightgray; padding: 5px 0; background: black; height: 150px; margin-top: 20px;}
 
 #footer .region-footer{width: 560px; margin: auto;}
 
