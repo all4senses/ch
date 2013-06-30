@@ -130,7 +130,7 @@ ul.header-links a.Submit.Reviews{background: url("images/block-head-red.png") re
 
 /* Footer */
 
-#footer {color: lightgray; padding: 5px 0; background: black; height: 150px; margin-top: 20px;}
+#footer {color: lightgray; padding: 5px 0; background: black; height: 230px; margin-top: 20px;}
 
 #footer .region-footer{width: 560px; margin: auto;}
 
@@ -1586,13 +1586,13 @@ body.one-sidebar.sidebar-second.page-get-iframe #main{background: none transpare
 
 #block-ch_blocks-footer_links {overflow: hidden; display: block; clear: both; margin: 20px auto 0;}
 
-#block-ch_blocks-footer_links .col {float: left; margin-right: 30px;}
-#block-ch_blocks-footer_links .title {font-size: 13px; color: white;}
+#block-ch_blocks-footer_links .col {float: left; margin-right: 80px; min-width: 160px;}
+#block-ch_blocks-footer_links .title {font-size: 20px; color: white; margin-bottom: 20px;}
 
 #block-ch_blocks-footer_links ul {margin: 0; padding: 0;}
-#block-ch_blocks-footer_links li {}
+#block-ch_blocks-footer_links li {list-style: disc; border-bottom: 1px dotted lightgray; padding: 7px 0 4px;}
 
-#block-ch_blocks-footer_links a {color: #aaaaaa; font-size: 13px;}
+#block-ch_blocks-footer_links a {color: #aaaaaa; font-size: 15px;}
 #block-ch_blocks-footer_links a:hover {color: white; text-decoration: underline;}
 
 
