@@ -1570,7 +1570,7 @@ body.one-sidebar.sidebar-second.page-get-iframe #main{background: none transpare
 
 
 /*#block-ch_blocks-footer_links {position: absolute; left: 840px; top: 110px;}*/
-
+/*
 #block-ch_blocks-footer_links {overflow: hidden; display: block; clear: both; margin: auto; width: 500px;}
 
 #block-ch_blocks-footer_links .title a{font-size: 13px; color: white; position: relative; top: -5px;}
@@ -1582,6 +1582,19 @@ body.one-sidebar.sidebar-second.page-get-iframe #main{background: none transpare
 #block-ch_blocks-footer_links a {color: #aaaaaa; font-size: 13px;}
 #block-ch_blocks-footer_links a:hover {color: white; text-decoration: underline;}
 #block-ch_blocks-footer_links .om-links a {margin-bottom: 8px; display: block;}
+*/
+
+#block-ch_blocks-footer_links {overflow: hidden; display: block; clear: both; margin: auto;}
+
+#block-ch_blocks-footer_links .col {float: left;}
+#block-ch_blocks-footer_links .title {font-size: 13px; color: white;}
+
+#block-ch_blocks-footer_links li {}
+
+#block-ch_blocks-footer_links a {color: #aaaaaa; font-size: 13px;}
+#block-ch_blocks-footer_links a:hover {color: white; text-decoration: underline;}
+
+
 
 
 .types-block.VoIP.Equipment {margin-top: 5px;}

@@ -4335,7 +4335,7 @@ function theme_ch_misc_submenuSimple_byColumns($vars) {
     foreach ($m['below'] as $sub_m) {
       $sub .= '<li>' . l($sub_m['link']['link_title'], $sub_m['link']['link_path']) . '</li>';
     }
-    $out .= '<div class="col"><div class="caption">' . $m['link']['link_title']. '</div><ul>' . $sub . '</ul></div>';
+    $out .= '<div class="col"><div class="title">' . $m['link']['link_title']. '</div><ul>' . $sub . '</ul></div>';
   }
   
   return $out;
