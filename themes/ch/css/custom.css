@@ -1642,6 +1642,7 @@ body.one-sidebar.sidebar-second.page-get-iframe #main{background: none transpare
 
 
 /* Home banner block */
+#block-ch-blocks-home-banner {position: relative;}
 #block-ch-blocks-home-banner h1 {position: absolute; left: 10px; top: 15px; width: 400px;}
 #block-ch-blocks-home-banner .banner_body {position: absolute; left: 10px; top: 120px; width: 450px;}
 
