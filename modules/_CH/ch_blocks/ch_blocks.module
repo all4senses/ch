@@ -349,7 +349,7 @@ function ch_blocks_getAdBlock($ad_name) {
         </div>
         <div class="sevice-block last">
           <div class="top-bar"></div>
-          <img alt="DS Hosting" title="Dedicated Servers" src="/sites/all/themes/ch/css/images/ds-icon.png" />
+          <img alt="Dedicated Servers" title="Dedicated Servers" src="/sites/all/themes/ch/css/images/ds-icon.png" />
           <h3>DS Hosting</h3>
           <div class="text">' . $data['ds_text']['value'] . '</div>
           <a href="/dedicated-servers" class="read-more"></a>
