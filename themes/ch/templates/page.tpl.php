@@ -155,7 +155,7 @@
 
       <!--<div id="in-touch"></div> -->
       
-      <div class="c">Copyright © 2013 Cloud Hosting HQ | All rights reserved.</div>
+      
       
       <?php 
         
@@ -171,4 +171,7 @@
       
     </div>
   </footer> <!-- /#footer -->
-
+  
+  <div id="under-footer">
+    <div class="c">Copyright © 2013 Cloud Hosting HQ | All rights reserved.</div>
+  </div>
