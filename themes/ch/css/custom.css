@@ -173,7 +173,7 @@ div.error{border: none;}
 
 
 ul.ch{margin-left: 0px; padding-left: 10px;}
-.block.block-om-maximenu{right: 0; position: absolute; top: 65px; z-index: 10; width: 660px; /*background: url(images/main-menu-back.jpg) repeat-x scroll 0 0 #62b0f7;*/ height: 45px; border-radius: 10px 10px 0 0;}
+.block.block-om-maximenu{right: 0; position: absolute; top: 65px; z-index: 10; /*width: 660px;*/ /*background: url(images/main-menu-back.jpg) repeat-x scroll 0 0 #62b0f7;*/ height: 45px; border-radius: 10px 10px 0 0;}
 
 
 .om-btitle {float: left; position: absolute; left: -180px;}
