@@ -49,8 +49,10 @@
           }
         }
         
-        dpm($_GET);
-        echo '<div class="float share">' . ch_blocks_getSocialiteButtons($url, $share_title) . '</div>';
+        //dpm($_GET);
+        if ($_GET['q'] != 'home') {
+          echo '<div class="float share">' . ch_blocks_getSocialiteButtons($url, $share_title) . '</div>';
+        }
       ?>
 
     <<?php echo (empty($node->title_h2)? 'h1' : 'h2' ); ?> class="preface" <?php /*echo preg_replace('/datatype=""/', '', $title_attributes);*/ if ($current_is_reviews) {echo ' property="dc:title v:summary"';} else {echo preg_replace('/datatype=""/', '', $title_attributes);} ?>>
