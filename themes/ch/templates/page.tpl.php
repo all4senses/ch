@@ -51,9 +51,11 @@
 
   
   <?php if ($page['highlighted']): ?>
-    <section id="highlighted" class="clearfix">
-      <?php print render($page['highlighted']); ?>
-    </section>
+    <div id="highlighted-wrapper">
+      <section id="highlighted" class="clearfix">
+        <?php print render($page['highlighted']); ?>
+      </section>
+    </div>
   <?php endif; ?>
   
   <div id="all-content-wrapper">
