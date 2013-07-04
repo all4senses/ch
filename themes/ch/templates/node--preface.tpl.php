@@ -48,7 +48,8 @@
             $share_title = $title;
           }
         }
-
+        
+        dpm($_GET);
         echo '<div class="float share">' . ch_blocks_getSocialiteButtons($url, $share_title) . '</div>';
       ?>
 
