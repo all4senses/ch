@@ -50,17 +50,23 @@
   
 
   
-  <?php if ($page['highlighted']): ?>
+  <?php /* if ($page['highlighted']): ?>
     <div id="highlighted-wrapper">
       <section id="highlighted" class="clearfix">
         <?php print render($page['highlighted']); ?>
       </section>
     </div>
-  <?php endif; ?>
+  <?php endif; */?>
   
   <div id="all-content-wrapper">
   <div id="all-content" class="clearfix">
       
+      
+      <?php if ($page['highlighted']): ?>
+          <section id="highlighted" class="clearfix">
+            <?php print render($page['highlighted']); ?>
+          </section>
+      <?php endif; ?>
       
     
       <section id="main" role="main" class="clearfix">
