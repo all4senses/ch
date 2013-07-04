@@ -327,7 +327,11 @@ function ch_blocks_getAdBlock($ad_name) {
   switch ($ad_name) {
     
     case 'home_banner':
+
       $data = unserialize(variable_get('ch_home_banner_block_data', NULL));
+      $url = 'http://cloudhostinghq.com';
+      $share_title = ch_misc_metatag_getFrontTitle();
+        
       return '<div class="float share">' . ch_blocks_getSocialiteButtons($url, $share_title) . '</div><h1>' . $data['title'] . '</h1><div class="banner_body">' . $data['body']['value'] . '</div><img alt="UNBIASED CLOUD HOSTING REVIEWS & COMPARISONS" title="UNBIASED CLOUD HOSTING REVIEWS & COMPARISONS" src="/sites/all/themes/ch/css/images/home-banner.jpg" />';
       
     case 'home_services':
