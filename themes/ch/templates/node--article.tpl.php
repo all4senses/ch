@@ -9,6 +9,8 @@
     $extra_data['guest_author'] = $author_name = !empty($extra_data['guest_author']) ? $extra_data['guest_author'] : NULL;
   }
 
+  dpm($extra_data);
+  
   if (!$extra_data['guest_author']) {
     $authorExtendedData = ch_misc_loadUserExtendedData($node->uid);
     $author_name = $authorExtendedData->realname;
