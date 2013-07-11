@@ -1667,7 +1667,12 @@ function ch_misc_getArticleTeaserData($target, $body_full_markup, $nid, $charact
   }
   $teaser_side_block = trim(drupal_substr($teaser, 0, $teaser_side_block_chars));
   $last_pos = strrpos($teaser_side_block, ' ');
-  $teaser_side_block = '<div class="teaser-content">' . substr_replace ($teaser_side_block, '...' . l('Read more', 'node/' . $nid, array('attributes' => array('class' => array('more')))), $last_pos) . '</div>';
+  if ($teaser_side_block) {
+    $teaser_side_block = '<div class="teaser-content">' . substr_replace ($teaser_side_block, '...' . l('Read more', 'node/' . $nid, array('attributes' => array('class' => array('more')))), $last_pos) . '</div>';
+  }
+  else {
+    $teaser_side_block = '<div class="teaser-content">' . l('Read more', 'node/' . $nid, array('attributes' => array('class' => array('more')))) . '</div>';
+  }
   
   // $teaser = text_summary($body_full_markup, 'full_html', $characters_num);
   $teaser = trim(drupal_substr($teaser, 0, $characters_num));
@@ -1682,8 +1687,12 @@ function ch_misc_getArticleTeaserData($target, $body_full_markup, $nid, $charact
   ////$teaser = substr_replace ($teaser, '...' . l('Read the rest of this entry В»', 'node/' . $nid, array('attributes' => array('class' => array('more')))), $last_pos);
   
   //$teaser = substr_replace ($teaser, '... ' . l('Read more В»', 'node/' . $nid, array('attributes' => array('class' => array('more')))), $last_pos);
-  $teaser = '<div class="teaser-content">' . substr_replace ($teaser, '... ' . l('Read more', 'node/' . $nid, array('attributes' => array('class' => array('more')))), $last_pos) . '</div>';
-  
+  if ($teaser) {
+    $teaser = '<div class="teaser-content">' . substr_replace ($teaser, '... ' . l('Read more', 'node/' . $nid, array('attributes' => array('class' => array('more')))), $last_pos) . '</div>';
+  }
+  else {
+    $teaser = '<div class="teaser-content">' . l('Read more', 'node/' . $nid, array('attributes' => array('class' => array('more')))) . '</div>';
+  }
   
   if ($only_teaser) {
     return $main_image_html . $teaser;
