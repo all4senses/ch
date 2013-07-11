@@ -1645,7 +1645,8 @@ body.one-sidebar.sidebar-second.page-get-iframe #main{background: none transpare
 /* Home banner block */
 #block-ch-blocks-home-banner {position: relative; margin: 0; overflow: hidden;}
 #block-ch-blocks-home-banner h1 {position: absolute; left: 10px; top: 15px; width: 400px;}
-#block-ch-blocks-home-banner .banner_body {position: absolute; left: 10px; top: 110px; width: 450px;}
+#block-ch-blocks-home-banner .banner_body {position: absolute; left: 15px; top: 100px; width: 400px;}
+#block-ch-blocks-home-banner ul {padding: 20px 0 0 0;}
 #block-ch-blocks-home-banner li {background: url(/sites/all/themes/ch/css/images/checkmark-green.png) no-repeat scroll 0 3px transparent; text-indent: 25px; padding: 0 0 3px 0;}
 
 /* Home services block */
