@@ -1537,7 +1537,7 @@ function ch_misc_getArticleTeaserData($target, $body_full_markup, $nid, $charact
     $body_full_markup = preg_replace('/<img[^>]+>/i', '', $body_full_markup);
     
     // Set No image for externally linked image.
-    if ( (strpos($main_image['src'], 'http') !== FALSE && !strpos($main_image['src'], 'cloudhostinghq.com')) || (!file_exists(ltrim(str_replace('http://cloudhostinghq.com/', '', $main_image['src']), '/') ) && !file_exists(ltrim(str_replace('http://test.cloudhostinghq.com/', '', $main_image['src']), '/') ))  ) {
+    if ( (strpos($main_image['src'], 'http') !== FALSE && !strpos($main_image['src'], 'cloudhostinghq.com')) || (!file_exists(ltrim(str_replace('http://cloudhostinghq.com/', '', $main_image['src']), '/') ) )  ) {
       $found_image = FALSE;
       //dpm($main_image);
       //dpm('$found_image = FALSE');
@@ -1560,7 +1560,6 @@ function ch_misc_getArticleTeaserData($target, $body_full_markup, $nid, $charact
     // Replace the old WP path for images with the new drupal img path.
     if (strpos($main_image['src'], 'http') !== FALSE) {
       $main_image['src'] = str_replace('http://cloudhostinghq.com/wp-content', 'f/img/wp-content', $main_image['src']);
-      $main_image['src'] = str_replace('http://test.cloudhostinghq.com/wp-content', 'f/img/wp-content', $main_image['src']);
     }
     
     $main_image['src'] = str_replace('%20', ' ', $main_image['src']);
@@ -1769,7 +1768,6 @@ function ch_misc_getStreamUriFromRelativePath($path) {
   $default_file_path = variable_get('file_' . $file_default_scheme . '_path', conf_path() . '/f');
 
   $stream_path = str_replace('http://cloudhostinghq.com', '', $path);
-  $stream_path = str_replace('http://test.cloudhostinghq.com', '', $stream_path);
   $stream_path = ltrim($stream_path, '/');
   return $file_default_scheme . '://' . str_replace($default_file_path . '/', '', $stream_path);
 }
