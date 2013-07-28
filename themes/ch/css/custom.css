@@ -1646,10 +1646,12 @@ body.one-sidebar.sidebar-second.page-get-iframe #main{background: none transpare
 
 /* Home banner block */
 #block-ch-blocks-home-banner {position: relative; margin: 0; overflow: hidden;}
-#block-ch-blocks-home-banner h1 {position: absolute; left: 10px; top: 15px; width: 400px;}
+/*#block-ch-blocks-home-banner h1 {position: absolute; left: 10px; top: 15px; width: 400px;}*/
+#block-ch-blocks-home-banner h1 {position: absolute; left: 10px; top: 25px; width: 350px; font-weight: 600; font-family: arial; font-size: 32px; line-height: 35px;}
 #block-ch-blocks-home-banner .banner_body {position: absolute; left: 15px; top: 100px; width: 400px;}
-#block-ch-blocks-home-banner ul {padding: 20px 0 0 0;}
-#block-ch-blocks-home-banner li {background: url(images/checkmark-blue.png) no-repeat scroll 0 0 transparent; text-indent: 25px; padding: 0 0 8px 0;}
+#block-ch-blocks-home-banner h4 {font-weight: normal; font-size: 15px; margin: 15px 0 17px 0;}
+#block-ch-blocks-home-banner ul {padding: 0;}
+#block-ch-blocks-home-banner li {background: url(images/checkmark-blue.png) no-repeat scroll 0 0 transparent; text-indent: 25px; padding: 0 0 8px 0; font-weight: 600;}
 
 /* Home services block */
 #block-ch-blocks-home-services .sevice-block {float: left; width: 320px; text-align: center;}
