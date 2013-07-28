@@ -185,7 +185,7 @@ ul.ch{margin-left: 0px; padding-left: 10px;}
 /*.om-maximenu.om-maximenu-block ul.om-menu {width: 960px;}*/
 
 
-#om-menu-main-om-menu li.om-leaf{position: relative; height: 42px; z-index: 400; padding: 0 8px 3px 2px; margin: 0 2px; background: url(/sites/all/themes/ch/css/images/menu-devisor.png) no-repeat scroll right 11px transparent;}
+#om-menu-main-om-menu li.om-leaf{position: relative; height: 42px; z-index: 400; padding: 0 8px 3px 2px; margin: 0 2px; background: url(images/menu-devisor.png) no-repeat scroll right 11px transparent;}
 #om-menu-main-om-menu li.om-leaf.first {margin-left: 30px;}
 #om-menu-main-om-menu li.om-leaf.last {background: none;}
 
@@ -1035,7 +1035,7 @@ margin-top: 100px;
 
 
 .ch_votes{float: left; width: 280px; margin: 0 10px 0 30px; padding: 10px 8px 6px; border: 1px solid lightgray; border-radius: 5px;}
-.ch_votes .caption{background: url(/sites/all/themes/ch/css/images/chart-th-back.jpg) repeat-x 0 bottom transparent; color: white; font-weight: bold; padding: 7px 0 6px 10px; border-radius: 5px; margin-bottom: 5px; }
+.ch_votes .caption{background: url(images/chart-th-back.jpg) repeat-x 0 bottom transparent; color: white; font-weight: bold; padding: 7px 0 6px 10px; border-radius: 5px; margin-bottom: 5px; }
 .ch_votes .caption span{float: left; margin-right: 10px;}
 .ch_votes .data{padding: 0 0 0px 0;}
 .ch_vote{clear: both; height: 25px; background: #c8ebff; border-radius: 5px; margin-top: 5px; padding: 3px 0;}
@@ -1640,6 +1640,8 @@ body.one-sidebar.sidebar-second.page-get-iframe #main{background: none transpare
 .ch-captcha #code{color: gray; font-size: 11px; clear: both; margin-top: 7px;}
 #ct_captcha {background: white;}
 
+ 
+
 
 
 /* Home banner block */
@@ -1647,7 +1649,7 @@ body.one-sidebar.sidebar-second.page-get-iframe #main{background: none transpare
 #block-ch-blocks-home-banner h1 {position: absolute; left: 10px; top: 15px; width: 400px;}
 #block-ch-blocks-home-banner .banner_body {position: absolute; left: 15px; top: 100px; width: 400px;}
 #block-ch-blocks-home-banner ul {padding: 20px 0 0 0;}
-#block-ch-blocks-home-banner li {background: url(/sites/all/themes/ch/css/images/checkmark-green.png) no-repeat scroll 0 3px transparent; text-indent: 25px; padding: 0 0 3px 0;}
+#block-ch-blocks-home-banner li {background: url(images/checkmark-blue.png) no-repeat scroll 0 3px transparent; text-indent: 25px; padding: 0 0 3px 0;}
 
 /* Home services block */
 #block-ch-blocks-home-services .sevice-block {float: left; width: 320px; text-align: center;}
