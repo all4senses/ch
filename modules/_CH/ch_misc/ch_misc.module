@@ -376,6 +376,7 @@ function ch_misc_getTrackingUrl($title_or_wrapped_object, $subpath = NULL, $nid 
   // Make a path looks like /go/nextiva
   $subpath = str_replace('reviews/', '', $subpath);
   
+  
   if ($service_type) {
     $subpath .= '/' . $service_type;
   }
@@ -5391,7 +5392,7 @@ function ch_misc_getProviderQuickData($target, $data) {
       $out = '';
       
       if (!empty($all_data_quick[$data['data']->nid][$data['service_type']]['s-url'])) {
-        $out .= ch_misc_getTrackingUrl('Visit site', NULL, $data['data']->nid, NULL, 'site-link', $all_data_quick[$data['data']->nid][$data['service_type']]['s-url']);
+        $out .= ch_misc_getTrackingUrl('Visit site', NULL, $data['data']->nid, NULL, 'site-link', $data['service_type']);
       }
       elseif (!empty($all_data_quick[$data['data']->nid]['i_web'])) {
         $out .= ch_misc_getTrackingUrl('Visit site', NULL, $data['data']->nid, NULL, 'site-link');
