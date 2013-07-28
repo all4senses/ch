@@ -2722,7 +2722,7 @@ function ch_pages_validateForm_provider(&$form, &$form_state) {
   $p_data_quick['coupon'] = array('offers' => $p_data['info']['coupon_field']['offers'], 'link' => $p_data['info']['coupon_field']['link']);
 
   
-  // Define all provider's
+  // Define all provider's types
   foreach ($form_state['values']['field_p_types']['und'] as $field_p_type) {
     $provider_types[] = $field_p_type['value'];
   }
@@ -2738,9 +2738,10 @@ function ch_pages_validateForm_provider(&$form, &$form_state) {
         
         $p_data_quick[$service_type_short]['sp'] = isset($service['sp']) ? $service['sp'] : '';
         $p_data_quick[$service_type_short]['bw'] = isset($service['bw']) ? $service['bw'] : '';
+        $p_data_quick[$service_type_short]['s-url'] = isset($service['s-url']) ? $service['s-url'] : '';
         
         // YouTube video ID
-        if (isset($service['vr-y']) && $service['vr-y']) {
+        if (!empty($service['vr-y'])) {
           // Allow to enter direct YouTube url and then parse it to save just a video ID.
           if (preg_match('|^.*v=(.*)&.*$|', $service['vr-y'], $matches)) {
             $p_data_quick[$service_type_short]['vr-y'] = $matches[1];
