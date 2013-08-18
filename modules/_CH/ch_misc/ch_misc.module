@@ -4330,10 +4330,15 @@ function theme_ch_misc_submenuSimple_byColumns($vars) {
   
   $out = '';
   foreach ($vars['submenu']['below'] as $m) {
+    if ($m['link']['hidden']) {
+      continue;
+    }
     $sub = '';
-    dpm($m['below']);
+    //dpm($m['below']);
     foreach ($m['below'] as $sub_m) {
-      $sub .= '<li>' . l($sub_m['link']['link_title'], $sub_m['link']['link_path']) . '</li>';
+      if (!$sub_m['link']['hidden']) {
+        $sub .= '<li>' . l($sub_m['link']['link_title'], $sub_m['link']['link_path']) . '</li>';
+      }
     }
     $out .= '<div class="col"><div class="title">' . $m['link']['link_title']. '</div><ul>' . $sub . '</ul></div>';
   }
