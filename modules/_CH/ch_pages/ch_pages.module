@@ -1222,6 +1222,7 @@ function ch_pages_form_alter(&$form, &$form_state, $form_id) {
   switch ($form_id) {
     
     case 'taxonomy_form_term':
+      dpm($form);
       // Restore the Metatag fields data.
       $query = db_select('metatag', 'm');
       $query->fields('m', array('data'))
@@ -1332,7 +1333,7 @@ function ch_pages_form_alter(&$form, &$form_state, $form_id) {
             );
             $form['bottom_text']['center_text'] = array(
               '#type' => 'textarea',
-              '#title' => t('Р РЋenter text'),
+              '#title' => t('Р В Р Р‹enter text'),
               //'#description' => t(''),
               '#default_value' => isset($data['bottom_text']['center_text']) ? $data['bottom_text']['center_text'] : '',
             );
