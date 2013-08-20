@@ -1221,22 +1221,22 @@ function ch_pages_form_alter(&$form, &$form_state, $form_id) {
   
   switch ($form_id) {
     
-    case 'taxonomy_form_term':
-      dpm($form);
-      //break;
-      // Restore the Metatag fields data.
-      $query = db_select('metatag', 'm');
-      $query->fields('m', array('data'))
-            ->condition('entity_type', 'taxonomy_term')
-            ->condition('entity_id', $form['#term']['tid']); 
-      $metatags = $query->execute()->fetchField(); 
-      if ($metatags) {
-        $metatags = unserialize($metatags);
-        foreach ($metatags as $key => $value) {
-          $form['metatags'][$key]['value']['#default_value'] = $value['value'];
-        }
-      }
-      break;
+//    case 'taxonomy_form_term':
+//      dpm($form);
+//      //break;
+//      // Restore the Metatag fields data.
+//      $query = db_select('metatag', 'm');
+//      $query->fields('m', array('data'))
+//            ->condition('entity_type', 'taxonomy_term')
+//            ->condition('entity_id', $form['#term']['tid']); 
+//      $metatags = $query->execute()->fetchField(); 
+//      if ($metatags) {
+//        $metatags = unserialize($metatags);
+//        foreach ($metatags as $key => $value) {
+//          $form['metatags'][$key]['value']['#default_value'] = $value['value'];
+//        }
+//      }
+//      break;
     
     case 'user_login_block':
     case 'user_login':
