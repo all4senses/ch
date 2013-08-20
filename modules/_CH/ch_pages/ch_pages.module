@@ -1223,7 +1223,7 @@ function ch_pages_form_alter(&$form, &$form_state, $form_id) {
     
     case 'taxonomy_form_term':
       dpm($form);
-      break;
+      //break;
       // Restore the Metatag fields data.
       $query = db_select('metatag', 'm');
       $query->fields('m', array('data'))
