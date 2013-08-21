@@ -301,7 +301,6 @@
   };
 
   Drupal.autocomplete_deluxe.MultipleWidget.Item.prototype.remove = function() {
-    alert("REMOVE");
     this.element.remove();
     var values = this.widget.valueForm.val();
     var escapedValue = Drupal.autocomplete_deluxe.escapeRegex( this.item.value );

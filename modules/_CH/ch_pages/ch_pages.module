@@ -1221,9 +1221,9 @@ function ch_pages_form_alter(&$form, &$form_state, $form_id) {
   
   switch ($form_id) {
     
-//    case 'taxonomy_form_term':
-//      dpm($form);
-//      //break;
+    case 'taxonomy_form_term':
+//      //dpm($form);
+
 //      // Restore the Metatag fields data.
 //      $query = db_select('metatag', 'm');
 //      $query->fields('m', array('data'))
@@ -1236,7 +1236,9 @@ function ch_pages_form_alter(&$form, &$form_state, $form_id) {
 //          $form['metatags'][$key]['value']['#default_value'] = $value['value'];
 //        }
 //      }
-//      break;
+      break;
+
+    
     
     case 'user_login_block':
     case 'user_login':
@@ -2611,7 +2613,7 @@ function ch_pages_submitForm_saveDraft(&$form, &$form_state) {
  */
 function ch_pages_validateForm_provider(&$form, &$form_state) {
    
-  dpm($form_state);
+  //dpm($form_state);
   //dpm($form_state['values']['wp_fields']);
   
   //$p_data['wp_fields'] = $form_state['values']['wp_fields'];
