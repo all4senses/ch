@@ -120,7 +120,10 @@
                     </div>
                     <div class="text">
                       <div class="title"><?php $node->field_p_name['und'][0]['value']  . ' Overall Rated:'; ?></div>
-                      <?php echo '<a id="' . ($node->ch_voters ? 'write-review' : 'write-review-first') . '" href="' . url('node/' . $node->nid, array('fragment' => 'tabs-3')) . '"><img src="/f/img/writeareview.png" /></a>'; ?>
+                      <?php 
+                        //echo '<a id="' . ($node->ch_voters ? 'write-review' : 'write-review-first') . '" href="' . url('node/' . $node->nid, array('fragment' => 'tabs-3')) . '"><img src="/f/img/writeareview.png" /></a>'; 
+                        echo '<a id="' . ($node->ch_voters ? 'write-review' : 'write-review-first') . '" href="' . url('node/add/review', array('query' => array('id' => $node->nid))) . '"><img src="/f/img/writeareview.png" /></a>'; 
+                      ?>
                     </div>
                     
                   </div>
