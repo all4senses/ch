@@ -24,6 +24,23 @@
     $author_title = t('!author\'s profile', array('!author' => $author_name));
   }
   
+  
+  
+  
+  
+  
+  
+  // Set Ruben as an author for all articles.
+  $author_name = 'Reuben Yonatan';
+  $author_url = url('user/47');
+  $gplus_profile = '<a class="gplus-hidden" title="Google+ profile of ' . $author_name . '" href="' . 'https://plus.google.com/u/0/113381815259010930707' . '?rel=author"></a>';
+  $author_title = t('!author\'s profile', array('!author' => $author_name));
+    
+    
+    
+  
+  
+  
   if($view_mode == 'side_block_teaser') {
     $side_block_teaser = TRUE;
   }
