@@ -147,7 +147,7 @@
                   
                   ?>
                   
-                  <li><a href="#tabs-3"><?php echo 'Write Review'; ?></a></li>
+                  <?php /* <li><a href="#tabs-3"><?php echo 'Write Review'; ?></a></li> */ ?>
                   
                 </ul>
                 
@@ -219,7 +219,7 @@
                 
                 
                 
-                
+                <?php /*
                 
                 <div id="tabs-3">
                   
@@ -251,6 +251,8 @@
                   
                   <div class="bottom-clear"></div>
                 </div>
+                
+                */ ?>
                 
                 
                
