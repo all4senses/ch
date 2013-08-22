@@ -1451,6 +1451,11 @@ function ch_pages_form_alter(&$form, &$form_state, $form_id) {
               '#title' => 'Service Availability',
               '#default_value' => isset($p_data['info']['i_availability']) ? $p_data['info']['i_availability'] : '',
             );
+            $form['data_info']['i_mbg'] = array(
+              '#type' => 'textfield',
+              '#title' => 'Money Back Guarantee',
+              '#default_value' => isset($p_data['info']['i_mbg']) ? $p_data['info']['i_mbg'] : '',
+            );
             $form['data_info']['i_web'] = array(
               '#type' => 'textfield',
               '#title' => 'Web Site',
