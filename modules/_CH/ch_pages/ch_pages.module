@@ -2021,7 +2021,7 @@ function ch_pages_form_alter(&$form, &$form_state, $form_id) {
           
       $form['provider'] = array(
         '#type' => 'fieldset',
-        '#title' => t('Step 2: Your VoIP Provider Details'),
+        '#title' => 'Step 2: Your VoIP Provider Details',
         //'#collapsible' => TRUE,
         //'#collapsed' => FALSE,
         '#weight' => -10,
@@ -2055,7 +2055,7 @@ function ch_pages_form_alter(&$form, &$form_state, $form_id) {
       $votes = array();
       $form['ureview'] = array(
         '#type' => 'fieldset',
-        '#title' => t('Step 3: Rate and Review Your VoIP Provider'),
+        '#title' => 'Step 3: Rate and Review Your VoIP Provider',
         '#weight' => -4,
       );
           

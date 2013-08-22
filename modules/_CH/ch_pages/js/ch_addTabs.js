@@ -6,6 +6,9 @@
         //console.log('Tabs!');
         $( ".data.tabs" ).tabs();
              
+            
+        // Buttun to go to the tab to Write review right on the provider page
+        /*
         $( "a#write-review-first" ).click(function(){
           $( ".data.tabs" ).tabs( { selected: 2 } );
           var aTag = $("a[name='provider-tabs']");
@@ -19,7 +22,7 @@
           $('html,body').animate({scrollTop: aTag.offset().top},'slow');
           return false;
         });
-        
+        */
     }
   };
 
