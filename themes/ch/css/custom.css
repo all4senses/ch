@@ -1664,10 +1664,9 @@ body.one-sidebar.sidebar-second.page-get-iframe #main{background: none transpare
 
 
 
-
 /* Template page--compare_providers.tpl.php with .page-compare-providers */
 .page-compare-providers table,
-.page-compare-providers #block-gv-blocks-preface-bottom-w-latest-articles {width: 930px;}
+.page-compare-providers #block-ch-blocks-preface-bottom-w-latest-articles {width: 930px;}
 
 .page-compare-providers #bottom-with-latest-articles.with-articles .field-name-field-preface-bottom {width: 590px;}
 body.one-sidebar.sidebar-second .page-compare-providers #main {width: 930px;}
