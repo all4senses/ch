@@ -544,6 +544,13 @@ function ch_process_page(&$variables) {
   
   if(isset($variables['node'])) {
     $variables['theme_hook_suggestions'][] = 'page__' . $variables['node']->type;
+    
+    if ($variables['node']->type == 'preface') {
+      $pages_with_separate_tpl = array('shared-hosting');
+      if (in_array(@$variables['node']->field_preface_key['und'][0]['value'], $pages_with_separate_tpl) && arg(2) != 'edit') {
+        $variables['theme_hook_suggestions'][] = 'page__compare_providers';
+      }
+    }
   }
   elseif (arg(0) == 'get' && @arg(1) == 'iframe') {
     module_invoke('admin_menu', 'suppress');
