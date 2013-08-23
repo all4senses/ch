@@ -1721,13 +1721,25 @@ function ch_pages_form_alter(&$form, &$form_state, $form_id) {
               
                   // Descriptions fields
                   foreach ($service_descriptions as $service_description_key => $service_description_title) {
-                    
-                    $form['s'][$service_type_key][$service_description_key] = array(
-                      '#type' => 'textfield',
-                      '#title' => $service_description_title,
-                      '#default_value' => isset($p_data['s'][$service_type_key][$service_description_key]) ? $p_data['s'][$service_type_key][$service_description_key] : '',
-                                          //$p_data['s']['re']['pti']
-                    );
+                  
+                    if ($service_description_key == 'trend') {
+                      $default_value = isset($p_data['s'][$service_type_key][$service_description_key]) ? $p_data['s'][$service_type_key][$service_description_key] : 0; //$p_data['s']['re']['pti']
+                      $options = array(-1 => 'Negative', 0 => 'No Change', 1 => 'Positive');
+                      $form['s'][$service_type_key][$service_description_key] = array(
+                        '#type' => 'radios',
+                        '#title' => $service_description_title,
+                        '#options' => $options,
+                        '#default_value' => $default_value,
+                      );
+                    }
+                    else {
+                      $default_value = isset($p_data['s'][$service_type_key][$service_description_key]) ? $p_data['s'][$service_type_key][$service_description_key] : ''; //$p_data['s']['re']['pti']
+                      $form['s'][$service_type_key][$service_description_key] = array(
+                        '#type' => 'textfield',
+                        '#title' => $service_description_title,
+                        '#default_value' => $default_value,
+                      );
+                    }
                     
                   }
                   
@@ -1790,7 +1802,8 @@ function ch_pages_form_alter(&$form, &$form_state, $form_id) {
             } // End of foreach ($service_types as $service_type => $service_type_short) {
       
             
-              
+       
+
                   
       //$form['field_p_types']['#suffix'] = '<div class="bottom-clear"></div>';
       
