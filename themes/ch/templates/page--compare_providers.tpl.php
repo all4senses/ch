@@ -1,4 +1,4 @@
-<div id="c-top"  class="page-compare-providers">
+<div id="c-top">
 
     <header id="header" role="banner" class="clearfix">
 
@@ -58,7 +58,8 @@
     </div>
   <?php endif; */?>
   
-  <div id="all-content-wrapper">
+<div id="all-content-wrapper" class="page-compare-providers">
+  
   <div id="all-content" class="clearfix">
       
     
