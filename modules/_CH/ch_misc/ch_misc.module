@@ -5526,6 +5526,7 @@ function ch_misc_getProviderQuickData($target, $data) {
     case 'trend':
       
       $all_data_quick = ch_misc_getProvidersDataQuick();
+      //dpm($all_data_quick);
       
       return isset($all_data_quick[$data['data']->nid][$data['service_type']]['trend']) ? $all_data_quick[$data['data']->nid][$data['service_type']]['trend'] : 0;
     

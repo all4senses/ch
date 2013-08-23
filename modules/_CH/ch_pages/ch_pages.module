@@ -2716,6 +2716,7 @@ function ch_pages_validateForm_provider(&$form, &$form_state) {
   // Save some more aggregated data to other field
   $p_data_quick['name'] = $form_state['values']['field_p_name']['und'][0]['value'];
   $p_data_quick['i_web'] = isset($p_data['info']['i_web']) ? $p_data['info']['i_web'] : '';
+  $p_data_quick['i_mbg'] = isset($p_data['info']['i_mbg']) ? $p_data['info']['i_mbg'] : '';
 
   
   // Prepare details exerpt field for Providers page.
@@ -2761,6 +2762,8 @@ function ch_pages_validateForm_provider(&$form, &$form_state) {
         $p_data_quick[$service_type_short]['sp'] = isset($service['sp']) ? $service['sp'] : '';
         $p_data_quick[$service_type_short]['bw'] = isset($service['bw']) ? $service['bw'] : '';
         $p_data_quick[$service_type_short]['s-url'] = isset($service['s-url']) ? $service['s-url'] : '';
+        $p_data_quick[$service_type_short]['trend'] = isset($service['trend']) ? $service['trend'] : 0;
+        
         
         // YouTube video ID
         if (!empty($service['vr-y'])) {
