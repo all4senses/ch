@@ -1,4 +1,4 @@
-<div id="c-top">
+<div id="c-top"  class="page-compare-providers">
 
     <header id="header" role="banner" class="clearfix">
 
