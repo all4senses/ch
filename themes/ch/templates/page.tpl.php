@@ -85,7 +85,7 @@
         
           <?php 
           
-          dpm($_SESSION);
+          dpm($_SESSION['messages']);
           dpm($messages);
           dpm(drupal_get_messages());
 
