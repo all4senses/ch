@@ -5522,7 +5522,13 @@ function ch_misc_getProviderQuickData($target, $data) {
                 ? '<a class="yt-direct" href="http://www.youtube.com/embed/' . $all_data_quick[$data['data']->nid][$data['service_type']]['vr-y'] . '?rel=0&amp;wmode=transparent" title="' . $all_data_quick[$data['data']->nid]['name'] . ' Video Review">Watch</a>'
                 : '';
       
-            
+    
+    case 'trend':
+      
+      $all_data_quick = ch_misc_getProvidersDataQuick();
+      
+      return isset($all_data_quick[$data['data']->nid][$data['service_type']]['trend']) ? $all_data_quick[$data['data']->nid][$data['service_type']]['trend'] : 0;
+    
       
       
     case 'monthly':
