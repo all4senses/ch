@@ -13,7 +13,8 @@
       </div>
       
       <?php 
-          global $user;
+
+          dpm($_SESSION);
 
 //        if ($user->uid == 1) {
           echo /*'<a id="itexpo" href="http://cloudhostinghq.com/blog/tags/itexpo-2012"></a>',*/ render($page['header']); 
