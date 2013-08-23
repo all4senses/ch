@@ -86,7 +86,7 @@
           <?php 
           
           //dpm($_SESSION['messages']);
-          dpm($messages);
+          //dpm($messages);
           
 
           print $messages; 
