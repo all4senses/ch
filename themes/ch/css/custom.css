@@ -672,6 +672,10 @@ form .counter.exceeded{color: red;}
 #outer-box legend{font-size: 25px; padding: 0 7px 0 7px; color: #478AFD;}
 .ch-edit-review-page legend{font-size: 22px; padding: 0 7px 0 7px; color: #478AFD;}
 
+#edit-s .fieldset-wrapper .fieldset-title {color: darkblue; font-size: 17px; padding: 10px 0 5px; display: block;}
+
+#edit-s-sh-trend {margin-bottom: 20px; overflow: hidden;}
+#edit-s-sh-trend div {float: left;}
 
 #edit-about-you input{width: 100%;}
 #edit-about-you .form-item-field-r-fname-temp{float: left; width: 300px; margin-top: 0;}
