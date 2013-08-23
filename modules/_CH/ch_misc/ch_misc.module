@@ -381,7 +381,7 @@ function ch_misc_getTrackingUrl($title_or_wrapped_object, $subpath = NULL, $nid 
     $subpath .= '/' . $service_type;
   }
   
-  $trackingUrl = '<a href="/click' . $subpath . '" target = "_blank"' . ($a_class ? ' class="' . $a_class . '"' : '') . '>' . $title_or_wrapped_object . '</a>';
+  $trackingUrl = '<a href="/click' . $subpath . '" target = "_blank"' . ($a_class ? ' class="' . $a_class . '"' : '') . ' rel="nofollow">' . $title_or_wrapped_object . '</a>';
   
   return $trackingUrl;
 }
