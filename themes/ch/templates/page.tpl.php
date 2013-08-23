@@ -14,7 +14,7 @@
       
       <?php 
 
-          dpm($_SESSION);
+          
 
 //        if ($user->uid == 1) {
           echo /*'<a id="itexpo" href="http://cloudhostinghq.com/blog/tags/itexpo-2012"></a>',*/ render($page['header']); 
@@ -85,7 +85,11 @@
         
           <?php 
           
-            print $messages; 
+          dpm($_SESSION);
+          dpm($messages);
+          dpm(drupal_get_messages());
+
+          print $messages; 
             // we aren't getting messages, get them manually
 //            if (isset($_SESSION['messages'])) {
 //                echo '<div class="messages">';
