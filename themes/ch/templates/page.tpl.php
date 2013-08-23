@@ -86,8 +86,8 @@
           <?php 
           
           //dpm($_SESSION['messages']);
-          //dpm($messages);
-          dpm(drupal_get_messages());
+          dpm($messages);
+          
 
           print $messages; 
             // we aren't getting messages, get them manually
