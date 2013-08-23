@@ -86,7 +86,7 @@
           <?php 
           
           //dpm($_SESSION['messages']);
-          dpm($messages);
+          //dpm($messages);
           //dpm(drupal_get_messages('status'));
 
           print $messages; 
