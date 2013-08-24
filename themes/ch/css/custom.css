@@ -413,7 +413,7 @@ border-radius: 5px;}
 
 
 .view-display-id-page_chart_providers th a,
-.view-providers th a{color: yellow; display: block; font-size: 15px; font-weight: bold;}
+.view-providers th a{color: yellow; display: block; font-size: 15px; font-weight: bold; background: url("images/arrow-asc-desc.png") no-repeat 0 0 transparent;}
 
 
 .view-display-id-page_chart_providers .view-providers td,
