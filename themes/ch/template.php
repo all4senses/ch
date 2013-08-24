@@ -12,6 +12,26 @@ function ch_preprocess_user_profile(&$profile) {
 
 
 /**
+ * Returns HTML for a sort icon.
+ *
+ * @param $variables
+ *   An associative array containing:
+ *   - style: Set to either 'asc' or 'desc', this determines which icon to show.
+ */
+function ch_tablesort_indicator($variables) {
+  
+  $path_to_current_theme = drupal_get_path('theme',$GLOBALS['theme']) . '/css/';
+    
+  if ($variables['style'] == "asc") {
+    return theme('image', array('path' => $path_to_current_theme . 'arrow-asc.png', 'width' => 13, 'height' => 13, 'alt' => t('sort ascending'), 'title' => t('sort ascending')));
+  }
+  else {
+    return theme('image', array('path' => $path_to_current_theme . 'arrow-desc.png', 'width' => 13, 'height' => 13, 'alt' => t('sort descending'), 'title' => t('sort descending')));
+  }
+}
+
+
+/**
  * Implements theme_link();
  * 
  * Add rel=nofollow to external links.
