@@ -1099,7 +1099,7 @@ margin-top: 100px;
 .view-display-id-block_all_reviews .node-review .main-content .content,
 .page-providers-reviews #main .node-review .main-content .content,
 .page-node #main .node-review .main-content .content, 
-.node-type-review #main .main-content .content{margin: 0; padding: 5px 10px 15px 10px; position: relative;} 
+
 
 #main h2.rcaption, #main h3.rcaption{font-size: 17px; color: white; font-weight: bold; background: none repeat scroll 0 0 #c2c2c2; border: medium none; margin: 5px; padding: 7px 0 7px 10px;}
 
@@ -1110,7 +1110,7 @@ h2.rcaption a, h3.rcaption a, /*.node-review*/ h3.rcaption a:hover{color: white;
 
 .node-type-review #main .main-content h1{padding: 0 10px;  display: block; font-size: 28px;}
 .node-type-review #main .main-content .submitted{display: block; padding: 0 0 10px 10px;}
-.node-type-review #main .main-content .content{margin: auto; padding: 20px 0 10px 0; width: 800px;}
+.node-type-review #main .main-content .content{margin: auto; padding: 20px 0 10px 0; position: relative; width: 670px;}
 
 
 .node-review .ch_votes, .node-type-review .ch_votes{margin: 0; font-size: 15px;}
