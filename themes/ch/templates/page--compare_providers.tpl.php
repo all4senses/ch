@@ -94,42 +94,55 @@
           <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
           
           <?php print render($page['above_content']); ?>
-          <?php if ($page['sidebar_second']): ?>
-            <aside id="sidebar-second" role="complementary" class="sidebar clearfix">
-              <?php print render($page['sidebar_second']); ?>
-            </aside>  <!-- /#sidebar-second -->
-          <?php endif; ?>
-
+          
+          
           <?php print render($page['content']); ?>
           
+          <div id="below">
+            
+            <?php if ($page['below_content']): ?>
+                <div id="below_content">
+                  <?php print render($page['below_content']); ?>
+                </div>
+            <?php endif; ?>
+
+            <?php if ($page['sidebar_second']): ?>
+              <aside id="sidebar-second" role="complementary" class="sidebar clearfix">
+                <?php print render($page['sidebar_second']); ?>
+              </aside>  <!-- /#sidebar-second -->
+            <?php endif; ?>
+
+          </div>
+          
           <?php 
-          //global $user;
-//          $pages_with_timestamp = array(
-//            '/compare-business-voip-providers', 
-//            '/business-voip-reviews', 
-//            '/compare-residential-voip-providers', 
-//            '/best-voip-service-providers',
-//            '/residential-voip-reviews', 
-//            '/sip-trunking-providers',
-//            '/internet-fax-service-providers',
-//            '/providers/reviews', 
-//            '/about-voip-services', 
-//            '/blog', 
-//            '/news', 
-//            '/voip-provider-submit-user-review',
-//            '/about-us',
-//            '/contact-us',
-//            '/advertise',
-//            '/press',
-//            '/privacy-policy',
-//            '/terms-of-use',
-//            '/our-team',
-//          );
-//          //if ($user->uid == 1) {
-//          if($is_front || in_array($_SERVER['REDIRECT_URL'], $pages_with_timestamp))
-//            echo ch_misc_lastUpdatedStamp();
+            /*
+          $pages_with_timestamp = array(
+            '/compare-business-voip-providers', 
+            '/business-voip-reviews', 
+            '/compare-residential-voip-providers', 
+            '/best-voip-service-providers',
+            '/residential-voip-reviews', 
+            '/sip-trunking-providers',
+            '/internet-fax-service-providers',
+            '/providers/reviews', 
+            '/about-voip-services', 
+            '/blog', 
+            '/news', 
+            '/voip-provider-submit-user-review',
+            '/about-us',
+            '/contact-us',
+            '/advertise',
+            '/press',
+            '/privacy-policy',
+            '/terms-of-use',
+            '/our-team',
+          );
+          //if ($user->uid == 1) {
+          if($is_front || in_array($_SERVER['REDIRECT_URL'], $pages_with_timestamp))
+            echo ch_misc_lastUpdatedStamp();
               
           //}
+          */
           ?>
           
       </section> <!-- /#main -->

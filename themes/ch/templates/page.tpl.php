@@ -118,33 +118,34 @@
           <?php print render($page['content']); ?>
           
           <?php 
-          //global $user;
-//          $pages_with_timestamp = array(
-//            '/compare-business-voip-providers', 
-//            '/business-voip-reviews', 
-//            '/compare-residential-voip-providers', 
-//            '/best-voip-service-providers',
-//            '/residential-voip-reviews', 
-//            '/sip-trunking-providers',
-//            '/internet-fax-service-providers',
-//            '/providers/reviews', 
-//            '/about-voip-services', 
-//            '/blog', 
-//            '/news', 
-//            '/voip-provider-submit-user-review',
-//            '/about-us',
-//            '/contact-us',
-//            '/advertise',
-//            '/press',
-//            '/privacy-policy',
-//            '/terms-of-use',
-//            '/our-team',
-//          );
-//          //if ($user->uid == 1) {
-//          if($is_front || in_array($_SERVER['REDIRECT_URL'], $pages_with_timestamp))
-//            echo ch_misc_lastUpdatedStamp();
+          /*
+          $pages_with_timestamp = array(
+            '/compare-business-voip-providers', 
+            '/business-voip-reviews', 
+            '/compare-residential-voip-providers', 
+            '/best-voip-service-providers',
+            '/residential-voip-reviews', 
+            '/sip-trunking-providers',
+            '/internet-fax-service-providers',
+            '/providers/reviews', 
+            '/about-voip-services', 
+            '/blog', 
+            '/news', 
+            '/voip-provider-submit-user-review',
+            '/about-us',
+            '/contact-us',
+            '/advertise',
+            '/press',
+            '/privacy-policy',
+            '/terms-of-use',
+            '/our-team',
+          );
+          //if ($user->uid == 1) {
+          if($is_front || in_array($_SERVER['REDIRECT_URL'], $pages_with_timestamp))
+            echo ch_misc_lastUpdatedStamp();
               
           //}
+          */
           ?>
           
       </section> <!-- /#main -->

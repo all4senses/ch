@@ -16,6 +16,9 @@ body.one-sidebar.sidebar-second #main {background: none repeat scroll 0 0 white;
 
 /*.page-node #main .main-content{float: left;}*/
 
+#below {}
+#below_content {}
+#below .sidebar-second {}
 
 a, a:focus{ -webkit-appearance: none; outline: none;}
 
