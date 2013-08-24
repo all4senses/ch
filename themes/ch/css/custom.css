@@ -16,9 +16,12 @@ body.one-sidebar.sidebar-second #main {background: none repeat scroll 0 0 white;
 
 /*.page-node #main .main-content{float: left;}*/
 
+/*
 #below {}
-#below_content {}
 #below .sidebar-second {}
+*/
+#below_content {width: 670px; float: left;}
+
 
 a, a:focus{ -webkit-appearance: none; outline: none;}
 
@@ -1679,5 +1682,5 @@ body.sidebar-second .page-compare-providers #sidebar-second {padding: 0; margin-
 /*.field-name-field-preface-b-body*/
 .page-compare-providers .field-name-field-preface-bottom {width: 100%;}
 
-.page-compare-providers .content.page.preface {width: 670px;}
+/*.page-compare-providers .content.page.preface {width: 670px;}*/
 .page-compare-providers #block-views-providers-block-top-sh-p-table {clear: both;}
