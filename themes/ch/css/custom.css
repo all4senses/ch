@@ -413,8 +413,8 @@ border-radius: 5px;}
 
 
 .view-display-id-page_chart_providers th a,
-.view-providers th a{color: yellow; display: block; font-size: 15px; font-weight: bold; background: url("images/arrow-asc-desc.png") no-repeat 0 0 transparent;}
-
+.view-providers th a{color: yellow; display: block; font-size: 15px; font-weight: bold; position: relative; background: url("images/arrow-asc-desc.png") no-repeat right center transparent;}
+th.active img {padding: 0 0 0 4px; position: absolute; right: 0; top: 0;}
 
 .view-display-id-page_chart_providers .view-providers td,
 #all-content .view-display-id-page_chart_providers td.active,
@@ -480,7 +480,7 @@ th.views-field-php-5{/*width: 80px;*/}
 
 th.views-field-php-6{width: 100px;}
 
-th.active img {padding: 0 0 0 4px;}
+
 
 .views-field-php .link a {background: url("images/visit-site-btn.png") no-repeat 0 0 transparent; text-indent: -9999px; color: black; display: block; width: 103px; height: 25px; margin: auto;}
 .views-field-php img {margin: auto; display: block; margin-bottom: 4px;}
