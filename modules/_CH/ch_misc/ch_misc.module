@@ -4008,6 +4008,9 @@ function ch_misc_getTopics($content_type, $base_url = NULL, $limit = NULL, $page
  */
 function ch_misc_theme($existing, $type, $theme, $path) {
   return array(
+    'ch_misc_trendMark' => array(
+      'variables' => array('vars' => null),
+    ),
     'ch_misc_submenuSimple' => array(
       'variables' => array('vars' => null),
     ),
@@ -4070,6 +4073,25 @@ function ch_misc_theme($existing, $type, $theme, $path) {
     ),
       
   );
+}
+
+
+/*
+ * Theme trend marks for providers tables.
+ */
+function theme_ch_misc_trendMark(array $variables) {
+  switch ($variables['value']) {
+    case 1:
+      $class = 'trent pos';
+      break;
+    case 0: 
+      $class = 'trent neu';
+      break;
+    case -1: 
+      $class = 'trent neg';
+      break;
+  }
+  return '<div class="' . $class . '">' . $variables['value'] . '</div>';
 }
 
 
