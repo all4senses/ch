@@ -216,16 +216,28 @@ function ch_blocks_block_configure($delta = '') {
     
       //dpm($recommendedSites_block);
 
-      $form['ch_title'] = array(
+      $form['ch_main_title'] = array(
         '#type' => 'textfield', 
-        '#title' => 'Title',
-        '#default_value' => $data['title'], 
+        '#title' => 'Main title',
+        '#default_value' => $data['main_title'], 
       );
       
-      $form['ch_body'] = array(
+      $form['ch_main_body'] = array(
         '#type' => 'text_format', 
-        '#title' => t('Body'),
-        '#default_value' => $data['body']['value'], 
+        '#title' => 'Main body',
+        '#default_value' => $data['main_body']['value'], 
+      );
+      
+      $form['ch_right_title'] = array(
+        '#type' => 'textfield', 
+        '#title' => 'Right title',
+        '#default_value' => $data['right_title'], 
+      );
+      
+      $form['ch_right_body'] = array(
+        '#type' => 'text_format', 
+        '#title' => 'Right body',
+        '#default_value' => $data['right_body']['value'], 
       );
       
       break;
@@ -269,7 +281,7 @@ function ch_blocks_block_save($delta = '', $edit = array()) {
       break;
     
     case 'home_banner':
-      $data = array('title' => $edit['ch_title'], 'body' => $edit['ch_body']);
+      $data = array('main_title' => $edit['ch_main_title'], 'main_body' => $edit['ch_main_body'], 'right_title' => $edit['ch_right_title'], 'right_body' => $edit['ch_right_body']);
       variable_set('ch_home_banner_block_data', serialize($data));
       break;
     
@@ -328,7 +340,7 @@ function ch_blocks_getAdBlock($ad_name) {
     
     case 'home_banner':
       $data = unserialize(variable_get('ch_home_banner_block_data', NULL));
-      return '<h1>' . $data['title'] . '</h1><div class="banner_body">' . $data['body']['value'] . '</div><img alt="UNBIASED CLOUD HOSTING REVIEWS & COMPARISONS" title="UNBIASED CLOUD HOSTING REVIEWS & COMPARISONS" src="/sites/all/themes/ch/css/images/home-banner-pic.png" />';
+      return '<h1>' . $data['main_title'] . '</h1><div class="banner_body">' . $data['main_body']['value'] . '</div><img alt="UNBIASED CLOUD HOSTING REVIEWS & COMPARISONS" title="UNBIASED CLOUD HOSTING REVIEWS & COMPARISONS" src="/sites/all/themes/ch/css/images/home-banner-pic.png" />';
       
     case 'home_services':
       $data = unserialize(variable_get('ch_home_services_block_data', NULL));
