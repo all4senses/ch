@@ -1691,7 +1691,7 @@ body.one-sidebar.sidebar-second.page-get-iframe #main{background: none transpare
 #block-ch-blocks-home-banner li {background: url(images/checkmark-blue.png) no-repeat scroll 0 0 transparent; text-indent: 25px; padding: 0 0 8px 0; font-weight: 600;}
 */
 
-#block-ch-blocks-home-banner .content {height: 400px; width: 100%; background: url(/sites/all/themes/ch/css/images/sprite-2.png) repeat-x scroll 0 -310px transparent;}
+#block-ch-blocks-home-banner .content {height: 385px; width: 100%; background: url(/sites/all/themes/ch/css/images/sprite-2.png) repeat-x scroll 0 -310px #64b6ed;}
 #block-ch-blocks-home-banner img {position: absolute; right: 40px; top: 35px;}
 
 #block-ch-blocks-home-banner h1 {position: absolute; left: 20px; top: 25px; width: 350px; font-weight: 600; font-family: arial; font-size: 31px; line-height: 35px;}
@@ -1716,6 +1716,9 @@ body.one-sidebar.sidebar-second.page-get-iframe #main{background: none transpare
 #block-ch-blocks-home-services .read-more {width: 110px; height: 38px; background: url('images/read-more.png') no-repeat scroll 0 0 transparent; display: block; margin: 15px auto 20px;}
 
 #block-ch-blocks-home-services {padding: 0 20px;}
+
+
+.front h2.preface { background: url(/sites/all/themes/ch/css/images/sprite-2.png) no-repeat -190px -15px transparent; overflow: hidden; padding-left: 20px;}
 
 
 /* Template page--compare_providers.tpl.php with .page-compare-providers */
