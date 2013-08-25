@@ -219,25 +219,25 @@ function ch_blocks_block_configure($delta = '') {
       $form['ch_main_title'] = array(
         '#type' => 'textfield', 
         '#title' => 'Main title',
-        '#default_value' => $data['main_title'], 
+        '#default_value' => isset($data['main_title']) ? $data['main_title'] : $data['title'], 
       );
       
       $form['ch_main_body'] = array(
         '#type' => 'text_format', 
         '#title' => 'Main body',
-        '#default_value' => $data['main_body']['value'], 
+        '#default_value' => isset($data['main_body']) ? $data['main_body']['value'] : $data['body']['value'],
       );
       
       $form['ch_right_title'] = array(
         '#type' => 'textfield', 
         '#title' => 'Right title',
-        '#default_value' => $data['right_title'], 
+        '#default_value' => isset($data['right_title']) ? $data['right_title'] : '', 
       );
       
       $form['ch_right_body'] = array(
         '#type' => 'text_format', 
         '#title' => 'Right body',
-        '#default_value' => $data['right_body']['value'], 
+        '#default_value' => isset($data['right_body']) ? $data['right_body']['value'] : '',
       );
       
       break;
