@@ -1689,10 +1689,10 @@ body.one-sidebar.sidebar-second.page-get-iframe #main{background: none transpare
 #block-ch-blocks-home-banner ul {padding: 0 0 0 10px;}
 #block-ch-blocks-home-banner li {background: url(images/checkmark-blue.png) no-repeat scroll 0 0 transparent; text-indent: 25px; padding: 0 0 8px 0; font-weight: 600;}
 
-/*
+
 #block-ch-blocks-home-banner .content {height: 400px; width: 100%; background: url(/sites/all/themes/ch/css/images/sprite-2.png) repeat-x scroll 0 -310px transparent;}
 #block-ch-blocks-home-banner img {display: none;}
-*/
+
 
 /* Home services block */
 #block-ch-blocks-home-services .sevice-block {float: left; width: 320px; text-align: center;}
