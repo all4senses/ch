@@ -1707,14 +1707,15 @@ body.one-sidebar.sidebar-second.page-get-iframe #main{background: none transpare
 
 
 /* Home services block */
-#block-ch-blocks-home-services .sevice-block {float: left; width: 320px; text-align: center;}
+#block-ch-blocks-home-services .sevice-block {float: left; width: 305px/*320px*/; text-align: center;}
 #block-ch-blocks-home-services .sevice-block.last {float: right;}
 #block-ch-blocks-home-services .sevice-block:hover {background: #f6f4f5;}
-#block-ch-blocks-home-services .top-bar {width: 100%; height: 5px; background: black; margin-bottom: 15px;}
+#block-ch-blocks-home-services .top-bar {width: 100%; /*height: 5px;*/ background: black; margin-bottom: 15px;}
 #block-ch-blocks-home-services .sevice-block:hover .top-bar {background: #018def;}
 #block-ch-blocks-home-services .text {color: gray; width: 250px; margin: auto; height: 60px; overflow: hidden;}
 #block-ch-blocks-home-services .read-more {width: 110px; height: 38px; background: url('images/read-more.png') no-repeat scroll 0 0 transparent; display: block; margin: 15px auto 20px;}
 
+#block-ch-blocks-home-services {padding: 0 20px;}
 
 
 /* Template page--compare_providers.tpl.php with .page-compare-providers */
