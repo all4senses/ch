@@ -1691,7 +1691,7 @@ body.one-sidebar.sidebar-second.page-get-iframe #main{background: none transpare
 
 
 #block-ch-blocks-home-banner .content {height: 400px; width: 100%; background: url(/sites/all/themes/ch/css/images/sprite-2.png) repeat-x scroll 0 -310px transparent;}
-#block-ch-blocks-home-banner img {display: none;}
+#block-ch-blocks-home-banner img {display: none;} 
 
 
 /* Home services block */
