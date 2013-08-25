@@ -405,7 +405,7 @@ h2, h3{color: gray; font-size: 18px; font-weight: bold; line-height: 18px; margi
 /* Ratings */
 #main .view-providers .fivestar{float: left; position: relative; top: 3px;}
 /*#main .view-providers table .fivestar{float: none; position: static; margin: auto; width: 75px;}*/
-#main .view-providers table .fivestar, .front table .fivestar{float: left; position: relative; left: 15px;}
+#main .view-providers table .fivestar, .front table .fivestar{float: left; position: relative; left: 15px; top: 3px;}
 
 /*
 div.fivestar-widget-static .star{width: 15px; background: url("images/sprite-2.png") no-repeat scroll 0 0 transparent;}
