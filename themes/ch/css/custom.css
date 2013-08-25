@@ -1,12 +1,14 @@
 #listpositionsbody{-webkit-text-size-adjust: none; min-width: 1150px; position: relative;}
 
-body {background: #fff/*#ededed*/; font-family: arial; min-width: 1100px;}
+body {background: #e9e9e9 /*#fff*/ /*#ededed*/; font-family: arial; min-width: 1100px;}
 
 body.one-sidebar.sidebar-second #sidebar-second{padding: 14px 10px 0 5px; width: 250px; margin: 0;}
 body.front.one-sidebar.sidebar-second #sidebar-second{padding-top: 3px}
 
 #all-content-wrapper{overflow: hidden; padding-bottom: 20px;}
-#all-content{/*overflow: hidden;*/ background: white; margin: auto; padding: 0 0 0 0; width: 960px; box-shadow: none; border: 1px solid lightgray; border-top: none; border-radius: 0 0 15px 15px; min-height: 600px; box-shadow: 0px 10px 60px #DDDDDD,0 0px 47px #f3f3f3;}
+
+/*#all-content{background: white; margin: auto; padding: 0; width: 960px; border: 1px solid lightgray; border-top: none; border-radius: 0 0 15px 15px; min-height: 600px; box-shadow: 0px 10px 60px #DDDDDD,0 0px 47px #f3f3f3;}*/
+#all-content{background: white; padding: 0; min-height: 600px; box-shadow: 0px 10px 60px #DDDDDD,0 0px 7px gray;}
 
 
 /*#highlighted-wrapper {overflow: hidden;}*/
@@ -25,7 +27,9 @@ body.one-sidebar.sidebar-second #main {background: none repeat scroll 0 0 white;
 
 a, a:focus{ -webkit-appearance: none; outline: none;}
 
-#c-top{background: url(images/top-back3.jpg) repeat-x scroll 0 bottom #484848; height: 112px;}
+/*#c-top{background: url(images/top-back3.jpg) repeat-x scroll 0 bottom #484848; height: 112px;}*/
+#c-top{height: 130px; background: white; width: 960px; margin: auto; box-shadow: 0px 10px 60px #DDDDDD,0 0px 7px gray;}
+
 .header{margin: auto; position: relative; width: 960px;}
 
 
@@ -85,7 +89,7 @@ input.blur, textarea.blur,
 #header, #navigation, #all-content, #footer-inside{width: 960px; margin: auto;}
 #footer-inside{position: relative;}
 
-#header{padding-top: 95px; z-index: 4;}
+#header{padding-top: 85px; z-index: 4;}
 
 
 /* Search block */
@@ -178,7 +182,9 @@ div.error{border: none;}
 
 
 ul.ch{margin-left: 0px; padding-left: 10px;}
-.block.block-om-maximenu{right: 0; position: absolute; top: 65px; z-index: 10; /*width: 660px;*/ /*background: url(images/main-menu-back.jpg) repeat-x scroll 0 0 #62b0f7;*/ height: 45px; border-radius: 10px 10px 0 0;}
+
+/*.block.block-om-maximenu{right: 0; position: absolute; top: 65px; z-index: 10; height: 45px; border-radius: 10px 10px 0 0;}*/
+.block.block-om-maximenu{position: absolute; top: 85px; z-index: 10;}
 
 
 .om-btitle {float: left; position: absolute; left: -180px;}
@@ -187,12 +193,15 @@ ul.ch{margin-left: 0px; padding-left: 10px;}
 .om-maximenu-content h3, .om-maximenu-content h2{margin-top:0; display: none;}
 
 
-/* set constant position for om submenu block*/
-/*.om-maximenu.om-maximenu-block ul.om-menu {width: 960px;}*/
+
+.om-maximenu.om-maximenu-block ul.om-menu {overflow: hidden; height: 40px;}
 
 
-#om-menu-main-om-menu li.om-leaf{position: relative; height: 42px; z-index: 400; padding: 0 8px 3px 2px; margin: 0 2px; background: url(images/menu-devisor.png) no-repeat scroll right 11px transparent;}
-#om-menu-main-om-menu li.om-leaf.first {margin-left: 30px;}
+/*#om-menu-main-om-menu li.om-leaf{position: relative; height: 42px; z-index: 400; padding: 0 8px 3px 2px; margin: 0 2px; background: url(images/menu-devisor.png) no-repeat scroll right 11px transparent;}*/
+#om-menu-main-om-menu li.om-leaf{position: relative; z-index: 400; padding: 0 10px 0px 8px; margin: 0 5px;}
+
+#om-menu-main-om-menu li.om-leaf.first {margin-left: 3px/*30px*/;}
+
 #om-menu-main-om-menu li.om-leaf.last {background: none;}
 
 #om-menu-main-om-menu li.om-leaf.leaf-about-us .om-maximenu-middle{width: 120px;}
@@ -207,12 +216,18 @@ body.not-admin #om-menu-main-om-menu li.om-leaf.leaf-write-review{background: no
 .om-maximenu ul.om-menu li.om-leaf .om-link.link-e{padding: 4px 8px 8px 8px;}
 
 
-.om-maximenu ul.om-menu li.om-leaf a.om-link{padding: 12px 12px 10px; font-size: 15px; color: lightgray/*#355f84*/; text-shadow: 1px 1px 2px black; font-family: arial; display: block; height: 20px !important; border: 1px solid transparent;}
+/*.om-maximenu ul.om-menu li.om-leaf a.om-link{padding: 12px 12px 10px; font-size: 15px; color: lightgray/*#355f84*/; text-shadow: 1px 1px 2px black; font-family: arial; display: block; height: 20px !important; border: 1px solid transparent;}*/
+.om-maximenu ul.om-menu li.om-leaf a.om-link{padding: 5px 10px 5px; font-size: 17px; color: white; font-family: arial; display: block; line-height: 30px;}
+
 /*.om-maximenu ul.om-menu li.om-leaf.first a.om-link{border-radius: 5px 0 0 0;}*/
 
 
 /*.om-maximenu ul.om-menu li.om-leaf:hover {background: url("images/main-menu-hover-li.png") no-repeat center bottom transparent;}*/
-#om-menu-main-om-menu li.om-leaf:hover a.om-link {color: black; text-shadow: none; background: url("images/main-menu-hover-a.jpg") repeat-x 0 0; overflow: hidden; border-radius: 0 0 5px 5px; border: 1px solid gray; padding-top: 5px; line-height: 38px; box-shadow: 3px 7px 7px -7px black; border-top: none; margin-top: 3px;}
+
+/*#om-menu-main-om-menu li.om-leaf:hover a.om-link {color: black; text-shadow: none; background: url("images/main-menu-hover-a.jpg") repeat-x 0 0; overflow: hidden; border-radius: 0 0 5px 5px; border: 1px solid gray; padding-top: 5px; line-height: 38px; box-shadow: 3px 7px 7px -7px black; border-top: none; margin-top: 3px;}*/
+#om-menu-main-om-menu li.om-leaf:hover a.om-link {color: #706e6f; background: #f3f3f3;}
+
+
 #om-menu-main-om-menu li.om-leaf:hover {/*background: none;*/}
 
 
@@ -1348,7 +1363,7 @@ article .thumb {width: 200px; float: left; margin: 0 10px 5px 0; text-align: cen
 #block-ch-blocks-request-quote-v1 #up .text li{list-style-type: disc; margin-left: 10px;}
 #block-ch-blocks-request-quote-v1 #up .text .guide-text{margin-left: 10px;}
 
-#block-ch-blocks-request-quote-v1 #up .img{background: url("images/sprite-0.png") no-repeat scroll -90px -11px transparent; float: right; height: 53px; width: 50px; position: absolute; top: 67px; right: 10px;}
+#block-ch-blocks-request-quote-v1 #up .img{background: url("images/#om-menu-main-om-menu li.om-leaf0.png") no-repeat scroll -90px -11px transparent; float: right; height: 53px; width: 50px; position: absolute; top: 67px; right: 10px;}
 
 /*#block-ch-blocks-request-quote-v1 #requestQuoteFormWrapper{width: auto; height: 285px;}*/
 #block-ch-blocks-request-quote-v1 #requestQuoteFormWrapper{width: auto; height: 290px;}
