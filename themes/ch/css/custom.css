@@ -414,7 +414,7 @@ padding: 3px 7px 4px;
 border-radius: 5px;}
 
 .view-display-id-page_chart_providers th,
-.view-providers th{background: url(images/chart-th-back.jpg) repeat-x 0 0 transparent; color: white; height: 39px; text-align: center; font-size: 13px; padding: 0 5px; font-weight: bold;}
+.view-providers th{position: relative; background: url(images/chart-th-back.jpg) repeat-x 0 0 transparent; color: white; height: 39px; text-align: center; font-size: 13px; padding: 0 5px; font-weight: bold;}
 
 
 
@@ -487,7 +487,7 @@ th.views-field-php-5{/*width: 80px;*/}
 th.views-field-php-6{width: 120px;}
 th.views-field-php-7{width: 130px;}
 
-.view-providers th .ajax-progress.ajax-progress-throbber {position: absolute; top: 0; left: 0;}
+.view-providers th .ajax-progress.ajax-progress-throbber {position: absolute; top: 10px; left: 0;}
 
 .views-field-php .link a {background: url("images/visit-site-btn.png") no-repeat 0 0 transparent; text-indent: -9999px; color: black; display: block; width: 103px; height: 25px; margin: auto;}
 .views-field-php img {margin: auto; display: block; margin-bottom: 4px;}
