@@ -340,6 +340,12 @@ function ch_blocks_getAdBlock($ad_name) {
     
     case 'home_banner':
       $data = unserialize(variable_get('ch_home_banner_block_data', NULL));
+      if (!isset($data['main_title'])) {
+        $data['main_title'] = $data['title'];
+      }
+      if (!isset($data['main_body'])) {
+        $data['main_body'] = $data['body'];
+      }
       return '<h1>' . $data['main_title'] . '</h1><div class="banner_body">' . $data['main_body']['value'] . '</div><img alt="UNBIASED CLOUD HOSTING REVIEWS & COMPARISONS" title="UNBIASED CLOUD HOSTING REVIEWS & COMPARISONS" src="/sites/all/themes/ch/css/images/home-banner-pic.png" />';
       
     case 'home_services':
