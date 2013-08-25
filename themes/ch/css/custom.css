@@ -1719,6 +1719,10 @@ body.one-sidebar.sidebar-second.page-get-iframe #main{background: none transpare
 
 #block-ch-blocks-home-services {padding: 0 20px;}
 
+#block-ch-blocks-home-services .icon {}
+#block-ch-blocks-home-services .ds {}
+#block-ch-blocks-home-services .vps {}
+#block-ch-blocks-home-services .ch {}
 
 .front h2.preface { background: url(/sites/all/themes/ch/css/images/sprite-2.png) no-repeat -190px -15px transparent; overflow: hidden; padding-left: 20px;}
 

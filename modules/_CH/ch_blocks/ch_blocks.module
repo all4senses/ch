@@ -354,21 +354,24 @@ function ch_blocks_getAdBlock($ad_name) {
       return '
         <div class="sevice-block">
           <div class="top-bar"></div>
-          <img alt="Cloud Hosting" title="Cloud Hosting" src="/sites/all/themes/ch/css/images/ch-icon.png" />
+          <!--<img alt="Cloud Hosting" title="Cloud Hosting" src="/sites/all/themes/ch/css/images/ch-icon.png" />-->
+          <div class="ch icon"></div>
           <h3>Cloud Hosting</h3>
           <div class="text">' . $data['ch_text']['value'] . '</div>
           <a href="/cloud" class="read-more"></a>
         </div>
         <div class="sevice-block">
           <div class="top-bar"></div>
-          <img alt="VPS Hosting" title="VPS Hosting" src="/sites/all/themes/ch/css/images/vps-icon.png" />
+          <!--<img alt="VPS Hosting" title="VPS Hosting" src="/sites/all/themes/ch/css/images/vps-icon.png" />-->
+          <div class="vps icon"></div>
           <h3>VPS Hosting</h3>
           <div class="text">' . $data['vps_text']['value'] . '</div>
           <a href="/vps" class="read-more"></a>
         </div>
         <div class="sevice-block last">
           <div class="top-bar"></div>
-          <img alt="Dedicated Servers" title="Dedicated Servers" src="/sites/all/themes/ch/css/images/ds-icon.png" />
+          <!--<img alt="Dedicated Servers" title="Dedicated Servers" src="/sites/all/themes/ch/css/images/ds-icon.png" />-->
+          <div class="ds icon"></div>
           <h3>Dedicated Servers</h3>
           <div class="text">' . $data['ds_text']['value'] . '</div>
           <a href="/dedicated-servers" class="read-more"></a>
