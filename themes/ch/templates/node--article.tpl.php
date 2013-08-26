@@ -55,11 +55,7 @@
   
   <?php 
     if($side_block_teaser) {
-      dpm($extra_data);
       if (!empty($extra_data['teaser_side_block'])) {
-        if(empty($extra_data['teaser_clean'])) {
-          return NULL;
-        }
         $teaser_data = $extra_data;
       }
       else {
