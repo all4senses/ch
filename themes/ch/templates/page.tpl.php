@@ -65,9 +65,9 @@
       
       <?php if ($page['highlighted']): ?>
           <?php 
-            $url = 'http://cloudhostinghq.com';
-            $share_title = ch_misc_metatag_getFrontTitle();
-            echo '<div class="float share">' . ch_blocks_getSocialiteButtons($url, $share_title) . '</div>';
+//            $url = 'http://cloudhostinghq.com';
+//            $share_title = ch_misc_metatag_getFrontTitle();
+//            echo '<div class="float share">' . ch_blocks_getSocialiteButtons($url, $share_title) . '</div>';
           ?>
           <section id="highlighted" class="clearfix">
             <?php print render($page['highlighted']); ?>
