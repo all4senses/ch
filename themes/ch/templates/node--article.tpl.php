@@ -191,6 +191,7 @@
                 echo l('Read more »', 'node/' . $node->nid, array('attributes' => array('class' => array('more')))) . $node->body['und'][0]['summary'];
               }
               else {
+                dpm($teaser_data);
                 echo $teaser_data['teaser'];
               }
             
