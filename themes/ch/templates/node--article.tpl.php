@@ -88,7 +88,7 @@
       $class_thumb_presented = '';
     }
   ?>
-  <article id="node-<?php print $node->nid; ?>" class="<?php print $classes . $class_thumb_presented; ?> clearfix"<?php print $attributes; ?>>
+  <article id="node-<?php print $node->nid; ?>" class="<?php print $classes . $class_thumb_presented . ' article'; ?> clearfix"<?php print $attributes; ?>>
  
 <?php else: ?>
   <?php
