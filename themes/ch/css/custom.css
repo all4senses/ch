@@ -1712,7 +1712,7 @@ body.one-sidebar.sidebar-second.page-get-iframe #main{background: none transpare
 
 #block-ch-blocks-home-banner .arrow {width: 45px; height: 50px; background: url(/sites/all/themes/ch/css/images/sprite-2.png) no-repeat -47px -30px; margin-right: 10px;}
 
-#block-ch-blocks-home-banner span:first-child {display: block; margin-bottom: 5px; font-size: 15px;}
+#block-ch-blocks-home-banner span:first-child {display: block; margin: 15px 0 5px; font-size: 15px;}
 #block-ch-blocks-home-banner span:last-child {color: white;}
 
 #block-ch-blocks-home-banner .right {position: absolute; top: 270px; left: 580px;}
