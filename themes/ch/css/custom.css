@@ -1715,14 +1715,16 @@ body.one-sidebar.sidebar-second.page-get-iframe #main{background: none transpare
 #block-ch-blocks-home-services .top-bar {width: 100%; /*height: 5px;*/ background: black; margin-bottom: 15px;}
 #block-ch-blocks-home-services .sevice-block:hover .top-bar {background: #018def;}
 #block-ch-blocks-home-services .text {color: gray; width: 250px; margin: auto; height: 60px; overflow: hidden;}
-#block-ch-blocks-home-services .read-more {width: 110px; height: 38px; background: url('images/read-more.png') no-repeat scroll 0 0 transparent; display: block; margin: 15px auto 20px;}
+
+/*#block-ch-blocks-home-services .read-more {width: 110px; height: 38px; background: url('images/read-more.png') no-repeat scroll 0 0 transparent; display: block; margin: 15px auto 20px;}*/
+#block-ch-blocks-home-services .read-more {display: block; margin: 10px auto 0; font-size: 18px; color: #64b6ed;}
 
 #block-ch-blocks-home-services {padding: 0 20px;}
 
-#block-ch-blocks-home-services .icon {}
-#block-ch-blocks-home-services .ds {}
-#block-ch-blocks-home-services .vps {}
-#block-ch-blocks-home-services .ch {}
+#block-ch-blocks-home-services .icon {width: 103px; height: 105px; margin: auto;}
+#block-ch-blocks-home-services .ds {background: url(/sites/all/themes/ch/css/images/sprite-2.png) repeat-x 3px -187px;}
+#block-ch-blocks-home-services .vps {background: url(/sites/all/themes/ch/css/images/sprite-2.png) repeat-x -102px -83px;}
+#block-ch-blocks-home-services .ch {background: url(/sites/all/themes/ch/css/images/sprite-2.png) repeat-x 1px -83px;}
 
 .front h2.preface { background: url(/sites/all/themes/ch/css/images/sprite-2.png) no-repeat -190px -15px transparent; overflow: hidden; padding-left: 20px;}
 
