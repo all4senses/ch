@@ -1269,7 +1269,7 @@ h1.preface{color: gray; font-size: 18px; font-weight: bold;}
 
 
 /* Articles teasers */
-.node-teaser.artice{margin-bottom: 0; background: #f2f5f7; border-radius: 5px; padding: 10px;}
+.node-teaser.article{margin-bottom: 0; background: #f2f5f7; border-radius: 5px; padding: 10px;}
 .node-teaser h2 a, .node-teaser h3 a{color: #004286; font-size: 18px; line-height: 22px; font-weight: bold; margin: 0; border: medium none; padding: 0;}
 
 .node-teaser .more {background: url("images/arrow-circle-gray-right.png") no-repeat scroll right 0 transparent; display: block; float: right; margin-top: 10px; color: orange; font-weight: bold; padding-right: 25px;}
