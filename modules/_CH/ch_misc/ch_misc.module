@@ -1699,6 +1699,7 @@ function ch_misc_getArticleTeaserData($target, $body_full_markup, $nid, $charact
   ////$teaser = substr_replace ($teaser, '...' . l('Read the rest of this entry Р вЂ™Р’В»', 'node/' . $nid, array('attributes' => array('class' => array('more')))), $last_pos);
   
   //$teaser = substr_replace ($teaser, '... ' . l('Read more Р вЂ™Р’В»', 'node/' . $nid, array('attributes' => array('class' => array('more')))), $last_pos);
+  $teaser_clean = $teaser;
   $teaser = '<div class="teaser-content">' . substr_replace ($teaser, '... ' . l('Read more', 'node/' . $nid, array('attributes' => array('class' => array('more')))), $last_pos) . '</div>';
   
   
@@ -1706,7 +1707,7 @@ function ch_misc_getArticleTeaserData($target, $body_full_markup, $nid, $charact
     return $main_image_html . $teaser;
   }
   else {
-    return array('teaser' => $teaser, 'teaser_side_block' => $teaser_side_block, 'teaser_block' => $teaser_block, 'teaser_home' => $main_image_html . $teaser_home, 'main_image' => $main_image, 'teaser_main_image' => $main_image_html, 'side_block_main_image' => $side_block_image_html);
+    return array('teaser_clean' => $teaser_clean, 'teaser' => $teaser, 'teaser_side_block' => $teaser_side_block, 'teaser_block' => $teaser_block, 'teaser_home' => $main_image_html . $teaser_home, 'main_image' => $main_image, 'teaser_main_image' => $main_image_html, 'side_block_main_image' => $side_block_image_html);
   }
   
 }
