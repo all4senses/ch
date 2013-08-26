@@ -1704,16 +1704,16 @@ body.one-sidebar.sidebar-second.page-get-iframe #main{background: none transpare
 #block-ch-blocks-home-banner .content {height: 385px; width: 100%; background: url(/sites/all/themes/ch/css/images/sprite-2.png) repeat-x scroll 0 -310px #64b6ed;}
 #block-ch-blocks-home-banner img {position: absolute; right: 40px; top: 35px;}
 
-#block-ch-blocks-home-banner h1 {position: absolute; left: 20px; top: 25px; width: 350px; font-weight: 600; font-family: arial; font-size: 31px; line-height: 35px;}
-#block-ch-blocks-home-banner .banner_body {position: absolute; left: 15px; top: 200px; width: 450px;}
+#block-ch-blocks-home-banner h1 {position: absolute; left: 20px; top: 25px; width: 500px; font-weight: 600; font-family: arial; font-size: 27px; line-height: 38px; color: white; text-shadow: 1px 3px 2px gray;}
+#block-ch-blocks-home-banner .banner_body {position: absolute; left: 15px; top: 120px; width: 480px;}
 #block-ch-blocks-home-banner h4 {font-weight: normal; font-size: 15px; margin: 15px 0 17px 10px;}
 #block-ch-blocks-home-banner ul {padding: 0 0 0 10px;}
 #block-ch-blocks-home-banner li {background: url(images/checkmark-blue.png) no-repeat scroll 0 0 transparent; text-indent: 25px; padding: 0 0 8px 0; font-weight: 600;}
 
 #block-ch-blocks-home-banner .arrow {width: 45px; height: 50px; background: url(/sites/all/themes/ch/css/images/sprite-2.png) no-repeat -47px -30px; margin-right: 10px;}
 
-#block-ch-blocks-home-banner span:first-child {display: block; margin: 15px 0 5px; font-size: 15px;}
-#block-ch-blocks-home-banner span:last-child {color: white;}
+#block-ch-blocks-home-banner span:first-child {display: block; margin: 18px 0 10px; font-size: 19px; text-shadow: 0px 1px 0px lightgray;}
+#block-ch-blocks-home-banner span:last-child {color: white; font-size: 15px; line-height: 22px; text-shadow: 1px 1px 0px gray;}
 
 #block-ch-blocks-home-banner .right {position: absolute; top: 270px; left: 580px;}
 #block-ch-blocks-home-banner .right h2 {}
