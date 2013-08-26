@@ -235,13 +235,7 @@ function ch_blocks_block_configure($delta = '') {
     
     case 'disclosure':
       $data = unserialize(variable_get('ch_home_banner_block_data', NULL));
-    
-      $form['ch_title'] = array(
-        '#type' => 'textfield', 
-        '#title' => 'Title',
-        '#default_value' => $data['title'], 
-      );
-      
+          
       $form['ch_body'] = array(
         '#type' => 'text_format', 
         '#title' => 'Body',
@@ -321,7 +315,7 @@ function ch_blocks_block_save($delta = '', $edit = array()) {
       break;
     
     case 'disclosure':
-      $data = array('title' => $edit['ch_title'], 'body' => $edit['ch_body']);
+      $data = array('body' => $edit['ch_body']);
       variable_set('ch_disclosure_block_data', serialize($data));
       break;
     
@@ -385,7 +379,7 @@ function ch_blocks_getAdBlock($ad_name) {
     
     case 'disclosure':
       $data = unserialize(variable_get('ch_disclosure_block_data', NULL));
-      return (!empty($data['title']) ? '<h3 class="block-title">' . $data['title'] . '</h3>' : '' ) . '<div class="body">' . $data['body']['value'] . '</div>';
+      return '<div class="body">' . $data['body']['value'] . '</div>';
     
     case 'home_banner':
       $data = unserialize(variable_get('ch_home_banner_block_data', NULL));
