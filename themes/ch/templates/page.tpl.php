@@ -182,15 +182,19 @@
         
         //echo ch_blocks_getBlockThemed(array('module' => 'ch_blocks', 'delta' => 'send_msg_n_subscribe', 'no_subject' => TRUE/*, 'class' => 'block-om-maximenu'*/, 'shadow' => FALSE)/*, TRUE, '+31 day'*/ /*, ($user->uid ? '_logged' : NULL)*/);
         ////echo ch_blocks_getBlockThemed(array('module' => 'ch_blocks', 'delta' => 'social_links', 'no_subject' => TRUE/*, 'class' => 'block-om-maximenu'*/, 'shadow' => FALSE)/*, TRUE, '+31 day'*/ /*, ($user->uid ? '_logged' : NULL)*/);
-        echo ch_blocks_getBlockThemed(array('module' => 'ch_blocks', 'delta' => 'footer_links', 'no_subject' => TRUE/*, 'class' => 'block-om-maximenu'*/, 'shadow' => FALSE)/*, TRUE, '+31 day'*/ /*, ($user->uid ? '_logged' : NULL)*/);
+        //echo ch_blocks_getBlockThemed(array('module' => 'ch_blocks', 'delta' => 'footer_menu', 'no_subject' => TRUE/*, 'class' => 'block-om-maximenu'*/, 'shadow' => FALSE)/*, TRUE, '+31 day'*/ /*, ($user->uid ? '_logged' : NULL)*/);
         
+        echo ch_blocks_get_footerLinks() . '<div class="c">© 2013 CloudHostingHQ.com | All Rights Reserved</div>';
+        
+                
         //echo '<div id="block-ch-blocks-follow-links"><div class="follow-us">Follow Us</div>', ch_blocks_get_headerLinks(), '</div>';
       ?>
       
       
     </div>
   </footer> <!-- /#footer -->
-  
+  <?php /* 
   <div id="under-footer">
     <div class="c">Copyright © 2013 Cloud Hosting HQ | All rights reserved.</div>
   </div>
+  */ ?>

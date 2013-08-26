@@ -33,6 +33,11 @@ function ch_blocks_block_info() {
     'info' => 'Footer links',
     'cache' => DRUPAL_NO_CACHE,
   );
+  $blocks['footer_menu'] = array(
+    'info' => 'Footer menu',
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  
   $blocks['social_links'] = array(
     'info' => 'Social links',
     'cache' => DRUPAL_NO_CACHE,
@@ -130,6 +135,11 @@ function ch_blocks_block_view($delta = '') {
       $block['subject'] = 'Footer links';
       $block['content'] = ch_blocks_get_footerLinks();
       break; 
+    case 'footer_menu':
+      $block['subject'] = 'Footer menu';
+      $block['content'] = ch_blocks_get_footerMenu();
+      break; 
+    
     case 'social_links':
       $block['subject'] = 'Social links';
       $block['content'] = ch_blocks_get_socialLinks();
@@ -405,31 +415,44 @@ function ch_blocks_get_socialLinks() {
 
 
 /**
- * Returns a themed Footer links.
+ * Returns a themed Footer menu (with submenus).
+ */
+function ch_blocks_get_footerMenu() {
+  
+  $cid = 'ch_footer_menu';
+  $cache = cache_get($cid, 'cache');
+
+  if ($cache && !empty($cache->data) && $cache->expire > time()) {
+    $out = $cache->data;
+  }
+  else 
+    {
+    $menu = menu_build_tree('menu-footer-menu');
+    $out = theme('ch_misc_submenuSimple_byColumns', array('submenu' => array('below' => $menu)/*, 'class' => 'menu'*/, 'delimiter' => '<li> | </li>')); // . '<div class="c">В© 2013 cloudhostinghq.com | All Rights Reserved</div>';
+    cache_set($cid, $out, 'cache', strtotime('+31 day'));
+  } 
+  
+  return $out;
+}
+
+
+/**
+ * Returns a themed Footer simple line links.
  */
 function ch_blocks_get_footerLinks() {
   
   $cid = 'ch_footer_links';
-//  $cache = cache_get($cid, 'cache');
-//
-//  if ($cache && !empty($cache->data) && $cache->expire > time()) {
-//    $out = $cache->data;
-//  }
-//  else 
-    {
-    //$menu = menu_build_tree('menu-footer-links');
-    $menu = menu_build_tree('menu-footer-menu');
-    //$out = '<div class="title">' . l('Sitemap', 'sitemap') . '</div>' . theme('ch_misc_submenuSimple_twoColumns', array('submenu' => array('below' => $menu)/*, 'class' => 'menu', 'delimiter' => '<li> | </li>'*/)); // . '<div class="c">В© 2013 cloudhostinghq.com | All Rights Reserved</div>';
-    
-    ////$out = '<div class="title">' . l('Sitemap', 'sitemap') . '</div>' . theme('ch_misc_submenuSimple', array('submenu' => array('below' => $menu)/*, 'class' => 'menu', 'delimiter' => '<li> | </li>'*/)); // . '<div class="c">В© 2013 cloudhostinghq.com | All Rights Reserved</div>';
-    
-    //$out = theme('ch_misc_submenuSimple', array('submenu' => array('below' => $menu)/*, 'class' => 'menu'*/, 'delimiter' => '<li> | </li>')); // . '<div class="c">В© 2013 cloudhostinghq.com | All Rights Reserved</div>';
-    $out = theme('ch_misc_submenuSimple_byColumns', array('submenu' => array('below' => $menu)/*, 'class' => 'menu'*/, 'delimiter' => '<li> | </li>')); // . '<div class="c">В© 2013 cloudhostinghq.com | All Rights Reserved</div>';
-    
-    
+  $cache = cache_get($cid, 'cache');
+
+  if ($cache && !empty($cache->data) && $cache->expire > time()) {
+    $out = $cache->data;
+  }
+  else {
+    $menu = menu_build_tree('menu-footer-links');
+    $out = theme('ch_misc_submenuSimple', array('submenu' => array('below' => $menu), 'class' => 'menu', 'delimiter' => '<li> | </li>')); // . '<div class="c">В© 2012 GetVoIP.com | All Rights Reserved</div>';
     cache_set($cid, $out, 'cache', strtotime('+31 day'));
   } 
-  
+    
   return $out;
 }
 
