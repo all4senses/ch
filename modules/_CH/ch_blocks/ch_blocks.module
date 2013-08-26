@@ -234,7 +234,7 @@ function ch_blocks_block_configure($delta = '') {
     
     
     case 'disclosure':
-      $data = unserialize(variable_get('ch_home_banner_block_data', NULL));
+      $data = unserialize(variable_get('ch_disclosure_block_data', NULL));
           
       $form['ch_body'] = array(
         '#type' => 'text_format', 
