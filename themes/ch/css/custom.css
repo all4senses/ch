@@ -447,6 +447,12 @@ th.active img {padding: 0 0 0 4px; position: absolute; right: 0; top: 0;}
 .view-display-id-page_chart_providers tr,
 .view-providers tr {border: none;}
 
+.trend.pos {background: url(/sites/all/themes/ch/css/images/sprite-2.png) no-repeat -48px -0px; width: 30px; height: 30px; text-indent: -9999px; margin: auto;}
+.trend.neg {background: url(/sites/all/themes/ch/css/images/sprite-2.png) no-repeat -17px -0px; width: 30px; height: 30px; text-indent: -9999px; margin: auto;}
+.trend.neu {background: url(/sites/all/themes/ch/css/images/sprite-2.png) no-repeat -17px -35px; width: 30px; height: 10px; text-indent: -9999px; margin: auto;} 
+
+
+
 
 tr.even, tr.odd {background: transparent;}
 
@@ -711,6 +717,8 @@ form .counter.exceeded{color: red;}
 
 #edit-s-sh-trend {margin-bottom: 20px; overflow: hidden;}
 #edit-s-sh-trend div {float: left;}
+
+
 
 #edit-about-you input{width: 100%;}
 #edit-about-you .form-item-field-r-fname-temp{float: left; width: 300px; margin-top: 0;}

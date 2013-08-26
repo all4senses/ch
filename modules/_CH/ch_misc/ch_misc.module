@@ -4082,13 +4082,13 @@ function ch_misc_theme($existing, $type, $theme, $path) {
 function theme_ch_misc_trendMark(array $variables) {
   switch ($variables['value']) {
     case 1:
-      $class = 'trent pos';
+      $class = 'trend pos';
       break;
     case 0: 
-      $class = 'trent neu';
+      $class = 'trend neu';
       break;
     case -1: 
-      $class = 'trent neg';
+      $class = 'trend neg';
       break;
   }
   return '<div class="' . $class . '">' . $variables['value'] . '</div>';
