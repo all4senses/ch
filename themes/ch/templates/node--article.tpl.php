@@ -73,6 +73,13 @@
       }
     }
     
+    
+    
+    // Hide images for side block latest blogs
+    $teaser_data['teaser_main_image'] = NULL;
+    
+    
+    
     //if (strpos($teaser_data['teaser'], 'class="thumb') !== FALSE) {
     if (!empty($teaser_data['teaser_main_image'])) {
       $class_thumb_presented = ' with_thumb';
