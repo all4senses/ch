@@ -3436,9 +3436,9 @@ function ch_pages_node_view($node, $view_mode) {
         drupal_add_js( $module_path . '/js/ch_addTabs.js'); 
         
         // Floating social buttons.
-        drupal_add_js('sites/all/libraries/jquery.plugins/stickyfloat/stickyfloat2.js');
-        $module_path = drupal_get_path('module', 'ch_misc');
-        drupal_add_js( $module_path . '/js/ch_floatingSocials.js'); 
+//        drupal_add_js('sites/all/libraries/jquery.plugins/stickyfloat/stickyfloat2.js');
+//        $module_path = drupal_get_path('module', 'ch_misc');
+//        drupal_add_js( $module_path . '/js/ch_floatingSocials.js'); 
     
       } // End of if ($view_mode == 'full') {
         
@@ -3489,9 +3489,11 @@ function ch_pages_node_view($node, $view_mode) {
       // Floating share buttons box.
       //drupal_add_js('sites/all/libraries/jquery.plugins/stickyfloat/stickyfloat.min.js');
       ////drupal_add_js('sites/all/libraries/jquery.plugins/stickyfloat/stickyfloat.js');
-      drupal_add_js('sites/all/libraries/jquery.plugins/stickyfloat/stickyfloat2.js');
-      $module_path = drupal_get_path('module', 'ch_misc');
-      drupal_add_js( $module_path . '/js/ch_floatingSocials.js'); 
+      
+      // Hide it for now.
+//      drupal_add_js('sites/all/libraries/jquery.plugins/stickyfloat/stickyfloat2.js');
+//      $module_path = drupal_get_path('module', 'ch_misc');
+//      drupal_add_js( $module_path . '/js/ch_floatingSocials.js'); 
        
     
       
@@ -3503,9 +3505,9 @@ function ch_pages_node_view($node, $view_mode) {
     case 'blog_post':
       
       if ($view_mode == 'full') {
-        drupal_add_js('sites/all/libraries/jquery.plugins/stickyfloat/stickyfloat2.js');
-        $module_path = drupal_get_path('module', 'ch_misc');
-        drupal_add_js( $module_path . '/js/ch_floatingSocials.js'); 
+//        drupal_add_js('sites/all/libraries/jquery.plugins/stickyfloat/stickyfloat2.js');
+//        $module_path = drupal_get_path('module', 'ch_misc');
+//        drupal_add_js( $module_path . '/js/ch_floatingSocials.js'); 
       }
       
     break; // End of blog_post

@@ -10,8 +10,8 @@
     
           <?php
 
-            $url = 'http://cloudhostinghq.com'. url('node/' . $node->nid);
-            echo '<div class="float share">' . ch_blocks_getSocialiteButtons($url, $node->title) . '</div>';
+//            $url = 'http://cloudhostinghq.com'. url('node/' . $node->nid);
+//            echo '<div class="float share">' . ch_blocks_getSocialiteButtons($url, $node->title) . '</div>';
 
           ?>
     
