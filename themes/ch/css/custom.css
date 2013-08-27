@@ -430,7 +430,7 @@ div.fivestar-widget-static .star span.on{text-indent: -9999px; width: 15px; heig
 
 
 #main .plan{color: #275FA6; font-size: 13px; font-weight: bold; margin: 0 0 3px 2px;}
-#main .feature{background: url("images/sprite-2.png") no-repeat scroll 0 -1044px transparent; font-size: 13px; padding-left: 20px; color: #777777; line-height: 20px; }
+#main .feature{background: url("images/sprite-2.png") no-repeat scroll -189px 0 transparent; font-size: 13px; padding-left: 20px; color: #777777; line-height: 20px; }
 
 
 .view-display-id-page_chart_providers {margin: 0 0 50px 0;}
