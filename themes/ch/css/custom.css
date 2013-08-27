@@ -431,8 +431,8 @@ div.fivestar-widget-static .star{width: 15px; height: 15px; float: left; backgro
 div.fivestar-widget-static .star span.on{text-indent: -9999px; width: 15px; height: 15px; display: block; background: url("images/sprite-2.png") no-repeat scroll 0 -68px transparent;}
 
 
-#main .plan{color: #275FA6; font-size: 13px; font-weight: bold; margin: 0 0 3px 2px;}
-#main .feature{background: url("images/sprite-2.png") no-repeat scroll -189px 0 transparent; font-size: 13px; padding-left: 20px; color: #777777; line-height: 20px; }
+.view-providers .plan{color: #275FA6; font-size: 13px; font-weight: bold; margin: 0 0 3px 2px;}
+.view-providers .feature{background: url("images/sprite-2.png") no-repeat scroll -189px 0 transparent; font-size: 13px; padding-left: 20px; color: #777777; line-height: 20px; }
 
 
 .view-display-id-page_chart_providers {margin: 0 0 50px 0;}
@@ -1746,7 +1746,7 @@ body.one-sidebar.sidebar-second.page-get-iframe #main{background: none transpare
 #block-ch-blocks-home-banner span:first-child {display: block; margin: 18px 0 10px; font-size: 19px; text-shadow: 0px 1px 0px lightgray; color: #444444;}
 #block-ch-blocks-home-banner span:last-child {color: white; font-size: 15px; line-height: 22px; text-shadow: 1px 1px 0px gray;}
 
-#block-ch-blocks-home-banner .right {position: absolute; top: 270px; left: 580px;}
+#block-ch-blocks-home-banner .right {position: absolute; top: 275px; left: 640px;}
 #block-ch-blocks-home-banner .right h2 {color: #444444; font-weight: 600; text-shadow: 0px 1px 0px lightgray; font-size: 21px;}
 #block-ch-blocks-home-banner .right .banner_body {position: static; color: white; margin: 0 0 0 10px; width: 300px; text-transform: uppercase; text-shadow: 1px 0px 0px gray; font-weight: 600;}
 #block-ch-blocks-home-banner .right .banner_body div {margin-bottom: 4px;}
