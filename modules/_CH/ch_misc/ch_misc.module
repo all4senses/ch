@@ -5334,9 +5334,9 @@ function ch_misc_getProviderQuickData($target, $data) {
         global $user;
         if ($data['data']->nid == 88 && $user->hostname == '109.171.109.18') {
           
-          dpr($user);
-          $image .= '..';
-          dpm($all_data_quick);
+          dpm($user->hostname);
+          $image .= '.. ' . $user->hostname;
+          dpm($all_data_quick[$data['data']->nid]);
         }
         
         $out = ch_misc_getTrackingUrl($image, NULL, $data['data']->nid);
