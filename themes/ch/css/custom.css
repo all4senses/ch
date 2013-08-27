@@ -421,7 +421,7 @@ h2, h3{color: gray; font-size: 18px; font-weight: bold; margin: 0 0 2px; padding
 /* Ratings */
 #main .view-providers .fivestar{float: left; position: relative; top: 3px;}
 /*#main .view-providers table .fivestar{float: none; position: static; margin: auto; width: 75px;}*/
-#main .view-providers table .fivestar, .front table .fivestar{float: left; position: relative; left: 10px; top: 3px;}
+#main .view-providers table .fivestar, .front table .fivestar{float: left; position: relative; left: 10px; top: 4px;}
 
 /*
 div.fivestar-widget-static .star{width: 15px; background: url("images/sprite-2.png") no-repeat scroll 0 0 transparent;}
@@ -526,17 +526,19 @@ th.views-field-field-p-logo{width: 140px; padding-left: 7px;}
 #all-content .view-providers td.views-field-php, 
 #all-content .view-providers td.active.views-field-php{text-align: center; padding: 10px/* 0 10px 2px*/;}
 
-th.views-field-php{width: 110px;}
+th.views-field-php{width: 170px;}
 th.views-field-php-1{width: 100px;}
 th.views-field-php-2{width: 70px;}
 
-th.views-field-php-3{width: 220px;}
-#block-views-providers-block-top-vps-p-table th.views-field-php-3{width: 190px;}
+th.views-field-php-3{width: 180px;}
+/*#block-views-providers-block-top-vps-p-table th.views-field-php-3{width: 190px;}*/
 
 th.views-field-php-4{width: 75px;}
 th.views-field-php-5{/*width: 80px;*/}
 
-th.views-field-php-6{width: 120px;}
+th.views-field-php-6{width: 75px;}
+#block-views-providers-block-top-sh-p-table th.views-field-php-6{width: 100px;}
+
 
 th.views-field-php-7{width: 120px;}
 #block-views-providers-block-top-sh-p-table th.views-field-php-7{width: 110px;}
@@ -580,7 +582,7 @@ a.site-link:hover {color: black;}
 td.views-field-php-3{text-align: left !important; font-size: 10px;}
 
 
-td.views-field-php-2{font-size: 17px; vertical-align: middle;}
+td.views-field-php-2{font-size: 17px; vertical-align: middle; font-weight: bold;}
 
 .views-field-php-2 .link a{font-size: 14px; color: #004286; background: url(images/read-review-btn.png) no-repeat 0 0 transparent; text-indent: -9999px; color: black; display: block; width: 103px; height: 25px; margin: 10px auto 0;}
 
@@ -602,17 +604,7 @@ td.views-field-php-7{font-size: 28px; font-weight: bold;}
 
 td.views-field-php-7 a {color: #0068d3;}
 
-.views-field .count{font-size: 10px; padding-top: 3px;}
-
-/* Providers block on a Article pages */
-.providers th.views-field-php-4,
-.providers td.views-field-php-4{width: 120px;}
-.providers th.views-field-php-2,
-.providers td.views-field-php-2{font-size: 16px !important; width: 50px !important;}
-.providers td.views-field-php-5 a{font-size: 9px; padding: 6px;}
-
-.providers .shadow{display: none; background: none; margin-bottom: 0;}
-
+.views-field .count{font-size: 11px; padding-top: 4px;}
 
 
 
@@ -1727,7 +1719,7 @@ body.one-sidebar.sidebar-second.page-get-iframe #main{background: none transpare
 
 
 /* Home banner block */
-#block-ch-blocks-home-banner {position: relative; margin: 0; overflow: hidden;}
+#block-ch-blocks-home-banner {position: relative; margin: 0 0 15px; overflow: hidden;}
 /*
 #block-ch-blocks-home-banner h1 {position: absolute; left: 20px; top: 25px; width: 350px; font-weight: 600; font-family: arial; font-size: 31px; line-height: 35px;}
 #block-ch-blocks-home-banner .banner_body {position: absolute; left: 15px; top: 100px; width: 400px;}
