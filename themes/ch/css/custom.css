@@ -365,8 +365,9 @@ body.not-admin #om-menu-main-om-menu li.om-leaf.leaf-write-review{background: no
 .front #main .block,
 #block-views-providers-block, #block-views-providers-block-1, #block-views-providers-block_1{position: relative; margin-bottom: 15px;}
 
-.block-views .view-id-providers .more-link{position: absolute; right: 0; top: 10px;}
-.block-views .view-id-providers .more-link a{color: #478AFD; font-size: 12px; font-weight: bold;}
+.block-views .view-id-providers .more-link{position: absolute; right: 0; top: 4px;}
+.view-id-providers .more-link a {background: url("images/sprite-2.png") no-repeat 0px 0px transparent; display: block; width: 98px; height: 32px; position: relative; top: -3px; text-indent: -9999px; text-align: left;}
+
 
 /*h2, h3{color: gray; font-size: 18px; font-weight: bold; line-height: 18px; margin: 0 0 5px 0; padding: 10px 0 5px 0;}*/
 h2, h3{color: gray; font-size: 18px; font-weight: bold; margin: 0 0 2px; padding: 0;}
@@ -562,8 +563,6 @@ th.views-field-php-7{width: 120px;}
 .view-providers .views-field-body div,
 .view-providers .views-field-body
 {text-align: left; font-size: 13px; margin: 2px 0 2px 0;}
-
-
 
 a.site-link {color: gray; display: block; background: url(images/visit-site-back.jpg) repeat-x 0 1px #f7c843; border-radius: 5px; font-size: 14px; padding: 5px 0 3px; box-shadow: 0px 1px 1px gray; width: 81px; margin: 3px auto; font-family: arial; font-weight: bold;}
 a.site-link:hover {color: black;}
