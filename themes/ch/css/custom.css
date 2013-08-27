@@ -7,15 +7,15 @@ body.front.one-sidebar.sidebar-second #sidebar-second{padding-top: 3px}
 
 #all-content-wrapper{overflow: hidden; padding-bottom: 5px;}
 
-/*#all-content{background: white; margin: auto; padding: 0; width: 960px; border: 1px solid lightgray; border-top: none; border-radius: 0 0 15px 15px; min-height: 600px; box-shadow: 0px 10px 60px #DDDDDD,0 0px 47px #f3f3f3;}*/
+/*#all-content{background: white; margin: auto; padding: 0; width: 1000px; border: 1px solid lightgray; border-top: none; border-radius: 0 0 15px 15px; min-height: 600px; box-shadow: 0px 10px 60px #DDDDDD,0 0px 47px #f3f3f3;}*/
 #all-content{background: white; padding: 0; min-height: 600px; box-shadow: 0px 10px 60px #DDDDDD,0 0px 7px gray;}
 
 
 /*#highlighted-wrapper {overflow: hidden;}*/
-#highlighted {background: white; margin: auto; padding: 0; width: 960px; /*border: 1px solid lightgray; border-bottom: none; border-top: none;*/ /*box-shadow: 0px 10px 60px #DDDDDD,0 0px 47px #f3f3f3;*/ /*box-shadow: 0 0 0px #DDDDDD, 0 20px 7px #000000;*/}
+#highlighted {background: white; margin: auto; padding: 0; width: 1000px; /*border: 1px solid lightgray; border-bottom: none; border-top: none;*/ /*box-shadow: 0px 10px 60px #DDDDDD,0 0px 47px #f3f3f3;*/ /*box-shadow: 0 0 0px #DDDDDD, 0 20px 7px #000000;*/}
 
-/*body.one-sidebar.sidebar-second #main {background: none repeat scroll 0 0 white; padding: 5px 0 10px 10px; width: 680px; border-radius: 0 0 0 15px;}*/
-body.one-sidebar.sidebar-second #main {background: none repeat scroll 0 0 white; padding: 5px 0 10px 15px; width: 680px; border-radius: 0 0 0 15px;}
+/*body.one-sidebar.sidebar-second #main {background: none repeat scroll 0 0 white; padding: 5px 0 10px 10px; width: 720px; border-radius: 0 0 0 15px;}*/
+body.one-sidebar.sidebar-second #main {background: none repeat scroll 0 0 white; padding: 5px 0 10px 15px; width: 720px; border-radius: 0 0 0 15px;}
 
 /*.page-node #main .main-content{float: left;}*/
 
@@ -23,15 +23,15 @@ body.one-sidebar.sidebar-second #main {background: none repeat scroll 0 0 white;
 #below {}
 #below .sidebar-second {}
 */
-#below_content {width: 670px; float: left;}
+#below_content {width: 720px; float: left;}
 
 
 a, a:focus{ -webkit-appearance: none; outline: none;}
 
 /*#c-top{background: url(images/top-back3.jpg) repeat-x scroll 0 bottom #484848; height: 112px;}*/
-#c-top{height: 130px; background: white; width: 960px; margin: auto; box-shadow: 0px 10px 60px #DDDDDD,0 0px 7px gray;}
+#c-top{height: 130px; background: white; width: 1000px; margin: auto; box-shadow: 0px 10px 60px #DDDDDD,0 0px 7px gray;}
 
-.header{margin: auto; position: relative; width: 960px;}
+.header{margin: auto; position: relative; width: 1000px;}
 
 
 /* Make caption narrower */
@@ -87,7 +87,7 @@ input.blur, textarea.blur,
 
 
 
-#header, #navigation, #all-content, #footer-inside{width: 960px; margin: auto;}
+#header, #navigation, #all-content, #footer-inside{width: 1000px; margin: auto;}
 #footer-inside{position: relative;}
 
 #header{padding-top: 85px; z-index: 4;}
@@ -168,7 +168,7 @@ ul.header-links a.Submit.Reviews{background: url("images/block-head-red.png") re
 #footer .menu li{margin: 2px 2px 0 2px;}
 
 #under-footer {height: 30px; padding-top: 5px;}
-#under-footer .c {color: gray; font-size: 12px; width: 960px; margin: auto;}
+#under-footer .c {color: gray; font-size: 12px; width: 1000px; margin: auto;}
 */
 
 #footer ul {margin: 5px 0 0 260px;}
@@ -1177,7 +1177,7 @@ h2.rcaption a, h3.rcaption a, /*.node-review*/ h3.rcaption a:hover{color: white;
 
 .node-type-review #main .main-content h1{padding: 0 10px;  display: block; font-size: 28px;}
 .node-type-review #main .main-content .submitted{display: block; padding: 0 0 10px 10px;}
-.node-type-review #main .main-content .content{margin: auto; padding: 20px 0 10px 0; position: relative; width: 670px;}
+.node-type-review #main .main-content .content{margin: auto; padding: 20px 0 10px 0; position: relative; width: 720px;}
 
 
 .node-review .ch_votes, .node-type-review .ch_votes{margin: 0; font-size: 15px;}
@@ -1767,14 +1767,14 @@ body.one-sidebar.sidebar-second.page-get-iframe #main{background: none transpare
 
 
 /* Template page--compare_providers.tpl.php with .page-compare-providers */
-body.one-sidebar.sidebar-second .page-compare-providers #main {width: 930px;}
+body.one-sidebar.sidebar-second .page-compare-providers #main {width: 970px;}
 body.sidebar-second .page-compare-providers #sidebar-second {padding: 0; margin-left: 5px;}
-.page-compare-providers table{width: 930px;}
+.page-compare-providers table{width: 970px;}
 
 /*.field-name-field-preface-b-body*/
 .page-compare-providers .field-name-field-preface-bottom {width: 100%;}
 
-/*.page-compare-providers .content.page.preface {width: 670px;}*/
+/*.page-compare-providers .content.page.preface {width: 720px;}*/
 /*.page-compare-providers #block-views-providers-block-top-sh-p-table {clear: both;}*/
 
 
