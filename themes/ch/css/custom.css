@@ -449,11 +449,11 @@ div.fivestar-widget-static .star span.on{text-indent: -9999px; width: 15px; heig
 .view-providers th{position: relative; background: url(images/chart-th-back.jpg) repeat-x 0 0 transparent; color: white; height: 39px; text-align: center; font-size: 13px; padding: 0 5px; font-weight: bold;}
 */
 .view-display-id-page_chart_providers th,
-.view-providers th{background: #5fb2ea; position: relative; color: white; height: 48px; text-align: center; font-size: 13px; padding: 0 5px; font-weight: bold;}
+.view-providers th{background: #5fb2ea; position: relative; color: white; height: 48px; text-align: center; font-size: 14px; padding: 0 5px; font-weight: bold;}
 
 
 .view-display-id-page_chart_providers th a,
-.view-providers th a{color: white; display: block; font-size: 15px; font-weight: bold; position: relative; background: url("images/arrow-asc-desc.png") no-repeat right center transparent; line-height: 15px;}
+.view-providers th a{color: white; display: block; font-size: 14px; font-weight: bold; position: relative; background: url("images/arrow-asc-desc.png") no-repeat right center transparent; line-height: 15px;}
 th.active img {padding: 0 0 0 4px; position: absolute; right: 0; top: 0;}
 
 .view-display-id-page_chart_providers .view-providers td,
