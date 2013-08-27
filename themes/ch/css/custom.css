@@ -423,7 +423,9 @@ h2, h3{color: gray; font-size: 18px; font-weight: bold; margin: 0 0 2px; padding
 /* Ratings */
 #main .view-providers .fivestar{float: left; position: relative; top: 3px;}
 /*#main .view-providers table .fivestar{float: none; position: static; margin: auto; width: 75px;}*/
-#main .view-providers table .fivestar, .front table .fivestar{float: left; position: relative; left: 10px; top: 4px;}
+
+#main .view-providers table .fivestar, .front table .fivestar{float: left; position: relative; left: 0; top: 4px;}
+.front p-less-fields table .fivestar{left: 2px;}
 
 /*
 div.fivestar-widget-static .star{width: 15px; background: url("images/sprite-2.png") no-repeat scroll 0 0 transparent;}
@@ -546,8 +548,8 @@ th.views-field-php-6{width: 68px;}
 .p-less-fields th.views-field-php-6{width: 100px;}
 
 
-th.views-field-php-7{width: 120px;}
-.p-less-fields th.views-field-php-7{width: 110px;}
+th.views-field-php-7{width: 90px;}
+/*.p-less-fields th.views-field-php-7{width: 90px;}*/
 
 .view-providers th .ajax-progress.ajax-progress-throbber {position: absolute; top: 15px; left: 0;}
 
