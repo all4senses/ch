@@ -5334,7 +5334,7 @@ function ch_misc_getProviderQuickData($target, $data) {
         global $user;
         if ($data['data']->nid == 88 && $user->hostname == '109.171.109.18') {
           
-          dpm($user);
+          dpr($user);
           $image .= '..';
           dpm($all_data_quick);
         }
