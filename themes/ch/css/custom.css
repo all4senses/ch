@@ -14,7 +14,8 @@ body.front.one-sidebar.sidebar-second #sidebar-second{padding-top: 3px}
 /*#highlighted-wrapper {overflow: hidden;}*/
 #highlighted {background: white; margin: auto; padding: 0; width: 960px; /*border: 1px solid lightgray; border-bottom: none; border-top: none;*/ /*box-shadow: 0px 10px 60px #DDDDDD,0 0px 47px #f3f3f3;*/ /*box-shadow: 0 0 0px #DDDDDD, 0 20px 7px #000000;*/}
 
-body.one-sidebar.sidebar-second #main {background: none repeat scroll 0 0 white; padding: 5px 0 10px 10px; width: 680px; border-radius: 0 0 0 15px;}
+/*body.one-sidebar.sidebar-second #main {background: none repeat scroll 0 0 white; padding: 5px 0 10px 10px; width: 680px; border-radius: 0 0 0 15px;}*/
+body.one-sidebar.sidebar-second #main {background: none repeat scroll 0 0 white; padding: 5px 0 10px 15px; width: 680px; border-radius: 0 0 0 15px;}
 
 /*.page-node #main .main-content{float: left;}*/
 
@@ -434,6 +435,8 @@ div.fivestar-widget-static .star span.on{text-indent: -9999px; width: 15px; heig
 
 .view-display-id-page_chart_providers {margin: 0 0 50px 0;}
 
+.view-providers {box-shadow: 1px 3px 10px -4px black;}
+
 /*
 .view-display-id-page_chart_providers table,
 .view-providers table{margin-bottom: 0; border-collapse: separate; border-spacing: 0 4px; border: 1px solid lightgray; padding: 3px 7px 4px; border-radius: 5px;}
@@ -441,10 +444,12 @@ div.fivestar-widget-static .star span.on{text-indent: -9999px; width: 15px; heig
 .view-display-id-page_chart_providers table,
 .view-providers table{margin-bottom: 0; border-collapse: separate; border: 1px solid lightgray;}
 
-
+/*
 .view-display-id-page_chart_providers th,
 .view-providers th{position: relative; background: url(images/chart-th-back.jpg) repeat-x 0 0 transparent; color: white; height: 39px; text-align: center; font-size: 13px; padding: 0 5px; font-weight: bold;}
-
+*/
+.view-display-id-page_chart_providers th,
+.view-providers th{background: #5fb2ea; position: relative; color: white; height: 39px; text-align: center; font-size: 13px; padding: 0 5px; font-weight: bold;}
 
 
 .view-display-id-page_chart_providers th a,
