@@ -55,7 +55,8 @@ ul li p{margin-bottom: 0;}
 /* Fix some ugly ol negative margins on some blog posts */
 ol {padding-left: 3em;}
 
-.field-name-body ul{list-style-type: disc;}
+.field-name-body ul,
+.field-name-field-preface-bottom ul{list-style-type: disc;}
 
 .delim{margin: 0 5px 0 5px;}
 
@@ -533,7 +534,7 @@ th.views-field-php-4{width: 75px;}
 th.views-field-php-5{/*width: 80px;*/}
 
 th.views-field-php-6{width: 120px;}
-th.views-field-php-7{width: 130px;}
+th.views-field-php-7{width: 115px;}
 
 .view-providers th .ajax-progress.ajax-progress-throbber {position: absolute; top: 15px; left: 0;}
 
