@@ -431,7 +431,7 @@ div.fivestar-widget-static .star{width: 15px; height: 15px; float: left; backgro
 div.fivestar-widget-static .star span.on{text-indent: -9999px; width: 15px; height: 15px; display: block; background: url("images/sprite-2.png") no-repeat scroll 0 -68px transparent;}
 
 
-.view-providers .plan{color: #0068d3; font-size: 13px; font-weight: bold; margin: 0 0 3px 2px;}
+.view-providers .plan{color: #0068d3; font-size: 13px; font-weight: bold; margin: 0 0 1px 2px;}
 .view-providers .feature{background: url("images/sprite-2.png") no-repeat scroll -189px 0 transparent; font-size: 13px; padding-left: 20px; color: #777777; line-height: 20px; }
 
 
@@ -461,7 +461,7 @@ th.active img {padding: 0 0 0 4px; position: absolute; right: 0; top: 0;}
 .view-display-id-page_chart_providers .view-providers td,
 #all-content .view-display-id-page_chart_providers td.active,
 #all-content .view-providers td, 
-#all-content .view-providers td.active{padding: 5px 5px 5px; text-align: center; color: #00325e; font-size: 14px;}
+#all-content .view-providers td.active{padding: 5px 5px 5px; text-align: center; color: #00325e; font-size: 15px;}
 
 td.active {background-color: #f6f6f6;}
 
@@ -537,7 +537,9 @@ th.views-field-php-4{width: 75px;}
 th.views-field-php-5{/*width: 80px;*/}
 
 th.views-field-php-6{width: 120px;}
+
 th.views-field-php-7{width: 120px;}
+#block-views-providers-block-top-sh-p-table th.views-field-php-7{width: 110px;}
 
 .view-providers th .ajax-progress.ajax-progress-throbber {position: absolute; top: 15px; left: 0;}
 
@@ -596,7 +598,9 @@ td.views-field-php-4 a:hover{text-decoration: underline;}
 
 /*td.views-field-php-5 a{background: #478AFD; border-radius: 3px; color: white; font-size: 12px; font-weight: bold; padding: 8px 3px;}*/
 
-td.views-field-php-7{font-size: 28px; font-weight: bold; color: orange; font-style: italic;}
+td.views-field-php-7{font-size: 28px; font-weight: bold;}
+
+td.views-field-php-7 a {color: #0068d3;}
 
 .views-field .count{font-size: 10px; padding-top: 3px;}
 
