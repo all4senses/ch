@@ -5331,7 +5331,7 @@ function ch_misc_getProviderQuickData($target, $data) {
         
         $image = theme('ch_misc_image_style', array('style_name' => $image_style_name, 'path' => $all_data_quick[$data['data']->nid]['i_logo_uri'], 'alt' =>  $all_data_quick[$data['data']->nid]['i_logo_alt'], 'title' =>  $all_data_quick[$data['data']->nid]['i_logo_title'] ));
         
-        $out = ch_misc_getTrackingUrl($image, NULL, $data['data']->nid);
+        $out = ch_misc_getTrackingUrl('..' . $image, NULL, $data['data']->nid);
       }
       else {
         if (!empty($all_data_quick[$data['data']->nid]['name'])) {
