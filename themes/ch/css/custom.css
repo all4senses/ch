@@ -424,8 +424,8 @@ h2, h3{color: gray; font-size: 18px; font-weight: bold; line-height: 18px; margi
 div.fivestar-widget-static .star{width: 15px; background: url("images/sprite-2.png") no-repeat scroll 0 0 transparent;}
 div.fivestar-widget-static .star span.on{background: url("images/sprite-2.png") no-repeat scroll 0 -32px transparent;}
 */
-div.fivestar-widget-static .star{width: 15px; height: 15px; float: left; background: url("images/sprite-2.png") no-repeat scroll 0 0 transparent;}
-div.fivestar-widget-static .star span.on{text-indent: -9999px; width: 15px; height: 15px; display: block; background: url("images/sprite-2.png") no-repeat scroll 0 -32px transparent;}
+div.fivestar-widget-static .star{width: 15px; height: 15px; float: left; background: url("images/sprite-2.png") no-repeat scroll 0 -51px transparent;}
+div.fivestar-widget-static .star span.on{text-indent: -9999px; width: 15px; height: 15px; display: block; background: url("images/sprite-2.png") no-repeat scroll 0 -68px transparent;}
 
 
 #main .plan{color: #275FA6; font-size: 13px; font-weight: bold; margin: 0 0 3px 2px;}
