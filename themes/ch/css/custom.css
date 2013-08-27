@@ -431,7 +431,7 @@ div.fivestar-widget-static .star{width: 15px; height: 15px; float: left; backgro
 div.fivestar-widget-static .star span.on{text-indent: -9999px; width: 15px; height: 15px; display: block; background: url("images/sprite-2.png") no-repeat scroll 0 -68px transparent;}
 
 
-.view-providers .plan{color: #275FA6; font-size: 13px; font-weight: bold; margin: 0 0 3px 2px;}
+.view-providers .plan{color: #0068d3; font-size: 13px; font-weight: bold; margin: 0 0 3px 2px;}
 .view-providers .feature{background: url("images/sprite-2.png") no-repeat scroll -189px 0 transparent; font-size: 13px; padding-left: 20px; color: #777777; line-height: 20px; }
 
 
