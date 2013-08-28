@@ -5607,7 +5607,9 @@ function ch_misc_getProviderQuickData($target, $data) {
       //$out = l('Visit Site', $url, array('attributes' => array(/*'rel' => 'nofollow', */'target' => '_blank', 'class' => 'site')));
       
       //ch_misc_getTrackingUrl($title_or_wrapped_object, $subpath = NULL, $nid = NULL, $target_name = NULL, $a_class = NULL, $service_type = NULL) {
-      $out = ch_misc_getTrackingUrl('Visit Site', NULL, $data['data']->nid, NULL, 'reviews visit-site-btn', $data['service_type']);
+      
+      //$out = ch_misc_getTrackingUrl('Visit Site', NULL, $data['data']->nid, NULL, 'reviews visit-site-btn', $data['service_type']);
+      $out = ch_misc_getTrackingUrl('', NULL, $data['data']->nid, NULL, 'reviews visit-site-btn', $data['service_type']);
       
       return $out;
 
