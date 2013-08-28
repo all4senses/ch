@@ -30,7 +30,6 @@
 
 
                       <?php
-                      dpm($node->p_data);
                         if (!$node->p_data['info']['i_web_hide'] && !empty($node->p_data['info']['i_web'])) {
                           echo '<div class="site">' , ch_misc_getTrackingUrl('Visit ' . $node->field_p_name['und'][0]['value']), '</div>';
                         }
@@ -45,11 +44,9 @@
                               <?php
                                 if ($node->ch_voters) {
                                   echo '<div class="voters"><div class="title">Total Number of Reviews:</div><div class="count" property="v:count"><a href="#reviews">' . $node->ch_voters . '</a></div></div>';
-                                }
-                                echo '<div class="caption">Overall Consumer Ratings</div>' . render($content['ch_ratings']); 
-                                if ($node->ch_voters) {
                                   echo '<div class="recommend"><div class="title">Would recommend: </div><div class="data">' . $node->ch_recommend . '% of Users' . '</div></div>';
                                 }
+                                echo '<div class="caption"><span property="v:itemreviewed">', $node->field_p_name['und'][0]['value'], '</span> Ratings</div>', render($content['ch_ratings']); 
                               ?>
                             </div>
                         

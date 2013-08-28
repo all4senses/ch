@@ -1190,6 +1190,7 @@ margin-top: 100px;
 .logged-in.node-type-provider .ch_votes {float: none; width: 280px; margin: 0; padding: 10px 8px 6px; border: 1px solid lightgray; border-radius: 5px;}
 .logged-in.node-type-provider .overall {margin-left: 0; position: relative;}
 
+.logged-in.node-type-provider .site a {background: none; text-indent: 0; color: black; display: block; width: 103px; height: 25px; margin: auto;}
 
 
 
