@@ -424,7 +424,12 @@ h2, h3{color: gray; font-size: 18px; font-weight: bold; margin: 0 0 2px; padding
 #main .view-providers .fivestar{float: left; position: relative; top: 3px;}
 /*#main .view-providers table .fivestar{float: none; position: static; margin: auto; width: 75px;}*/
 
-#main .view-providers table .fivestar, .front table .fivestar{float: left; position: relative; left: 0; top: 4px;}
+#main .view-providers table .fivestar, .front table .fivestar{float: left; position: relative; left: 0; top: 6px;}
+/* safari and chrome only */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  #main .view-providers table .fivestar, .front table .fivestar{float: left; position: relative; left: 0; top: 4px;}
+}
+  
 .front p-less-fields table .fivestar{left: 2px;}
 
 /*
