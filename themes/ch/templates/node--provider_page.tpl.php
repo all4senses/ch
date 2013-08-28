@@ -19,53 +19,22 @@
           
           <div id="left-col" style="overflow: hidden;">
             
-                      <div class="logo-info">
+                      <div class="image">
+                      <?php
+                        if (isset($content['field_p_image'][0]['#item']['uri'])) {
+                          echo '<div>' . ch_misc_getTrackingUrl(theme('image_style', array( 'path' =>  $content['field_p_image'][0]['#item']['uri'], 'style_name' => 'image_provider_page', 'alt' =>  $content['field_p_image'][0]['#item']['alt'], 'title' =>  $content['field_p_image'][0]['#item']['title']))), '</div>';
+                        }
+                      ?>
 
-                              <?php
-                                if (isset($content['field_p_logo'][0]['#item']['uri'])) {
-                                  echo '<div class="logo">' . ch_misc_getTrackingUrl(theme('image_style', array( 'path' =>  $content['field_p_logo'][0]['#item']['uri'], 'style_name' => 'logo_provider_page', 'alt' => $content['field_p_logo'][0]['#item']['alt'], 'title' => $content['field_p_logo'][0]['#item']['title'], 'attributes' => array('rel' => 'v:photo')))) . '</div>';
-                                }
-                                else {
-                                  echo render($title_prefix), '<h2', $title_attributes,'>', $node->field_p_name['und'][0]['value'] /*$content['field_p_name'][0]['#markup']*/, '</h2>', render($title_suffix);
-                                }
-
-                              ?>
-
-                              <div class="image">
-                              <?php
-                                if (isset($content['field_p_image'][0]['#item']['uri'])) {
-                                  echo '<div>' . ch_misc_getTrackingUrl(theme('image_style', array( 'path' =>  $content['field_p_image'][0]['#item']['uri'], 'style_name' => 'image_provider_page', 'alt' =>  $content['field_p_image'][0]['#item']['alt'], 'title' =>  $content['field_p_image'][0]['#item']['title']))), '</div>';
-                                }
-                              ?>
-
-                              </div>
-                            
-                              
-                              <?php
-                                if (!$node->p_data['info']['i_web_hide'] && !empty($node->p_data['info']['i_web'])) {
-                                  echo '<div class="site">' , ch_misc_getTrackingUrl('Visit ' . $node->field_p_name['und'][0]['value']), '</div>';
-                                }
-                              ?>   
-
-                              <div class="basic-info" rel="v:itemreviewed">
-                                <div typeof="Organization">
-                                  <div class="caption"><?php echo t('!p Corporate Info:', array('!p' => '<span property="v:itemreviewed">' . $node->field_p_name['und'][0]['value'] /*$content['field_p_name'][0]['#markup']*/ . '</span>')); ?></div>
-                                  <div><?php echo '<span class="title">Headquarters:</span><span property="v:address">' . $node->p_data['info']['i_heads'] . '</span>'; ?></div>
-                                  <div><?php echo '<span class="title">Founded In:</span>' . $node->p_data['info']['i_founded']; ?></div>
-                                  <div><?php echo '<span class="title">Service Availability:</span>' . $node->p_data['info']['i_availability']; ?></div>
-                                  <div>
-                                    <?php 
-                                      if (!$node->p_data['info']['i_web_hide'] && !empty($node->p_data['info']['i_web'])) {
-                                        $goto_link_title = (isset($node->p_data['info']['i_web_display']) && $node->p_data['info']['i_web_display']) ? $node->p_data['info']['i_web_display'] : str_replace(array('http://', 'https://'), '', $node->p_data['info']['i_web']);
-                                        echo '<span class="title">Website:</span>' . ch_misc_getTrackingUrl($goto_link_title, NULL, NULL, NULL, NULL, array('key' => 'rel', 'value' => 'v:url'));
-                                      }
-                                      ?>
-                                  </div>
-                                </div>
-                              </div>
+                      </div>
 
 
-                      </div> <!-- <div class="logo-info">-->
+                      <?php
+                        if (!$node->p_data['info']['i_web_hide'] && !empty($node->p_data['info']['i_web'])) {
+                          echo '<div class="site">' , ch_misc_getTrackingUrl('Visit ' . $node->field_p_name['und'][0]['value']), '</div>';
+                        }
+                      ?>   
+
 
                       
                       
@@ -115,7 +84,7 @@
                     <h1<?php //print $title_attributes; 
                     echo ' property="v:summary"'; 
                     if (!$node->status) {echo ' class="not-published"';}?> ><?php 
-                      print $node->field_p_name['und'][0]['value'] . ': ' . $title; 
+                      print $title; 
                     ?></h1>
 
                     <ul>
