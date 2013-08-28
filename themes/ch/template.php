@@ -597,6 +597,9 @@ function ch_process_page(&$variables) {
  * Override or insert variables into the node template.
  */
 function ch_preprocess_node(&$variables) {
+  
+  global $user;
+  
   $variables['submitted'] = t('Published by !username on !datetime', array('!username' => $variables['name'], '!datetime' => $variables['date']));
   if ($variables['view_mode'] == 'full' && node_is_page($variables['node'])) {
     $variables['classes_array'][] = 'node-full';
@@ -623,6 +626,10 @@ function ch_preprocess_node(&$variables) {
       elseif(@$variables['node']->field_preface_key['und'][0]['value'] == 'providers_types_n_features_n_etc') {
         $variables['theme_hook_suggestions'][] = 'node__preface__types';
       }
+    }
+    
+    elseif($variables['node']->type == 'provider' && $user->uid == 1) {
+      $variables['theme_hook_suggestions'][] = 'node__provider_page';
     }
     
   }
