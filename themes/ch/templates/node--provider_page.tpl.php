@@ -36,14 +36,16 @@
                                 if (isset($content['field_p_image'][0]['#item']['uri'])) {
                                   echo '<div>' . ch_misc_getTrackingUrl(theme('image_style', array( 'path' =>  $content['field_p_image'][0]['#item']['uri'], 'style_name' => 'image_provider_page', 'alt' =>  $content['field_p_image'][0]['#item']['alt'], 'title' =>  $content['field_p_image'][0]['#item']['title']))), '</div>';
                                 }
+                              ?>
 
+                              </div>
+                            
+                              
+                              <?php
                                 if (!$node->p_data['info']['i_web_hide'] && !empty($node->p_data['info']['i_web'])) {
                                   echo '<div class="site">' , ch_misc_getTrackingUrl('Visit ' . $node->field_p_name['und'][0]['value']), '</div>';
                                 }
-                              ?>  
-
-                            </div>
-
+                              ?>   
 
                               <div class="basic-info" rel="v:itemreviewed">
                                 <div typeof="Organization">
@@ -73,7 +75,6 @@
                               <?php
                                 if ($node->ch_voters) {
                                   echo '<div class="voters"><div class="title">Total Number of Reviews:</div><div class="count" property="v:count"><a href="#reviews">' . $node->ch_voters . '</a></div></div>';
-                                  //echo '<div id="positive">' . $node->ch_recommends['positive'] . ' Positive reviews</div><div id="negative">' . $node->ch_recommends['negative'] . ' Negative reviews</div>';
                                 }
                                 echo '<div class="caption">Overall Consumer Ratings</div>' . render($content['ch_ratings']); 
                                 if ($node->ch_voters) {
@@ -81,24 +82,17 @@
                                 }
                               ?>
                             </div>
+                        
                             <div class="overall"> 
-                              <div class="star-big">
+
                                 <?php 
                                   if ($node->ch_rating_overall) {
-                                    echo '<div class="count" content="' . $node->ch_rating_overall . '" property="v:rating">' . $node->ch_rating_overall . '</div>' . '<div class="descr">Out of 5 stars</div>'; 
+                                    echo 'Overall Score: <span class="count" content="' . $node->ch_rating_overall . '" property="v:rating">' . $node->ch_rating_overall . '</span>out of 5'; 
                                   }
                                   else {
                                     echo '<div class="descr be-first">Be the first to review</div>'; 
                                   }
                                 ?>
-                              </div>
-                              <div class="text">
-                                <div class="title"><?php $node->field_p_name['und'][0]['value']  . ' Overall Rated:'; ?></div>
-                                <?php 
-                                  //echo '<a id="' . ($node->ch_voters ? 'write-review' : 'write-review-first') . '" href="' . url('node/' . $node->nid, array('fragment' => 'tabs-3')) . '"><img src="/f/img/writeareview.png" /></a>'; 
-                                  echo '<a id="' . ($node->ch_voters ? 'write-review' : 'write-review-first') . '" href="' . url('node/add/review', array('query' => array('id' => $node->nid))) . '" rel="nofollow"><img src="/f/img/writeareview.png" /></a>'; 
-                                ?>
-                              </div>
 
                             </div>
 
@@ -111,8 +105,8 @@
               
               
               
-
-            <a name="provider-tabs"></a>         
+      
+      
             <div class="data tabs">
                 
                 <ul>

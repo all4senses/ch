@@ -628,7 +628,7 @@ function ch_preprocess_node(&$variables) {
       }
     }
     
-    elseif($variables['node']->type == 'provider' && $user->uid == 1) {
+    elseif($variables['node']->type == 'provider' && $user->uid) {
       $variables['theme_hook_suggestions'][] = 'node__provider_page';
     }
     
