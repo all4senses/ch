@@ -108,7 +108,13 @@
       
       
             <div class="data tabs">
-                
+              
+                <h1<?php //print $title_attributes; 
+                echo ' property="v:summary"'; 
+                if (!$node->status) {echo ' class="not-published"';}?> ><?php 
+                  print $node->field_p_name['und'][0]['value'] . ': ' . $title; 
+                ?></h1>
+              
                 <ul>
                   <?php if ($page && isset($content['reviews_entity_view_1']) && $content['reviews_entity_view_1']): ?>
                     <li><a href="#tabs-0"><?php echo 'Consumer Reviews'; ?></a></li>

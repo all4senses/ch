@@ -1176,7 +1176,9 @@ margin-top: 100px;
 
 /* New provider template for page and node*/
 
-.logged-in.node-type-provider .data.tabs {margin: 0; width: 650px; float: right;}
+.logged-in.node-type-provider #main .main-content {position: relative; padding: 40px 0 0 0;}
+.logged-in.node-type-provider .data.tabs {margin: 0; width: 650px; float: right; position: static;}
+.logged-in.node-type-provider ul.ui-widget-header {position: absolute; top: 0; left: 0;}
 
 .logged-in.node-type-provider #left-col{overflow: hidden; float: left; width: 300px;}
 .logged-in.node-type-provider .logo-info {float: none; width: 180px; overflow: hidden;}
