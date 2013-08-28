@@ -44,6 +44,7 @@
           
         <?php if ($page): ?>
           
+          <div class="data tabs">
           <div id="top-line">
             
                <h1<?php //print $title_attributes; 
@@ -52,7 +53,7 @@
                   print $node->field_p_name['und'][0]['value'] . ': ' . $title; 
                 ?></h1>
    
-                <div class="data tabs">
+                
 
                     <ul>
                       <?php if ($page && isset($content['reviews_entity_view_1']) && $content['reviews_entity_view_1']): ?>
@@ -75,7 +76,7 @@
               
                 </div> 
             
-          </div>
+
           
           
           <div style="overflow: hidden;">
