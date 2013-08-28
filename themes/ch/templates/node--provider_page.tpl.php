@@ -30,6 +30,7 @@
 
 
                       <?php
+                      dpm($node->p_data);
                         if (!$node->p_data['info']['i_web_hide'] && !empty($node->p_data['info']['i_web'])) {
                           echo '<div class="site">' , ch_misc_getTrackingUrl('Visit ' . $node->field_p_name['und'][0]['value']), '</div>';
                         }
