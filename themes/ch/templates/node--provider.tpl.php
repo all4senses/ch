@@ -15,13 +15,13 @@
 
           ?>
     
-          <?php /*
+    
           <h1<?php //print $title_attributes; 
                 echo ' property="v:summary"'; 
                 if (!$node->status) {echo ' class="not-published"';}?> ><?php 
                   print $title; 
                 ?></h1>
-          */ ?>
+   
    
         <?php else: ?>
           <header>
@@ -42,42 +42,7 @@
           
           
           
-        <?php if ($page): ?>
-          
-          <div class="data tabs">
-          <div id="top-line">
-            
-               <h1<?php //print $title_attributes; 
-                echo ' property="v:summary"'; 
-                if (!$node->status) {echo ' class="not-published"';}?> ><?php 
-                  print $node->field_p_name['und'][0]['value'] . ': ' . $title; 
-                ?></h1>
-   
-                
-
-                    <ul>
-                      <?php if ($page && isset($content['reviews_entity_view_1']) && $content['reviews_entity_view_1']): ?>
-                        <li><a href="#tabs-0"><?php echo 'Consumer Reviews'; ?></a></li>
-                      <?php endif; ?>
-
-                      <li><a href="#tabs-1"><?php echo t('About !p', array('!p' => isset($node->field_p_name['und'][0]['value']) ? $node->field_p_name['und'][0]['value'] : t(' Provider') )); ?></a></li>
-
-                      <?php 
-
-                      if ($user->uid && !empty($node->p_data['provider_options']) && (!isset($node->p_data['provider_options']['enabled']) || !empty($node->p_data['provider_options']['enabled']))) {
-                        echo '<li><a href="#tabs-2">Available Options</a></li>';
-                      }
-
-                      ?>
-
-                      <?php /* <li><a href="#tabs-3"><?php echo 'Write Review'; ?></a></li> */ ?>
-
-                    </ul>
-              
-                </div> 
-            
-
-          
+           <?php if ($page): ?>
           
           <div style="overflow: hidden;">
               <div class="logo-info">
@@ -87,7 +52,7 @@
                     echo '<div class="logo">' . ch_misc_getTrackingUrl(theme('image_style', array( 'path' =>  $content['field_p_logo'][0]['#item']['uri'], 'style_name' => 'logo_provider_page', 'alt' => $content['field_p_logo'][0]['#item']['alt'], 'title' => $content['field_p_logo'][0]['#item']['title'], 'attributes' => array('rel' => 'v:photo')))) . '</div>';
                   }
                   else {
-                    echo render($title_prefix), '<h2', $title_attributes,'>', $node->field_p_name['und'][0]['value'], '</h2>', render($title_suffix);
+                    echo render($title_prefix), '<h2', $title_attributes,'>', $node->field_p_name['und'][0]['value'] /*$content['field_p_name'][0]['#markup']*/, '</h2>', render($title_suffix);
                   }
                   
                 ?>
@@ -168,8 +133,27 @@
               
 
               <a name="provider-tabs"></a>         
-              
               <div class="data tabs">
+                
+                <ul>
+                  <?php if ($page && isset($content['reviews_entity_view_1']) && $content['reviews_entity_view_1']): ?>
+                    <li><a href="#tabs-0"><?php echo 'Consumer Reviews'; ?></a></li>
+                  <?php endif; ?>
+                    
+                  <li><a href="#tabs-1"><?php echo t('About !p', array('!p' => isset($node->field_p_name['und'][0]['value']) ? $node->field_p_name['und'][0]['value'] : t(' Provider') )); ?></a></li>
+                  
+                  <?php 
+                  
+                  if ($user->uid && !empty($node->p_data['provider_options']) && (!isset($node->p_data['provider_options']['enabled']) || !empty($node->p_data['provider_options']['enabled']))) {
+                    echo '<li><a href="#tabs-2">Available Options</a></li>';
+                  }
+                  
+                  ?>
+                  
+                  <?php /* <li><a href="#tabs-3"><?php echo 'Write Review'; ?></a></li> */ ?>
+                  
+                </ul>
+                
                 <?php if ($page && isset($content['reviews_entity_view_1']) && $content['reviews_entity_view_1']): ?>
                   <div id="tabs-0">
                     <div class="reviews">
