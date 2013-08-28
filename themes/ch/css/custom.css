@@ -23,7 +23,8 @@ body.one-sidebar.sidebar-second #main {background: none repeat scroll 0 0 white;
 #below {}
 #below .sidebar-second {}
 */
-#below_content {width: 710px; float: left;}
+
+#below_content {width: 700px; float: left;}
 
 
 a, a:focus{ -webkit-appearance: none; outline: none;}
@@ -441,6 +442,7 @@ div.fivestar-widget-static .star span.on{text-indent: -9999px; width: 15px; heig
 .view-display-id-page_chart_providers {margin: 0 0 50px 0;}
 
 .view-providers {box-shadow: 1px 3px 10px -4px black;}
+.page-compare-providers .view-providers {width: 960px;}
 
 /*
 .view-display-id-page_chart_providers table,
@@ -1776,8 +1778,8 @@ body.one-sidebar.sidebar-second.page-get-iframe #main{background: none transpare
 
 /* Template page--compare_providers.tpl.php with .page-compare-providers */
 body.one-sidebar.sidebar-second .page-compare-providers #main {width: 980px;}
-body.sidebar-second .page-compare-providers #sidebar-second {padding: 0; margin-left: 5px;}
-.page-compare-providers table{width: 980px;}
+body.sidebar-second .page-compare-providers #sidebar-second {padding: 0 20px 0 0; margin-left: 5px;}
+
 
 /*.field-name-field-preface-b-body*/
 .page-compare-providers .field-name-field-preface-bottom {width: 100%;}
