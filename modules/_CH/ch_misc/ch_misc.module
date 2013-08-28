@@ -5172,7 +5172,7 @@ function ch_misc_getProvidersDataQuick($scope = 'all', $reset = FALSE, $clear_fr
     unset($_SESSION['p_all_data_quick']);
   }
     
-  $p_data_quick = NULL;
+  $p_data_quick = array();
   if ($scope == 'all') {
     // If data is not in the Session or its age more than 5 hours, reset it.
     
@@ -5334,7 +5334,7 @@ function ch_misc_getProviderQuickData($target, $data) {
         global $user;
         if ($data['data']->nid == 88 && $user->hostname == '109.171.109.18') {
           
-          $image .= '.. <PRE>' . print_r($all_data_quick[$data['data']->nid], TRUE) . '</PRE>';
+          //$image .= '.. <PRE>' . print_r($all_data_quick[$data['data']->nid], TRUE) . '</PRE>';
           dpm($all_data_quick[$data['data']->nid]);
         }
         
