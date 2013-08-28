@@ -1164,6 +1164,38 @@ margin-top: 100px;
 
 
 
+
+
+
+
+
+
+
+
+
+
+/* New provider template for page and node*/
+
+.logged-in.node-type-provider .data.tabs {margin: 0; width: 650px; float: right;}
+
+.logged-in.node-type-provider #letft-col{overflow: hidden; float: left; width: 300px;}
+.logged-in.node-type-provider .logo-info {float: none; width: 180px; overflow: hidden;}
+.logged-in.node-type-provider .image {float: none; text-align: center; overflow: inherit;}
+.logged-in.node-type-provider .basic-info {float: none; margin: 0; width: inherit; font-size: 15px;}
+.logged-in.node-type-provider .ch_votes {float: none; width: 280px; margin: 0; padding: 10px 8px 6px; border: 1px solid lightgray; border-radius: 5px;}
+.logged-in.node-type-provider .overall {margin-left: 0; position: relative;}
+
+
+
+
+
+
+
+
+
+
+
+
 /* Provider edit page */
 .page-node-edit .form-item-i-web{float: left;}
 .page-node-edit .form-item-i-web-display{margin: 32px 0 0 450px;}
