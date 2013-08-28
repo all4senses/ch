@@ -87,10 +87,10 @@
 
                     <ul>
                       <?php if ($page && isset($content['reviews_entity_view_1']) && $content['reviews_entity_view_1']): ?>
-                        <li><a href="#tabs-0"><?php echo 'Consumer Reviews'; ?></a></li>
+                        <li><a href="#tabs-0"><?php echo 'Customer Reviews'; ?></a></li>
                       <?php endif; ?>
 
-                      <li><a href="#tabs-1"><?php echo t('About !p', array('!p' => isset($node->field_p_name['und'][0]['value']) ? $node->field_p_name['und'][0]['value'] : t(' Provider') )); ?></a></li>
+                      <li><a href="#tabs-1">Editor's Overview</a></li>
 
                       <?php 
 
