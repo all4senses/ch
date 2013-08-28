@@ -114,55 +114,8 @@
 
           </div>
           
-          <?php 
-            /*
-          $pages_with_timestamp = array(
-            '/compare-business-voip-providers', 
-            '/business-voip-reviews', 
-            '/compare-residential-voip-providers', 
-            '/best-voip-service-providers',
-            '/residential-voip-reviews', 
-            '/sip-trunking-providers',
-            '/internet-fax-service-providers',
-            '/providers/reviews', 
-            '/about-voip-services', 
-            '/blog', 
-            '/news', 
-            '/voip-provider-submit-user-review',
-            '/about-us',
-            '/contact-us',
-            '/advertise',
-            '/press',
-            '/privacy-policy',
-            '/terms-of-use',
-            '/our-team',
-          );
-          //if ($user->uid == 1) {
-          if($is_front || in_array($_SERVER['REDIRECT_URL'], $pages_with_timestamp))
-            echo ch_misc_lastUpdatedStamp();
-              
-          //}
-          */
-          ?>
-          
       </section> <!-- /#main -->
 
-      
-      <?php /*
-      
-      <?php if ($page['sidebar_first']): ?>
-        <aside id="sidebar-first" role="complementary" class="sidebar clearfix">
-          <?php print render($page['sidebar_first']); ?>
-        </aside>  <!-- /#sidebar-first -->
-      <?php endif; ?>
-
-      <?php if ($page['sidebar_second']): ?>
-        <aside id="sidebar-second" role="complementary" class="sidebar clearfix">
-          <?php print render($page['sidebar_second']); ?>
-        </aside>  <!-- /#sidebar-second -->
-      <?php endif; ?>
-        
-      */ ?>
 
         
   </div> <!-- /#all-content -->
@@ -180,15 +133,8 @@
       <?php 
         
         echo render($page['footer']);
-        
-        //echo ch_blocks_getBlockThemed(array('module' => 'ch_blocks', 'delta' => 'send_msg_n_subscribe', 'no_subject' => TRUE/*, 'class' => 'block-om-maximenu'*/, 'shadow' => FALSE)/*, TRUE, '+31 day'*/ /*, ($user->uid ? '_logged' : NULL)*/);
-        ////echo ch_blocks_getBlockThemed(array('module' => 'ch_blocks', 'delta' => 'social_links', 'no_subject' => TRUE/*, 'class' => 'block-om-maximenu'*/, 'shadow' => FALSE)/*, TRUE, '+31 day'*/ /*, ($user->uid ? '_logged' : NULL)*/);
-        //echo ch_blocks_getBlockThemed(array('module' => 'ch_blocks', 'delta' => 'footer_menu', 'no_subject' => TRUE/*, 'class' => 'block-om-maximenu'*/, 'shadow' => FALSE)/*, TRUE, '+31 day'*/ /*, ($user->uid ? '_logged' : NULL)*/);
-        
         echo ch_blocks_get_footerLinks() . '<div class="c">© 2013 CloudHostingHQ.com | All Rights Reserved</div>';
         
-                
-        //echo '<div id="block-ch-blocks-follow-links"><div class="follow-us">Follow Us</div>', ch_blocks_get_headerLinks(), '</div>';
       ?>
       
       
