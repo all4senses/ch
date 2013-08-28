@@ -1178,7 +1178,7 @@ margin-top: 100px;
 
 .logged-in.node-type-provider .data.tabs {margin: 0; width: 650px; float: right;}
 
-.logged-in.node-type-provider #letft-col{overflow: hidden; float: left; width: 300px;}
+.logged-in.node-type-provider #left-col{overflow: hidden; float: left; width: 300px;}
 .logged-in.node-type-provider .logo-info {float: none; width: 180px; overflow: hidden;}
 .logged-in.node-type-provider .image {float: none; text-align: center; overflow: inherit;}
 .logged-in.node-type-provider .basic-info {float: none; margin: 0; width: inherit; font-size: 15px;}
