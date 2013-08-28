@@ -4133,7 +4133,7 @@ function theme_ch_misc_image(array $variables) {
 //  }
   
   // Add dimensions only for anonymous.
-  global $user;
+  //global $user;
   if (/*!$user->uid &&*/ !$variables['width']) {
     
     
@@ -5338,12 +5338,10 @@ function ch_misc_getProviderQuickData($target, $data) {
         
         $image = theme('ch_misc_image_style', array('style_name' => $image_style_name, 'path' => $all_data_quick[$data['data']->nid]['i_logo_uri'], 'alt' =>  $all_data_quick[$data['data']->nid]['i_logo_alt'], 'title' =>  $all_data_quick[$data['data']->nid]['i_logo_title'] ));
         
-        global $user;
-        if ($data['data']->nid == 88 && $user->hostname == '109.171.109.18') {
-          
-          //$image .= '.. <PRE>' . print_r($all_data_quick[$data['data']->nid], TRUE) . '</PRE>';
-          dpm($all_data_quick[$data['data']->nid]);
-        }
+//        global $user;
+//        if ($data['data']->nid == 88 && $user->hostname == '109.171.109.18') { // 88 - hostgator
+//           dpm($all_data_quick[$data['data']->nid]);
+//        }
         
         $out = ch_misc_getTrackingUrl($image, NULL, $data['data']->nid);
       }
