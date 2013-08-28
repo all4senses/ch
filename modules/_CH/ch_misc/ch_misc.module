@@ -4135,7 +4135,14 @@ function theme_ch_misc_image(array $variables) {
   // Add dimensions only for anonymous.
   global $user;
   if (/*!$user->uid &&*/ !$variables['width']) {
-    $size = getimagesize($variables['path']);
+    
+    
+    if(!$size = getimagesize($variables['path'])) {
+      // Refresh Session providers data, In case the error is caused by obsolete data for providers which has not been refreshed in SESSION
+      ch_misc_getProvidersDataQuick('all', TRUE, TRUE);
+      return NULL;
+    }
+    
     $image = theme('image', array('width' => $size[0], 'height' => $size[1], 'path' => $variables['path'], 'alt' =>  $variables['alt'], 'title' => $variables['title'] ));  
   }
   else {
