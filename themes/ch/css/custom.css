@@ -1777,8 +1777,8 @@ body.one-sidebar.sidebar-second.page-get-iframe #main{background: none transpare
 
 
 /* Template page--compare_providers.tpl.php with .page-compare-providers */
-body.one-sidebar.sidebar-second .page-compare-providers #main {width: 980px;}
-body.sidebar-second .page-compare-providers #sidebar-second {padding: 0 20px 0 0; margin-left: 5px;}
+body.one-sidebar.sidebar-second .page-compare-providers #main {width: 960px;}
+body.sidebar-second .page-compare-providers #sidebar-second {padding: 0; margin-left: 5px;}
 
 
 /*.field-name-field-preface-b-body*/
