@@ -5,6 +5,8 @@
 
         //console.log('Tabs!');
         $( ".data.tabs" ).tabs();
+        console.log('Tabs!');
+        console.log($( ".data.tabs .visit-site" ));
              
             
         // Buttun to go to the tab to Write review right on the provider page

@@ -92,7 +92,7 @@
                       }
 
                       if (!$node->p_data['info']['i_web_hide'] && !empty($node->p_data['info']['i_web'])) {
-                        echo '<li>', ch_misc_getTrackingUrl('Visit Website'), '</li>';
+                        echo '<li>', ch_misc_getTrackingUrl('Visit Website', NULL, NULL, NULL, 'visit-site'), '</li>';
                       }
                       ?>
 
