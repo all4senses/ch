@@ -1195,7 +1195,7 @@ margin: 0; padding: .2em .2em 0;}
 list-style: none; position: relative; top: 1px; margin: 0 .2em 1px 0; border-bottom: 0 !important; padding: 0; white-space: nowrap; font-weight: normal;*/}
 .logged-in.node-type-provider #top-line li.ui-state-default {display: block; background: #f1f1f1; border: 2px solid #61b4eb; font-size: 14px; border-radius: 0; height: 32px; margin-left: 5px !important;}
 
-.logged-in.node-type-provider #top-line li.ui-state-default.ui-tabs-selected {background: white; border: 2px solid #61b4eb; height: 34px;}
+.logged-in.node-type-provider #top-line li.ui-state-default.ui-tabs-selected {background: white; border: 2px solid #61b4eb; height: 33px;}
 
 .logged-in.node-type-provider #main .main-content h1 {float: left; font-size: 15px; font-weight: normal; background: #61b4eb; line-height: normal; padding: 6px 10px; height: 22px; color: white; margin-left: 20px;}
 
