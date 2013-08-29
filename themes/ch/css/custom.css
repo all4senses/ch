@@ -1192,7 +1192,7 @@ margin-top: 100px;
 
 .logged-in.node-type-provider #visit-site-tab a {display: block; float: left; border: 3px solid #61b4eb; padding: 7px 6px 6px; margin: 4px 0 0 0; color: gray; font-weight: bold; font-size: 14px;}
 
-.logged-in.node-type-provider .data.tabs {margin: 0; width: 650px; float: right; position: static;}
+.logged-in.node-type-provider .data.tabs {margin: 0; padding: 0; width: 695px; float: right; position: static;}
 
 .logged-in.node-type-provider .ui-tabs .ui-tabs-panel {border: none; padding: 0 0 0 20px;}
 .logged-in.node-type-provider .views-exposed-form .views-exposed-widget {padding-top: 0;}
@@ -1213,14 +1213,18 @@ margin-top: 100px;
 .logged-in.node-type-provider .review-right .field-name-body {margin-top: 0; margin-bottom: 50px;}
 .logged-in.node-type-provider #main .node-teaser .links, .logged-in.node-type-provider #main .node-teaser .links a {font-weight: normal; font-size: 14px; color: #5bafe7;}
 
-.logged-in.node-type-provider #left-col{overflow: hidden; float: left; width: 300px;}
+
+
+
+.logged-in.node-type-provider #left-col{overflow: hidden; float: left; width: 265px;}
 .logged-in.node-type-provider .logo-info {float: none; width: 180px; overflow: hidden;}
 .logged-in.node-type-provider .image {float: none; text-align: center; overflow: inherit;}
-.logged-in.node-type-provider .basic-info {float: none; margin: 0; width: inherit; font-size: 15px;}
+.logged-in.node-type-provider .image img {width: 265px;}
+/*.logged-in.node-type-provider .basic-info {float: none; margin: 0; width: inherit; font-size: 15px;}*/
 
 .logged-in.node-type-provider .overall {margin-left: 0; position: relative;}
 
-.logged-in.node-type-provider .site a {background: none; text-indent: 0; color: black; display: block; width: 103px; height: 25px; margin: auto;}
+.logged-in.node-type-provider .site a {background: #2ab967; text-indent: 0; width: 260px; margin: 5px auto 10px; padding: 10px 0 2px 0; color: white; border-radius: 5px; font-size: 18px;}
 
 
 
