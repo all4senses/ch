@@ -1176,9 +1176,12 @@ margin-top: 100px;
 
 /* New provider template for page and node*/
 
-.logged-in.node-type-provider #main .main-content {position: relative; padding: 40px 0 0 0;}
+.logged-in.node-type-provider #all-content {background: #f2f2f2;}
 
-.logged-in.node-type-provider #top-line {position: absolute; top: 0; left: 0; width: 100%;}
+.logged-in.node-type-provider #main .main-content {position: relative; padding: 40px 0 0 0;}
+.logged-in.node-type-provider #main .main-content .content {border: none; margin-top: 0; padding: 20px 20px 10px 20px; background: white; overflow: hidden;}
+
+.logged-in.node-type-provider #top-line {position: absolute; top: 0; left: 0; width: 100%; background: #f2f2f2; height: 37px; border-bottom: 3px solid #61b4eb;}
 .logged-in.node-type-provider #main .main-content h1 {color: gray; font-size: 18px; font-weight: bold; float: left;}
 
 .logged-in.node-type-provider .data.tabs {margin: 0; width: 650px; float: right; position: static;}
