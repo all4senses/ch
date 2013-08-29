@@ -10,7 +10,7 @@ define('PRICE', 'Price Value');
 define('FEATURES', 'Features');
 define('RELY', 'Reliability & Uptime');
 define('CUSTOMER', 'Customer Support');
-define('CONTROL', 'Control Panel Interface');
+define('CONTROL', 'Control Panel Use');
 
 define('OVERALL', 'Overall Average Rating');
 
