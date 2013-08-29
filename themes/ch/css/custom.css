@@ -1219,7 +1219,7 @@ margin-top: 100px;
 .logged-in.node-type-provider #left-col{overflow: hidden; float: left; width: 265px;}
 .logged-in.node-type-provider .logo-info {float: none; width: 180px; overflow: hidden;}
 .logged-in.node-type-provider .image {float: none; text-align: center; overflow: inherit;}
-.logged-in.node-type-provider .image img {width: 265px;}
+.logged-in.node-type-provider .image img {width: 260px; border: 1px solid lightgray;}
 /*.logged-in.node-type-provider .basic-info {float: none; margin: 0; width: inherit; font-size: 15px;}*/
 .logged-in.node-type-provider .site a {background: #2ab967; text-indent: 0; width: 260px; margin: 5px auto 10px; padding: 10px 0 2px 0; color: white; border-radius: 5px; font-size: 18px;}
 
