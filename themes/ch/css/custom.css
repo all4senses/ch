@@ -1007,7 +1007,7 @@ margin-top: 100px;
 .node-type-provider .field-name-body h3 {font-weight: bold; border-bottom: 2px solid lightgray; margin-bottom: 5px;}
 
 .node-type-provider .ui-widget-content{border: none;}
-.node-type-provider .ui-widget-header{border: none; background: none;}
+.node-type-provider .ui-widget-header{border: none; background: none; float: left;}
 .node-type-provider .ui-tabs .ui-tabs-panel{border: 1px solid lightgray;}
 
 .node-type-provider .ui-state-default.ui-tabs-selected, .node-type-provider .ui-state-default.ui-tabs-selected.ui-state-hover{background: none; border: 1px solid lightgray;}
