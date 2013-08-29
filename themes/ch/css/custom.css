@@ -1181,7 +1181,7 @@ margin-top: 100px;
 .logged-in.node-type-provider #main .main-content {position: relative; padding: 40px 0 0 0;}
 .logged-in.node-type-provider #main .main-content .content {border: none; margin-top: 0; padding: 20px 20px 10px 20px; background: white; overflow: hidden;}
 
-.logged-in.node-type-provider #top-line {position: absolute; top: 0; left: 0; width: 100%; background: #f2f2f2; height: 38px; border-bottom: 3px solid #61b4eb;}
+.logged-in.node-type-provider #top-line {position: absolute; top: 3px; left: 0; width: 100%; background: #f2f2f2; height: 38px; border-bottom: 3px solid #61b4eb;}
 
 .logged-in.node-type-provider ul.ui-widget-header {border: none; background: none; float: left; position: relative; top: 0px;}
 .logged-in.node-type-provider .ui-state-default {background: none; border: 3px solid #61b4eb; font-size: 14px; border-radius: 0; height: 33px; margin-left: 5px !important;}
