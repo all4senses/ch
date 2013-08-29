@@ -86,7 +86,7 @@
                     ?></h1>
 
                     <ul>
-                      <?php if ($page && isset($content['reviews_entity_view_1']) && $content['reviews_entity_view_1']): ?>
+                      <?php if (!empty($content['reviews_entity_view_1'])): ?>
                         <li><a href="#tabs-0"><?php echo 'Customer Reviews'; ?></a></li>
                       <?php endif; ?>
 
@@ -101,7 +101,12 @@
                       ?>
 
                     </ul>
-
+                  
+                    <?php
+                      if (!$node->p_data['info']['i_web_hide'] && !empty($node->p_data['info']['i_web'])) {
+                        echo '<div id="visit-site-tab">', ch_misc_getTrackingUrl('Visit Website'), '</div>';
+                      }
+                    ?>
                 </div>
                 
                 
