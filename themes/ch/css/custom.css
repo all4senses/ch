@@ -1209,7 +1209,7 @@ margin-top: 100px;
 .logged-in.node-type-provider .ch_votes .ch_vote.even {background: #f1f1f1;}
 .logged-in.node-type-provider .ch_vote .fivestar {float: right; margin-right: 10px; padding: 4px 0 5px;}
 
-.logged-in.node-type-provider .review-right {margin-left: 290px; font-size: 13px; color: gray; line-height: inherit; font-weight: normal;}
+.logged-in.node-type-provider .review-right {margin-left: 285px; font-size: 13px; color: gray; line-height: inherit; font-weight: normal;}
 .logged-in.node-type-provider .review-right .field-name-body {margin-top: 0; margin-bottom: 50px;}
 .logged-in.node-type-provider #main .node-teaser .links, .logged-in.node-type-provider #main .node-teaser .links a {font-weight: normal; font-size: 14px; color: #5bafe7;}
 
@@ -1221,10 +1221,20 @@ margin-top: 100px;
 .logged-in.node-type-provider .image {float: none; text-align: center; overflow: inherit;}
 .logged-in.node-type-provider .image img {width: 265px;}
 /*.logged-in.node-type-provider .basic-info {float: none; margin: 0; width: inherit; font-size: 15px;}*/
-
-.logged-in.node-type-provider .overall {margin-left: 0; position: relative;}
-
 .logged-in.node-type-provider .site a {background: #2ab967; text-indent: 0; width: 260px; margin: 5px auto 10px; padding: 10px 0 2px 0; color: white; border-radius: 5px; font-size: 18px;}
+
+
+.logged-in.node-type-provider #left-col .ch_votes .caption {padding: 20px 5px 5px 10px; color: gray; background: url(/sites/all/themes/ch/css/images/sprite-2.png) repeat-x 0 -703px; font-weight: normal; margin: 0; font-size: 16px; border-radius: 0;}
+.logged-in.node-type-provider #left-col .ch_votes .ch_vote {margin-top: 4px;}
+.logged-in.node-type-provider #left-col .ch_votes .ch_vote.even {background: none;}
+.logged-in.node-type-provider #left-col .ch_votes .data {padding: 0;}
+.logged-in.node-type-provider #left-col .ch_votes .voters {margin: 10px 0 0 10px; font-size: 12px; font-weight: normal;}
+.logged-in.node-type-provider #left-col .ch_votes .voters .title {float: left; margin: 0 5px 0 0; font-weight: normal;}
+.logged-in.node-type-provider #left-col .ch_votes .recommend {margin: 0 0 15px 10px;}
+.logged-in.node-type-provider #left-col .ch_votes .recommend .title {float: left; margin: 0 5px 0 0; font-size: 12px; font-weight: normal;}
+.logged-in.node-type-provider #left-col .overall {margin: 15px 0 5px 10px; font-size: 12px;}
+
+
 
 
 
