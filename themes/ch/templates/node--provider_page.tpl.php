@@ -31,7 +31,8 @@
 
                       <?php
                         if (!$node->p_data['info']['i_web_hide'] && !empty($node->p_data['info']['i_web'])) {
-                          echo '<div class="site">' , ch_misc_getTrackingUrl('Visit ' . $node->field_p_name['und'][0]['value']), '</div>';
+                          $visit_site_url = '<div class="site">' . ch_misc_getTrackingUrl('Visit ' . $node->field_p_name['und'][0]['value']) . '</div>';
+                          echo $visit_site_url;
                         }
                       ?>   
 
@@ -107,6 +108,21 @@
                     ?>
                 </div>
                 
+              
+              
+              
+              
+              
+                
+                <div id="tabs-1">
+                  <?php 
+                  
+                      echo render($content['body']), (!empty($visit_site_url) ? $visit_site_url : ''); 
+                      
+                  ?>
+                  
+                </div>
+                
                 
                 <?php if (!empty($content['reviews_entity_view_1'])): ?>
                   <div id="tabs-0">
@@ -118,10 +134,6 @@
                     </div>
                   </div>
                 <?php endif; ?>
-                
-                <div id="tabs-1">
-                  <?php echo render($content['body']); ?>
-                </div>
                 
                 
                 
