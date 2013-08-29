@@ -86,11 +86,13 @@
                     ?></h1>
 
                     <ul>
+                      
+                      <li><a href="#tabs-1">Editor's Overview</a></li>
+
                       <?php if (!empty($content['reviews_entity_view_1'])): ?>
                         <li><a href="#tabs-0"><?php echo 'Customer Reviews'; ?></a></li>
                       <?php endif; ?>
 
-                      <li><a href="#tabs-1">Editor's Overview</a></li>
 
                       <?php 
 
