@@ -1175,6 +1175,7 @@ margin-top: 100px;
 
 
 /* New provider template for page and node*/
+.logged-in.node-type-provider .breadcrumb {padding: 2px 0 2px 20px; font-size: 12px;}
 
 .logged-in.node-type-provider #all-content {background: #f2f2f2;}
 
@@ -1189,15 +1190,31 @@ margin-top: 100px;
 
 .logged-in.node-type-provider #main .main-content h1 {float: left; font-size: 15px; font-weight: normal; background: #61b4eb; line-height: normal; padding: 6px 10px; height: 22px; color: white; margin-left: 20px;}
 
-  .logged-in.node-type-provider #visit-site-tab a {display: block; float: left; border: 3px solid #61b4eb; padding: 7px 6px 6px; margin: 4px 0 0 0; color: gray; font-weight: bold; font-size: 14px;}
+.logged-in.node-type-provider #visit-site-tab a {display: block; float: left; border: 3px solid #61b4eb; padding: 7px 6px 6px; margin: 4px 0 0 0; color: gray; font-weight: bold; font-size: 14px;}
 
 .logged-in.node-type-provider .data.tabs {margin: 0; width: 650px; float: right; position: static;}
+
+.logged-in.node-type-provider .ui-tabs .ui-tabs-panel {border: none; padding: 0 0 0 20px;}
+.logged-in.node-type-provider .views-exposed-form .views-exposed-widget {padding-top: 0;}
+
+
+
+.logged-in.node-type-provider.page-node #main .node-review .main-content {background: #f7f7f7; box-shadow: 1px 3px 10px -4px black;}
+.logged-in.node-type-provider #main h3.rcaption {background: none; color: gray; font-weight: 600; padding: 5px 0 0 5px;}
+.logged-in.node-type-provider #main .node-teaser header {border-bottom: none; padding-bottom: 0; margin-bottom: 0;}
+.logged-in.node-type-provider.page-node #main .node-review .main-content .content {background: none; padding: 5px;}
+.logged-in.node-type-provider .ch_votes {float: left; width: 280px; margin: 0; padding: 0; border: 1px solid lightgray; border-radius: 0; color: gray; font-weight: normal;}
+.logged-in.node-type-provider .ch_votes .caption {background: #59ade6; color: white; font-weight: bold; padding: 4px 0 6px 10px; border-radius: 0; margin-bottom: 5px;}
+
+
+
+
 
 .logged-in.node-type-provider #left-col{overflow: hidden; float: left; width: 300px;}
 .logged-in.node-type-provider .logo-info {float: none; width: 180px; overflow: hidden;}
 .logged-in.node-type-provider .image {float: none; text-align: center; overflow: inherit;}
 .logged-in.node-type-provider .basic-info {float: none; margin: 0; width: inherit; font-size: 15px;}
-.logged-in.node-type-provider .ch_votes {float: none; width: 280px; margin: 0; padding: 10px 8px 6px; border: 1px solid lightgray; border-radius: 5px;}
+
 .logged-in.node-type-provider .overall {margin-left: 0; position: relative;}
 
 .logged-in.node-type-provider .site a {background: none; text-indent: 0; color: black; display: block; width: 103px; height: 25px; margin: auto;}
