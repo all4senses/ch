@@ -1190,7 +1190,7 @@ margin-top: 100px;
 .logged-in.node-type-provider #top-line li a,
 .logged-in.node-type-provider .ui-tabs .ui-tabs-nav li a {padding: .5em 9px;}
 
-.logged-in.node-type-provider #top-line li {background: #f1f1f1; border: 2px solid #61b4eb; font-size: 14px; border-radius: 0; height: 32px; margin-left: 5px;}
+.logged-in.node-type-provider #top-line li {float: left; background: #f1f1f1; border: 2px solid #61b4eb; font-size: 14px; border-radius: 0; height: 32px; margin-left: 5px;}
 .logged-in.node-type-provider #top-line li.ui-state-default {background: #f1f1f1; border: 2px solid #61b4eb; font-size: 14px; border-radius: 0; height: 32px; margin-left: 5px !important;}
 
 .logged-in.node-type-provider #top-line li.ui-state-default.ui-tabs-selected {background: white; border: 2px solid #61b4eb; height: 33px;}
