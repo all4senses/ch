@@ -101,7 +101,7 @@
                     <?php
                       if (!$node->p_data['info']['i_web_hide'] && !empty($node->p_data['info']['i_web'])) {
                         //echo '<div id="visit-site-tab">', ch_misc_getTrackingUrl('Visit Website'), '</div>';
-                        echo '<li class="visit-site ui-state-default ui-corner-top">' . ch_misc_getTrackingUrl('Visit Website') . '</li>';
+                        echo '<div class="visit-site" style="display: none;">' . ch_misc_getTrackingUrl('Visit Website') . '</div>';
                       }
                     ?>
                 </div>
