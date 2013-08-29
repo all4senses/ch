@@ -48,7 +48,7 @@
                                   echo '<div class="voters"><div class="title">Total Number of Reviews:</div><div class="count" property="v:count">' . $node->ch_voters . '</div></div>';
                                   echo '<div class="recommend"><div class="title">Would recommend: </div><div class="data">' . $node->ch_recommend . '% of Users' . '</div></div>';
                                   echo render($content['ch_ratings']); 
-                                  echo '<div class="overall">Overall Score: <span class="count" content="' . $node->ch_rating_overall . '" property="v:rating">' . $node->ch_rating_overall . '</span>out of 5</div>'; 
+                                  echo '<div class="overall">Overall Score: <span class="count" content="' . $node->ch_rating_overall . '" property="v:rating">' . $node->ch_rating_overall . '</span> out of 5</div>'; 
                                 }
                                 else {
                                   echo '<div class="descr be-first">Be the first to review</div>'; 
