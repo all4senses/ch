@@ -7,7 +7,7 @@
         $( ".data.tabs" ).tabs();
         console.log('Tabs!');
         console.log($( ".data.tabs .visit-site" ));
-        $( ".data.tabs ul" ).append('<li><a href="http://cloudhostinghq.com">Visit Website</a></li>');     
+        $( ".data.tabs ul" ).append('<li class="ui-state-default ui-corner-top"><a href="http://cloudhostinghq.com">Visit Website</a></li>');     
             
         // Buttun to go to the tab to Write review right on the provider page
         /*

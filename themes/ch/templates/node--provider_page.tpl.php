@@ -91,17 +91,18 @@
                         echo '<li><a href="#tabs-2">Available Options</a></li>';
                       }
 
-                      if (!$node->p_data['info']['i_web_hide'] && !empty($node->p_data['info']['i_web'])) {
-                        echo '<li>', ch_misc_getTrackingUrl('Visit Website', NULL, NULL, NULL, 'visit-site'), '</li>';
-                      }
+//                      if (!$node->p_data['info']['i_web_hide'] && !empty($node->p_data['info']['i_web'])) {
+//                        echo '<li>', ch_misc_getTrackingUrl('Visit Website', NULL, NULL, NULL, 'visit-site'), '</li>';
+//                      }
                       ?>
 
                     </ul>
                   
                     <?php
-//                      if (!$node->p_data['info']['i_web_hide'] && !empty($node->p_data['info']['i_web'])) {
-//                        echo '<div id="visit-site-tab">', ch_misc_getTrackingUrl('Visit Website'), '</div>';
-//                      }
+                      if (!$node->p_data['info']['i_web_hide'] && !empty($node->p_data['info']['i_web'])) {
+                        echo '<div id="visit-site-tab">', ch_misc_getTrackingUrl('Visit Website'), '</div>';
+                        echo '<li class="visit-site ui-state-default ui-corner-top">' . ch_misc_getTrackingUrl('Visit Website') . '</li>';
+                      }
                     ?>
                 </div>
                 
