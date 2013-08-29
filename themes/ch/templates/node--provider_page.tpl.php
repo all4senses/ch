@@ -43,28 +43,18 @@
                             <div class="ch_votes">
                               <?php
                                 
-                                echo '<div class="caption"><span property="v:itemreviewed">', $node->field_p_name['und'][0]['value'], '</span> Ratings</div>', render($content['ch_ratings']); 
+                                echo '<div class="caption"><span property="v:itemreviewed">', $node->field_p_name['und'][0]['value'], '</span> Ratings</div>';
                                 if ($node->ch_voters) {
                                   echo '<div class="voters"><div class="title">Total Number of Reviews:</div><div class="count" property="v:count"><a href="#reviews">' . $node->ch_voters . '</a></div></div>';
                                   echo '<div class="recommend"><div class="title">Would recommend: </div><div class="data">' . $node->ch_recommend . '% of Users' . '</div></div>';
+                                  echo render($content['ch_ratings']); 
+                                  echo '<div class="overall">Overall Score: <span class="count" content="' . $node->ch_rating_overall . '" property="v:rating">' . $node->ch_rating_overall . '</span>out of 5</div>'; 
+                                }
+                                else {
+                                  echo '<div class="descr be-first">Be the first to review</div>'; 
                                 }
                               ?>
                             </div>
-                        
-                            <div class="overall"> 
-
-                                <?php 
-                                  if ($node->ch_rating_overall) {
-                                    echo 'Overall Score: <span class="count" content="' . $node->ch_rating_overall . '" property="v:rating">' . $node->ch_rating_overall . '</span>out of 5'; 
-                                  }
-                                  else {
-                                    echo '<div class="descr be-first">Be the first to review</div>'; 
-                                  }
-                                ?>
-
-                            </div>
-
-
                         
                       </div> <!-- <div id="ratings">-->
                           
