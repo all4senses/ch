@@ -1182,7 +1182,12 @@ margin-top: 100px;
 .logged-in.node-type-provider #main .main-content .content {border: none; margin-top: 0; padding: 20px 20px 10px 20px; background: white; overflow: hidden;}
 
 .logged-in.node-type-provider #top-line {position: absolute; top: 0; left: 0; width: 100%; background: #f2f2f2; height: 37px; border-bottom: 3px solid #61b4eb;}
-.logged-in.node-type-provider #main .main-content h1 {color: gray; font-size: 18px; font-weight: bold; float: left;}
+
+.logged-in.node-type-provider ul.ui-widget-header {border: none; background: none; float: left; position: relative; top: 0px;}
+.logged-in.node-type-provider .ui-state-default {background: none; border: 3px solid #61b4eb; font-size: 14px; border-radius: 0; height: 33px; margin-left: 5px !important;}
+.logged-in.node-type-provider .ui-state-default.ui-tabs-selected {background: white; border: 3px solid #61b4eb;}
+
+.logged-in.node-type-provider #main .main-content h1 {float: left; font-size: 15px; font-weight: normal; background: #61b4eb; line-height: normal; padding: 6px 10px; height: 22px; color: white; margin-left: 20px;}
 
 .logged-in.node-type-provider .data.tabs {margin: 0; width: 650px; float: right; position: static;}
 
