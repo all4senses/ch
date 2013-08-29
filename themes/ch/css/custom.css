@@ -1199,7 +1199,8 @@ list-style: none; position: relative; top: 1px; margin: 0 .2em 1px 0; border-bot
 
 .logged-in.node-type-provider #main .main-content h1 {float: left; font-size: 15px; font-weight: normal; background: #61b4eb; line-height: normal; padding: 6px 10px; height: 22px; color: white; margin-left: 20px;}
 
-.logged-in.node-type-provider #visit-site-tab a {display: block; float: left; border: 2px solid #61b4eb; padding: 7px 6px 6px; margin: 4px 0 0 0; color: gray; font-weight: bold; font-size: 14px; position: absolute; left: 762px; top: 0;}
+.logged-in.node-type-provider #visit-site-tab a.visit-site {display: block; float: left; border: 2px solid #61b4eb; padding: 7px 6px 6px; margin: 4px 0 0 0; color: gray; font-weight: bold; font-size: 14px; position: absolute; left: 762px; top: 0;}
+.logged-in.node-type-provider a.visit-site {display: none;}
 
 .logged-in.node-type-provider .data.tabs {margin: 0; padding: 0; width: 695px; float: right; position: static;}
 
