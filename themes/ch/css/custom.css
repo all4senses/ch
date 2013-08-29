@@ -1232,7 +1232,7 @@ margin-top: 100px;
 .logged-in.node-type-provider #left-col .ch_votes .voters .title {float: left; margin: 0 5px 0 0; font-weight: normal;}
 .logged-in.node-type-provider #left-col .ch_votes .recommend {margin: 0 0 15px 10px;}
 .logged-in.node-type-provider #left-col .ch_votes .recommend .title {float: left; margin: 0 5px 0 0; font-size: 12px; font-weight: normal;}
-.logged-in.node-type-provider #left-col .overall {margin: 15px 0 5px 10px; font-size: 12px;}
+.logged-in.node-type-provider #left-col .overall {margin: 15px auto 5px 10px; font-size: 15px; font-weight: bold; border-top: 1px solid lightgray; padding: 10px 0px 5px 0; width: 240px;}
 
 
 
