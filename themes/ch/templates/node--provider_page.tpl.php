@@ -91,14 +91,17 @@
                         echo '<li><a href="#tabs-2">Available Options</a></li>';
                       }
 
+                      if (!$node->p_data['info']['i_web_hide'] && !empty($node->p_data['info']['i_web'])) {
+                        echo '<li>', ch_misc_getTrackingUrl('Visit Website'), '</li>';
+                      }
                       ?>
 
                     </ul>
                   
                     <?php
-                      if (!$node->p_data['info']['i_web_hide'] && !empty($node->p_data['info']['i_web'])) {
-                        echo '<div id="visit-site-tab">', ch_misc_getTrackingUrl('Visit Website'), '</div>';
-                      }
+//                      if (!$node->p_data['info']['i_web_hide'] && !empty($node->p_data['info']['i_web'])) {
+//                        echo '<div id="visit-site-tab">', ch_misc_getTrackingUrl('Visit Website'), '</div>';
+//                      }
                     ?>
                 </div>
                 
