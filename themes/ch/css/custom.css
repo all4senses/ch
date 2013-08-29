@@ -1225,6 +1225,7 @@ margin-top: 100px;
 
 
 .logged-in.node-type-provider #left-col .ch_votes .caption {padding: 20px 5px 5px 10px; color: gray; background: url(/sites/all/themes/ch/css/images/sprite-2.png) repeat-x 0 -703px; font-weight: normal; margin: 0; font-size: 16px; border-radius: 0;}
+.logged-in.node-type-provider #left-col .ch_votes .caption span {float: left; margin-right: 5px;}
 .logged-in.node-type-provider #left-col .ch_votes .ch_vote {margin-top: 4px;}
 .logged-in.node-type-provider #left-col .ch_votes .ch_vote.even {background: none;}
 .logged-in.node-type-provider #left-col .ch_votes .data {padding: 0;}
