@@ -51,7 +51,8 @@
                                   echo '<div class="overall">Overall Score: <span class="count" content="' . $node->ch_rating_overall . '" property="v:rating">' . $node->ch_rating_overall . '</span> out of 5</div>'; 
                                 }
                                 else {
-                                  echo '<div class="descr be-first">Be the first to review</div>'; 
+                                  echo l('Be the first to review', 'node/add/review', array('' => array('id' => $node->id), 'attributes' => array('class' => array('be-first'), 'rel' => array('nofollow'))));
+                                  //echo '<a href="' . url() . '" class="descr be-first">Be the first to review</a>'; 
                                 }
                               ?>
                             </div>
