@@ -564,11 +564,8 @@ function ch_process_page(&$variables) {
   
   if(isset($variables['node'])) {
     $variables['theme_hook_suggestions'][] = 'page__' . $variables['node']->type;
-    dpm($_GET);
-      dpm(arg()); 
+    
     if ($variables['node']->type == 'provider' && arg(2) != 'edit') {
-      dpm($_GET);
-      dpm(arg()); 
       $variables['theme_hook_suggestions'][] = 'page__provider';
     }
     elseif ($variables['node']->type == 'preface') {
@@ -631,7 +628,7 @@ function ch_preprocess_node(&$variables) {
       }
     }
     
-    elseif($variables['node']->type == 'provider') {
+    elseif($variables['node']->type == 'provider' && arg(2) != 'edit') {
       $variables['theme_hook_suggestions'][] = 'node__provider_page';
     }
     
