@@ -1,4 +1,4 @@
-/* Drupal 7 Vn theme, based on Framework - Created by André Griffin
+/* Drupal 7 Gv theme, based on Framework - Created by André Griffin
 ------------------------------------------------
 [Table of contents]
 
@@ -43,30 +43,26 @@ Equation for font sizing:
  * 1.GLOBAL
  */
 
-body, p {
-  /*font-size: 15px; line-height: 22px;*/
-  font-size: 13px; line-height: 19px;
-}
-
 body {
+  background: #fff;
   color: #222;
-  font-family: Verdana,Arial,sans-serif/*{ffDefault}*/;
-  /*
+  /*font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;*/
+  font-family: 'Open Sans', arial;
   font-size: 100%;
   line-height: 1.5;
-  */
   margin: 0;
   padding: 0;
 }
 
-p {
-  margin-bottom: 10px;
-}
-
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: Verdana,Arial,sans-serif/*{ffDefault}*/;
+  /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+  font-family: ubuntu, arial;
   font-style: normal;
   font-weight: normal;
+}
+
+.ui-widget, .ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button {
+  font-family: 'Open Sans';
 }
 
 h1, .h1 {
@@ -94,6 +90,11 @@ h4, h5, h6, .h4, .h5, .h6 {
   margin-top: 1.5em;
 }
 
+p {
+  font-size: 1em;
+  line-height: 1.5;
+  margin: 0 0 1.5em 0;
+}
 
 a { color: #069; text-decoration: none; }
 
@@ -230,7 +231,7 @@ body.sidebar-second #sidebar-second {
 }
 
 #header #site-name {
-  font-family: Verdana,Arial,sans-serif/*{ffDefault}*/;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 2.5em;
   font-weight: 700;
   line-height: 1.2;

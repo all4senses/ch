@@ -1,6 +1,6 @@
 #listpositionsbody{-webkit-text-size-adjust: none; min-width: 1150px; position: relative;}
 
-body {background: #e9e9e9 /*#fff*/ /*#ededed*/; font-family: arial; min-width: 1100px;}
+body {background: #e9e9e9; min-width: 1000px;}
 
 body.one-sidebar.sidebar-second #sidebar-second{padding: 0 20px 0 5px; width: 250px; margin: 0;}
 body.front.one-sidebar.sidebar-second #sidebar-second{padding-top: 3px}
@@ -234,8 +234,8 @@ body.not-admin #om-menu-main-om-menu li.om-leaf.leaf-write-review{background: no
 .om-maximenu ul.om-menu li.om-leaf .om-link.link-e{padding: 4px 8px 8px 8px;}
 
 
-/*.om-maximenu ul.om-menu li.om-leaf a.om-link{padding: 12px 12px 10px; font-size: 15px; color: lightgray; text-shadow: 1px 1px 2px black; font-family: arial; display: block; height: 20px !important; border: 1px solid transparent;}*/
-.om-maximenu ul.om-menu li.om-leaf a.om-link{padding: 5px 10px 5px; font-size: 17px; color: white; font-family: arial; display: block; line-height: 30px; text-transform: uppercase;}
+/*.om-maximenu ul.om-menu li.om-leaf a.om-link{padding: 12px 12px 10px; font-size: 15px; color: lightgray; text-shadow: 1px 1px 2px black; display: block; height: 20px !important; border: 1px solid transparent;}*/
+.om-maximenu ul.om-menu li.om-leaf a.om-link{padding: 5px 10px 5px; font-size: 17px; color: white; display: block; line-height: 30px; text-transform: uppercase;}
 
 /*.om-maximenu ul.om-menu li.om-leaf.first a.om-link{border-radius: 5px 0 0 0;}*/
 
@@ -577,7 +577,7 @@ th.views-field-php-7{width: 95px;}
 
 a.visit-site-btn {background: url("images/sprite-2.png") no-repeat -79px 0 transparent; display: block; width: 84px; height: 28px; margin: auto; text-indent: -9999px;}
 
-.review-link {font-size: 12px; margin: 3px 0 5px 0; display: block; line-height: 12px; font-family: arial; font-weight: bold;}
+.review-link {font-size: 12px; margin: 3px 0 5px 0; display: block; line-height: 12px; font-weight: bold;}
 .review-link:hover {text-decoration: underline;}
 
 .view-display-id-page_chart_providers .site-link,
@@ -690,7 +690,7 @@ body.sidebar-second #sidebar-second{float: right; margin-right: 18px; padding: 1
 #block-views-blog-block-latest-news .views-row.views-row-last {border-bottom: none;}
 
 #block-views-blog-block-latest-news .date-icon{height: 50px; float: left; text-align: center; margin: 0 10px 0 0; color: #004286; font-weight: bold; width: 40px;}
-.date-icon span {font-size: 25px; font-weight: bold; font-family: arial black; line-height: 25px;}
+.date-icon span {font-size: 25px; font-weight: bold; line-height: 25px;}
 .date-icon div div div {font-size: 16px;}
 
 .sidebar .block .content .view-display-id-block_with_thumbs .views-row,
@@ -1385,8 +1385,29 @@ h2.rcaption a, h3.rcaption a, /*.node-review*/ h3.rcaption a:hover{color: white;
 
 /*.front h1, .attachment-before h1{line-height: 18px; color: black; font-size: 18px; font-weight: bold; margin: 0; border: medium none; padding: 0 10px 0 5px;}*/
 
-h1.preface{color: gray; font-size: 18px; font-weight: bold;}
-.front h1.preface{margin-top: 10px;}
+
+h1.preface,
+.front h1 {margin-top: 5px; color: #f60; padding: 0;}
+
+
+
+h1.preface, #main h2.preface {
+/*font-family: arial;*/
+font-family: 'FaktConPro-SemiBold';
+font-weight: normal;
+font-size: 25px; /*22px*/
+line-height: normal;
+}
+
+
+.front h1.preface {
+font-weight: normal; /*600;*/
+
+font-size: 33px; /*29px*/
+line-height: 35px;
+
+color: #666666;
+}
 
 
 .content.page.preface,
@@ -1830,18 +1851,11 @@ body.one-sidebar.sidebar-second.page-get-iframe #main{background: none transpare
 
 /* Home banner block */
 #block-ch-blocks-home-banner {position: relative; margin: 0 0 15px; overflow: hidden;}
-/*
-#block-ch-blocks-home-banner h1 {position: absolute; left: 20px; top: 25px; width: 350px; font-weight: 600; font-family: arial; font-size: 31px; line-height: 35px;}
-#block-ch-blocks-home-banner .banner_body {position: absolute; left: 15px; top: 100px; width: 400px;}
-#block-ch-blocks-home-banner h4 {font-weight: normal; font-size: 15px; margin: 15px 0 17px 10px;}
-#block-ch-blocks-home-banner ul {padding: 0 0 0 10px;}
-#block-ch-blocks-home-banner li {background: url(images/checkmark-blue.png) no-repeat scroll 0 0 transparent; text-indent: 25px; padding: 0 0 8px 0; font-weight: 600;}
-*/
 
 #block-ch-blocks-home-banner .content {height: 385px; width: 100%; background: url(/sites/all/themes/ch/css/images/sprite-2.png) repeat-x scroll 0 -310px #64b6ed;}
 #block-ch-blocks-home-banner img {position: absolute; right: 30px; top: 35px;}
 
-#block-ch-blocks-home-banner h1 {position: absolute; left: 20px; top: 25px; width: 500px; font-weight: 600; font-family: arial; font-size: 27px; line-height: 38px; color: white; text-shadow: 1px 3px 2px gray;}
+#block-ch-blocks-home-banner h1 {position: absolute; left: 20px; top: 25px; width: 500px; font-weight: 600; font-size: 27px; line-height: 38px; color: white; text-shadow: 1px 3px 2px gray;}
 #block-ch-blocks-home-banner .banner_body {position: absolute; left: 15px; top: 120px; width: 480px;}
 #block-ch-blocks-home-banner h4 {font-weight: normal; font-size: 15px; margin: 15px 0 17px 10px;}
 #block-ch-blocks-home-banner ul {padding: 0 0 0 10px;}
