@@ -565,7 +565,7 @@ function ch_process_page(&$variables) {
   if(isset($variables['node'])) {
     $variables['theme_hook_suggestions'][] = 'page__' . $variables['node']->type;
     
-    if ($variables['node']->type == 'provider') {
+    if ($variables['node']->type == 'provider' && arg(2) != 'edit') {
       $variables['theme_hook_suggestions'][] = 'page__provider';
     }
     elseif ($variables['node']->type == 'preface') {
@@ -628,7 +628,7 @@ function ch_preprocess_node(&$variables) {
       }
     }
     
-    elseif($variables['node']->type == 'provider' && $user->uid) {
+    elseif($variables['node']->type == 'provider') {
       $variables['theme_hook_suggestions'][] = 'node__provider_page';
     }
     
