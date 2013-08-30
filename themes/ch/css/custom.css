@@ -967,7 +967,7 @@ margin-top: 100px;
 
 .node-type-provider .site {text-align: center;}
 
-.node-type-provider .site a {background: url(images/visit-site-btn.png) no-repeat 0 0 transparent; text-indent: -9999px;color: black; display: block; width: 103px; height: 25px; margin: auto; }
+.node-type-provider .site a {background: url(images/visit-site-btn.png) no-repeat 0 0 transparent; text-indent: -9999px; color: black; display: block; width: 103px; height: 25px; margin: auto; }
 
 .pros-and-cons{margin: 0 0 0 315px;}
 .pros-and-cons .title {font-weight: bold;}
@@ -1199,7 +1199,7 @@ list-style: none; position: relative; top: 1px; margin: 0 .2em 1px 0; border-bot
 .node-type-provider #top-line li.ui-state-default.ui-tabs-selected {background: white; border: 2px solid #61b4eb; height: 32px;}
 .node-type-provider #top-line li.ui-state-default.ui-tabs-selected a {background: white; padding: .5em 9px .8em;}
 
-.page-node.node-type-provider #main .main-content h1 {font-family: arial; float: left; font-size: 15px; font-weight: normal; background: #61b4eb; line-height: normal; padding: 6px 10px; height: 22px; color: white; margin-left: 20px;}
+.page-node.node-type-provider #main .main-content h1 {font-family: arial; float: left; font-size: 15px; font-weight: normal; background: #61b4eb; line-height: normal; padding: 6px 10px; height: 22px; color: white; margin: 5px 0 0 20px;}
 
 
 .node-type-provider .data.tabs {margin: 0; padding: 0 0 0 20px; width: 675px; float: right; position: static;}
@@ -1236,7 +1236,7 @@ list-style: none; position: relative; top: 1px; margin: 0 .2em 1px 0; border-bot
 .node-type-provider .image {float: none; text-align: center; overflow: inherit;}
 .node-type-provider .image img {width: 260px; border: 1px solid lightgray;}
 /*.node-type-provider .basic-info {float: none; margin: 0; width: inherit; font-size: 15px;}*/
-.node-type-provider .site a {background: url(/sites/all/themes/ch/css/images/sprite-2.png) repeat-x 0 -763px #2ab967; text-indent: 0; width: 260px; margin: 5px auto 10px; padding: 10px 0 2px 0; color: white; border-radius: 5px; font-size: 18px;}
+.node-type-provider .site a {background: url(/sites/all/themes/ch/css/images/sprite-2.png) repeat-x 0 -763px #2ab967; text-indent: 0; width: 260px; margin: 5px auto 10px; padding: 7px 0 8px 0; color: white; border-radius: 5px; font-size: 18px;}
 
 
 .node-type-provider #left-col .ch_votes .caption {padding: 20px 5px 5px 10px; color: gray; background: url(/sites/all/themes/ch/css/images/sprite-2.png) repeat-x 0 -703px; font-weight: normal; margin: 0; font-size: 18px; border-radius: 0;}
@@ -1246,8 +1246,8 @@ list-style: none; position: relative; top: 1px; margin: 0 .2em 1px 0; border-bot
 .node-type-provider #left-col .ch_votes .data {padding: 0;}
 .node-type-provider #left-col .ch_votes .voters {margin: 10px 0 0 10px; font-size: 12px; font-weight: normal;}
 .node-type-provider #left-col .ch_votes .voters .title {float: left; margin: 0 5px 0 0; font-weight: normal;}
-.node-type-provider #left-col .ch_votes .recommend {margin: 0 0 15px 10px;}
-.node-type-provider #left-col .ch_votes .recommend .title {float: left; margin: 0 5px 0 0; font-size: 12px; font-weight: normal;}
+.node-type-provider #left-col .ch_votes .recommend {margin: 0 0 15px 10px; font-size: 12px;}
+.node-type-provider #left-col .ch_votes .recommend .title {float: left; margin: 0 5px 0 0; font-weight: normal;}
 .node-type-provider #left-col .overall {margin: 15px auto 5px 10px; font-size: 15px; font-weight: bold; border-top: 1px solid lightgray; padding: 10px 0px 5px 0; width: 240px; text-align: center;}
 .node-type-provider .be-first {margin: 10px 0 15px 10px; display: block; width: 140px; font-size: 15px;}
 
@@ -1722,7 +1722,7 @@ body.one-sidebar.sidebar-second.page-get-iframe #main{background: none transpare
 
 
 .view-reviews .attachment select,
-.views-exposed-widgets select{float: left;}
+.views-exposed-widgets select{float: left; font-size: 14px;}
 
 /* Breadcrumb */
 .breadcrumb{clear: both; padding: 0 0 2px 0; font-size: 12px; color: lightgray;}
