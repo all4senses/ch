@@ -563,7 +563,9 @@ function ch_process_page(&$variables) {
   //array(l(t('Home'), NULL), l(t('Blogs'), 'blog'), l(t("!name's blog", array('!name' => format_username($node))), 'blog/' . $node->uid))
   
   if(isset($variables['node'])) {
-    $variables['theme_hook_suggestions'][] = 'page__' . $variables['node']->type;
+    if (arg(2) != 'edit') {
+      $variables['theme_hook_suggestions'][] = 'page__' . $variables['node']->type;
+    }
     
     if ($variables['node']->type == 'provider' && arg(2) != 'edit') {
       $variables['theme_hook_suggestions'][] = 'page__provider';
