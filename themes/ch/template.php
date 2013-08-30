@@ -564,7 +564,8 @@ function ch_process_page(&$variables) {
   
   if(isset($variables['node'])) {
     $variables['theme_hook_suggestions'][] = 'page__' . $variables['node']->type;
-    
+    dpm($_GET);
+      dpm(arg()); 
     if ($variables['node']->type == 'provider' && arg(2) != 'edit') {
       dpm($_GET);
       dpm(arg()); 
