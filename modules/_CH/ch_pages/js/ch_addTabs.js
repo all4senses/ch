@@ -7,7 +7,7 @@
         $( ".data.tabs" ).tabs();
         
         //console.log($(".data.tabs .visit-site"));
-        $( ".data.tabs ul" ).append('<li class="ui-state-default ui-corner-top">' + $(".data.tabs .visit-site")[0].innerHTML + '</li>');     
+        $( ".data.tabs #top-line ul" ).append('<li class="ui-state-default ui-corner-top">' + $(".data.tabs .visit-site")[0].innerHTML + '</li>');     
             
         // Buttun to go to the tab to Write review right on the provider page
         /*
