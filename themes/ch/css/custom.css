@@ -1903,7 +1903,7 @@ body.one-sidebar.sidebar-second.page-get-iframe #main{background: none transpare
 #block-ch-blocks-home-services .vps {background: url(/sites/all/themes/ch/css/images/sprite-2.png) repeat-x -102px -83px;}
 #block-ch-blocks-home-services .ch {background: url(/sites/all/themes/ch/css/images/sprite-2.png) repeat-x 1px -83px;}
 
-.front h2.preface {background: url(/sites/all/themes/ch/css/images/sprite-2.png) no-repeat -190px -32px transparent; overflow: hidden; padding-left: 20px; clear: both;}
+.front h2.preface {/*background: url(/sites/all/themes/ch/css/images/sprite-2.png) no-repeat -190px -32px transparent; padding-left: 20px; */overflow: hidden; clear: both;}
 
 
 /* Template page--compare_providers.tpl.php with .page-compare-providers */
