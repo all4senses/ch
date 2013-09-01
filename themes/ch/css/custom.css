@@ -1864,7 +1864,7 @@ body.one-sidebar.sidebar-second.page-get-iframe #main{background: none transpare
 
 
 /* Home banner block */
-#block-ch-blocks-home-banner {position: relative; margin: 0 0 15px; overflow: hidden;}
+#block-ch-blocks-home-banner {position: relative; margin: 0 0 25px; overflow: hidden;}
 
 #block-ch-blocks-home-banner .content {height: 385px; width: 100%; background: url(/sites/all/themes/ch/css/images/sprite-2.png) repeat-x scroll 0 -310px #64b6ed;}
 #block-ch-blocks-home-banner img {position: absolute; right: 30px; top: 35px;}
