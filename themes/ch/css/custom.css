@@ -474,7 +474,8 @@ th.active img {padding: 0 0 0 4px; position: absolute; right: 0; top: 0;}
 #all-content .view-providers td, 
 #all-content .view-providers td.active{padding: 5px 5px 5px; text-align: center; color: #00325e; font-size: 15px;}
 
-td.active {background-color: #f6f6f6;}
+/*td.active {background-color: #f6f6f6;}*/
+td.active {background-color: transparent;}
 
 .view-display-id-page_chart_providers tr,
 .view-providers tr {border: none;}
