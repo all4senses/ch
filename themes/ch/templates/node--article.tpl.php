@@ -61,8 +61,20 @@
       else {
         $teaser_data = ch_misc_getArticleTeaserData('all', $node->body['und'][0]['value'], $node->nid);
       }
+      
       $teaser_data['teaser'] = $extra_data['teaser_side_block'];
       $teaser_data['teaser_main_image'] = $extra_data['side_block_main_image'];
+      
+      
+      
+      
+      
+      
+      // Hide images for side block latest blogs
+      $teaser_data['teaser_main_image'] = NULL;
+      
+      
+      
     }
     elseif (empty($node->body['und'][0]['summary'])) {
       if (!empty($extra_data['teaser'])) {
@@ -75,8 +87,6 @@
     
     
     
-    // Hide images for side block latest blogs
-    $teaser_data['teaser_main_image'] = NULL;
     
     
     

@@ -1922,5 +1922,5 @@ body.sidebar-second .page-compare-providers #sidebar-second {padding: 0; margin-
 
 .front #block-views-providers-block-h-top-sh-table {padding: 0 20px;}
 
-#block-ch-blocks-disclosure {background: #f6f4f5; border: none;}
-#block-ch-blocks-disclosure p {font-size: 13px; font-family: arial;}
+#block-ch-blocks-disclosure {background: #f6f4f5; border: none; padding-top: 5px;}
+#block-ch-blocks-disclosure p {font-size: 13px; font-family: arial; margin-bottom: 10px;}
