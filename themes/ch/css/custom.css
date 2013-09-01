@@ -547,7 +547,8 @@ th.views-field-php-3{width: 180px;}
 /*#block-views-providers-block-top-vps-p-table th.views-field-php-3{width: 190px;}*/
 
 th.views-field-php-4{width: 60px;}
-.p-less-fields th.views-field-php-4{width: 60px;}
+.p-less-fields th.views-field-php-4{width: 55px;} /* Trend */
+.p-less-fields th.views-field-php-4 a {padding: 0 10px 0 0;}
 
 th.views-field-php-5{width: 70px;}
 
