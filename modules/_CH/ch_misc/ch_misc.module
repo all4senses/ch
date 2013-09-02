@@ -5347,11 +5347,12 @@ function ch_misc_getProviderQuickData($target, $data) {
 //           dpm($all_data_quick[$data['data']->nid]);
 //        }
         
-        $out = ch_misc_getTrackingUrl($image, NULL, $data['data']->nid);
+        $out = ch_misc_getTrackingUrl($image, NULL, $data['data']->nid, NULL, NULL, $data['service_type']);
+        //$out .= ch_misc_getTrackingUrl('', NULL, $data['data']->nid, NULL, 'reviews visit-site-btn', $data['service_type']);
       }
       else {
         if (!empty($all_data_quick[$data['data']->nid]['name'])) {
-          $out = ch_misc_getTrackingUrl($all_data_quick[$data['data']->nid]['name'], NULL, $data['data']->nid);
+          $out = ch_misc_getTrackingUrl($all_data_quick[$data['data']->nid]['name'], NULL, $data['data']->nid, NULL, NULL, $data['service_type']);
         }
 //        else {
 //          $out = '<a href="' . $link . '" target="_blank">' . $data['data']->node_title . '</a>';
@@ -5454,6 +5455,8 @@ function ch_misc_getProviderQuickData($target, $data) {
       return $out;
       
     
+      
+      
     case 'i_mbg':
       
       $all_data_quick = ch_misc_getProvidersDataQuick();
@@ -5470,6 +5473,8 @@ function ch_misc_getProviderQuickData($target, $data) {
       $out = isset($all_data_quick[$data['data']->nid][$data['service_type']][$target]) ? $all_data_quick[$data['data']->nid][$data['service_type']][$target] : '';
       
       return $out;
+      
+      
       
       
     case 'features':
@@ -5564,7 +5569,7 @@ function ch_misc_getProviderQuickData($target, $data) {
         $out = '<div class="details"><a ' . ( (isset($data['target']) && $data['target'] == 'iframe') ? 'target="_blank" ' : '') . 'href="' . url('node/' . $data['data']->nid) . '"><div>Write Review</div></a></div>';
       }
       
-      $out .= ch_misc_getTrackingUrl('', NULL, $data['data']->nid, NULL, 'reviews visit-site-btn', $data['service_type']);
+      $out .= ch_misc_getTrackingUrl('Visit Site', NULL, $data['data']->nid, NULL, 'reviews visit-site-btn', $data['service_type']);
       
       $out .= '<a class="review-link" href="' . url('node/' . $data['data']->nid) . '">Read Review</a>' . $out;  
       
