@@ -975,7 +975,6 @@ margin-top: 100px;
 
 .node-type-provider .site {text-align: center;}
 
-.node-type-provider .site a {background: url(images/visit-site-btn.png) no-repeat 0 0 transparent; text-indent: -9999px; color: black; display: block; width: 103px; height: 25px; margin: auto; }
 
 .pros-and-cons{margin: 0 0 0 315px;}
 .pros-and-cons .title {font-weight: bold;}
@@ -1244,7 +1243,8 @@ list-style: none; position: relative; top: 1px; margin: 0 .2em 1px 0; border-bot
 .node-type-provider .image {float: none; text-align: center; overflow: inherit;}
 .node-type-provider .image img {width: 260px; border: 1px solid lightgray;}
 /*.node-type-provider .basic-info {float: none; margin: 0; width: inherit; font-size: 15px;}*/
-.node-type-provider .site a {background: url(/sites/all/themes/ch/css/images/sprite-2.png) repeat-x 0 -763px #2ab967; text-indent: 0; width: 260px; margin: 5px auto 10px; padding: 7px 0 8px 0; color: white; border-radius: 5px; font-size: 18px;}
+
+.node-type-provider .site a {background: url(/sites/all/themes/ch/css/images/sprite-2.png) repeat-x 0 -763px #2ab967; text-indent: 0; display: block; height: 25px; width: 260px; margin: 15px auto 20px; padding: 7px 0 8px 0; color: white; border-radius: 5px; font-size: 18px;}
 
 
 .node-type-provider #left-col .ch_votes .caption {padding: 20px 5px 5px 10px; color: gray; background: url(/sites/all/themes/ch/css/images/sprite-2.png) repeat-x 0 -703px; font-weight: normal; margin: 0; font-size: 18px; border-radius: 0;}
