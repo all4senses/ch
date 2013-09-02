@@ -58,7 +58,7 @@
     </div>
   <?php endif; */?>
   
-<div id="all-content-wrapper" class="page-compare-providers">
+<div id="all-content-wrapper" class="page-provider">
   
   <div id="all-content" class="clearfix">
       
