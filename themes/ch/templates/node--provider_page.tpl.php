@@ -63,8 +63,8 @@
                       
                       <?php 
                       
-                        $block_data = array('module' => 'views', 'delta' => 'providers-block_top_webhost_small', 'shadow' => FALSE);
-                        echo ch_blocks_getBlockThemed($block_data);
+//                        $block_data = array('module' => 'views', 'delta' => 'providers-block_top_webhost_small', 'shadow' => FALSE);
+//                        echo ch_blocks_getBlockThemed($block_data);
                       
                       ?>
                           
