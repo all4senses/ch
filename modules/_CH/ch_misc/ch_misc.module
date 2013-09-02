@@ -5313,16 +5313,17 @@ function ch_misc_getProviderQuickData($target, $data) {
     case 'logo_chart':
     case 'logo_article':
     case 'logo_chart_iframe':
+    case 'logo_small_block':
     
       $all_data_quick = ch_misc_getProvidersDataQuick();
       $out = '';
       
-      if (!empty($all_data_quick[$data['data']->nid]['i_web'])) {
-        $link = $all_data_quick[$data['data']->nid]['i_web'];
-      }
-      else {
-        $link = url('node/' . $data['data']->nid);
-      }
+//      if (!empty($all_data_quick[$data['data']->nid]['i_web'])) {
+//        $link = $all_data_quick[$data['data']->nid]['i_web'];
+//      }
+//      else {
+//        $link = url('node/' . $data['data']->nid);
+//      }
       
       if (!empty($all_data_quick[$data['data']->nid]['i_logo_uri'])) {
         
@@ -5334,6 +5335,9 @@ function ch_misc_getProviderQuickData($target, $data) {
         }
         elseif ($target == 'logo_article') {
           $image_style_name = 'thumbnail';
+        }
+        elseif ($target == 'logo_small_block') {
+          $image_style_name = 'article_thumbnail_side_block';
         }
         
         $image = theme('ch_misc_image_style', array('style_name' => $image_style_name, 'path' => $all_data_quick[$data['data']->nid]['i_logo_uri'], 'alt' =>  $all_data_quick[$data['data']->nid]['i_logo_alt'], 'title' =>  $all_data_quick[$data['data']->nid]['i_logo_title'] ));
@@ -5542,6 +5546,29 @@ function ch_misc_getProviderQuickData($target, $data) {
       
       return $out;
       
+    
+      
+      
+      
+    case 'rating_visit_review': // For Top 5 hosting sites block on a provider page/
+      
+      $all_data_quick = ch_misc_getProvidersDataQuick();
+      
+      if (!empty($data['data']->votingapi_cache_node_percent_overall_average_value)) {
+                
+        $out = theme('ch_misc_fivestar_static', array('rating' => $data['data']->votingapi_cache_node_percent_overall_average_value, 'stars' => 5, 'tag' => 'overall', 'widget' => array('name' => 'stars', 'css' => 'stars.css')));
+        
+        $out = '<div class="details"><a ' . ( (isset($data['target']) && $data['target'] == 'iframe') ? 'target="_blank" ' : '') . 'href="' . url('node/' . $data['data']->nid) . '"><div>' . format_plural($data['data']->votingapi_cache_node_percent_overall_count_value, '1 Review', '@count Reviews') . '</div></a></div>' . $out . ' <div class="count">(' . number_format( (0.05 * $data['data']->votingapi_cache_node_percent_overall_average_value), 1 ) . ')</div>';
+      }
+      else {
+        $out = '<div class="details"><a ' . ( (isset($data['target']) && $data['target'] == 'iframe') ? 'target="_blank" ' : '') . 'href="' . url('node/' . $data['data']->nid) . '"><div>Write Review</div></a></div>';
+      }
+      
+      $out .= ch_misc_getTrackingUrl('', NULL, $data['data']->nid, NULL, 'reviews visit-site-btn', $data['service_type']);
+      
+      $out .= '<a class="review-link" href="' . url('node/' . $data['data']->nid) . '">Read Review</a>' . $out;  
+      
+      return $out;
       
       
       
