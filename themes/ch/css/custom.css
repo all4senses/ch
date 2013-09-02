@@ -162,7 +162,7 @@ ul.header-links a.Submit.Reviews{background: url("images/block-head-red.png") re
 
 #footer #block-ch-blocks-follow-links .header-links{clear: both;}
 
-.block{margin-bottom: 0.7em; position: relative; float: left;}
+.block{margin-bottom: 0.7em; position: relative; /*float: left;*/}
 
 #footer .block{margin-bottom: 0;}
 
