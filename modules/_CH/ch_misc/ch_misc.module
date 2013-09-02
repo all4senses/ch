@@ -5571,7 +5571,7 @@ function ch_misc_getProviderQuickData($target, $data) {
       
       $out .= ch_misc_getTrackingUrl('Visit Site', NULL, $data['data']->nid, NULL, 'reviews visit-site-btn', $data['service_type']);
       
-      $out .= '<a class="review-link" href="' . url('node/' . $data['data']->nid) . '">Review</a>' . $out;  
+      $out .= '<a class="review-link" href="' . url('node/' . $data['data']->nid) . '">Review</a>';  
       
       return $out;
       

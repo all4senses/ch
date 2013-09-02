@@ -1270,7 +1270,7 @@ list-style: none; position: relative; top: 1px; margin: 0 .2em 1px 0; border-bot
 #block-views-providers-block_top_webhost_small table {border: none;}
 #block-views-providers-block_top_webhost_small thead {display: none;}
 #block-views-providers-block_top_webhost_small .view-providers tr.even td {background: none;}
-#block-views-providers-block_top_webhost_small a.visit-site-btn {background: none;}
+#block-views-providers-block_top_webhost_small a.visit-site-btn {background: none; text-indent: 0;}
 
 
 
