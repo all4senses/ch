@@ -5561,7 +5561,7 @@ function ch_misc_getProviderQuickData($target, $data) {
       
       if (!empty($data['data']->votingapi_cache_node_percent_overall_average_value)) {
                 
-        $out = theme('ch_misc_fivestar_static', array('rating' => $data['data']->votingapi_cache_node_percent_overall_average_value, 'stars' => 5, 'tag' => 'overall', 'widget' => array('name' => 'stars', 'css' => 'stars.css')));
+        $out = 'Rating: ' . theme('ch_misc_fivestar_static', array('rating' => $data['data']->votingapi_cache_node_percent_overall_average_value, 'stars' => 5, 'tag' => 'overall', 'widget' => array('name' => 'stars', 'css' => 'stars.css')));
         
         //$out = '<div class="details"><a ' . ( (isset($data['target']) && $data['target'] == 'iframe') ? 'target="_blank" ' : '') . 'href="' . url('node/' . $data['data']->nid) . '"><div>' . format_plural($data['data']->votingapi_cache_node_percent_overall_count_value, '1 Review', '@count Reviews') . '</div></a></div>' . $out ;
       }
@@ -5569,9 +5569,7 @@ function ch_misc_getProviderQuickData($target, $data) {
 //        $out = '<div class="details"><a ' . ( (isset($data['target']) && $data['target'] == 'iframe') ? 'target="_blank" ' : '') . 'href="' . url('node/' . $data['data']->nid) . '"><div>Write Review</div></a></div>';
 //      }
       
-      $out .= ch_misc_getTrackingUrl('Visit Site', NULL, $data['data']->nid, NULL, 'reviews visit-site-btn', $data['service_type']);
-      
-      $out .= '<a class="review-link" href="' . url('node/' . $data['data']->nid) . '">Review</a>';  
+      $out .= '<div class="links">' . ch_misc_getTrackingUrl('Visit Site', NULL, $data['data']->nid, NULL, 'reviews visit-site-btn', $data['service_type']) . '<a class="review-link" href="' . url('node/' . $data['data']->nid) . '">Review</a></div>';
       
       return $out;
       
