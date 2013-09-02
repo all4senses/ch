@@ -1677,7 +1677,7 @@ function ch_misc_getArticleTeaserData($target, $body_full_markup, $nid, $charact
   $teaser_home = substr_replace ($teaser_home, '...', $last_pos);
   
   if ($found_image) {
-    $teaser_side_block_chars = 70;
+    $teaser_side_block_chars = 105;//70;
   }
   else {
     $teaser_side_block_chars = 105;
