@@ -3056,7 +3056,7 @@ function ch_misc_testPage() {
           console.log("teeest");
           console.log(event);
           console.log(event.data);
-          document.getElementById("bu-chart").style.height=event.data+"px";
+          document.getElementById("bu-chart").style.height=event.data;
       }
 
     </SCRIPT>';
