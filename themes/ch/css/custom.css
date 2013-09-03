@@ -1421,7 +1421,7 @@ h2.rcaption a, h3.rcaption a, /*.node-review*/ h3.rcaption a:hover{color: white;
 }
 
 /*.page-node #main .main-content h1{color: gray; font-weight: 600; font-size: 28px;}*/
-.page-node #main .main-content h1 {color: black; font-size: 38px; line-height: 45px; font-family: 'FaktConPro-SemiBold'; margin: 10px 0 2px 0;}
+.page-node #main .main-content h1 {color: gray; font-size: 38px; line-height: 45px; font-family: 'FaktConPro-SemiBold'; margin: 10px 0 2px 0;}
 
 h1.preface,
 .front h1 {margin-top: 5px; color: gray; padding: 0;}
@@ -1945,3 +1945,13 @@ body.sidebar-second .page-compare-providers #sidebar-second {padding: 0; margin-
 
 #block-ch-blocks-disclosure {background: #f6f4f5; border: none; padding-top: 5px;}
 #block-ch-blocks-disclosure p {font-size: 13px; font-family: arial; margin-bottom: 10px;}
+
+
+
+
+/* Webform pages */
+
+.node-type-webform .webform-component-textarea {width: 395px;}
+.node-type-webform input {border: 1px solid lightgray;}
+.node-type-webform .webform-component-textarea textarea {height: 200px; border: 1px solid lightgray;}
+.node-type-webform input[type="submit"] {background: url(/sites/all/themes/ch/css/images/sprite-2.png) repeat-x 0 -803px; border: none; text-indent: -9999px; width: 130px; height: 50px; padding: 0; cursor: pointer;}
