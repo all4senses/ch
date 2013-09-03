@@ -1930,9 +1930,9 @@ function ch_pages_form_alter(&$form, &$form_state, $form_id) {
       
        
       // Metatags.
-      gv_misc_addMetatag('title', 'Review Your Web Host');
-      gv_misc_addMetatag('description', 'Share your feedback with others. Rate and review your user experience with your current Web Host. Let others know.');
-      gv_misc_addMetatag('keywords', 'submit web host review, review my web host, rate my web host, wev host submit review');
+      ch_misc_addMetatag('title', 'Review Your Web Host');
+      ch_misc_addMetatag('description', 'Share your feedback with others. Rate and review your user experience with your current Web Host. Let others know.');
+      ch_misc_addMetatag('keywords', 'submit web host review, review my web host, rate my web host, wev host submit review');
       
       global $user;
       
