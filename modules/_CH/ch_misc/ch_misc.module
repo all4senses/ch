@@ -3042,23 +3042,27 @@ function ch_misc_testPage() {
 //  }
   
   $out .= '<SCRIPT>
+      /*
       function setGvIframeSize(pixels){
-        /*pixels+=32;*/
+        pixels+=32;
         document.getElementById("bu-chart").style.height=pixels+"px";
-        /*alert(document.getElementById("bu-chart").style.height);*/
+        alert(document.getElementById("bu-chart").style.height);
       }
+      */
       
-
+      /* Internet Explorer */
+      window.attachEvent("onmessage", receiveMessage);
+      /* Opera/Mozilla/Webkit */
       window.addEventListener("message", receiveMessage, false);
+      
       function receiveMessage(event)
       {
           // do something with event.data;
-          console.log("teeest");
+          /*console.log("teeest");
           console.log(event);
-          console.log(event.data);
+          console.log(event.data);*/
           document.getElementById("bu-chart").style.height=event.data;
       }
-
     </SCRIPT>';
   
 //  $out = '<SCRIPT>
