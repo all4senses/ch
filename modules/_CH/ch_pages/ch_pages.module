@@ -2230,7 +2230,7 @@ function ch_pages_form_alter(&$form, &$form_state, $form_id) {
               $type = $query->execute()->fetchField();
               if ($type == 'provider') {
                 $provider_nid = $source;
-                $provider_id_source = t('the page you have been viewing when clicked a Submit review button');
+                $provider_id_source = 'the page you have been viewing when clicked a Submit review button';
               }
             }
           } // End of if (isset($refferer[1]) && $refferer[1]) {
@@ -2315,7 +2315,7 @@ function ch_pages_form_alter(&$form, &$form_state, $form_id) {
           $form['about_you']['field_r_email_temp']['#access'] = FALSE;
           $form['about_you']['email_autofilled'] = array(
               '#type' => 'item',
-              '#title' => t('Your email'),
+              '#title' => 'Your email',
               //'#markup' => $form['about_you']['field_r_email']['und'][0]['value']['#default_value'],
               '#markup' => $form['about_you']['field_r_email_temp']['#default_value'],
           );
@@ -2456,6 +2456,7 @@ function ch_pages_form_alter(&$form, &$form_state, $form_id) {
       $form['#validate'][] = 'ch_pages_validateForm_review';
       $form['#submit'][] = 'ch_pages_submitForm_review';
       
+      dpm($form);
       
       
     break; // End of Review of provider
