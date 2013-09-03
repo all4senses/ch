@@ -3030,7 +3030,32 @@ function ch_misc_testPage() {
   
   $out = '<div>Start test...</div>';
 
-      
+  
+  $out = '';
+  
+//  if (@arg(1) == 'narrow') {
+    $out .= '<iframe id="bu-chart" src="http://getvoip.com/get/iframe/business-voip-chart/narrow" scrolling="no" width="590px" height="400px" frameborder="0" seamless="seamless"></iframe>';
+//  }
+//  else {
+//    // wide.
+//    $out .= '<iframe id="bu-chart" src="http://getvoip.com/get/iframe/business-voip-chart" scrolling="no" width="822px" frameborder="0" seamless="seamless"></iframe>';
+//  }
+  
+  $out .= '<SCRIPT>
+      function setGvIframeSize(pixels){
+        /*pixels+=32;*/
+        document.getElementById("bu-chart").style.height=pixels+"px";
+        /*alert(document.getElementById("bu-chart").style.height);*/
+      }
+    </SCRIPT>';
+  
+//  $out = '<SCRIPT>
+//      function setGvIframeSize(pixels){
+//        /*pixels+=32;*/
+//        document.getElementById("bu-chart").style.height=pixels+"px";
+//        /*alert(document.getElementById("bu-chart").style.height);*/
+//      }
+//    </SCRIPT>' . $out; 
   
   return $out . '<br>End of Test';
 }
