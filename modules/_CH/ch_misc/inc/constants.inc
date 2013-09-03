@@ -14,7 +14,7 @@ define('CONTROL', 'Control Panel Use');
 
 define('OVERALL', 'Overall Average Rating');
 
-define('RECOMMEND', 'Would you recommend this provider?');
+define('RECOMMEND', 'Would you recommend this web host?');
 
 
 

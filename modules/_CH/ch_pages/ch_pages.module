@@ -1963,14 +1963,14 @@ function ch_pages_form_alter(&$form, &$form_state, $form_id) {
       //$breadcrumb = theme('breadcrumb', array('breadcrumb' => array(l('Home', NULL), 'Submit Provider Review' )));
       
       // Set outer fieldset with the main caption for the Submit a Review page.
-      $form['#prefix'] = '<fieldset id="outer-box" class="form-wrapper"><legend><span class="fieldset-legend">' . t('Share Your Feedback - What Do You Think of Your VoIP Provider?') . '</span></legend><div class="fieldset-wrapper" style="display: block;">';
+      $form['#prefix'] = '<fieldset id="outer-box" class="form-wrapper"><legend><span class="fieldset-legend">Share Your Feedback - Submit a Review</span></legend><div class="fieldset-wrapper" style="display: block;">';
       $form['#suffix'] = '</div></fieldset>';
       
       //dpm($form);
-      $form['actions']['submit']['#value'] = t('Submit Review');
+      $form['actions']['submit']['#value'] = 'Submit Review';
       
       // Make some small corrections.
-      $form['title']['#title'] = t('Review title');
+      $form['title']['#title'] = 'Review title';
       $form['title']['#weight'] = -1;
       
       
@@ -2039,7 +2039,7 @@ function ch_pages_form_alter(&$form, &$form_state, $form_id) {
           
       $form['provider'] = array(
         '#type' => 'fieldset',
-        '#title' => 'Step 2: Your VoIP Provider Details',
+        '#title' => 'Step 2: Your Web Host',
         //'#collapsible' => TRUE,
         //'#collapsed' => FALSE,
         '#weight' => -10,
@@ -2073,13 +2073,13 @@ function ch_pages_form_alter(&$form, &$form_state, $form_id) {
       $votes = array();
       $form['ureview'] = array(
         '#type' => 'fieldset',
-        '#title' => 'Step 3: Rate and Review Your VoIP Provider',
+        '#title' => 'Step 3: Rate and Review Your Experience',
         '#weight' => -4,
       );
           
           $form['ureview']['votes'] = array(
               '#type' => 'container',
-              '#prefix' => '<div class="rate-caption"><div class="col-2">' . t('Click Stars To Start Reviewing') . '</div><div class="col-3">' . t('Rate it') . '</div></div>',
+              '#prefix' => '<div class="rate-caption"><div class="col-2">Click Stars To Start Reviewing</div><div class="col-3">Rate it</div></div>',
           );
           foreach ($vote_keys as $vote_key => $vote_title) {
             $form['ureview']['votes']['rating_' . $vote_key] = array(
@@ -2101,7 +2101,7 @@ function ch_pages_form_alter(&$form, &$form_state, $form_id) {
               '#type' => 'radios',
               '#options' => $rating_recommend_options,
               '#default_value' => FALSE,
-              '#prefix' => '<div class="label left">' . t(RECOMMEND) . '</div>',
+              '#prefix' => '<div class="label left">' . RECOMMEND . '</div>',
           );
           
           // just for reference from a below call
@@ -3320,7 +3320,7 @@ function ch_pages_node_view($node, $view_mode) {
       
       // Show data from field_r_oprovider, if is not set field_ref_provider
       if ( !isset($node->field_ref_provider['und'][0]['target_id']) && isset($node->field_r_oprovider['und'][0]['value']) ) {
-        $node->content['field_r_oprovider']['#title'] = 'Your Service Provider (*)';
+        $node->content['field_r_oprovider']['#title'] = 'Select your host (*)';
       }
       else {
         unset($node->content['field_r_oprovider']);
