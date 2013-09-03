@@ -3055,7 +3055,8 @@ function ch_misc_testPage() {
           // do something with event.data;
           console.log("teeest");
           console.log(event);
-          
+          console.log(event.data);
+          document.getElementById("bu-chart").style.height=event.data+"px";
       }
 
     </SCRIPT>';
