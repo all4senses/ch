@@ -760,6 +760,7 @@ form .counter.exceeded{color: red;}
 #outer-box legend{font-size: 25px; padding: 0 7px 0 7px; color: #478AFD;}
 .ch-edit-review-page legend{font-size: 22px; padding: 0 7px 0 7px; color: #478AFD;}
 
+
 #edit-s .fieldset-wrapper .fieldset-title {color: darkblue; font-size: 17px; padding: 10px 0 5px; display: block;}
 
 #edit-s-sh-trend {margin-bottom: 20px; overflow: hidden;}
@@ -831,6 +832,9 @@ form .counter.exceeded{color: red;}
 .ch-edit-review-page .captcha .fieldset-wrapper{margin-left: 200px;}
 /* Center a Submit button */
 .ch-edit-review-page #edit-actions{text-align: center;}
+
+.ch-edit-review-page input, .ch-edit-review-page select {border: 1px solid lightgray;}
+
 
 
 /* Node page, including Article */
