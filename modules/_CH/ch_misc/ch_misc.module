@@ -3047,6 +3047,17 @@ function ch_misc_testPage() {
         document.getElementById("bu-chart").style.height=pixels+"px";
         /*alert(document.getElementById("bu-chart").style.height);*/
       }
+      
+
+      window.addEventListener("message", receiveMessage, false);
+      function receiveMessage(event)
+      {
+          // do something with event.data;
+          console.log("teeest");
+          console.log(event);
+          
+      }
+
     </SCRIPT>';
   
 //  $out = '<SCRIPT>
