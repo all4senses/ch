@@ -1329,6 +1329,9 @@ list-style: none; position: relative; top: 1px; margin: 0 .2em 1px 0; border-bot
 
 
 #all-content #block-views-providers-block-topwhost-small .view-providers td {padding: 15px 0; border-bottom: 1px solid lightgray;}
+#all-content #block-views-providers-block-topwhost-small .view-providers .views-row-last td {border-bottom: none;}
+
+
 #all-content #block-views-providers-block-topwhost-small .view-providers td.views-field-php {padding-left: 0; padding-right: 10px;}
 
 
