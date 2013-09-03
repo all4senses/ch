@@ -3058,9 +3058,12 @@ function ch_misc_testPage() {
       function receiveMessage(event)
       {
           // do something with event.data;
-          /*console.log("teeest");
+          /*
+          console.log("teeest");
           console.log(event);
-          console.log(event.data);*/
+          console.log(event.data);
+          */
+          
           document.getElementById("bu-chart").style.height=event.data;
       }
     </SCRIPT>';
