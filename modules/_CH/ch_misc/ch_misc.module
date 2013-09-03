@@ -3051,7 +3051,7 @@ function ch_misc_testPage() {
       */
       
       /* Internet Explorer */
-      window.attachEvent("onmessage", receiveMessage);
+      /*window.attachEvent("onmessage", receiveMessage);*/
       /* Opera/Mozilla/Webkit */
       window.addEventListener("message", receiveMessage, false);
       
