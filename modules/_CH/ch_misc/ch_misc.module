@@ -5613,7 +5613,7 @@ function ch_misc_getProviderQuickData($target, $data) {
 //        $out = '<div class="details"><a ' . ( (isset($data['target']) && $data['target'] == 'iframe') ? 'target="_blank" ' : '') . 'href="' . url('node/' . $data['data']->nid) . '"><div>Write Review</div></a></div>';
 //      }
       
-      $out .= '<div class="links">' . ch_misc_getTrackingUrl('Visit Site', NULL, $data['data']->nid, NULL, 'reviews visit-site-btn', $data['service_type']) . '<a class="review-link" href="' . url('node/' . $data['data']->nid) . '">Reviews</a></div>';
+      $out .= '<div class="p-links">' . ch_misc_getTrackingUrl('Visit Site', NULL, $data['data']->nid, NULL, 'reviews visit-site-btn', $data['service_type']) . '<a class="review-link" href="' . url('node/' . $data['data']->nid) . '">Reviews</a></div>';
       
       return $out;
       
