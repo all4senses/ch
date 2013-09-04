@@ -235,6 +235,10 @@
          }
          else {
            
+
+                echo '<div class="share">' . ch_blocks_getSidebarShareStaticBlock($node, '<span>Share:</span>') . '</div>';
+
+           
           //echo '<div class="links">' . l($content['field_categories'][0]['#title'], $content['field_categories'][0]['#href']) . '</div>';
           //dpm($node);
           //dpm($content);
