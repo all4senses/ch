@@ -186,6 +186,11 @@ ul.header-links a.Submit.Reviews{background: url("images/block-head-red.png") re
 
 
 
+footer .share {border-top: solid 1px lightgray; padding: 15px 0;}
+footer .share .share-static {width: 300px; margin: 0 auto; overflow: hidden;}
+footer .share .share-static span{float: left; padding: 6px 15px;}
+
+
 /* System Messages */
 /*
 .messages{overflow-x: scroll;}
