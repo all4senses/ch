@@ -134,16 +134,18 @@ ul.header-links li{float: left;}
 ul.header-links a{display: block; text-indent: -9999px; width: 35px; height: 42px; margin: 0 0 0 7px; clear: both;}
 #footer ul.header-links a{margin: 0 7px 0 0;}
 
-/*ul.header-links*/ a.Twitter{background: url("images/sprite-2.png") no-repeat scroll 0 -199px transparent;}
-/*ul.header-links*/ a.Facebook{background: url("images/sprite-2.png") no-repeat scroll 0 -239px transparent;}
-/*ul.header-links*/ a.GooglePlus{background: url("images/sprite-2.png") no-repeat scroll 0 -322px transparent;}
-/*ul.header-links*/ a.LinkedIn{background: url("images/sprite-2.png") no-repeat scroll 0 -282px transparent;}
+/*ul.header-links*/ a.Twitter{background: url("images/sprite-2.png") no-repeat scroll -95px -38px transparent;}
+/*ul.header-links*/ a.Facebook{background: url("images/sprite-2.png") no-repeat scroll -140px -38px transparent;}
+/*ul.header-links*/ a.GooglePlus{background: url("images/sprite-2.png") no-repeat scroll -147px -192px transparent;}
+/*ul.header-links*/ a.LinkedIn{background: url("images/sprite-2.png") no-repeat scroll -103px -192px transparent;}
 /*ul.header-links*/ a.YouTube{background: url("images/sprite-2.png") no-repeat scroll 0 -363px transparent;}
 /*ul.header-links*/ a.Rss{background: url("images/sprite-2.png") no-repeat scroll 0 -657px transparent;}
 
+.share-static {overflow: hidden; margin: 5px 0 10px;}
+.share-static a{display: block; text-indent: -9999px; width: 40px; height: 40px; margin: 0 10px 0 0; padding: 0 !important; float: left;}
+
 ul.header-links a.Submit.Reviews{background: url("images/block-head-red.png") repeat-x scroll 0 0 red; border: 1px solid red; border-radius: 3px 3px 3px 3px; color: white; padding: 0 2px 0 3px; margin: 0; position: absolute; right: 0; text-indent: 0; top: 52px; width: 145px; height: 25px; font-weight: bold;  text-align: center;}
 
-.share-static a{display: block; text-indent: -9999px; width: 40px; height: 37px; margin: 0 10px 0 0; padding: 0; float: left;}
 
 
 /* Footer */
