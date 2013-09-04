@@ -143,7 +143,7 @@ ul.header-links a{display: block; text-indent: -9999px; width: 35px; height: 42p
 
 ul.header-links a.Submit.Reviews{background: url("images/block-head-red.png") repeat-x scroll 0 0 red; border: 1px solid red; border-radius: 3px 3px 3px 3px; color: white; padding: 0 2px 0 3px; margin: 0; position: absolute; right: 0; text-indent: 0; top: 52px; width: 145px; height: 25px; font-weight: bold;  text-align: center;}
 
-
+.share-static a{display: block; text-indent: -9999px; width: 40px; height: 37px; margin: 0 10px 0 0; padding: 0; float: left;}
 
 
 /* Footer */
