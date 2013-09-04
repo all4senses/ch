@@ -991,7 +991,8 @@ margin-top: 100px;
 
 
 
-.block-views h2{color: gray; font-size: 25px; font-weight: normal; font-family: 'FaktConPro-SemiBold'; margin-bottom: 3px;}
+.block-views h2,
+.block-views h3{color: gray; font-size: 25px; font-weight: normal; font-family: 'FaktConPro-SemiBold'; margin-bottom: 3px;}
 
 /* Chart Featured providers, Coupons */
 #block-views-providers-block_chart_featured_providers .block-title,
