@@ -796,7 +796,7 @@ form .counter.exceeded{color: red;}
 .ch-edit-review-page .form-item-captcha-response label{display: none;}
 .ch-edit-review-page .form-item-captcha-response input{float: left; margin-right: 20px;}
 
-.ch-edit-review-page #edit-field-r-oprovider input{width: 320px;}
+.ch-edit-review-page #edit-field-r-oprovider input{width: 340px;}
 
 .ch-edit-review-page .rate-caption{font-size: 12px; margin: 0 0 10px 347px;}
 .ch-edit-review-page .rate-caption .col-2{float: left; margin-right: 60px; text-align: center; width: 120px;}
