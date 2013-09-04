@@ -754,11 +754,11 @@ form .counter.exceeded{color: red;}
 
 .ch-edit-review-page .form-item{margin-top: 0;}
 
-.ch-edit-review-page #outer-box {padding: 0 20px;}
-.ch-edit-review-page fieldset {padding: 10px; margin: 0;}
+#outer-box {padding: 0 20px;}
+#outer-box fieldset {padding: 10px; margin: 0;}
 
 #outer-box legend{font-size: 25px; padding: 0 7px 0 7px; color: #478AFD;}
-.ch-edit-review-page legend{font-size: 22px; padding: 0 7px 0 7px; color: #478AFD;}
+#outer-box legend{font-size: 22px; padding: 0 7px 0 7px; color: #478AFD;}
 
 
 #edit-s .fieldset-wrapper .fieldset-title {color: darkblue; font-size: 17px; padding: 10px 0 5px; display: block;}
