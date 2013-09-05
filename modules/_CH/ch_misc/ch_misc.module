@@ -3791,7 +3791,7 @@ CloudHostingHQ Team
       $message['subject'] = t('CH New Provider review for "!provider" has been submitted', array('!provider' => $params['provider_name']));
       $message['body'][] = t('Dear administrator!
 
-A new review for the provider "!provider" just has been submitted:
+A new review for the provider "!provider" just has been submitted' . ($params['spam'] ? ' (perhaps it is SPAM)' : '') . ':
 
 ' . 
 
@@ -3921,6 +3921,9 @@ function ch_misc_sendMessage($tag, $data = NULL) {
       */
       global $language;
       $params['provider_name'] = $data['provider_name'];
+      $params['spam'] = $data['spam'];
+      $params['review'] = $data['review'];
+      
       drupal_mail('ch_misc', 'new_review_admin_notify', 'ry@cloudhostinghq.com', $language->language, $params);
       drupal_mail('ch_misc', 'new_review_admin_notify', 'all4senses@gmail.com', $language->language, $params);
       
