@@ -118,9 +118,9 @@
 
       <?php if (!$page): ?>
         <?php 
-          if (!empty($teaser_data['teaser_main_image'])) {
-            echo $teaser_data['teaser_main_image']; 
-          }
+//          if (!empty($teaser_data['teaser_main_image'])) {
+//            echo $teaser_data['teaser_main_image']; 
+//          }
         ?>
         <header>
       <?php endif; ?>
@@ -172,7 +172,7 @@
                   echo '<span class="submitted">', $created_str, '</span>';
                 }
                 else {
-                  echo '<span class="submitted"><span class="author">', $author_name, '</span> - ', $created_str, '</span>';
+                  //echo '<span class="submitted"><span class="author">', $author_name, '</span> - ', $created_str, '</span>';
                 }
               }
             ?>
@@ -197,13 +197,18 @@
             
               hide($content['body']);
 
+              if (!empty($teaser_data['teaser_main_image'])) {
+                echo $teaser_data['teaser_main_image']; 
+              }
+              
               if (!empty($node->body['und'][0]['summary'])) {
                 echo l('Read more »', 'node/' . $node->nid, array('attributes' => array('class' => array('more')))) . $node->body['und'][0]['summary'];
               }
               else {
                 echo $teaser_data['teaser'];
               }
-            
+              
+              echo '<span class="submitted"><span class="author">', $author_name, '</span> - ', $created_str, '</span>';
             
           }
           
