@@ -1520,8 +1520,11 @@ color: #666666;
 
 
 /* Articles teasers */ 
-.node-teaser.article {margin-bottom: 0; background: #f2f5f7; border-radius: 5px; padding: 10px;}
-.node-teaser h2 a, .node-teaser h3 a{color: #004286; font-size: 18px; line-height: 22px; font-weight: bold; margin: 0; border: medium none; padding: 0;}
+/*.node-teaser.article {margin-bottom: 0; background: #f2f5f7; border-radius: 5px; padding: 10px;}*/
+.node-teaser.article {margin-bottom: 12px; background: #fefefe; padding: 10px; box-shadow: 1px 3px 10px -4px gray; border: 1px solid lightgray;}
+
+/*.node-teaser h2 a, .node-teaser h3 a{color: #004286; font-size: 18px; line-height: 22px; font-weight: bold; margin: 0; border: medium none; padding: 0;}*/
+.node-teaser h2 a, .node-teaser h3 a{color: gray; font-size: 24px; line-height: 22px; font-weight: bold; margin: 0; border: medium none; padding: 0;}
 
 .node-teaser .more {background: url("images/arrow-circle-gray-right.png") no-repeat scroll right 0 transparent; display: block; float: right; margin-top: 10px; color: orange; font-weight: bold; padding-right: 25px;}
 
