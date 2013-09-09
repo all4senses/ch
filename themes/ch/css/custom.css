@@ -147,6 +147,17 @@ ul.header-links a{display: block; text-indent: -9999px; width: 35px; height: 42p
 ul.header-links a.Submit.Reviews{background: url("images/block-head-red.png") repeat-x scroll 0 0 red; border: 1px solid red; border-radius: 3px 3px 3px 3px; color: white; padding: 0 2px 0 3px; margin: 0; position: absolute; right: 0; text-indent: 0; top: 52px; width: 145px; height: 25px; font-weight: bold;  text-align: center;}
 
 
+#main .node-teaser .share {float: right; border: none; padding: 0;}
+.node-teaser footer .share .share-static {width: 178px; font-size: 15px;}
+
+.node-teaser footer .share .share-static span {padding: 6px 5px; color: #b6b6b6;}
+.node-teaser .share-static a {width: 25px; height: 25px; margin: 5px 5px 0 0;}
+.node-teaser a.Twitter {background: url(/sites/all/themes/ch/css/images/sprite-2.png) no-repeat scroll -60px -855px transparent;}
+.node-teaser a.Facebook {background: url(/sites/all/themes/ch/css/images/sprite-2.png) no-repeat scroll -90px -855px transparent;}
+.node-teaser a.GooglePlus {background: url(/sites/all/themes/ch/css/images/sprite-2.png) no-repeat scroll -119px -855px transparent;}
+.node-teaser a.LinkedIn {background: url(/sites/all/themes/ch/css/images/sprite-2.png) no-repeat scroll -148px -855px transparent;}
+
+
 
 /* Footer */
 
@@ -1549,8 +1560,6 @@ color: #666666;
 #main .node-teaser .links{clear: both;}
 
 #main footer .links a {color: gray;}
-
-#main .node-teaser .share{float: right;}
 
 /*.node-teaser header {border-bottom: 1px solid lightgray; padding-bottom: 10px; margin-bottom: 5px;}*/
 .node-teaser header {margin-bottom: 8px;}
