@@ -1,5 +1,10 @@
 <?php 
-  $created_str = date('F d, Y', $node->created);
+  if($view_mode == 'teaser') {
+    $created_str = date('F d, Y \a\t g:i A', $node->created);
+  }
+  else {
+    $created_str = date('F d, Y', $node->created);
+  }
   $created_rdf = preg_replace('|(.*)content=\"(.*)\"\s(.*)|', '$2', $date); //date('Y-m-d\TH:i:s', $node->created); 
 
   $extra_data['guest_author'] = NULL;
@@ -208,7 +213,7 @@
                 echo $teaser_data['teaser'];
               }
               
-              echo '<span class="submitted"><span class="author">', $author_name, '</span> - ', $created_str, '</span>';
+              echo '<span class="submitted">By:<span class="author">', $author_name, '</span><span class="icon"></span>', $created_str, '</span>';
             
           }
           
