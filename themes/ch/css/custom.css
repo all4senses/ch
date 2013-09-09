@@ -1543,7 +1543,8 @@ color: #666666;
 
 #main .node-teaser .share{float: right;}
 
-.node-teaser header {border-bottom: 1px solid lightgray; padding-bottom: 10px; margin-bottom: 5px;}
+/*.node-teaser header {border-bottom: 1px solid lightgray; padding-bottom: 10px; margin-bottom: 5px;}*/
+.node-teaser header {margin-bottom: 8px;}
 
 /*
 article .thumb{width: 200px; height: 140px; float: left; margin-bottom: -56px; text-align: center; overflow: hidden; position: relative; top: -56px;}
