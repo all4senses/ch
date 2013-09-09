@@ -213,8 +213,9 @@
                 echo $teaser_data['teaser'];
               }
               
-              echo '<span class="submitted">By:<span class="author">', $author_name, '</span><span class="icon"></span>', $created_str, '</span>';
-            
+              if($view_mode == 'teaser') {
+                echo '<span class="submitted">By:<span class="author">', $author_name, '</span><span class="icon"></span>', $created_str, '</span>';
+              }
           }
           
           $keyword_metatag_name = ($node->type == 'news_post') ? 'news_keywords' : 'keywords';
