@@ -248,7 +248,7 @@
          }
          elseif ($view_mode == 'teaser') {
            //echo '<div class="links">' . l('Comments' . ( ($user->uid && $node->comment_count) ? ' (' . $node->comment_count . ')' : ''), 'node/' . $node->nid, array('fragment' => 'comments')) . '</div>';
-          echo '<span class="submitted">By:<span class="author">', $author_name, '</span><span class="icon"></span>', $created_str, '</span>';
+          echo '<span class="submitted">By:<span class="author">', $author_name, '</span><span class="time-icon"></span>', $created_str, '</span>';
         } 
       ?>
     </footer>
