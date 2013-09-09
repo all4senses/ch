@@ -1,8 +1,9 @@
 <?php 
-  if($view_mode == 'teaser') {
-    $created_str = date('F d, Y \a\t g:i A', $node->created);
-  }
-  else {
+//  if($view_mode == 'teaser') {
+//    $created_str = date('F d, Y \a\t g:i A', $node->created);
+//  }
+//  else 
+    {
     $created_str = date('F d, Y', $node->created);
   }
   $created_rdf = preg_replace('|(.*)content=\"(.*)\"\s(.*)|', '$2', $date); //date('Y-m-d\TH:i:s', $node->created); 
