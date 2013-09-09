@@ -1554,7 +1554,7 @@ color: #666666;
 .front #main .node h2 a, .front #main .node h3 a{}
 
 /*#main .node-teaser .submitted{font-size: 12px; margin: 2px 0; padding-bottom: 5px; color: #d59057; font-weight: bold;}*/
-#main .node-teaser .submitted{font-size: 14px; color: #bebebe;}
+#main .node-teaser .submitted{font-size: 14px; color: #bebebe; padding-top: 3px; float: left;}
 
 #main .node-teaser .links, #main footer .links{float: left;}
 #main .node-teaser .links{clear: both;}
