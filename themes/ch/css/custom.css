@@ -1549,6 +1549,8 @@ color: #666666;
 .node-teaser h2 a {color: #333333;}
 .node-teaser h2 a:hover {color: #009ce2;}
 
+.node-teaser.with_thumb .teaser-content {margin-left: 210px;}
+
 /*.node-teaser .more {background: url("images/arrow-circle-gray-right.png") no-repeat scroll right 0 transparent; display: block; float: right; margin-top: 10px; color: orange; font-weight: bold; padding-right: 25px;}*/
 .node-teaser .more {}
 
