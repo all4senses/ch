@@ -244,8 +244,7 @@
         <?php 
          if ($page) {
           
-          dpm($content);
-          
+        
           $tags = NULL;
           foreach (@$node->field_tags['und'] as $key => $value) {
             $tags .= ($tags ? '<div class="delim">|</div>' : '') . l(@$content['field_tags'][$key]['#title'], 'taxonomy/term/' . $value['tid']);

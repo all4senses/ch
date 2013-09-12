@@ -953,7 +953,7 @@ margin-top: 100px;
 
 
 
-.page-node #main .topics{border-top: 1px solid lightgray; font-size: 13px; font-weight: bold; padding-top: 10px; /*padding-bottom: 20px;*/}
+.page-node #main .topics{border-top: 1px solid lightgray; font-size: 13px; font-weight: bold; padding: 10px 0;}
 .page-node #main .topics .title{margin-right: 10px; float: left;}
 .page-node #main .topics a{float: left;}
 .page-node #main .topics .delim{margin: 0 5px 0 5px; float: left; color: #478AFD;}
