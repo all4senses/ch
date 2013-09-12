@@ -643,7 +643,7 @@ td.views-field-php-4 a:hover{text-decoration: underline;}
 
 td.views-field-php-7{font-size: 28px; font-weight: bold;}
 
-td.views-field-php-7 a {color: #0068d3;}
+td.views-field-php-7 a {color: #0068d3; font-size: 14px; font-weight: normal; line-height: 14px;}
 td.views-field-php-7 a:hover {text-decoration: underline;}
 
 .views-field .count{font-size: 11px; padding-top: 4px;}
