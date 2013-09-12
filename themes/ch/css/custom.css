@@ -32,7 +32,7 @@ body.one-sidebar.sidebar-second #main {background: none repeat scroll 0 0 white;
 a, a:focus{ -webkit-appearance: none; outline: none;}
 
 /*#c-top{background: url(images/top-back3.jpg) repeat-x scroll 0 bottom #484848; height: 112px;}*/
-#c-top{height: 130px; background: white; width: 1000px; margin: auto; box-shadow: 0px 10px 60px #DDDDDD,0 0px 7px gray;}
+#c-top{height: 125px; background: white; width: 1000px; margin: auto; box-shadow: 0px 10px 60px #DDDDDD,0 0px 7px gray;}
 
 .header{margin: auto; position: relative; width: 1000px;}
 
@@ -94,7 +94,7 @@ input.blur, textarea.blur,
 #header, #navigation, #all-content, #footer-inside{width: 1000px; margin: auto;}
 #footer-inside{position: relative;}
 
-#header{padding-top: 85px; z-index: 4;}
+#header{padding-top: 80px; z-index: 4;}
 
 #header-menu-back {background: #706e6f; height: 40px;}
 
@@ -115,7 +115,7 @@ input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-s
 
 #header #logo-block{color: #C5C5C5; left: 0; position: absolute; top: 6/*20*/px; z-index: 200;}
 /*#header #logo-block img {width: 220px;}*/
-#header #logo{float: left; margin: 8px 0 0 12px;}
+#header #logo{float: left; margin: 3px 0 0 12px;}
 #header #logo-block .descr{float: left;}
 #header #logo-block .title{font-size: 26px; font-weight: bold; margin-top: 10px;}
 #header #logo-block .stars{float: left; height: 20px; margin: 2px 0 0 7px; overflow: hidden; width: 80px; position: relative;}
@@ -225,7 +225,7 @@ div.error{border: none;}
 ul.ch{margin-left: 0px; padding-left: 10px;}
 
 /*.block.block-om-maximenu{right: 0; position: absolute; top: 65px; z-index: 10; height: 45px; border-radius: 10px 10px 0 0;}*/
-.block.block-om-maximenu{position: absolute; top: 85px; z-index: 10; left: 110px;}
+.block.block-om-maximenu{position: absolute; top: 80px; z-index: 10; left: 110px;}
 
 
 .om-btitle {float: left; position: absolute; left: -180px;}
