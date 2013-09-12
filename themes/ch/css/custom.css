@@ -833,7 +833,7 @@ form .counter.exceeded{color: red;}
 
 
 
-.ch-edit-review-page #edit-rating-recommend{padding-bottom: 30px;}
+.ch-edit-review-page #edit-rating-recommend{padding-bottom: 30px; overflow: hidden;}
 .ch-edit-review-page .form-item-rating-recommend.form-type-radios{margin: 0 0 80px 200px; clear: both;}
 
 .ch-edit-review-page #edit-ureview .label.left{float: left; margin: 0 20px 0 145px;}
