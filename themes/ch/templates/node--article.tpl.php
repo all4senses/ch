@@ -198,6 +198,7 @@
           hide($content['links']);
           hide($content['field_categories']);
           hide($content['disqus']);
+          hide($content['field_topics']);
           
            if (!$page) {
             
@@ -242,6 +243,9 @@
 
         <?php 
          if ($page) {
+          
+          dpm($content);
+           
           echo '<div class="share">' . ch_blocks_getSidebarShareStaticBlock($node, '<span>Share:</span>') . '</div>';
           //echo '<div class="links">' . l($content['field_categories'][0]['#title'], $content['field_categories'][0]['#href']) . '</div>';
           //dpm($node);
