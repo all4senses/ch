@@ -486,7 +486,7 @@ div.fivestar-widget-static .star span.off {display: block; width: 100%; height: 
 .view-providers th{position: relative; background: url(images/chart-th-back.jpg) repeat-x 0 0 transparent; color: white; height: 39px; text-align: center; font-size: 13px; padding: 0 5px; font-weight: bold;}
 */
 .view-display-id-page_chart_providers th,
-.view-providers th{background: #5fb2ea; position: relative; color: white; height: 48px; text-align: center; font-size: 14px; padding: 0 5px; font-weight: bold;}
+.view-providers th{background: #5fb2ea; position: relative; color: white; height: 48px; text-align: center; font-size: 14px; padding: 0 5px; font-weight: bold; font-family: arial;}
 
 
 .view-display-id-page_chart_providers th a,
