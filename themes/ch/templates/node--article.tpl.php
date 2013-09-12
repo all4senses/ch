@@ -198,7 +198,7 @@
           hide($content['links']);
           hide($content['field_categories']);
           hide($content['disqus']);
-          hide($content['field_topics']);
+          hide($content['field_tags']);
           
            if (!$page) {
             
@@ -245,6 +245,16 @@
          if ($page) {
           
           dpm($content);
+          
+          $tags = NULL;
+          foreach (@$node->field_tags['und'] as $key => $value) {
+            $tags .= ($tags ? '<div class="delim">|</div>' : '') . l(@$content['field_tags'][$key]['#title'], 'taxonomy/term/' . $value['tid']);
+          }
+
+          if ($tags) {
+            echo '<div class="topics"><div class="title">TAGS:</div>' . $tags . '<div class="bottom-clear"></div></div>';
+          }
+
            
           echo '<div class="share">' . ch_blocks_getSidebarShareStaticBlock($node, '<span>Share:</span>') . '</div>';
           //echo '<div class="links">' . l($content['field_categories'][0]['#title'], $content['field_categories'][0]['#href']) . '</div>';
