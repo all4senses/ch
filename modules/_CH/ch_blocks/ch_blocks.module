@@ -348,6 +348,9 @@ function ch_blocks_block_save($delta = '', $edit = array()) {
 function ch_blocks_getSidebarShareStaticBlock($node = NULL, $block_title = NULL) {
   
   if (!$node) {
+    dpm($_GET);
+    dpm($_SERVER);
+    dpm(arg());
     $node = node_load(str_replace('node/', '', $_GET['q']));
   }
   
