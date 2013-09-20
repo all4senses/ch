@@ -1765,7 +1765,7 @@ function ch_pages_form_alter(&$form, &$form_state, $form_id) {
                       
                   
                   // Move defined via admin panel fields with a taxonomy autocomplete for corresponding Features tags to the corresponding fieldset.
-                  $form['s'][$service_type_key]['field_p_' . $service_type_key . '_features'] = $form['field_p_' . $service_type_key . '_features'];
+                  $form['s'][$service_type_key]['field_p_' . $service_type_key . '_features'] = @$form['field_p_' . $service_type_key . '_features'];
                   $form['field_p_' . $service_type_key . '_features']['#access'] = FALSE;
                   
                   // Add tags weights editing window for corresponding features.
