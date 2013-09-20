@@ -1737,6 +1737,8 @@ article .thumb {width: 200px; float: left; margin: 0 10px 5px 0; text-align: cen
 #types-n-feat .form-type-checkbox {margin-bottom: 38px;}
 #listpositions {float: left; margin-top: 20px;}
 
+#listpositions .form-type-textfield {margin-bottom: 8px;}
+
 label[for="edit-field-p-types-und"] {color: #478AFD;}
  
 
