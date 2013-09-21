@@ -4770,8 +4770,16 @@ function ch_misc_views_pre_render(&$view) {
 //    $view->result[$key]->created_year_month = '2006/06';
 //  }
   
-  //dpm($view->name); dpm($view->current_display);
+  
+  dpm($view->name); dpm($view->current_display);
 
+  global $user;
+  if ($user->uid == 1) {
+    $args = arg();
+    $term = taxonomy_term_load($args[2]);
+    dpm($term);  
+  }
+    
   // Add a prefaces for the some views pages.
   $key = 'view-' . $view->name . '-' . $view->current_display;
   
