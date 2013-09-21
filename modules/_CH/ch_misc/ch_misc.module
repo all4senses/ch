@@ -4771,14 +4771,14 @@ function ch_misc_views_pre_render(&$view) {
 //  }
   
   
-  dpm($view->name); dpm($view->current_display);
+  //dpm($view->name); dpm($view->current_display);
 
-  global $user;
-  if ($user->uid == 1) {
+//  global $user;
+//  if ($user->uid == 1) {
 //    $args = arg();
 //    $term = taxonomy_term_load($args[2]);
 //    dpm($term);  
-  }
+//  }
     
   // Add a prefaces for the some views pages.
   $key = 'view-' . $view->name . '-' . $view->current_display;
@@ -4818,7 +4818,8 @@ function ch_misc_views_pre_render(&$view) {
       $args = arg();
       $term = taxonomy_term_load($args[2]);
       if ($term->vocabulary_machine_name == 'provider_features') {
-        ch_misc_drupal_not_found();
+        //ch_misc_drupal_not_found();
+        drupal_not_found();
         drupal_exit();
       }
       
