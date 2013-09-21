@@ -4818,8 +4818,7 @@ function ch_misc_views_pre_render(&$view) {
       $args = arg();
       $term = taxonomy_term_load($args[2]);
       if ($term->vocabulary_machine_name == 'provider_features') {
-        //ch_misc_drupal_not_found();
-        drupal_not_found();
+        ch_misc_drupal_not_found();
         drupal_exit();
       }
       
