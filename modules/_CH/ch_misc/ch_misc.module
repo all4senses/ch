@@ -4775,9 +4775,9 @@ function ch_misc_views_pre_render(&$view) {
 
   global $user;
   if ($user->uid == 1) {
-    $args = arg();
-    $term = taxonomy_term_load($args[2]);
-    dpm($term);  
+//    $args = arg();
+//    $term = taxonomy_term_load($args[2]);
+//    dpm($term);  
   }
     
   // Add a prefaces for the some views pages.
@@ -4814,7 +4814,19 @@ function ch_misc_views_pre_render(&$view) {
     */
       
       
-    //case 'view-taxonomy_term-page':
+    case 'view-taxonomy_term-page':
+      $args = arg();
+      $term = taxonomy_term_load($args[2]);
+      if ($term->vocabulary_machine_name == 'provider_features') {
+        ch_misc_drupal_not_found();
+        drupal_exit();
+      }
+      
+      break;
+      
+      
+      
+      
     case 'view-taxonomy_term-page_chart_providers':
     case 'view-taxonomy_term-page_teasers':
     case 'view-taxonomy_term-page_taxonomy_hide_results':
