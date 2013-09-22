@@ -155,7 +155,8 @@ function ch_misc_menu_alter(&$items) {
   dpm($items);
   //unset($items['taxonomy/term/%taxonomy_term']);
   //unset($items['taxonomy/term/%taxonomy_term/view']);
-  unset($items['taxonomy/term/%taxonomy_term/feed']); // If you want to hide the feed as well.
+  ////unset($items['taxonomy/term/%taxonomy_term/feed']); // If you want to hide the feed as well.
+  unset($items['taxonomy/term/%/feed']); // If you want to hide the feed as well.
   
 }
 
