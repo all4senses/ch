@@ -164,7 +164,7 @@ function ch_misc_menu_alter(&$items) {
   */
   
   //unset($items['taxonomy/term/%taxonomy_term']);
-  ////unset($items['taxonomy/term/%taxonomy_term/view']);
+  unset($items['taxonomy/term/%taxonomy_term/view']);
   unset($items['taxonomy/term/%taxonomy_term/feed']); // If you want to hide the feed as well.
 }
 
