@@ -151,8 +151,14 @@ function ch_misc_menu_alter(&$items) {
   
   // Remove all Tagadelic urls.
   //////unset($items['tagadelic'], $items['tagadelic/list/%tagadelic_vocs'], $items['tagadelic/chunk/%tagadelic_vocs']);
-  
-  dpr($items);
+  $keys = array_keys($items);
+  dpr($keys2);
+  foreach($keys as $key) {
+    if (strpos($key, 'taxonomy/term/') !== FALSE) {
+      $keys2[] = $key;
+    }
+  }
+  dpr($keys2);
   exit();
   //unset($items['taxonomy/term/%taxonomy_term']);
   //unset($items['taxonomy/term/%taxonomy_term/view']);
