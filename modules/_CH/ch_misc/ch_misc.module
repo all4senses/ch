@@ -153,6 +153,7 @@ function ch_misc_menu_alter(&$items) {
   //////unset($items['tagadelic'], $items['tagadelic/list/%tagadelic_vocs'], $items['tagadelic/chunk/%tagadelic_vocs']);
   
   dpr($items);
+  exit();
   //unset($items['taxonomy/term/%taxonomy_term']);
   //unset($items['taxonomy/term/%taxonomy_term/view']);
   unset($items['taxonomy/term/%taxonomy_term/feed']); // If you want to hide the feed as well.
