@@ -142,6 +142,26 @@ function ch_misc_menu() {
 
 
 /**
+ * Hook menu alter.
+ *
+ */
+function ch_misc_menu_alter(&$items) {
+  // Example - disable the page at node/add
+  //$items['node/add']['access callback'] = FALSE;
+  
+  // Remove all Tagadelic urls.
+  //////unset($items['tagadelic'], $items['tagadelic/list/%tagadelic_vocs'], $items['tagadelic/chunk/%tagadelic_vocs']);
+  
+  dpm($items);
+  //unset($items['taxonomy/term/%taxonomy_term']);
+  //unset($items['taxonomy/term/%taxonomy_term/view']);
+  unset($items['taxonomy/term/%taxonomy_term/feed']); // If you want to hide the feed as well.
+  
+}
+
+
+
+/**
  * Returns recommendations counts for pos and neg.
  */
 function ch_misc_getVotesRecommendPosVsNeg($nid) {
@@ -1139,19 +1159,6 @@ function ch_misc_preventEnterOnEditField() {
   $path_to_custom_js = drupal_get_path('module', 'ch_misc') . '/js/';
   drupal_add_js($path_to_custom_js . 'ch_preventEnterOnEditField.js');
   
-}
-
-
-/**
- * Hook menu alter.
- *
- */
-function ch_misc_menu_alter(&$items) {
-  // Example - disable the page at node/add
-  //$items['node/add']['access callback'] = FALSE;
-  
-  // Remove all Tagadelic urls.
-  //////unset($items['tagadelic'], $items['tagadelic/list/%tagadelic_vocs'], $items['tagadelic/chunk/%tagadelic_vocs']);
 }
 
 
