@@ -151,6 +151,8 @@ function ch_misc_menu_alter(&$items) {
   
   // Remove all Tagadelic urls.
   //////unset($items['tagadelic'], $items['tagadelic/list/%tagadelic_vocs'], $items['tagadelic/chunk/%tagadelic_vocs']);
+  
+  /*
   $keys = array_keys($items);
   dpr($keys2);
   foreach($keys as $key) {
@@ -160,11 +162,11 @@ function ch_misc_menu_alter(&$items) {
   }
   dpr($keys2);
   exit();
-  //unset($items['taxonomy/term/%taxonomy_term']);
-  //unset($items['taxonomy/term/%taxonomy_term/view']);
-  unset($items['taxonomy/term/%taxonomy_term/feed']); // If you want to hide the feed as well.
-  //unset($items['taxonomy/term/%/feed']); // If you want to hide the feed as well.
+  */
   
+  //unset($items['taxonomy/term/%taxonomy_term']);
+  unset($items['taxonomy/term/%taxonomy_term/view']);
+  unset($items['taxonomy/term/%taxonomy_term/feed']); // If you want to hide the feed as well.
 }
 
 
