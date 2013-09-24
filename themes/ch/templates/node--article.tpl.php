@@ -244,15 +244,16 @@
         <?php 
          if ($page) {
           
-        
-          $tags = NULL;
-          foreach (@$node->field_tags['und'] as $key => $value) {
-            $tags .= ($tags ? '<div class="delim">|</div>' : '') . l(@$content['field_tags'][$key]['#title'], 'taxonomy/term/' . $value['tid']);
-          }
+           if (isset($node->field_tags['und']) && is_array($node->field_tags['und']) && !empty($node->field_tags['und'])) {
+              $tags = NULL;
+              foreach (@$node->field_tags['und'] as $key => $value) {
+                $tags .= ($tags ? '<div class="delim">|</div>' : '') . l(@$content['field_tags'][$key]['#title'], 'taxonomy/term/' . $value['tid']);
+              }
 
-          if ($tags) {
-            echo '<div class="topics"><div class="title">TAGS:</div>' . $tags . '<div class="bottom-clear"></div></div>';
-          }
+              if ($tags) {
+                echo '<div class="topics"><div class="title">TAGS:</div>' . $tags . '<div class="bottom-clear"></div></div>';
+              }
+           }
 
            
           echo '<div class="share">' . ch_blocks_getSidebarShareStaticBlock($node, '<span>Share:</span>') . '</div>';
