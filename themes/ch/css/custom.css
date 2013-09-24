@@ -580,9 +580,9 @@ th.views-field-php{width: 170px;}
 th.views-field-php-1{width: 85px;}
 
 th.views-field-php-2{width: 80px;}
-.p-less-fields th.views-field-php-2{width: 70px;}
+.p-less-fields th.views-field-php-2{width: 75px;}
 
-th.views-field-php-3{width: 195px;}
+th.views-field-php-3{width: 215px;}
 /*#block-views-providers-block-top-vps-p-table th.views-field-php-3{width: 190px;}*/
 
 th.views-field-php-4{width: 60px;}
@@ -591,7 +591,7 @@ th.views-field-php-4{width: 60px;}
 
 th.views-field-php-5{width: 70px;}
 
-th.views-field-php-6{width: 55px;} /* Trend */
+th.views-field-php-6{width: 40px;} /* Trend */
 th.views-field-php-6 a {padding: 0 10px 0 0;}
 .p-less-fields th.views-field-php-6{width: 100px;}
 
