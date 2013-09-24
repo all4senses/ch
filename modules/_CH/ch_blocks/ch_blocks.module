@@ -345,9 +345,9 @@ function ch_blocks_block_save($delta = '', $edit = array()) {
 /**
  * Block with sidebar share links for a current post.
  */
-function ch_blocks_getSidebarShareStaticBlock($node = NULL, $block_title = NULL) {
+function ch_blocks_getSidebarShareStaticBlock($node = NULL, $block_title = NULL, $source = 'sidebar') {
   
-  if (arg(0) == 'taxonomy') {
+  if (arg(0) == 'taxonomy' && $source == 'sidebar') {
     return NULL;
   }
   
