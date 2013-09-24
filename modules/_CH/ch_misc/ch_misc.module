@@ -5257,23 +5257,48 @@ function ch_misc_getProvidersFees($scope = 'all') {
  */
 function ch_misc_getProvidersDataQuick($scope = 'all', $reset = FALSE, $clear_from_session = FALSE) {
     
+  static $var_p_all_data_quick;
+  static $request_counter;
+  
+  if (!$var_p_all_data_quick && !$reset && !$clear_from_session) {
+    $var_p_all_data_quick = variable_get('p_all_data_quick');
+    //dpm('used from var');
+    $request_counter = 0;
+  }
+  else {
+    $request_counter++;
+    //dpm('used from static');
+    //dpm('$request_counter = ' . $request_counter);
+  }
+  
+  //if ($clear_from_session && isset($_SESSION['p_all_data_quick'])) {
+  if ($clear_from_session && $var_p_all_data_quick) {
+    // Reset a helper session var with all quick data.
+    //unset($_SESSION['p_all_data_quick']);
+    variable_set('p_all_data_quick', NULL);
+    $var_p_all_data_quick = NULL;
+  }
+  
+  /*
   if ($clear_from_session && isset($_SESSION['p_all_data_quick'])) {
     // Reset a helper session var with all quick data.
     unset($_SESSION['p_all_data_quick']);
   }
-    
+  */
+  
   $p_data_quick = array();
   if ($scope == 'all') {
     // If data is not in the Session or its age more than 5 hours, reset it.
     
-    //$p_data_quick = @$_SESSION['p_all_data_quick'];
-    if(!$reset && isset($_SESSION['p_all_data_quick'])) {
-      $p_data_quick = $_SESSION['p_all_data_quick'];
+    //if(!$reset && !empty($_SESSION['p_all_data_quick'])) {
+    if(!$reset && $var_p_all_data_quick) {
+      //$p_data_quick = $_SESSION['p_all_data_quick'];
+      $p_data_quick = $var_p_all_data_quick;
     }
     else {
       $p_data_quick = NULL;
     }
-    
+        
     
     if ($reset || !$p_data_quick || time() > ($p_data_quick['timestamp'] + 18000) ) {
       $data = db_select('field_revision_field_p_data_quick', 'f')
@@ -5284,7 +5309,9 @@ function ch_misc_getProvidersDataQuick($scope = 'all', $reset = FALSE, $clear_fr
       }
 
       $p_data_quick['timestamp'] = time();
-      $_SESSION['p_all_data_quick'] = $p_data_quick;
+      //$_SESSION['p_all_data_quick'] = $p_data_quick;
+      variable_set('p_all_data_quick', $p_data_quick);
+      $var_p_all_data_quick = $p_data_quick;
     }
   }
   return $p_data_quick;  
