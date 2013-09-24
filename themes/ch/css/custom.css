@@ -469,6 +469,16 @@ div.fivestar-widget-static .star{width: 15px; height: 15px; float: left; backgro
 div.fivestar-widget-static .star span.on{text-indent: -9999px; width: 15px; height: 15px; display: block; background: url("images/sprite-2.png") no-repeat scroll 1px -67px transparent;}
 div.fivestar-widget-static .star span.off {display: block; width: 100%; height: 100%; background: url(/sites/all/themes/ch/css/images/sprite-2.png) no-repeat scroll 0 -51px transparent;}
 
+
+
+
+.view-display-id-block_topwhost_small div.fivestar-widget-static .star{width: 14px; height: 14px; float: left; background: url("images/sprite-2.png") no-repeat scroll -19px -50px transparent;}
+.view-display-id-block_topwhost_small div.fivestar-widget-static .star span.on{text-indent: -9999px; width: 14px; height: 14px; display: block; background: url("images/sprite-2.png") no-repeat scroll -19px -62px transparent;}
+.view-display-id-block_topwhost_small div.fivestar-widget-static .star span.off {display: block; width: 14px; height: 14px; background: url(/sites/all/themes/ch/css/images/sprite-2.png) no-repeat scroll -19px -50px transparent;}
+
+
+
+
 .view-providers .plan{color: #0068d3; font-size: 13px; font-weight: bold; margin: 0 0 1px 2px;}
 .view-providers .feature{background: url("images/sprite-2.png") no-repeat scroll -189px 0 transparent; font-size: 13px; padding-left: 20px; color: #777777; line-height: 20px; }
 
