@@ -673,7 +673,7 @@ body.sidebar-second #sidebar-second{float: right; margin-right: 18px; padding: 1
 .sidebar .block{overflow: hidden; margin: 12px 0; position: relative; z-index: 1; border: 1px solid lightgray;}
 
 /*.sidebar .block-title{padding: 10px 5px 10px 10px; border-bottom: 3px solid lightgray; color: white; background: url("images/main-menu-hover.png") repeat-x 0 0px; font-weight: normal; margin: 0; font-size: 16px; border-radius: 7px 7px 0 0;}*/
-.sidebar .block-title{padding: 20px 5px 5px 10px; color: gray; background: url(/sites/all/themes/ch/css/images/sprite-2.png) repeat-x 0 -703px; font-weight: normal; margin: 0; font-size: 16px;}
+.sidebar .block-title{padding: 20px 5px 5px 10px; color: gray; background: url(/sites/all/themes/ch/css/images/sprite-2.png) repeat-x 0 -703px; font-weight: normal; margin: 0; font-size: 22px; font-family: 'FaktConPro-SemiBold';}
 
 
 .sidebar .block li{list-style: none; clear: both;}
