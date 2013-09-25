@@ -5089,9 +5089,11 @@ function ch_misc_views_pre_render(&$view) {
       } // End of else of if (isset($term->description) && $term->description) {r
       
       
-    } 
-    //elseif ($view->name . '-' . $view->current_display == 'taxonomy_term-page') {
-    elseif ($key == 'view-taxonomy_term-page_category') {
+    }
+     * */
+    
+    elseif ($view->name . '-' . $view->current_display == 'taxonomy_term-page') {
+   // elseif ($key == 'view-taxonomy_term-page_category') {
       
       global $current_tag_title;
       $current_tag_title = $preface_node->title . ' "' . htmlspecialchars_decode($view->build_info['substitutions']['%1']) . '"';
@@ -5142,6 +5144,7 @@ function ch_misc_views_pre_render(&$view) {
       
       
     } // End of if ($view->current_display == 'page_by_tag') {
+    /*
     elseif ($view->current_display == 'page_by_tag') {
       
 //      global $current_tag_title;
