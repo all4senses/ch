@@ -5088,9 +5088,9 @@ function ch_misc_views_pre_render(&$view) {
         
       } // End of else of if (isset($term->description) && $term->description) {r
       
-      
+     */ 
     }
-     * */
+     
     
     elseif ($view->name . '-' . $view->current_display == 'taxonomy_term-page') {
    // elseif ($key == 'view-taxonomy_term-page_category') {
