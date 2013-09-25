@@ -4843,12 +4843,15 @@ function ch_misc_views_pre_render(&$view) {
         ch_misc_drupal_not_found();
         drupal_exit();
       }
+      else {
+        $do_attach_preface = TRUE;
+      }
       
       break;
       
       
       
-      
+    /*  
     case 'view-taxonomy_term-page_chart_providers':
     case 'view-taxonomy_term-page_teasers':
     case 'view-taxonomy_term-page_taxonomy_hide_results':
@@ -4884,11 +4887,11 @@ function ch_misc_views_pre_render(&$view) {
       }
       
       break;
+    */
     
-    
-    
+    /*
     case 'view-reviews-block_all_reviews':
-      /*
+      
       $providers = array('' => t('- All Providers -'));
       ch_misc_getProviders($providers, 'all_including_others_from_reviews');
 
@@ -4919,15 +4922,15 @@ function ch_misc_views_pre_render(&$view) {
       ); 
       
       $view->attachment_before = render($select_providers);
-      */
+      
       break;
+      */
       
-      
-      
+      /*
     case 'view-reviews-block_all_reviews_bu':
     case 'view-reviews-block_all_reviews_re':
     case 'view-reviews-block_all_reviews_ca':
-      /*
+      
       $providers = array('' => t('- All Providers -'));
       $p_key = $key;
       $r_p_types = array('view-reviews-block_all_reviews_bu' => array('business', 'Business'), 
@@ -4965,14 +4968,15 @@ function ch_misc_views_pre_render(&$view) {
       ); 
       
       $view->attachment_before = render($select_providers);
-      */
-      break;
       
+      break;
+      */
   }
   
   
   if ($do_attach_preface && $preface_node = ch_misc_getPrefaceByKey($key)) {
    
+    /*
      if ($key == 'view-taxonomy_term-page_equipment' || $key == 'view-taxonomy_term-page_protocols') {
       
       global $current_tag_title;
@@ -4994,14 +4998,14 @@ function ch_misc_views_pre_render(&$view) {
       $view->build_info['title'] = $preface_node->title;
       
       // add metatags for the specific term.
-      /*
-      if (isset($term->metatags['keywords']['value']) && $term->metatags['keywords']['value']) {
-        ch_misc_addMetatag('keywords', $term->metatags['keywords']['value']);
-      }
-      else {
-        ch_misc_addMetatag('keywords', $term->name);
-      }
-      */
+      
+//      if (isset($term->metatags['keywords']['value']) && $term->metatags['keywords']['value']) {
+//        ch_misc_addMetatag('keywords', $term->metatags['keywords']['value']);
+//      }
+//      else {
+//        ch_misc_addMetatag('keywords', $term->name);
+//      }
+      
       
       if (isset($term->description) && $term->description) {
         ////ch_misc_addMetatag('description', $term->description);
@@ -5010,20 +5014,20 @@ function ch_misc_views_pre_render(&$view) {
         $preface_node->body['und'][0]['safe_value'] = $term->description;
       }
       else {
-        /*
-        $query = db_select('taxonomy_index', 'ti');
-        $query->join('node', 'n', "n.nid = ti.nid"); 
-        $query->join('field_revision_field_a_teaser', 'tf', "tf.entity_type = 'node' AND tf.entity_id = ti.nid"); 
-        $query->fields('tf', array('field_a_teaser_value'))
-              ->orderBy('n.created', 'DESC')
-              ->condition('n.type', array('article', 'blog_post', 'news_post'), 'IN')
-              ->condition('ti.tid', $term->tid); 
-        $node_a_teaser = $query->execute()->fetchField(); 
-
-        if ($node_a_teaser) {
-          ch_misc_addMetatag('description', $preface_node->title . '. ' . drupal_substr(rtrim(strip_tags($node_a_teaser), 'Read More'), 0, 150));
-        }
-        */
+        
+//        $query = db_select('taxonomy_index', 'ti');
+//        $query->join('node', 'n', "n.nid = ti.nid"); 
+//        $query->join('field_revision_field_a_teaser', 'tf', "tf.entity_type = 'node' AND tf.entity_id = ti.nid"); 
+//        $query->fields('tf', array('field_a_teaser_value'))
+//              ->orderBy('n.created', 'DESC')
+//              ->condition('n.type', array('article', 'blog_post', 'news_post'), 'IN')
+//              ->condition('ti.tid', $term->tid); 
+//        $node_a_teaser = $query->execute()->fetchField(); 
+//
+//        if ($node_a_teaser) {
+//          ch_misc_addMetatag('description', $preface_node->title . '. ' . drupal_substr(rtrim(strip_tags($node_a_teaser), 'Read More'), 0, 150));
+//        }
+        
       } // End of else of if (isset($term->description) && $term->description) {r
       
       
@@ -5050,14 +5054,14 @@ function ch_misc_views_pre_render(&$view) {
       $view->build_info['title'] = $preface_node->title;
       
       // add metatags for the specific term.
-      /*
-      if (isset($term->metatags['keywords']['value']) && $term->metatags['keywords']['value']) {
-        ch_misc_addMetatag('keywords', $term->metatags['keywords']['value']);
-      }
-      else {
-        ch_misc_addMetatag('keywords', $term->name);
-      }
-      */
+      
+//      if (isset($term->metatags['keywords']['value']) && $term->metatags['keywords']['value']) {
+//        ch_misc_addMetatag('keywords', $term->metatags['keywords']['value']);
+//      }
+//      else {
+//        ch_misc_addMetatag('keywords', $term->name);
+//      }
+      
       
       if (isset($term->description) && $term->description) {
         ////ch_misc_addMetatag('description', $term->description);
@@ -5065,21 +5069,23 @@ function ch_misc_views_pre_render(&$view) {
         $preface_node->body['und'][0]['value'] = $term->description;
         $preface_node->body['und'][0]['safe_value'] = $term->description;
       }
-      else {
-        /*
-        $query = db_select('taxonomy_index', 'ti');
-        $query->join('node', 'n', "n.nid = ti.nid"); 
-        $query->join('field_revision_field_a_teaser', 'tf', "tf.entity_type = 'node' AND tf.entity_id = ti.nid"); 
-        $query->fields('tf', array('field_a_teaser_value'))
-              ->orderBy('n.created', 'DESC')
-              ->condition('n.type', array('article', 'blog_post', 'news_post'), 'IN')
-              ->condition('ti.tid', $term->tid); 
-        $node_a_teaser = $query->execute()->fetchField(); 
-
-        if ($node_a_teaser) {
-          ch_misc_addMetatag('description', $preface_node->title . '. ' . drupal_substr(rtrim(strip_tags($node_a_teaser), 'Read More'), 0, 150));
-        }
-        */
+      else 
+      
+        {
+        
+//        $query = db_select('taxonomy_index', 'ti');
+//        $query->join('node', 'n', "n.nid = ti.nid"); 
+//        $query->join('field_revision_field_a_teaser', 'tf', "tf.entity_type = 'node' AND tf.entity_id = ti.nid"); 
+//        $query->fields('tf', array('field_a_teaser_value'))
+//              ->orderBy('n.created', 'DESC')
+//              ->condition('n.type', array('article', 'blog_post', 'news_post'), 'IN')
+//              ->condition('ti.tid', $term->tid); 
+//        $node_a_teaser = $query->execute()->fetchField(); 
+//
+//        if ($node_a_teaser) {
+//          ch_misc_addMetatag('description', $preface_node->title . '. ' . drupal_substr(rtrim(strip_tags($node_a_teaser), 'Read More'), 0, 150));
+//        }
+        
       } // End of else of if (isset($term->description) && $term->description) {r
       
       
@@ -5105,86 +5111,88 @@ function ch_misc_views_pre_render(&$view) {
       }
       
       // add metatags for the specific term.
-      /*
-      if (isset($term->metatags['keywords']['value']) && $term->metatags['keywords']['value']) {
-        ch_misc_addMetatag('keywords', $term->metatags['keywords']['value']);
-      }
-      else {
-        ch_misc_addMetatag('keywords', $term->name);
-      }
-      */
+      
+//      if (isset($term->metatags['keywords']['value']) && $term->metatags['keywords']['value']) {
+//        ch_misc_addMetatag('keywords', $term->metatags['keywords']['value']);
+//      }
+//      else {
+//        ch_misc_addMetatag('keywords', $term->name);
+//      }
+      
       
       if (isset($term->description) && $term->description) {
         ////ch_misc_addMetatag('description', $term->description);
       }
       else {
-        /*
-        $query = db_select('taxonomy_index', 'ti');
-        $query->join('node', 'n', "n.nid = ti.nid"); 
-        $query->join('field_revision_field_a_teaser', 'tf', "tf.entity_type = 'node' AND tf.entity_id = ti.nid"); 
-        $query->fields('tf', array('field_a_teaser_value'))
-              ->orderBy('n.created', 'DESC')
-              ->condition('n.type', array('article', 'blog_post', 'news_post'), 'IN')
-              ->condition('ti.tid', $term->tid); 
-        $node_a_teaser = $query->execute()->fetchField(); 
-
-        if ($node_a_teaser) {
-          ch_misc_addMetatag('description', $preface_node->title . '. ' . drupal_substr(rtrim(strip_tags($node_a_teaser), 'Read More'), 0, 150));
-        }
-        */
+        
+//        $query = db_select('taxonomy_index', 'ti');
+//        $query->join('node', 'n', "n.nid = ti.nid"); 
+//        $query->join('field_revision_field_a_teaser', 'tf', "tf.entity_type = 'node' AND tf.entity_id = ti.nid"); 
+//        $query->fields('tf', array('field_a_teaser_value'))
+//              ->orderBy('n.created', 'DESC')
+//              ->condition('n.type', array('article', 'blog_post', 'news_post'), 'IN')
+//              ->condition('ti.tid', $term->tid); 
+//        $node_a_teaser = $query->execute()->fetchField(); 
+//
+//        if ($node_a_teaser) {
+//          ch_misc_addMetatag('description', $preface_node->title . '. ' . drupal_substr(rtrim(strip_tags($node_a_teaser), 'Read More'), 0, 150));
+//        }
+        
       } // End of else of if (isset($term->description) && $term->description) {r
       
       
     } // End of if ($view->current_display == 'page_by_tag') {
     elseif ($view->current_display == 'page_by_tag') {
-      /*
-      global $current_tag_title;
-      $current_tag_title = $preface_node->title . ' "' . htmlspecialchars_decode($view->build_info['substitutions']['%1']) . '"';
       
-      // add metatag title for the specific term, if it's set in the Metatags block and not equal to defaults.
-      if (isset($term->metatags['title']['value']) && $term->metatags['title']['value']) {
-        $metatag_title = token_replace($term->metatags['title']['value']);
-        ch_misc_addMetatag('title', $metatag_title);
-        // Set the title (not only a metatag title) as well.
-        $preface_node->title = htmlspecialchars_decode($metatag_title);
-        $view->build_info['title'] = $preface_node->title;
-      }
-      else {
-        //$preface_node->title = $view->get_title();//$view->build_info['title'];
-        $preface_node->title .= ' "' . htmlspecialchars_decode($view->build_info['substitutions']['%1']) . '"';
-        $view->build_info['title'] = $preface_node->title;
-      }
+//      global $current_tag_title;
+//      $current_tag_title = $preface_node->title . ' "' . htmlspecialchars_decode($view->build_info['substitutions']['%1']) . '"';
+//      
+//      // add metatag title for the specific term, if it's set in the Metatags block and not equal to defaults.
+//      if (isset($term->metatags['title']['value']) && $term->metatags['title']['value']) {
+//        $metatag_title = token_replace($term->metatags['title']['value']);
+//        ch_misc_addMetatag('title', $metatag_title);
+//        // Set the title (not only a metatag title) as well.
+//        $preface_node->title = htmlspecialchars_decode($metatag_title);
+//        $view->build_info['title'] = $preface_node->title;
+//      }
+//      else {
+//        //$preface_node->title = $view->get_title();//$view->build_info['title'];
+//        $preface_node->title .= ' "' . htmlspecialchars_decode($view->build_info['substitutions']['%1']) . '"';
+//        $view->build_info['title'] = $preface_node->title;
+//      }
+//      
+//      // add metatags for the specific term.
+//      if (isset($term->metatags['keywords']['value']) && $term->metatags['keywords']['value']) {
+//        ch_misc_addMetatag('keywords', $term->metatags['keywords']['value']);
+//      }
+//      else {
+//        ch_misc_addMetatag('keywords', $term->name);
+//      }
+//      
+//      if (isset($term->description) && $term->description) {
+//        ch_misc_addMetatag('description', $term->description);
+//      }
+//      else {
+//        
+//        $query = db_select('taxonomy_index', 'ti');
+//        $query->join('node', 'n', "n.nid = ti.nid"); 
+//        $query->join('field_revision_field_a_teaser', 'tf', "tf.entity_type = 'node' AND tf.entity_id = ti.nid"); 
+//        $query->fields('tf', array('field_a_teaser_value'))
+//              ->orderBy('n.created', 'DESC')
+//              ->condition('n.type', array('article', 'blog_post', 'news_post'), 'IN')
+//              ->condition('ti.tid', $term->tid); 
+//        $node_a_teaser = $query->execute()->fetchField(); 
+//
+//        if ($node_a_teaser) {
+//          ch_misc_addMetatag('description', $preface_node->title . '. ' . drupal_substr(rtrim(strip_tags($node_a_teaser), 'Read More'), 0, 150));
+//        }
+//      } // End of else of if (isset($term->description) && $term->description) {r
       
-      // add metatags for the specific term.
-      if (isset($term->metatags['keywords']['value']) && $term->metatags['keywords']['value']) {
-        ch_misc_addMetatag('keywords', $term->metatags['keywords']['value']);
-      }
-      else {
-        ch_misc_addMetatag('keywords', $term->name);
-      }
-      
-      if (isset($term->description) && $term->description) {
-        ch_misc_addMetatag('description', $term->description);
-      }
-      else {
-        
-        $query = db_select('taxonomy_index', 'ti');
-        $query->join('node', 'n', "n.nid = ti.nid"); 
-        $query->join('field_revision_field_a_teaser', 'tf', "tf.entity_type = 'node' AND tf.entity_id = ti.nid"); 
-        $query->fields('tf', array('field_a_teaser_value'))
-              ->orderBy('n.created', 'DESC')
-              ->condition('n.type', array('article', 'blog_post', 'news_post'), 'IN')
-              ->condition('ti.tid', $term->tid); 
-        $node_a_teaser = $query->execute()->fetchField(); 
-
-        if ($node_a_teaser) {
-          ch_misc_addMetatag('description', $preface_node->title . '. ' . drupal_substr(rtrim(strip_tags($node_a_teaser), 'Read More'), 0, 150));
-        }
-      } // End of else of if (isset($term->description) && $term->description) {r
-      */
       
     } 
-    else {
+    else 
+     */
+      {
       // Change the title of the view (main page title actually)
       if (isset($preface_node->metatags['title']['value'])) {
         $view->build_info['title'] = $preface_node->metatags['title']['value'];
