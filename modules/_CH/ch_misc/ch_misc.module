@@ -4976,7 +4976,7 @@ function ch_misc_views_pre_render(&$view) {
   
   if ($do_attach_preface && $preface_node = ch_misc_getPrefaceByKey($key)) {
    
-    /*
+    
      if ($key == 'view-taxonomy_term-page_equipment' || $key == 'view-taxonomy_term-page_protocols') {
       
       global $current_tag_title;
@@ -5069,9 +5069,7 @@ function ch_misc_views_pre_render(&$view) {
         $preface_node->body['und'][0]['value'] = $term->description;
         $preface_node->body['und'][0]['safe_value'] = $term->description;
       }
-      else 
-      
-        {
+      else {
         
 //        $query = db_select('taxonomy_index', 'ti');
 //        $query->join('node', 'n', "n.nid = ti.nid"); 
@@ -5088,12 +5086,10 @@ function ch_misc_views_pre_render(&$view) {
         
       } // End of else of if (isset($term->description) && $term->description) {r
       
-     */ 
-    }
-     
-    
-    elseif ($view->name . '-' . $view->current_display == 'taxonomy_term-page') {
-   // elseif ($key == 'view-taxonomy_term-page_category') {
+      
+    } 
+    //elseif ($view->name . '-' . $view->current_display == 'taxonomy_term-page') {
+    elseif ($key == 'view-taxonomy_term-page_category') {
       
       global $current_tag_title;
       $current_tag_title = $preface_node->title . ' "' . htmlspecialchars_decode($view->build_info['substitutions']['%1']) . '"';
@@ -5144,7 +5140,6 @@ function ch_misc_views_pre_render(&$view) {
       
       
     } // End of if ($view->current_display == 'page_by_tag') {
-    /*
     elseif ($view->current_display == 'page_by_tag') {
       
 //      global $current_tag_title;
@@ -5194,7 +5189,6 @@ function ch_misc_views_pre_render(&$view) {
       
     } 
     else 
-     */
       {
       // Change the title of the view (main page title actually)
       if (isset($preface_node->metatags['title']['value'])) {
