@@ -217,6 +217,21 @@ function ch_misc_securimage_show_ajax() {
  */
 function ch_misc_process_html(&$vars) {
   
+  
+  // Disable boost caching for custom gv page not found pages.
+  // First part, initialization.
+  // See the second part at gv_misc_preprocess_page(),
+  // where $_boost variable  will be corrected to prevent the current page caching.
+  global $_boost;
+  global $ch_page_not_found;
+
+  if ($ch_page_not_found) {
+    $_boost['cache_this'] = FALSE;
+  }
+
+  
+  
+  
   global $user;
   
   if (!$user->uid) {
@@ -738,6 +753,15 @@ function ch_misc_identifyNodeType($nid) {
  * Fix for a standard drupal_not_found
  */
 function ch_misc_drupal_not_found() {
+  
+  // Disable boost caching for custom gv page not found pages.
+  // First part, initialization.
+  // See the second part at gv_misc_process_html(),
+  // where $_boost variable  will be corrected to prevent the current page caching.
+  global $ch_page_not_found;
+  $ch_page_not_found = TRUE;
+  
+  
   // Emit the correct charset HTTP header, but not if the page callback
   // result is NULL, since that likely indicates that it printed something
   // in which case, no further headers may be sent, and not if code running
