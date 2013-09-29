@@ -450,13 +450,12 @@ h2, h3{color: black; font-size: 18px; font-weight: bold; margin: 0; padding: 0;}
 
 
 /* Ratings */
-#main .view-providers .fivestar{float: left; position: relative; top: 3px;}
-/*#main .view-providers table .fivestar{float: none; position: static; margin: auto; width: 75px;}*/
+#main .view-providers .fivestar{float: left; /*position: relative; top: 3px;*/}
 
-#main .view-providers table .fivestar, .front table .fivestar{float: left; position: relative; left: 0; top: 6px;}
+#main .view-providers table .fivestar, .front table .fivestar{float: left; /*position: relative; left: 0; top: 6px;*/}
 /* safari and chrome only */
 @media screen and (-webkit-min-device-pixel-ratio:0) {
-  #main .view-providers table .fivestar, .front table .fivestar{float: left; position: relative; left: 0; top: 4px;}
+  /*#main .view-providers table .fivestar, .front table .fivestar{float: left; position: relative; left: 0; top: 4px;}*/
 }
   
 .front p-less-fields table .fivestar{left: 2px;}
@@ -656,10 +655,11 @@ td.views-field-php-4 a:hover{text-decoration: underline;}
 
 td.views-field-php-7{font-size: 28px; font-weight: bold;}
 
-td.views-field-php-7 a {color: #0068d3; font-size: 14px; font-weight: normal; line-height: 14px;}
+td.views-field-php-7 a {color: #0068d3; font-size: 14px; font-weight: normal;}
 td.views-field-php-7 a:hover {text-decoration: underline;}
 
-.views-field .count{font-size: 11px; padding-top: 4px;}
+
+.views-field .count{font-size: 11px;/* padding-top: 4px;*/}
 
 
 
