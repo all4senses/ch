@@ -94,12 +94,10 @@
       }
     }
     
-    if ($update_teaser && $user->uid == 1) {
-      dpm('updated teaser for node ---> ' . $node->title);
+    if ($update_teaser) {
       // Update the field $extra_data in the db
       $teaser_data['title'] = $node->title;
-      if ($node->nid == 36)
-        ch_misc_fieldSave('extra_data', $node->nid, serialize($teaser_data));
+      ch_misc_fieldSave('extra_data', $node->nid, serialize($teaser_data));
     }
     
     
