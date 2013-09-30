@@ -5315,7 +5315,7 @@ function ch_misc_getProviderQuickData($target, $data) {
       $all_data_quick = ch_misc_getProvidersDataQuick();
       $out = '';
       
-      dpm('sub = ' . $all_data_quick[$data['data']->nid]['subpath']);
+      dpm('sub = ' . @$all_data_quick[$data['data']->nid]['subpath']);
       
 //      if (!empty($all_data_quick[$data['data']->nid]['i_web'])) {
 //        $link = $all_data_quick[$data['data']->nid]['i_web'];
