@@ -5188,9 +5188,13 @@ function ch_misc_getProvidersDataQuick($scope = 'all', $reset = FALSE, $clear_fr
         $query = db_select('url_alias', 'a')
           ->fields('a', array('alias'));
         $query->condition('a.source', 'node/' . $value->entity_id);
+        
         $p_data_quick[$value->entity_id]['subpath'] = '/' . $query->execute()->fetchField();
+        
       }
 
+      dpm($p_data_quick);
+      
       $p_data_quick['timestamp'] = time();
       //$_SESSION['p_all_data_quick'] = $p_data_quick;
       variable_set('p_all_data_quick', $p_data_quick);
@@ -5311,7 +5315,7 @@ function ch_misc_getProviderQuickData($target, $data) {
       $all_data_quick = ch_misc_getProvidersDataQuick();
       $out = '';
       
-      dpm($all_data_quick[$data['data']->nid]['subpath']);
+      dpm('sub = ' . $all_data_quick[$data['data']->nid]['subpath']);
       
 //      if (!empty($all_data_quick[$data['data']->nid]['i_web'])) {
 //        $link = $all_data_quick[$data['data']->nid]['i_web'];
