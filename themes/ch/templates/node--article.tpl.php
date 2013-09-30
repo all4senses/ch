@@ -98,7 +98,7 @@
       dpm('updated teaser for node ---> ' . $node->title);
       // Update the field $extra_data in the db
       $teaser_data['title'] = $node->title;
-      if ($node->nid == 39)
+      if ($node->nid == 36)
         ch_misc_fieldSave('extra_data', $node->nid, serialize($teaser_data));
     }
     
