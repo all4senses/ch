@@ -1132,9 +1132,9 @@ function ch_misc_fieldSave($field_name, $entity_id, $data, $entity_type = 'node'
     // Need update an existing field.
     db_update('field_data_field_' . $field_name)
       ->fields(array(
-        'entity_id' => $entity_id,
-        'delta' => 0,  
-        'revision_id'=> $entity_id,    
+        //'entity_id' => $entity_id,
+        //'delta' => 0,  
+        //'revision_id'=> $entity_id,    
         'field_' . $field_name . '_value' => $data,
       ))
       ->condition('entity_id', $entity_id)
@@ -1143,9 +1143,9 @@ function ch_misc_fieldSave($field_name, $entity_id, $data, $entity_type = 'node'
 
     db_update('field_revision_field_' . $field_name)
       ->fields(array(
-        'entity_id' => $entity_id,
-        'delta' => 0,  
-        'revision_id'=> $entity_id,     
+        //'entity_id' => $entity_id,
+        //'delta' => 0,  
+        //'revision_id'=> $entity_id,     
         'field_' . $field_name . '_value' => $data,
       ))
       ->condition('entity_id', $entity_id)

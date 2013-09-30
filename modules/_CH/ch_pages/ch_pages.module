@@ -2538,14 +2538,12 @@ function ch_pages_validateForm_article(&$form, &$form_state) {
   //dpm($form_state['values']['field_teaser_thumbnail']['und'][0]['fid']);
   
   // Define a main image and build a custom teaser.
-  $teaser_data = ch_misc_getArticleTeaserData('all', $form_state['values']['body']['und'][0]['value'], $form_state['values']['nid'], FALSE, FALSE, $form_state['values']['field_teaser_thumbnail']['und'][0]['fid']);
+  $extra_data = ch_misc_getArticleTeaserData('all', $form_state['values']['body']['und'][0]['value'], $form_state['values']['nid'], FALSE, FALSE, $form_state['values']['field_teaser_thumbnail']['und'][0]['fid']);
 
-  //dpm($form_state['values']);
+  $extra_data['title'] = $form_state['values']['title'];
+  $extra_data['guest_author'] = empty($form_state['values']['guest_author']) ? NULL : $form_state['values']['guest_author'];
   
-  form_set_value($form['field_a_teaser'], array('und' => array(0 => array('value' => $teaser_data['teaser'], 'format' => 'full_html') )), $form_state);
-  form_set_value($form['field_main_image'], array('und' => array(0 => array('value' => serialize($teaser_data['main_image']), 'format' => 'full_html') )), $form_state);
-  
-  
+  /*
   $extra_data = array(
     'teaser' => $teaser_data['teaser'],
     'title' => $form_state['values']['title'], 
@@ -2556,13 +2554,13 @@ function ch_pages_validateForm_article(&$form, &$form_state) {
     'side_block_main_image' => $teaser_data['side_block_main_image'],
     'teaser_home' => $teaser_data['teaser_home']
   );
-  
-  if (!empty($form_state['values']['guest_author'])) {
-    $extra_data['guest_author'] = $form_state['values']['guest_author'];
-  }
-  
+  */
+
   form_set_value($form['field_extra_data'], array('und' => array(0 => array('value' => serialize($extra_data), 'format' => 'full_html') )), $form_state);
   
+  form_set_value($form['field_a_teaser'], array('und' => array(0 => array('value' => $extra_data['teaser'], 'format' => 'full_html') )), $form_state);
+  form_set_value($form['field_main_image'], array('und' => array(0 => array('value' => serialize($extra_data['main_image']), 'format' => 'full_html') )), $form_state);
+
 }
 
 

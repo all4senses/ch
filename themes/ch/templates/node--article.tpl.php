@@ -60,12 +60,14 @@
 <?php if (!$page): ?>
   
   <?php 
+    $update_teaser = FALSE;
     if($side_block_teaser) {
       if (!empty($extra_data['teaser_side_block'])) {
         $teaser_data = $extra_data;
       }
       else {
         $teaser_data = ch_misc_getArticleTeaserData('all', $node->body['und'][0]['value'], $node->nid);
+        $update_teaser = TRUE;
       }
       
       $teaser_data['teaser'] = $extra_data['teaser_side_block'];
@@ -88,10 +90,16 @@
       }
       else {
         $teaser_data = ch_misc_getArticleTeaserData('all', $node->body['und'][0]['value'], $node->nid);
+        $update_teaser = TRUE;
       }
     }
     
-    
+    if ($update_teaser) {// && $user->uid == 1 && $node->nid == 139) {
+      dpm('updated teaser for node ---> ' . $node->title);
+      // Update the field $extra_data in the db
+      $teaser_data['title'] = $node->title;
+      //ch_misc_fieldSave('extra_data', $node->nid, serialize($teaser_data));
+    }
     
     
     
