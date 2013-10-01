@@ -113,6 +113,11 @@ function ch_blocks_block_info() {
     'info' => 'Share this Post Static',
     'cache' => DRUPAL_NO_CACHE,
   );
+  
+  $blocks['writer-admin-links'] = array(
+    'info' => 'Writer admin links',
+    'cache' => DRUPAL_NO_CACHE,
+  );
       
   return $blocks;
 }
@@ -199,6 +204,11 @@ function ch_blocks_block_view($delta = '') {
     case 'sidebar_share_block':
       $block['subject'] = 'Share this Post:';
       $block['content'] = ch_blocks_getSidebarShareStaticBlock();
+      break;
+    
+    case 'writer-admin-links':
+      $block['subject'] = '';
+      $block['content'] = ch_blocks_getWriterAdminLinks();
       break;
     
     default:
@@ -340,6 +350,13 @@ function ch_blocks_block_save($delta = '', $edit = array()) {
   
 }
 
+
+/**
+ * Block with writer admin links.
+ */
+function ch_blocks_getWriterAdminLinks() {
+  return '<a href="/admin/content-ch?service=All">Add/Edit Content</a><a href="/cc">Clear Cache</a>';
+}
 
 
 /**

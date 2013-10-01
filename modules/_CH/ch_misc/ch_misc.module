@@ -18,7 +18,13 @@
  */
 function ch_misc_menu() {
  
-  
+  $items['cc'] = array(
+    'title' => 'Flush the cache and redirect to the Home page',
+    'page callback' => 'ch_misc_flushCache',
+    //'access arguments' => array('access content'),
+    'access callback' => 'ch_misc_userIsAdmin',
+    'type' => MENU_CALLBACK,
+  );
   
   $items['securimage_show'] = array(
     'title' => 'Securimage',
@@ -373,6 +379,16 @@ function ch_misc_flush_caches() {
     variable_set('ch_blog_summary', $blog_summary);
   }
   
+}
+
+
+/**
+ * Flush the cache and redirect to the Home page.
+ */
+function ch_misc_flushCache() {
+  drupal_flush_all_caches();
+  drupal_set_message('Cache is flushed.', 'warning');
+  drupal_goto('');
 }
 
 
