@@ -1562,7 +1562,7 @@ color: #666666;
 #main .node-teaser h2 {margin-top: 10px;}
 
 /*.node-teaser h2 a, .node-teaser h3 a{color: #004286; font-size: 18px; line-height: 22px; font-weight: bold; margin: 0; border: medium none; padding: 0;}*/
-.node-teaser h2 a, .node-teaser h3 a{color: gray; font-size: 24px; line-height: 22px; font-weight: bold; margin: 0; border: medium none; padding: 0;}
+.node-teaser h2 a, .node-teaser h3 a{color: gray; font-size: 24px; line-height: 22px; font-weight: bold; margin: 0; border: medium none; padding: 0; font-family: FaktConPro-SemiBold;}
 
 .node-teaser h2 a {color: #333333;}
 .node-teaser h2 a:hover {color: #009ce2;}

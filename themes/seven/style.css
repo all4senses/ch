@@ -993,9 +993,9 @@ div.add-or-remove-shortcuts {
 
 
 /* a4s */
-#views-form-content-voipnow-page .views-field-editablefield input.form-text{width: 20px;}
-#views-form-content-voipnow-page .views-table th{font-size: 10px;}
-#views-form-content-voipnow-page td.views-field-created{font-size: 10px;}
+#views-form-content-ch-page .views-field-editablefield input.form-text{width: 20px;}
+#views-form-content-ch-page .views-table th{font-size: 10px;}
+#views-form-content-ch-page td.views-field-created{font-size: 10px;}
 
 .form-radios.filter_by{margin-bottom: 20px;}
 .form-radios.filter_by div{float: left;}
@@ -1008,4 +1008,6 @@ div.add-or-remove-shortcuts {
  table.track-links td.page{width: 200px; overflow-x: scroll;}
  
  table.track-links td.date{width: 90px; margin: 0; padding: 0; display: block;}
+ 
+ 
  

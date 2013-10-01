@@ -2540,7 +2540,7 @@ function ch_pages_validateForm_article(&$form, &$form_state) {
   // Define a main image and build a custom teaser.
   $extra_data = ch_misc_getArticleTeaserData('all', $form_state['values']['body']['und'][0]['value'], $form_state['values']['nid'], FALSE, FALSE, $form_state['values']['field_teaser_thumbnail']['und'][0]['fid']);
 
-  $extra_data['title'] = $form_state['values']['title'];
+  $extra_data['title'] = htmlspecialchars_decode($form_state['values']['title'], ENT_QUOTES);
   $extra_data['guest_author'] = empty($form_state['values']['guest_author']) ? NULL : $form_state['values']['guest_author'];
   
   /*
