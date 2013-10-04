@@ -635,7 +635,7 @@ a.visit-site-btn {background: url("images/sprite-2.png") no-repeat -79px 0 trans
 td.views-field-php-3{text-align: left !important; font-size: 10px;}
 
 
-#all-content .view-providers td.views-field-php-2{font-size: 17px; vertical-align: middle; font-weight: bold; font-family: arial;}
+#all-content .view-providers td.views-field-php-2{font-size: 19px; vertical-align: middle; font-weight: bold; /*font-family: arial;*/}
 
 .views-field-php-2 .link a{font-size: 14px; color: #004286; background: url(images/read-review-btn.png) no-repeat 0 0 transparent; text-indent: -9999px; color: black; display: block; width: 103px; height: 25px; margin: 10px auto 0;}
 
