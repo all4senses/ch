@@ -227,7 +227,7 @@ div.error{border: none;}
 ul.ch{margin-left: 0px; padding-left: 10px;}
 
 /*.block.block-om-maximenu{right: 0; position: absolute; top: 65px; z-index: 10; height: 45px; border-radius: 10px 10px 0 0;}*/
-.block.block-om-maximenu{position: absolute; top: 80px; z-index: 10; left: 120px /*80px for 5 items*/;}
+.block.block-om-maximenu{position: absolute; top: 80px; z-index: 10; left: 115px /*80px for 5 items*/;}
 
 
 
