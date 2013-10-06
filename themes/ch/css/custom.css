@@ -678,7 +678,7 @@ td.views-field-php-7 a:hover {text-decoration: underline;}
 {background: url("/sites/all/themes/ch/css/images/sprite-2.png") no-repeat -90px -885px transparent; height: 50px; text-indent: -999px; width: 45px; margin: auto;}
 
 
-.logged-in .view-providers tr:hover, .logged-in .view-providers tr.even:hover, .logged-in .view-providers tr:hover td, .logged-in .view-providers tr.even:hover td {background: #cfe7ff;}
+.view-providers tr:hover, .view-providers tr.even:hover, .view-providers tr:hover td, .view-providers tr.even:hover td {background: #cfe7ff;}
 
 
 
