@@ -2072,3 +2072,4 @@ body.sidebar-second .page-compare-providers #sidebar-second {padding: 0; margin-
 #block-ch-blocks-writer-admin-links .content a:hover {/*text-decoration: underline; font-weight: bold;*/ border: 1px dotted lightgray; border-radius: 5px;}
 #block-ch-blocks-writer-admin-links .contextual-links-wrapper {display: none;}
 
+#breadcrumbs-dummy {height: 10px; width: 100%;}
