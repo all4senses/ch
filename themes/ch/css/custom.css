@@ -664,8 +664,7 @@ td.views-field-php-7 a:hover {text-decoration: underline;}
 
 .views-field-field-p-listposition-sh {width: 40px;}
 
-
-
+.views-row-first .views-field-field-p-listposition-sh div {background: url("/sites/all/themes/ch/css/images/sprite-2.png") no-repeat -90px -885px transparent; height: 50px; text-indent: -999px;}
 
 /* Side bar, blocks */
 
