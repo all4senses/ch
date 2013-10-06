@@ -485,7 +485,7 @@ div.fivestar-widget-static .star span.off {display: block; width: 100%; height: 
 .view-display-id-page_chart_providers {margin: 0 0 50px 0;}
 
 .view-providers {box-shadow: 1px 3px 10px -4px black;}
-.page-compare-providers .view-providers {width: 960px;}
+.page-compare-providers .view-providers {width: 960px; clear: both;}
 
 /*
 .view-display-id-page_chart_providers table,
