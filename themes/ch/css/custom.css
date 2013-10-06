@@ -672,6 +672,10 @@ td.views-field-php-7 a:hover {text-decoration: underline;}
 .views-row-first .views-field-field-p-listposition-wp div
 {background: url("/sites/all/themes/ch/css/images/sprite-2.png") no-repeat -90px -885px transparent; height: 50px; text-indent: -999px;}
 
+.views-field-field-p-listposition-sh div, 
+.views-field-field-p-listposition-vps div,
+.views-field-field-p-listposition-wp div {font-size: 25px; font-weight: bold;}
+
 /* Side bar, blocks */
 
 
