@@ -669,7 +669,7 @@ td.views-field-php-7 a:hover {text-decoration: underline;}
 
 .views-field-field-p-listposition-sh div, 
 .views-field-field-p-listposition-vps div,
-.views-field-field-p-listposition-wp div {font-size: 25px; /*font-weight: bold;*/}
+.views-field-field-p-listposition-wp div {/*font-size: 25px;*/ /*font-weight: bold;*/}
 
 
 .views-row-first .views-field-field-p-listposition-sh div, 
