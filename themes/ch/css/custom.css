@@ -1518,7 +1518,7 @@ h2.rcaption a, h3.rcaption a, /*.node-review*/ h3.rcaption a:hover{color: white;
 .page-node #main .main-content h1 {font-size: 38px; line-height: 45px; font-family: 'FaktConPro-SemiBold'; margin: 10px 0 2px 0;}
 
 h1.preface,
-.front h1 {margin-top: 5px; padding: 0;}
+.front h1 {margin-top: 3px; padding: 0;}
 
 h1.preface, #main h2.preface {
 /*font-family: arial;*/
@@ -2072,4 +2072,4 @@ body.sidebar-second .page-compare-providers #sidebar-second {padding: 0; margin-
 #block-ch-blocks-writer-admin-links .content a:hover {/*text-decoration: underline; font-weight: bold;*/ border: 1px dotted lightgray; border-radius: 5px;}
 #block-ch-blocks-writer-admin-links .contextual-links-wrapper {display: none;}
 
-#breadcrumbs-dummy {height: 10px; width: 100%;}
+/*#breadcrumbs-dummy {height: 10px; width: 100%;}*/
