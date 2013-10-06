@@ -665,7 +665,7 @@ td.views-field-php-7 a:hover {text-decoration: underline;}
 .views-field-field-p-listposition-sh,
 .views-field-field-p-listposition-vps,
 .views-field-field-p-listposition-wp
-{width: 40px;}
+{width: 55px;}
 
 .views-field-field-p-listposition-sh div, 
 .views-field-field-p-listposition-vps div,
@@ -675,7 +675,7 @@ td.views-field-php-7 a:hover {text-decoration: underline;}
 .views-row-first .views-field-field-p-listposition-sh div, 
 .views-row-first .views-field-field-p-listposition-vps div,
 .views-row-first .views-field-field-p-listposition-wp div
-{background: url("/sites/all/themes/ch/css/images/sprite-2.png") no-repeat -90px -885px transparent; height: 50px; text-indent: -999px;}
+{background: url("/sites/all/themes/ch/css/images/sprite-2.png") no-repeat -90px -885px transparent; height: 50px; text-indent: -999px; width: 45px; margin: auto;}
 
 
 /* Side bar, blocks */
