@@ -3048,7 +3048,7 @@ function ch_pages_submitForm_review(&$form, &$form_state) {
     }
     
     
-    watchdog('Capture review submission values', print_r($form_state['values'], TRUE) . ', $_server -------> '. print_r($_SERVER, TRUE), NULL, WATCHDOG_WARNING);
+    //watchdog('Capture review submission values', print_r($form_state['values'], TRUE) . ', $_server -------> '. print_r($_SERVER, TRUE), NULL, WATCHDOG_WARNING);
     ch_misc_sendMessage('new_review_admin_notify', array('provider_name' => $provider_name, 'review' => $form_state['values']['body']['und'][0]['value'], 'spam' => $spam));
   } // End of if (!isset($form_state['values']['nid']) OR !$form_state['values']['nid']) {
   else {
