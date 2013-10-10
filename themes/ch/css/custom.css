@@ -1365,7 +1365,10 @@ list-style: none; position: relative; top: 1px; margin: 0 .2em 1px 0; border-bot
 
 #block-views-providers-block-topwhost-small h2 {padding: 20px 5px 5px 10px; color: gray; background: url(/sites/all/themes/ch/css/images/sprite-2.png) repeat-x 0 -703px; font-weight: normal; margin: 0; font-size: 18px; font-family: 'Open Sans';}
 .page-node #main .main-content #block-views-providers-block-topwhost-small.block-views .content {padding: 0 10px; border: none;}
-#block-views-providers-block-topwhost-small .content {padding: 5px 5px 0;}
+
+/*#block-views-providers-block-topwhost-small .content {padding: 5px 5px 0;}*/
+#block-views-providers-block-topwhost-small .content {/*padding: 5px 5px 0 7px;*/ padding: 5px 0;}
+/*#block-views-providers-block-topwhost-small .content td {padding-left: 5px !important;}*/
 
 #block-views-providers-block-topwhost-small .view-providers {box-shadow: none; width: inherit;}
 #block-views-providers-block-topwhost-small table {border: none;}
@@ -1391,7 +1394,7 @@ list-style: none; position: relative; top: 1px; margin: 0 .2em 1px 0; border-bot
 #block-views-providers-block-topwhost-small .p-links {clear: both;}
 
 
-#all-content #block-views-providers-block-topwhost-small .view-providers td {padding: 15px 0; border-bottom: 1px solid lightgray;}
+#all-content #block-views-providers-block-topwhost-small .view-providers td {padding: /*15px 0*/ 15px 0 15px 5px !important; border-bottom: 1px solid lightgray;}
 #all-content #block-views-providers-block-topwhost-small .view-providers .views-row-last td {border-bottom: none;}
 
 
