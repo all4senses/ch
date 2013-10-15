@@ -444,6 +444,14 @@ h2, h3{color: black; font-size: 18px; font-weight: bold; margin: 0; padding: 0;}
 .sidebar article {/*margin-bottom: 7px !important;*/ border-top: 2px dotted lightgray; padding-top: 10px; overflow: hidden;}
 .sidebar .views-row-first article {border: none; padding: 0;}
 
+/* Correction for hidden date on side block blogs teasers */
+.view-display-id-block_latest_blog_side_teasers h3 a {margin-bottom: 6px !important; line-height: 16px !important;}
+
+
+
+
+
+
 
 /* Shadows */
 .shadow{background: url("images/shadow-bottom-right-t.png") no-repeat scroll 105% 2px transparent; height: 15px; margin-bottom: -15px; width: 100%;}
