@@ -182,7 +182,8 @@
               }
               else {
                 if ($side_block_teaser) {
-                  echo '<span class="submitted">', $created_str, '</span>';
+                  // Hide the date for a while.
+                  //echo '<span class="submitted">', $created_str, '</span>';
                 }
                 else {
                   //echo '<span class="submitted"><span class="author">', $author_name, '</span> - ', $created_str, '</span>';

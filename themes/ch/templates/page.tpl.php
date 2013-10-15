@@ -86,8 +86,8 @@
             
             // Hide breadcrumbs temporarily, but reserve the room for it.
             //echo $breadcrumb; 
-            echo '<div id="breadcrumbs-dummy"></div>';
           ?>
+          <div id="breadcrumbs-dummy"></div>
         
           <?php 
           
