@@ -6,8 +6,8 @@
       <div id="header-menu-back"></div>
       
       <div id="logo-block">
-        <a href="<?php print $front_page; ?>" title="<?php print 'VoIP Now Home'; ?>" id="logo">
-          <img src="<?php echo '/sites/all/themes/ch/css/images/ch-logo-main-top.png'; ?>" alt="CloudHostingHQ" title="<?php print 'CloudHostingHQ Home'; ?>" />
+        <a href="<?php print $front_page; ?>" title="<?php print 'CloudHostingHQ.com'; ?>" id="logo">
+          <img src="<?php echo '/sites/all/themes/ch/css/images/ch-logo-main-top.png'; ?>" alt="CloudHostingHQ.com" title="<?php print 'CloudHostingHQ.com Home'; ?>" />
         </a>
         
       </div>
@@ -123,36 +123,6 @@
           <?php print render($page['above_content']); ?>
           <?php print render($page['content']); ?>
           
-          <?php 
-          /*
-          $pages_with_timestamp = array(
-            '/compare-business-voip-providers', 
-            '/business-voip-reviews', 
-            '/compare-residential-voip-providers', 
-            '/best-voip-service-providers',
-            '/residential-voip-reviews', 
-            '/sip-trunking-providers',
-            '/internet-fax-service-providers',
-            '/providers/reviews', 
-            '/about-voip-services', 
-            '/blog', 
-            '/news', 
-            '/voip-provider-submit-user-review',
-            '/about-us',
-            '/contact-us',
-            '/advertise',
-            '/press',
-            '/privacy-policy',
-            '/terms-of-use',
-            '/our-team',
-          );
-          //if ($user->uid == 1) {
-          if($is_front || in_array($_SERVER['REDIRECT_URL'], $pages_with_timestamp))
-            echo ch_misc_lastUpdatedStamp();
-              
-          //}
-          */
-          ?>
           
       </section> <!-- /#main -->
 

@@ -6,8 +6,8 @@
       <div id="header-menu-back"></div>
       
       <div id="logo-block">
-        <a href="<?php print $front_page; ?>" title="<?php print 'VoIP Now Home'; ?>" id="logo">
-          <img src="<?php echo '/sites/all/themes/ch/css/images/ch-logo-main-top.png'; ?>" alt="CloudHostingHQ" title="<?php print 'CloudHostingHQ Home'; ?>" />
+        <a href="<?php print $front_page; ?>" title="<?php print 'CloudHostingHQ.com'; ?>" id="logo">
+          <img src="<?php echo '/sites/all/themes/ch/css/images/ch-logo-main-top.png'; ?>" alt="CloudHostingHQ.com" title="<?php print 'CloudHostingHQ.com Home'; ?>" />
         </a>
         
       </div>
