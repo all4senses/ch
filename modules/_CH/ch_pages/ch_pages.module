@@ -2413,8 +2413,8 @@ function ch_pages_form_alter(&$form, &$form_state, $form_id) {
             //'#weight' => -100,
           );
           
-          $form['provider']['field_ref_provider']['#access'] = FALSE;
-          $form['provider']['field_r_oprovider']['#access'] = FALSE;
+          //$form['provider']['field_ref_provider']['#access'] = FALSE;
+          //$form['provider']['field_r_oprovider']['#access'] = FALSE;
           
           
         } // End of A provider has been selected from a list.
