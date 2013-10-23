@@ -5638,6 +5638,8 @@ function ch_misc_getProviderQuickData($target, $data) {
       $all_data_quick = ch_misc_getProvidersDataQuick();
       $out = isset($all_data_quick[$data['data']->nid][$data['service_type']]['fees'][$target]) ? $all_data_quick[$data['data']->nid][$data['service_type']]['fees'][$target] : '';
       
+      dpm($all_data_quick[$data['data']->nid][$data['service_type']]['fees']);
+      
       if ($target == 'monthly' && $out) {
         $out = '$'. $out;
       }
