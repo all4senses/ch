@@ -1759,6 +1759,8 @@ function ch_pages_form_alter(&$form, &$form_state, $form_id) {
                           '#field_prefix' => $fee_type_data[1],
                           '#default_value' => isset($p_data['s'][$service_type_key]['fees'][$fee_type_key]) ? $p_data['s'][$service_type_key]['fees'][$fee_type_key] : '',
                                               // $p_data['s']['re']['fees']['mon']
+                            
+                          '#description' => isset($fee_type_data['description']) ? $fee_type_data['description'] : NULL,
                         );                    
                         
                       }

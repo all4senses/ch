@@ -30,7 +30,7 @@ define('CONS_HINT', 'Optional');
 $service_types = serialize(array('wp' => 'WordPress', 'ch' => 'Cloud Hosting', 'vps' => 'VPS Hosting', 'ds' => 'Dedicated Servers', 'sh' => 'Shared Hosting'));
 
 $service_descriptions = serialize(array('pti' => 'Plan title', 'sp' => 'Space', 'bw' => 'Bandwidth', 'vr-y' => 'Video Review (YouTube video ID)', 's-url' => 'Outbound Service Url', 'trend' => 'Trend'));
-$fee_types = serialize(array('mon' => array('Monthly fees', '$'), 'set' => array('Setup fees', ''), 'oth' => array('Other fees', '') ));
+$fee_types = serialize(array('mon' => array('Monthly fees', '$'),  'mon-crossed' => array('Crossed Out Price', '$', 'description' => 'Put "-" in font of the text to disable the field'), 'set' => array('Setup fees', ''), 'oth' => array('Other fees', '') ));
 
 define('SERVICE_TYPES', $service_types);
 define('SERVICE_DESCRIPTIONS', $service_descriptions);
