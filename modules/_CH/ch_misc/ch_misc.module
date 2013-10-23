@@ -5224,10 +5224,12 @@ function ch_misc_getProvidersDataQuick($scope = 'all', $reset = FALSE, $clear_fr
       //$_SESSION['p_all_data_quick'] = $p_data_quick;
       variable_set('p_all_data_quick', $p_data_quick);
       $var_p_all_data_quick = $p_data_quick;
+      
+      dpm($var_p_all_data_quick);
     }
   }
   
-  dpm($p_data_quick);
+  
   return $p_data_quick;  
 }
  
