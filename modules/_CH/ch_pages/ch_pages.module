@@ -2750,7 +2750,7 @@ function ch_pages_validateForm_provider(&$form, &$form_state) {
     $provider_types[] = $field_p_type['value'];
   }
   
-  dpm($p_data);
+  
     
   foreach ($p_data['s'] as $service_type_short => $service) {
     
@@ -2809,6 +2809,8 @@ function ch_pages_validateForm_provider(&$form, &$form_state) {
     $used_service_type_keys[] = ch_misc_refineServiceTypeKey($used_type['value']);
   }
   
+  
+  dpm($p_data_quick);
 
   form_set_value($form['field_p_data_quick'], array('und' => array(0 => array('value' => serialize($p_data_quick)))), $form_state);
   
