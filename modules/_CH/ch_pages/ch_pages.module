@@ -2749,6 +2749,8 @@ function ch_pages_validateForm_provider(&$form, &$form_state) {
   foreach ($form_state['values']['field_p_types']['und'] as $field_p_type) {
     $provider_types[] = $field_p_type['value'];
   }
+  
+  dpm($p_data);
     
   foreach ($p_data['s'] as $service_type_short => $service) {
     
@@ -2781,7 +2783,7 @@ function ch_pages_validateForm_provider(&$form, &$form_state) {
         $p_data_quick[$service_type_short]['fees'] = array(
           //'back' => isset($service['mbg']) ? $service['mbg'] : '',
           'monthly' => isset($service['fees']['mon']) ? $service['fees']['mon'] : '',
-          'monthly-crossed' => isset($service['fees']['mon']) ? $service['fees']['mon-crossed'] : '',
+          'monthly-crossed' => isset($service['fees']['mon-crossed']) ? $service['fees']['mon-crossed'] : '',
           //'setup' => isset($service['fees']['set']) ? $service['fees']['set'] : '',
         );
 
