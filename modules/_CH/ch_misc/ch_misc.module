@@ -5226,6 +5226,8 @@ function ch_misc_getProvidersDataQuick($scope = 'all', $reset = FALSE, $clear_fr
       $var_p_all_data_quick = $p_data_quick;
     }
   }
+  
+  dpm($p_data_quick);
   return $p_data_quick;  
 }
  
