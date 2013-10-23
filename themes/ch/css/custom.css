@@ -2103,3 +2103,19 @@ body.sidebar-second .page-compare-providers #sidebar-second {padding: 0; margin-
 #block-ch-blocks-writer-admin-links .contextual-links-wrapper {display: none;}
 
 /*#breadcrumbs-dummy {height: 10px; width: 100%;}*/
+
+
+.price.crossed {
+position: relative;
+color: black;
+font-size: 16px;
+}
+
+.price.crossed .cross {
+background: url(/sites/all/themes/ch/css/images/sprite-2.png) no-repeat -25px -923px transparent;
+width: 80%;
+height: 30px;
+position: absolute;
+top: 0;
+margin: auto;
+}
