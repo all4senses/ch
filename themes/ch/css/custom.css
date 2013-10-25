@@ -2110,6 +2110,9 @@ position: relative;
 color: black;
 font-size: 16px;
 }
+.price.non-crossed {
+font-size: 24px;
+}
 
 .price.crossed .cross {
 background: url(/sites/all/themes/ch/css/images/sprite-2.png) no-repeat -25px -923px transparent;
@@ -2119,6 +2122,7 @@ position: absolute;
 top: 3px;
 margin: auto;
 }
+
 
 .limited-time {
 background: url(/sites/all/themes/ch/css/images/sprite-2.png) no-repeat 2px -972px transparent;
