@@ -2109,6 +2109,7 @@ body.sidebar-second .page-compare-providers #sidebar-second {padding: 0; margin-
 position: relative;
 color: black;
 font-size: 16px;
+font-weight: normal;
 }
 .price.non-crossed {
 font-size: 24px;
