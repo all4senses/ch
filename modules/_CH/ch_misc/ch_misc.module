@@ -5657,7 +5657,7 @@ function ch_misc_getProviderQuickData($target, $data) {
         global $user;
         if ($user->uid && !empty($all_data_quick[$data['data']->nid][$data['service_type']]['fees']['monthly-crossed']) && strpos($all_data_quick[$data['data']->nid][$data['service_type']]['fees']['monthly-crossed'], '-') !== 0) {
           dpm($all_data_quick[$data['data']->nid][$data['service_type']]['fees']);
-          $out = '<div class="price month crossed">' . $all_data_quick[$data['data']->nid][$data['service_type']]['fees']['monthly-crossed'] . '<div class="cross"></div></div>' . $out;
+          $out = '<div class="price month crossed">$' . $all_data_quick[$data['data']->nid][$data['service_type']]['fees']['monthly-crossed'] . '<div class="cross"></div></div>' . $out;
         }
       }
       return $out;
