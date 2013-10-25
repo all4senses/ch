@@ -5392,7 +5392,7 @@ function ch_misc_getProviderQuickData($target, $data) {
       
       global $user;
       if ($target == 'logo_chart' && $user->uid && !empty($all_data_quick[$data['data']->nid][$data['service_type']]['fees']['monthly-crossed']) && strpos($all_data_quick[$data['data']->nid][$data['service_type']]['fees']['monthly-crossed'], '-') !== 0) {
-        $out .= ch_misc_getTrackingUrl('<div class="limited-time"></div>', $all_data_quick[$data['data']->nid]['subpath'], $data['data']->nid, NULL, NULL, $data['service_type']);
+        $out .= ch_misc_getTrackingUrl('<div class="limited-time">LIMITED TIME</div>', $all_data_quick[$data['data']->nid]['subpath'], $data['data']->nid, NULL, NULL, $data['service_type']);
       } 
       
       /*
