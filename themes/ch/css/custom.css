@@ -2115,11 +2115,11 @@ font-size: 24px;
 }
 
 .price.crossed .cross {
-background: url(/sites/all/themes/ch/css/images/sprite-2.png) no-repeat -25px -923px transparent;
+background: url(/sites/all/themes/ch/css/images/sprite-2.png) no-repeat 15px -923px transparent;
 width: 80%;
-height: 20px;
+height: 5px;
 position: absolute;
-top: 3px;
+top: 7px;
 margin: auto;
 }
 
