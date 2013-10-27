@@ -5167,6 +5167,9 @@ function ch_misc_getProvidersDataQuick($scope = 'all', $reset = FALSE, $clear_fr
       //$_SESSION['p_all_data_quick'] = $p_data_quick;
       variable_set('p_all_data_quick', $var_p_all_data_quick);
       
+      drupal_set_message('Quick data for this provider has been reset.', 'warning');
+      dpm($var_p_all_data_quick);
+      
       return NULL;
     }
     else {
