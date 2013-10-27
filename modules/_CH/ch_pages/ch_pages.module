@@ -3136,7 +3136,9 @@ function ch_pages_node_update($node) {
   if ($node->type == 'provider') {
     
     // Reset ProvidersDataQuick in session var.
-    ch_misc_getProvidersDataQuick('all', FALSE, TRUE);    
+    ////ch_misc_getProvidersDataQuick('all', FALSE, TRUE);
+    // Resen only a current provider data.
+    ch_misc_getProvidersDataQuick('all', FALSE, FALSE, $node->nid);
   }
 }
 
