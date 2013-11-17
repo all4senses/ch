@@ -7,9 +7,10 @@
         $( ".data.tabs" ).tabs();
         
         //console.log($(".data.tabs .visit-site"));
-        console.log($(".visit-site-link-manually-added"));
-        $( ".data.tabs #top-line ul" ).append('<li class="ui-state-default ui-corner-top visit-site-link-manually-added">' + $(".data.tabs .visit-site")[0].innerHTML + '</li>');     
-            
+        console.log($(".data.tabs .visit-site-link-manually-added"));
+        if (!$(".visit-site-link-manually-added").length) {
+          $( ".data.tabs #top-line ul" ).append('<li class="ui-state-default ui-corner-top visit-site-link-manually-added">' + $(".data.tabs .visit-site")[0].innerHTML + '</li>');     
+        }
         // Buttun to go to the tab to Write review right on the provider page
         /*
         $( "a#write-review-first" ).click(function(){
