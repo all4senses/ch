@@ -4811,10 +4811,8 @@ function ch_misc_views_pre_render(&$view) {
   
   //dpm($view);
   
+  // Fix empty default sort_by parameter in url in pager for Reviews views.
   if ($view->name == 'reviews' && empty($view->exposed_data['sort_by'])) {
-    //dpm('was empty!');
-    //dpm($view->query);
-    //$view->exposed_data['sort_by'] = 'created';
     $view->exposed_data['sort_by'] = 'created';
     $view->exposed_raw_input['sort_by'] = 'created';
   }
