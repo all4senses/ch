@@ -6,13 +6,11 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
 
 if (typeof Drupal != 'undefined') {
   window.CKEDITOR_BASEPATH = Drupal.settings.ckeditor.editor_path;
+  exit;
 }
 
 (function ($) {
   
-  if (typeof Drupal == 'undefined') {
-    return;
-  }
   
   Drupal.ckeditor = (typeof(CKEDITOR) != 'undefined');
   Drupal.ckeditor_ver = false;
