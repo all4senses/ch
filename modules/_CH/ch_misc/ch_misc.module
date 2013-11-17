@@ -4809,12 +4809,14 @@ function ch_misc_votingapi_metadata_alter(&$data) {
  */
 function ch_misc_views_pre_render(&$view) {
   
-  dpm($view);
+  //dpm($view);
   
   if ($view->name == 'reviews' && empty($view->exposed_data['sort_by'])) {
-    dpm('was empty!');
-    dpm($view->query);
+    //dpm('was empty!');
+    //dpm($view->query);
+    //$view->exposed_data['sort_by'] = 'created';
     $view->exposed_data['sort_by'] = 'created';
+    $view->exposed_raw_input['sort_by'] = 'created';
   }
   
 //  //$view->result = array();
