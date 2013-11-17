@@ -6,8 +6,8 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
 
 if (typeof Drupal != 'undefined') {
   window.CKEDITOR_BASEPATH = Drupal.settings.ckeditor.editor_path;
-  exit;
-}
+  
+
 
 (function ($) {
   
@@ -366,4 +366,7 @@ var ckeditor_imceSendTo = function (file, win){
   }
   CKEDITOR.tools.callFunction(cfunc[1], file.url);
   win.close();
+}
+
+
 }
