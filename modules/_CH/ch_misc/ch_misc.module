@@ -4813,6 +4813,7 @@ function ch_misc_views_pre_render(&$view) {
   
   if ($view->name == 'reviews' && empty($view->exposed_data['sort_by'])) {
     dpm('was empty!');
+    dpm($view->pager);
     $view->exposed_data['sort_by'] = 'created';
   }
   
