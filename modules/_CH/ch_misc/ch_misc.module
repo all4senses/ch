@@ -4806,7 +4806,7 @@ function ch_misc_votingapi_metadata_alter(&$data) {
  */
 function ch_misc_views_pre_render(&$view) {
   
-//  dpm($view);
+  dpm($view);
 //  //$view->result = array();
 //  foreach ($view->result as $key => $r) {
 //    $view->result[$key]->created_year_month = '2006/06';
