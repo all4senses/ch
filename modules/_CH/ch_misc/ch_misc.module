@@ -4812,6 +4812,7 @@ function ch_misc_views_pre_render(&$view) {
   //dpm($view);
   
   if ($view->name == 'reviews' && empty($view->exposed_data['sort_by'])) {
+    dpm('was empty!');
     $view->exposed_data['sort_by'] = 'created';
   }
   
