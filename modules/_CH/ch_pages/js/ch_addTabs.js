@@ -7,7 +7,9 @@
         $( ".data.tabs" ).tabs();
         
         //console.log($(".data.tabs .visit-site"));
-        console.log($(".data.tabs .visit-site-link-manually-added"));
+        //console.log($(".data.tabs .visit-site-link-manually-added"));
+        
+        // With this condition we prevent creating extra visit-site links on ajax changing sorting options.
         if (!$(".visit-site-link-manually-added").length) {
           $( ".data.tabs #top-line ul" ).append('<li class="ui-state-default ui-corner-top visit-site-link-manually-added">' + $(".data.tabs .visit-site")[0].innerHTML + '</li>');     
         }
