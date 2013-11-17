@@ -346,14 +346,14 @@ function ch_misc_flush_caches() {
   // Remove all minified files from jsmin-ch folder.
   // Uncomment in case ov changing any js
   
-  $dir = 'f/jsmin-ch';
-  $objects = scandir($dir);
-  foreach ($objects as $object) {
-    if ($object != "." && $object != "..") {
-      unlink($dir . "/" . $object);
-    }
-  }
-  variable_del('ch_minified_js');
+//  $dir = 'f/jsmin-ch';
+//  $objects = scandir($dir);
+//  foreach ($objects as $object) {
+//    if ($object != "." && $object != "..") {
+//      unlink($dir . "/" . $object);
+//    }
+//  }
+//  variable_del('ch_minified_js');
   
   
   // Recalculate the reviews amount.
