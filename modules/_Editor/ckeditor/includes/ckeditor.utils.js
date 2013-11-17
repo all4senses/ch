@@ -2,7 +2,10 @@
 Copyright (c) 2003-2011, CKSource - Frederico Knabben. All rights reserved.
 For licensing, see LICENSE.html or http://ckeditor.com/license
 */
-window.CKEDITOR_BASEPATH = Drupal.settings.ckeditor.editor_path;
+// a4s fix
+if (Drupal) {
+  window.CKEDITOR_BASEPATH = Drupal.settings.ckeditor.editor_path;
+}
 (function ($) {
   Drupal.ckeditor = (typeof(CKEDITOR) != 'undefined');
   Drupal.ckeditor_ver = false;
