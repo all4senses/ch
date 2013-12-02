@@ -2791,7 +2791,7 @@ function ch_pages_validateForm_provider(&$form, &$form_state) {
           $count = 0;
           foreach ($service['weights_' . $service_type_short . '_features'] as $term_id => $term_data) {
             $p_data_quick[$service_type_short]['feat'][$term_id] = $term_data['name'];
-            if ($count++ > 1) {
+            if ($count++ > 2) {
               break;
             }
           }
