@@ -5533,7 +5533,7 @@ function ch_misc_getProviderQuickData($target, $data) {
       
       $plan_title = isset($all_data_quick[$data['data']->nid][$data['service_type']]['plan']) ? $all_data_quick[$data['data']->nid][$data['service_type']]['plan'] : '';
       $features = isset($all_data_quick[$data['data']->nid][$data['service_type']]['feat']) ?  $all_data_quick[$data['data']->nid][$data['service_type']]['feat'] : '';
-      dpm($features);
+      //dpm($features);
       if ($plan_title) {
         $out .= '<div class="plan">' . $plan_title . '</div>';
       }
