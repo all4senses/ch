@@ -2139,5 +2139,5 @@ color: white;
 
 
 /* Fix for the shared page without bottom and sidebar */
-.page-node-80 #all-content {padding: 20px 0 5px 20px; width: 980px;}
+.page-node-80 #all-content {padding: 5px 0 5px 20px; width: 980px;}
 .page-node-80 .preface .field-item {padding-right: 20px;}
