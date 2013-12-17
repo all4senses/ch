@@ -5415,8 +5415,9 @@ function ch_misc_getProviderQuickData($target, $data) {
           $out .= ch_misc_getTrackingUrl('<div class="limited-time">LIMITED TIME</div>', $all_data_quick[$data['data']->nid]['subpath'], $data['data']->nid, NULL, NULL, $data['service_type']);
         }
         
-        global $user;
-        if ($user->uid) {
+//        global $user;
+//        if ($user->uid) 
+        {
           $out .= ch_misc_getTrackingUrl('Visit ' . $all_data_quick[$data['data']->nid]['name'], NULL, $data['data']->nid, NULL, 'company visit-site-link', $data['service_type']);
         }
         
@@ -5616,18 +5617,19 @@ function ch_misc_getProviderQuickData($target, $data) {
         
         
         $rating_count = number_format( (0.05 * $data['data']->votingapi_cache_node_percent_overall_average_value), 1 );
-        global $user;
-        if (!$user->uid) {
-            $out = '<div class="details">
-                      <a ' . ( (isset($data['target']) && $data['target'] == 'iframe') ? 'target="_blank" ' : '') . 'href="' . url('node/' . $data['data']->nid) . '"><div>Read Reviews</div>
-                      </a>
-                    </div>
-                    <div class="stars_n_count">' 
-                        . $stars 
-                        . ' <div class="count">(' . $rating_count . ')</div>
-                    </div>';
-        }
-        else{
+//        global $user;
+//        if (!$user->uid) {
+//            $out = '<div class="details">
+//                      <a ' . ( (isset($data['target']) && $data['target'] == 'iframe') ? 'target="_blank" ' : '') . 'href="' . url('node/' . $data['data']->nid) . '"><div>Read Reviews</div>
+//                      </a>
+//                    </div>
+//                    <div class="stars_n_count">' 
+//                        . $stars 
+//                        . ' <div class="count">(' . $rating_count . ')</div>
+//                    </div>';
+//        }
+//        else
+          {
             $out = '
                     <div class="stars_n_count">' 
                         . ' <div class="count">' . $rating_count . '<span> / 5</span></div>'
@@ -5745,17 +5747,19 @@ function ch_misc_getProviderQuickData($target, $data) {
       //ch_misc_getTrackingUrl($title_or_wrapped_object, $subpath = NULL, $nid = NULL, $target_name = NULL, $a_class = NULL, $service_type = NULL) {
       
       
-      global $user;
-      
-      if (!$user->uid) {
-        //$out = ch_misc_getTrackingUrl('Visit Site', NULL, $data['data']->nid, NULL, 'reviews visit-site-btn', $data['service_type']);
-        $out = ch_misc_getTrackingUrl('', NULL, $data['data']->nid, NULL, 'reviews visit-site-btn', $data['service_type']);
-      }
-      else {
+//      global $user;
+//      
+//      if (!$user->uid) {
+//        //$out = ch_misc_getTrackingUrl('Visit Site', NULL, $data['data']->nid, NULL, 'reviews visit-site-btn', $data['service_type']);
+//        $out = ch_misc_getTrackingUrl('', NULL, $data['data']->nid, NULL, 'reviews visit-site-btn', $data['service_type']);
+//      }
+//      else 
+        {
         $out = ch_misc_getTrackingUrl('Visit Site', NULL, $data['data']->nid, NULL, 'reviews visit-site-btn', $data['service_type']);
       }
       
-      if ($user->uid) {
+//      if ($user->uid) 
+      {
         $out .= ch_misc_getTrackingUrl('Visit ' . $all_data_quick[$data['data']->nid]['name'], NULL, $data['data']->nid, NULL, 'visit visit-site-link', $data['service_type']);
       }
       
