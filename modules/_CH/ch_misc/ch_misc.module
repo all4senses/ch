@@ -5718,11 +5718,17 @@ function ch_misc_getProviderQuickData($target, $data) {
       
       //ch_misc_getTrackingUrl($title_or_wrapped_object, $subpath = NULL, $nid = NULL, $target_name = NULL, $a_class = NULL, $service_type = NULL) {
       
-      //$out = ch_misc_getTrackingUrl('Visit Site', NULL, $data['data']->nid, NULL, 'reviews visit-site-btn', $data['service_type']);
-      $out = ch_misc_getTrackingUrl('', NULL, $data['data']->nid, NULL, 'reviews visit-site-btn', $data['service_type']);
       
-      //dpm($all_data_quick[$data['data']->nid]);
       global $user;
+      
+      if (!$user->uid) {
+        //$out = ch_misc_getTrackingUrl('Visit Site', NULL, $data['data']->nid, NULL, 'reviews visit-site-btn', $data['service_type']);
+        $out = ch_misc_getTrackingUrl('', NULL, $data['data']->nid, NULL, 'reviews visit-site-btn', $data['service_type']);
+      }
+      else {
+        $out = ch_misc_getTrackingUrl('Visit Site', NULL, $data['data']->nid, NULL, 'reviews visit-site-btn', $data['service_type']);
+      }
+      
       if ($user->uid) {
         $out .= ch_misc_getTrackingUrl('Visit ' . $all_data_quick[$data['data']->nid]['name'], NULL, $data['data']->nid, NULL, 'visit visit-site-link', $data['service_type']);
       }

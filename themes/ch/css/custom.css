@@ -584,7 +584,11 @@ th.views-field-field-p-logo{width: 140px; padding-left: 7px;}
 #all-content .view-providers td.active.views-field-php{text-align: center; padding: 10px/* 0 10px 2px*/;}
 
 th.views-field-php{width: 170px;}
+
 th.views-field-php-1{width: 85px;}
+.logged-in th.views-field-php-1{width: 160px; padding: 0;}
+.logged-in td.views-field-php-1{padding: 12px 0px 5px;}
+
 
 th.views-field-php-2{width: 80px;}
 .p-less-fields th.views-field-php-2{width: 75px;}
@@ -625,6 +629,10 @@ th.views-field-php-7{width: 100px;}
 
 /*a.visit-site-btn {background: url("images/sprite-2.png") no-repeat -79px 0 transparent; display: block; width: 84px; height: 28px; margin: auto; text-indent: -9999px;}*/
 a.visit-site-btn {background: url("images/sprite-2.png") no-repeat 3px -890px transparent; display: block; width: 87px; height: 32px; margin: auto; text-indent: -9999px;}
+
+.logged-in a.visit-site-btn {background: url("images/sprite-2.png") no-repeat -2px -1000px transparent; display: block; width: 165px; height: 47px; margin: auto;}
+
+
 
 .review-link {font-size: 12px; margin: 3px 0 5px 0; display: block; line-height: 12px; font-weight: bold;}
 .review-link:hover {text-decoration: underline;}
