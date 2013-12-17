@@ -587,7 +587,7 @@ th.views-field-php{width: 170px;}
 
 th.views-field-php-1{width: 85px;}
 .logged-in th.views-field-php-1{width: 160px; padding: 0;}
-.logged-in td.views-field-php-1{padding: 12px 0px 5px;}
+.logged-in td.views-field-php-1{padding: 12px 0px 5px !important;}
 
 
 th.views-field-php-2{width: 80px;}
