@@ -648,7 +648,7 @@ a.visit-site-btn {background: url("images/sprite-2.png") no-repeat 3px -890px tr
 .chart.view-display-id-block_top_vps_p_table a.reviews.visit-site-btn {width: 115px; height: 36px; border-radius: 5px;}
 
 .chart a.visit.visit-site-link {font-size: 16px; line-height: 17px; padding: 5px 0; display: block;}
-.chart .view-display-id-block_top_vps_p_table a.visit.visit-site-link {font-size: 15px;}
+.chart.view-display-id-block_top_vps_p_table a.visit.visit-site-link {font-size: 15px;}
 .chart a.visit.visit-site-link:hover {text-decoration: underline;}
 .chart a.company.visit-site-link {font-size: 15px;}
 .chart a.company.visit-site-link:hover {text-decoration: underline;}
