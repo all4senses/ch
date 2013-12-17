@@ -586,7 +586,10 @@ th.views-field-field-p-logo{width: 140px; padding-left: 7px;}
 th.views-field-php{width: 170px;}
 
 th.views-field-php-1{width: 85px;}
+
 .logged-in th.views-field-php-1{width: 140px; padding: 0;}
+.logged-in .view-display-id-block_top_vps_p_table th.views-field-php-1{width: 130px; padding: 0;}
+
 .logged-in td.views-field-php-1{padding: 12px 0px 0px !important;}
 
 
@@ -631,8 +634,9 @@ th.views-field-php-7{width: 100px;}
 a.visit-site-btn {background: url("images/sprite-2.png") no-repeat 3px -890px transparent; display: block; width: 87px; height: 32px; margin: auto; text-indent: -9999px;}
 
 .logged-in a.reviews.visit-site-btn {background: url("images/sprite-2.png") no-repeat -2px -1000px transparent; display: block; width: 140px; height: 38px; margin: auto; text-indent: 0; color: white; font-size: 24px; padding: 5px 0; /*font-weight: bold;*/}
+.logged-in .view-display-id-block_top_vps_p_table a.reviews.visit-site-btn {width: 115px; height: 36px; border-radius: 5px;}
 
-.logged-in a.visit.visit-site-link {font-size: 16px;}
+.logged-in a.visit.visit-site-link {font-size: 15px; line-height: 17px; padding: 5px 0; display: block;}
 .logged-in a.visit.visit-site-link:hover {text-decoration: underline;}
 .logged-in a.company.visit-site-link {font-size: 15px;}
 .logged-in a.company.visit-site-link:hover {text-decoration: underline;}
