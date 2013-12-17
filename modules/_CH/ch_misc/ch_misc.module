@@ -5513,9 +5513,16 @@ function ch_misc_getProviderQuickData($target, $data) {
       
     case 'i_mbg':
       
-      $all_data_quick = ch_misc_getProvidersDataQuick();
+      global $user;
       
-      return @$all_data_quick[$data['data']->nid][$target];
+      $out = NULL;
+      
+      if ($user->uid) {
+        $all_data_quick = ch_misc_getProvidersDataQuick();
+        $out = @$all_data_quick[$data['data']->nid][$target];
+      }
+      
+      return $out;
       
       
       
