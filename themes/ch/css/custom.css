@@ -588,14 +588,14 @@ th.views-field-php{width: 170px;}
 th.views-field-php-1{width: 85px;}
 
  
-.logged-in .chart th.views-field-php-1 {width: 140px; padding: 0;}
-.logged-in .chart .view-display-id-block_top_vps_p_table th.views-field-php-1 {width: 130px; padding: 0;}
+.chart th.views-field-php-1 {width: 140px; padding: 0;}
+.chart.view-display-id-block_top_vps_p_table th.views-field-php-1 {width: 130px; padding: 0;}
 
-.logged-in .chart td.views-field-php-1 {padding: 12px 0px 0px !important;}
+.chart td.views-field-php-1 {padding: 12px 0px 0px !important;}
 
-.logged-in .chart .views-field-php-7 .fivestar {width: 80px; margin: 7px auto 5px; float: none !important; clear: both; overflow: hidden;}
-.logged-in .chart .views-field-php-7 .count {font-size: 18px; color: red;}
-.logged-in .chart .views-field-php-7 .count span {font-size: 15px; color: #00325e;}
+.chart .views-field-php-7 .fivestar {width: 80px; margin: 7px auto 5px; float: none !important; clear: both; overflow: hidden;}
+.chart .views-field-php-7 .count {font-size: 18px; color: red;}
+.chart .views-field-php-7 .count span {font-size: 15px; color: #00325e;}
 
 
 
@@ -644,14 +644,14 @@ a.visit-site-btn {background: url("images/sprite-2.png") no-repeat 3px -890px tr
 
 
 
-.logged-in .chart a.reviews.visit-site-btn{background: url("images/sprite-2.png") no-repeat -2px -1000px transparent; display: block; width: 140px; height: 38px; margin: auto; text-indent: 0; color: white; font-size: 24px; padding: 5px 0; /*font-weight: bold;*/}
-.logged-in .chart .view-display-id-block_top_vps_p_table a.reviews.visit-site-btn {width: 115px; height: 36px; border-radius: 5px;}
+.chart a.reviews.visit-site-btn{background: url("images/sprite-2.png") no-repeat -2px -1000px transparent; display: block; width: 140px; height: 38px; margin: auto; text-indent: 0; color: white; font-size: 24px; padding: 5px 0; /*font-weight: bold;*/}
+.chart.view-display-id-block_top_vps_p_table a.reviews.visit-site-btn {width: 115px; height: 36px; border-radius: 5px;}
 
-.logged-in .chart a.visit.visit-site-link {font-size: 16px; line-height: 17px; padding: 5px 0; display: block;}
-.logged-in .chart .view-display-id-block_top_vps_p_table a.visit.visit-site-link {font-size: 15px;}
-.logged-in .chart a.visit.visit-site-link:hover {text-decoration: underline;}
-.logged-in .chart a.company.visit-site-link {font-size: 15px;}
-.logged-in .chart a.company.visit-site-link:hover {text-decoration: underline;}
+.chart a.visit.visit-site-link {font-size: 16px; line-height: 17px; padding: 5px 0; display: block;}
+.chart .view-display-id-block_top_vps_p_table a.visit.visit-site-link {font-size: 15px;}
+.chart a.visit.visit-site-link:hover {text-decoration: underline;}
+.chart a.company.visit-site-link {font-size: 15px;}
+.chart a.company.visit-site-link:hover {text-decoration: underline;}
 
 
 
