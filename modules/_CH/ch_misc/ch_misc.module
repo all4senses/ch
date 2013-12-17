@@ -693,10 +693,16 @@ function ch_misc_disqus_getNewUsers() {
     
     $ch_disqus_users += $new_ch_disqus_users;
     variable_set('ch_disqus_users', serialize($ch_disqus_users));
-    $out = 'Something has changed (new users, less users, etc).
+    
+    
+    if (!empty($new_users)) {
+      $new_users = print_r($new_users, TRUE);
+      $out = 'Something has changed (new users, less users, etc).
  
 
-<pre>' . print_r($new_users, TRUE) . '</pre>';
+<pre>' . $new_users . '</pre>';
+    }
+    
   }
   
   global $language;
