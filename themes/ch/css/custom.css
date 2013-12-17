@@ -592,6 +592,14 @@ th.views-field-php-1{width: 85px;}
 
 .logged-in td.views-field-php-1{padding: 12px 0px 0px !important;}
 
+.logged-in .views-field-php-7 .fivestar {width: 80px; margin: 7px 10px 5px; float: none !important; clear: both; overflow: hidden;}
+.logged-in .views-field-php-7 .count {font-size: 14px;}
+.logged-in .views-field-php-7 .count span {font-size: 12px;}
+
+
+
+
+
 
 th.views-field-php-2{width: 80px;}
 .p-less-fields th.views-field-php-2{width: 75px;}
