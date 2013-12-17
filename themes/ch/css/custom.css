@@ -587,14 +587,21 @@ th.views-field-php{width: 170px;}
 
 th.views-field-php-1{width: 85px;}
 
-.logged-in #main th.views-field-php-1{width: 140px; padding: 0;}
-.logged-in #main .view-display-id-block_top_vps_p_table th.views-field-php-1{width: 130px; padding: 0;}
+ 
+.logged-in #main th.views-field-php-1,
+.logged-in #highlighted th.views-field-php-1 {width: 140px; padding: 0;}
+.logged-in #main .view-display-id-block_top_vps_p_table th.views-field-php-1,
+.logged-in #highlighted .view-display-id-block_top_vps_p_table th.views-field-php-1 {width: 130px; padding: 0;}
 
-.logged-in #main td.views-field-php-1{padding: 12px 0px 0px !important;}
+.logged-in #main td.views-field-php-1,
+.logged-in #highlighted td.views-field-php-1 {padding: 12px 0px 0px !important;}
 
-.logged-in #main .views-field-php-7 .fivestar {width: 80px; margin: 7px auto 5px; float: none !important; clear: both; overflow: hidden;}
-.logged-in #main .views-field-php-7 .count {font-size: 14px;}
-.logged-in #main .views-field-php-7 .count span {font-size: 12px;}
+.logged-in #main .views-field-php-7 .fivestar,
+.logged-in #highlighted .views-field-php-7 .fivestar {width: 80px; margin: 7px auto 5px; float: none !important; clear: both; overflow: hidden;}
+.logged-in #main .views-field-php-7 .count,
+.logged-in #highlighted .views-field-php-7 .count {font-size: 14px;}
+.logged-in #main .views-field-php-7 .count span,
+.logged-in #highlighted .views-field-php-7 .count span {font-size: 12px;}
 
 
 
@@ -641,14 +648,25 @@ th.views-field-php-7{width: 100px;}
 /*a.visit-site-btn {background: url("images/sprite-2.png") no-repeat -79px 0 transparent; display: block; width: 84px; height: 28px; margin: auto; text-indent: -9999px;}*/
 a.visit-site-btn {background: url("images/sprite-2.png") no-repeat 3px -890px transparent; display: block; width: 87px; height: 32px; margin: auto; text-indent: -9999px;}
 
-.logged-in #main a.reviews.visit-site-btn {background: url("images/sprite-2.png") no-repeat -2px -1000px transparent; display: block; width: 140px; height: 38px; margin: auto; text-indent: 0; color: white; font-size: 24px; padding: 5px 0; /*font-weight: bold;*/}
-.logged-in #main .view-display-id-block_top_vps_p_table a.reviews.visit-site-btn {width: 115px; height: 36px; border-radius: 5px;}
 
-.logged-in #main a.visit.visit-site-link {font-size: 16px; line-height: 17px; padding: 5px 0; display: block;}
-.logged-in #main .view-display-id-block_top_vps_p_table a.visit.visit-site-link {font-size: 15px;}
-.logged-in #main a.visit.visit-site-link:hover {text-decoration: underline;}
-.logged-in #main a.company.visit-site-link {font-size: 15px;}
-.logged-in #main a.company.visit-site-link:hover {text-decoration: underline;}
+
+.logged-in #main a.reviews.visit-site-btn,
+.logged-in #highlighted a.reviews.visit-site-btn {background: url("images/sprite-2.png") no-repeat -2px -1000px transparent; display: block; width: 140px; height: 38px; margin: auto; text-indent: 0; color: white; font-size: 24px; padding: 5px 0; /*font-weight: bold;*/}
+.logged-in #main .view-display-id-block_top_vps_p_table a.reviews.visit-site-btn,
+.logged-in #highlighted .view-display-id-block_top_vps_p_table a.reviews.visit-site-btn {width: 115px; height: 36px; border-radius: 5px;}
+
+.logged-in #main a.visit.visit-site-link,
+.logged-in #highlighted a.visit.visit-site-link {font-size: 16px; line-height: 17px; padding: 5px 0; display: block;}
+.logged-in #main .view-display-id-block_top_vps_p_table a.visit.visit-site-link,
+.logged-in #highlighted .view-display-id-block_top_vps_p_table a.visit.visit-site-link {font-size: 15px;}
+.logged-in #main a.visit.visit-site-link:hover,
+.logged-in #highlighted a.visit.visit-site-link:hover {text-decoration: underline;}
+.logged-in #main a.company.visit-site-link,
+.logged-in #highlighted a.company.visit-site-link {font-size: 15px;}
+.logged-in #main a.company.visit-site-link:hover,
+.logged-in #highlighted a.company.visit-site-link:hover {text-decoration: underline;}
+
+
 
 .review-link {font-size: 12px; margin: 3px 0 5px 0; display: block; line-height: 12px; font-weight: bold;}
 .review-link:hover {text-decoration: underline;}
