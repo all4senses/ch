@@ -599,7 +599,7 @@ th.views-field-php-1{width: 85px;}
 .logged-in #main .views-field-php-7 .fivestar,
 .logged-in #highlighted .views-field-php-7 .fivestar {width: 80px; margin: 7px auto 5px; float: none !important; clear: both; overflow: hidden;}
 .logged-in #main .views-field-php-7 .count,
-.logged-in #highlighted .views-field-php-7 .count {font-size: 18px; color: #0068d3;}
+.logged-in #highlighted .views-field-php-7 .count {font-size: 18px; color: red;}
 .logged-in #main .views-field-php-7 .count span,
 .logged-in #highlighted .views-field-php-7 .count span {font-size: 15px; color: #00325e;}
 
