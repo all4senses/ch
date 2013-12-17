@@ -589,11 +589,15 @@ th.views-field-php-1{width: 85px;}
 
  
 .chart th.views-field-php-1 {width: 140px; padding: 0;}
-.chart.view-display-id-block_top_vps_p_table th.views-field-php-1 {width: 130px; padding: 0;}
+.chart.view-display-id-block_top_vps_p_table th.views-field-php-1 {width: 140px; padding: 0;}
+
+
 
 .chart td.views-field-php-1 {padding: 12px 0px 0px !important;}
 
-.chart .views-field-php-7 .fivestar {width: 80px; margin: 7px auto 5px; float: none !important; clear: both; overflow: hidden;}
+.chart.view-display-id-block_top_vps_p_table th.views-field-php-2 {width: 65px;}
+
+.chart .views-field-php-7 .fivestar {width: 80px; margin: 3px auto 5px; float: none !important; clear: both; overflow: hidden;}
 .chart .views-field-php-7 .count {font-size: 18px; color: red;}
 .chart .views-field-php-7 .count span {font-size: 15px; color: #00325e;}
 
