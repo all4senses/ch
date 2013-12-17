@@ -632,7 +632,10 @@ a.visit-site-btn {background: url("images/sprite-2.png") no-repeat 3px -890px tr
 
 .logged-in a.reviews.visit-site-btn {background: url("images/sprite-2.png") no-repeat -2px -1000px transparent; display: block; width: 140px; height: 38px; margin: auto; text-indent: 0; color: white; font-size: 24px; padding: 5px 0; /*font-weight: bold;*/}
 
-
+.logged-in a.visit.visit-site-link {font-size: 16px;}
+.logged-in a.visit.visit-site-link:hover {text-decoration: underline;}
+.logged-in a.company.visit-site-link {font-size: 15px;}
+.logged-in a.company.visit-site-link:hover {text-decoration: underline;}
 
 .review-link {font-size: 12px; margin: 3px 0 5px 0; display: block; line-height: 12px; font-weight: bold;}
 .review-link:hover {text-decoration: underline;}
