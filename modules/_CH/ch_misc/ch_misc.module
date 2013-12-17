@@ -5517,7 +5517,7 @@ function ch_misc_getProviderQuickData($target, $data) {
       
       $out = NULL;
       
-      if ($user->uid) {
+      if (!$user->uid) {
         $all_data_quick = ch_misc_getProvidersDataQuick();
         $out = @$all_data_quick[$data['data']->nid][$target];
       }
