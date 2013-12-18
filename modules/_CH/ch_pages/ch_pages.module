@@ -73,7 +73,7 @@ function ch_pages_menu() {
 /**
  * Track clicks report page.
  */
-function ch_pages_trackClickReport_form($form, &$form_state) {
+function ch_pages_trackClickReport_form_old($form, &$form_state) {
   
   //$args = arg();
   //dpm($args);
@@ -238,6 +238,698 @@ function ch_pages_trackClickReport_form($form, &$form_state) {
 
 
 /**
+ * Track clicks report page.
+ */
+function ch_pages_trackClickReport_form($form, &$form_state) {
+  
+  //$args = arg();
+  //dpm($args);
+  //dpm($_GET);
+//  $form['emails'] = array(
+//    '#type' => 'markup',
+//    '#markup' => '<div class="type">' . l('Quote requests emails only', 'admin/content/quote-requests/emails') . ' - ' . l('Reviews emails', 'admin/content/quote-requests/reviews-emails') . ' - ' . l('Disqus emails', 'admin/content/quote-requests/disqus-emails') . ' - ' . l('Newsletter emails', 'admin/content/quote-requests/newsletter-emails') . '</div>'
+//      . '<br/><div><strong>All Quote Requests data.</strong></div><br/><div class="email-captured">' . l('Check and email captured but not submitted requests', 'admin/content/quote-requests', array('query' => array('op' => 'email-captured'))) . '</div>',
+//  );
+  
+  $defult_preset = count($_GET) > 1 ? FALSE :  TRUE;
+  
+  $query = '';
+  foreach ($_GET as $key => $value) {
+    if ($key != 'q' && $key != 'sort' && $key != 'order') {
+      $query .= ($query ? '&' : '?') . $key . '=' . $value;
+    }
+  }
+
+  $start_url = $_SERVER['REDIRECT_URL'] . $query . ($query ? '&' : '?');
+              
+  
+  $filter_by = array('provider_link' => 'Provider link', 'video_click' => 'Video link', 'all' => 'Show all');
+  $filter_by_db = array('provider_link' => array('type', 'provider_link'), 'video_click' => array('type', 'video_click'), 'all' => NULL);
+  $current_filter = isset($filter_by[@$_GET['filter']]) ? $_GET['filter'] : 'all';
+  
+  
+  $include_logged_in = !empty($_GET['include_logged_in']) ? $_GET['include_logged_in'] : NULL;
+  
+  
+  
+  $from_date_str = $from_time_str = $to_date_str = $to_time_str = NULL;
+  
+  
+  $time_now = time();
+  $day = 60*60*24;
+  $week = $day*7;
+  $month = $day*30;
+  drupal_add_js(array('ch_pages' => array(
+    'to_now' => array(
+      'date' => date('m\/d\/Y', $time_now),
+      'time' => date('H:i:s', $time_now),
+    ),
+     'from_today' => array(
+      'date' => date('m\/d\/Y', strtotime(date('m\/d\/Y 00\:00\:00', $time_now))),
+      'time' => '00:00:00',
+    ),
+    'from_yesterday' => array(
+      'date' => date('m\/d\/Y', strtotime(date('m\/d\/Y 00\:00\:00', strtotime('yesterday')))),
+      'time' => '00:00:00',
+    ),
+    'from_day' => array(
+      'date' => date('m\/d\/Y', $time_now - $day),
+      'time' => date('H:i:s', $time_now - $day),
+    ),
+    'from_week' => array(
+      'date' => date('m\/d\/Y', $time_now - $week),
+      'time' => date('H:i:s', $time_now - $week),
+    ),
+    'from_month' => array(
+      'date' => date('m\/d\/Y', $time_now - $month),
+      'time' => date('H:i:s', $time_now - $month),
+    ),
+    'from_this_month' => array(
+      'date' => date('m\/d\/Y', strtotime(date('m\/01\/Y 00\:00\:00', $time_now))),
+      'time' => '00:00:00',
+    ),
+    'from_last_month' => array(
+      'date' => date('m\/d\/Y', strtotime(date('m\/01\/Y 00\:00\:00', strtotime('last month')))),
+      'time' => '00:00:00',
+    ),
+  )), 'setting');  
+  
+  
+  
+  if ($defult_preset) {
+    // Default timeframe - yesterday.
+    $from = strtotime(date('m\/d\/Y 00\:00\:00', strtotime('yesterday')));
+    $from_date_str = date('m\/d\/Y', $from);
+    $from_time_str = '00:00:00';
+//    if ($from_time_str == '00:00:00') {
+//      $from_time_str = NULL;
+//    }
+    $to = strtotime(date('m\/d\/Y 00\:00\:00', $time_now));
+    $to_date_str = date('m\/d\/Y', $to);
+    $to_time_str = '00:00:00';
+//    if ($to_time_str == '00:00:00') {
+//      $to_time_str = NULL;
+//    }
+  }
+  else {
+    if ($from = @$_GET['date_from']) {
+      $from_date_str = date('m\/d\/Y', $from);
+      $from_time_str = date('H:i:s', $from);
+      if ($from_time_str == '00:00:00') {
+        $from_time_str = NULL;
+      }
+    }
+    if ($to = @$_GET['date_to']) {
+      $to_date_str = date('m\/d\/Y', $to);
+      $to_time_str = date('H:i:s', $to);
+      if ($to_time_str == '00:00:00') {
+        $to_time_str = NULL;
+      }
+    }
+  }
+  
+  if (!$from_time_str && $from_date_str && $to_date_str && $to_time_str) {
+    $from_time_str = '00:00:00';
+  }
+  elseif (!$to_time_str && $to_date_str && $from_date_str && $from_time_str) {
+    $to_time_str = '00:00:00';
+  }
+  
+  $filter_temp_get = $_GET;
+  unset($filter_temp_get['q']);
+    
+  $statistics_types = array('full' => 'Full', 'per_provider' => 'Per provider');
+  $statistics_type = isset($statistics_types[@$_GET['stat_type']]) ? $_GET['stat_type'] : 'per_provider'; 
+  
+  
+  $form['default_preset'] = array(
+    '#markup' => 
+       '<div class="default preset">' 
+          . l('Default preset', 'admin/content/track-report') . '
+        <div class="description">Stat per provider, All types clicks, Yesterday, sort DESC by Unique clicks, show only Featured provider, logged in users clicks are Excluded.</div>
+      </div>',
+  );
+  
+  
+  $form['stat_type'] = array(
+    '#type' => 'radios',
+    '#title' => 'Statistics type:',
+    '#default_value' => $statistics_type,
+    '#options' => $statistics_types,
+    '#attributes' =>  array('class' =>array('statistics_type'), 'onClick' => array('javascript:this.form.submit();')),
+  );
+  
+  $form['header-block'] = array(
+    '#type' => 'container',
+  );
+  
+  $form['header-block']['filter'] = array(
+    '#type' => 'radios',
+    '#title' => t('Filter by: '),
+    '#default_value' => $current_filter,
+    '#options' => $filter_by,
+    '#attributes' =>  array('class' =>array('filter_by'), 'onClick' => array('javascript:this.form.submit();')),
+  );
+
+  
+  $providers['_none'] = '- All providers -';
+  //gv_misc_getProviders($providers);
+  // function gv_misc_getProviders(&$providers, $scope = 'all', $data = NULL, $cache_key = '', $only_featured = NULL, $no_cache = FALSE) {
+
+  if (!isset($_GET['only_featured']) || $_GET['only_featured']) {
+    ch_misc_getProviders($providers, 'all', NULL, 'featured');
+  }
+  else {
+    ch_misc_getProvidersKeyedByName($providers);
+  }
+
+  //dpm($providers);
+  //dpm($_GET);
+
+    
+    
+  if ($statistics_type == 'full') {
+    
+    $selected_provider = (!empty($_GET['provider']) && !empty($providers[$_GET['provider']])) ? $_GET['provider'] : NULL;
+
+    $form['header-block']['provider'] = array(
+      '#type' => 'select',
+      '#title' => 'Provider',
+      '#default_value' => $selected_provider ? $providers[$selected_provider] : '_none',
+      '#options' => $providers,
+      '#attributes' =>  array('class' =>array('provider'), 'onChange' => array('javascript:this.form.submit();')),
+    );
+  }
+  
+  $form['header-block']['only_featured'] = array(
+    '#type' => 'checkbox',
+    '#title' => 'Only Featured',
+    '#default_value' => (!isset($_GET['only_featured']) || $_GET['only_featured']) ? 1 : 0,
+    //'#disabled' => TRUE,
+    '#attributes' =>  array('class' =>array('only_featured'), 'onChange' => array('javascript:this.form.submit();')),
+  );
+  $form['header-block']['include_logged_in'] = array(
+    '#type' => 'checkbox',
+    '#title' => 'Include logged in',
+    '#default_value' => $include_logged_in,
+    '#attributes' =>  array('class' =>array('include_logged_in'), 'onChange' => array('javascript:this.form.submit();')),
+  );
+  
+  
+  $form['header-block']['from'] = array(
+    '#type' => 'container',
+  );
+      $form['header-block']['from']['date_from'] = array(
+        '#type' => 'textfield',
+        '#title' => 'Date from:',
+        '#description' => 'mm/dd/yyyy',
+        '#default_value' => $from_date_str,
+      );
+      $form['header-block']['from']['time_from'] = array(
+        '#type' => 'textfield',
+        '#title' => 'Time from:',
+        '#description' => '00:00:00',
+        '#default_value' => $from_time_str,
+      );
+  $form['header-block']['to'] = array(
+    '#type' => 'container',
+  );
+      $form['header-block']['to']['date_to'] = array(
+        '#type' => 'textfield',
+        '#title' => 'Date to:',
+        '#description' => 'mm/dd/yyyy',
+        '#default_value' => $to_date_str,
+      );
+      $form['header-block']['to']['time_to'] = array(
+        '#type' => 'textfield',
+        '#title' => 'Time to:',
+        '#description' => '00:00:00',
+        '#default_value' => $to_time_str,
+      );
+  
+      
+      
+      
+  $form['header-block']['set_timeframe'] = array(
+    '#type' => 'select',
+    '#title' => 'Timeframe',
+    '#description' => 'Presets',
+    '#default_value' => $defult_preset ? 'yesterday' : '',
+    '#options' => array('_none' => '', 'today' => 'Today', 'yesterday' => 'Yesterday', 'day' => '24h from now', 'week' => '7 days from now', 'month' => '30 days from now', 'this_month' => 'This month', 'last_month' => 'Last month', '_clear' => 'Clear...'),
+    '#attributes' =>  array('class' =>array('set_timeframe')),
+  );
+  
+  
+  
+  
+  
+  
+  $form['header-block']['actions'] = array(
+    '#type' => 'actions',
+    //'#weight' => 1,
+  );
+  $form['header-block']['actions']['submit'] = array(
+    '#type' => 'submit',
+    '#value' => 'Submit',
+  ); 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    // Full statistics.
+    if ($statistics_type == 'full') {
+
+        
+        $sort = (@$_GET['sort'] && isset($sort_options[$_GET['sort']]) ) ? $_GET['sort'] : 'timestamp';
+  
+        $sort_options = array('timestamp' => 'Click date', 'type' => 'Object type', 'object_name' => 'Object name', 
+          'url' => 'Url', 'referer' => 'Referrer', 'click_page' => 'Click page', 'ip' => 'IP', 'uname' => 'User name');
+
+        $sort_exposed = '';
+        $order = 'DESC';
+        foreach($sort_options as $sort_option => $sort_title) {
+          $order_marker = '';
+          if ($sort_option == @$_GET['sort']) {
+            if (!@$_GET['order'] || $_GET['order'] == 'DESC') {
+              $current_order = 'ASC';
+              $order = 'ASC';
+              $order_marker = '&darr;';
+            }
+            else {
+              $current_order = 'DESC';
+              $order = 'DESC';
+              $order_marker = '&uarr;';
+            }
+          }
+          else {
+            $current_order = 'DESC';
+          }
+          //$sort_exposed .= ' | <a href="' . $start_url . 'sort=' . $sort_option . '&order=' . $current_order . '">' . $sort_title . $order_marker . '</a>';
+          $sort_links[$sort_option] = '<a href="' . $start_url . 'sort=' . $sort_option . '&order=' . $current_order . '">' . $sort_title . ' ' . $order_marker . '</a>';
+        }
+
+  
+        //$query = db_select('gv_track_links', 'tl')->extend('PagerDefault');
+        $query = db_select('ch_track_links', 'tl')->extend('ChPager');
+
+        $query->fields('tl');
+
+
+        if (@$filter_by_db[$current_filter]) {
+          $filter_field = $filter_by_db[$current_filter][0];
+          $filter_value = $filter_by_db[$current_filter][1];
+          if ($filter_field == 'type' && $filter_value == 'provider_link') {
+            // add an alias.
+            $or = db_or()->condition('type', 'provider_link')
+                        ->condition('type', 'provider');
+            $query->condition($or);
+          }
+          else {
+            $query->condition($filter_field, $filter_value);
+          }
+        }
+
+        if ($selected_provider) {
+          $query->condition('object_name', '%%' . $selected_provider . '%%', 'LIKE');
+        }
+        elseif (@$_GET['only_featured']) {
+          $or = db_or();
+          //$providers['_none']
+          foreach ($providers as $key => $value) {
+            if ($key == '_none') {
+              continue;
+            }
+             $or->condition('object_name', '%%' . $value . '%%', 'LIKE');
+          }
+          $query->condition($or);
+        }
+
+        if ($from) {
+          $query->condition('timestamp', $from, '>=');
+        }
+        if ($to) {
+          $query->condition('timestamp', $to, '<=');
+        }
+
+        if (!$include_logged_in) {
+          //$query->isNull('uname');
+
+          $or = db_or()->condition('uname', '')
+                        ->isNull('uname');
+          $query->condition($or);
+      //    $query->condition('uname', '', '!=')
+      //                   ->isNotNull('uname');
+
+        }
+
+        $results = 
+          $query
+            ->orderBy($sort, $order)
+            ->limit(20)
+            ->execute();
+
+        $results = $query->orderBy($sort, $order)->limit(20)->execute();
+
+        $total_items = $query->getTotalItemCount();
+
+
+
+        $form['total_results'] = array(
+          '#markup' => '<div class="total"><strong>Total results: </strong>' . $total_items . '</div>',
+        );
+
+        $form['table_start'] = array(
+          '#type' => 'markup',
+          '#markup' => '<table class="views-table track-links"><thead><tr>
+              <th>Num</th>
+              <th class="date">' . $sort_links['timestamp'] . '</th>
+              <th>' . $sort_links['type'] . '</th>
+              <th class="name">' . $sort_links['object_name'] . '</th>
+              <th class="url">' . $sort_links['url'] . '</th>
+              <th class="referer">' . $sort_links['referer'] . '</th>
+              <th class="page">' . $sort_links['click_page'] . '</th>
+              <th>' . $sort_links['ip'] . '</th>
+              <th>' . $sort_links['uname'] . '</th>'
+            //.'<th class="data">Data</th>'
+            .'<th>Operations</th>
+            </tr></thead><tbody>',
+        );
+
+
+
+        $tr_class = 'even';
+        foreach ($results as $key => $result) {
+
+          $data = '';
+          $result_data = unserialize($result->data);
+          if (!empty($result_data)) {
+            foreach ($result_data as $title => $value) {
+              $data .= "<div>$title: $value</div>";
+            }
+          }
+
+          $form['item_' . ($key + 1) . 'a'] = array(
+            '#markup' => '<tr class="'. ($tr_class == 'odd' ? $tr_class = 'even' : $tr_class = 'odd') . '">
+              <td>' . ($key + 1) . '</td>
+              <td class="date">' . date('Y-m-d, H:i:s', $result->timestamp) . '</td>
+              <td>' . $result->type . '</td>
+              <td class="name">' . $result->object_name . '</td>
+              <td ><div class="url">' . $result->url . '</div></td>
+              <td><div class="referer">' . ($result->referer ? $result->referer : (!empty($result_data['referer']) ? $result_data['referer'] : '') ) . '</div></td>
+              <td><div class="page">' . ($result->click_page ? $result->click_page : (!empty($result_data['click_on_page']) ? $result_data['click_on_page'] : '') ) . '</div></td>
+              <td>' . ($result->ip ? $result->ip : (!empty($result_data['user']['hostname']) ? $result_data['user']['hostname'] : '') ) . '</td>
+              <td>' . ($result->uname ? $result->uname : (!empty($result_data['user']['name']) ? $result_data['user']['name'] : '') ) . '</td>',
+          );
+
+
+
+
+      //    $delete_url = $_GET + array('op' => 'delete', 'timestamp' => $result->timestamp);
+      //    unset($delete_url['q']);
+
+
+      //    $filter_by_track_id_url = $_GET + array('op' => 'filter_by_track_id', 'track_id' => $result->track_id);
+      //    unset($filter_by_track_id_url['q']);
+
+          $filter_by_provider_name_url = $filter_temp_get + array('provider' => urlencode(str_replace(' Video Review', '', $result->object_name)));
+
+          $form['item_' . ($key + 1) . 'c'] = array(
+            '#markup' => //'<td class="data">' . $data . '</td>' .
+              //'<td>' . l('Delete', $_GET['q'], array('query' => $delete_url)) . '</td>' .
+              '<td>' . l('Full stat for this provider', $_GET['q'], array('query' => $filter_by_provider_name_url)) . '</td>' .
+              '</tr>',
+          );
+        }
+
+        $form['table_close'] = array(
+          '#type' => 'markup',
+          '#markup' => '</tbody></table></div>',
+        );
+
+        $form['pager'] = array(
+          '#theme' => 'pager',
+          //'#weight' => 5,
+        );
+  
+  } // End of if ($statistics_type == 'full') {
+  elseif ($statistics_type == 'per_provider') {
+
+        $sort_options = array('object_name' => 'Provider', 'clicks' => 'All Clicks', 'clicks_unique' => 'Unique Clicks');
+
+        $sort_exposed = '';
+        $order = 'DESC';
+        $url_sort = isset($sort_options[@$_GET['sort']]) ? $_GET['sort'] : 'clicks_unique';
+        $url_order = @$_GET['order'];
+        foreach($sort_options as $sort_option => $sort_title) {
+          $order_marker = '';
+          if ($sort_option == $url_sort) {
+            if (!$url_order || $url_order == 'DESC') {
+              $current_order = 'ASC';
+              $order = 'ASC';
+              $order_marker = '&darr;';
+            }
+            else {
+              $current_order = 'DESC';
+              $order = 'DESC';
+              $order_marker = '&uarr;';
+            }
+          }
+          else {
+            $current_order = 'DESC';
+          }
+          //$sort_exposed .= ' | <a href="' . $start_url . 'sort=' . $sort_option . '&order=' . $current_order . '">' . $sort_title . $order_marker . '</a>';
+          $sort_links[$sort_option] = '<a href="' . $start_url . 'sort=' . $sort_option . '&order=' . $current_order . '">' . $sort_title . ' ' . $order_marker . '</a>';
+        }
+
+    
+        
+        //$providers = array();
+        //gv_misc_getProviders($providers);
+        unset($providers['_none']);
+        
+        
+        // Find out and print total clicks for all providers
+        /*
+        $query = db_select('gv_track_links', 'tl');
+        $query->fields('tl', array('track_id'));
+
+        if (@$filter_by_db[$current_filter]) {
+          $filter_field = $filter_by_db[$current_filter][0];
+          $filter_value = $filter_by_db[$current_filter][1];
+          if ($filter_field == 'type' && $filter_value == 'provider_link') {
+            // add an alias.
+            $or = db_or()->condition('type', 'provider_link')
+                        ->condition('type', 'provider');
+            $query->condition($or);
+          }
+          else {
+            $query->condition($filter_field, $filter_value);
+          }
+        }
+
+        if ($from) {
+          $query->condition('timestamp', $from, '>=');
+        }
+        if ($to) {
+          $query->condition('timestamp', $to, '<=');
+        }
+
+        if (!$include_logged_in) {
+          $or = db_or()->condition('uname', '')
+                        ->isNull('uname');
+          $query->condition($or);
+        }
+        
+        if (@$_GET['only_featured']) {
+          $or = db_or();
+          //$providers['_none']
+          foreach ($providers as $key => $value) {
+//            if ($key == '_none') {
+//              continue;
+//            }
+             $or->condition('object_name', '%%' . $value . '%%', 'LIKE');
+          }
+          $query->condition($or);
+        }
+
+        $results = $query->execute();
+        $all_total_items = $results->rowCount();
+        */
+    
+        
+        $all_total_items = $all_total_items_unique = 0;
+        
+        foreach ($providers as $p_nid => $selected_provider) {
+          
+          $query = db_select('ch_track_links', 'tl');
+          $query->fields('tl', array('track_id', 'ip', 'timestamp'));
+
+          $query->condition('object_name', '%%' . $selected_provider . '%%', 'LIKE');
+
+          if (@$filter_by_db[$current_filter]) {
+            $filter_field = $filter_by_db[$current_filter][0];
+            $filter_value = $filter_by_db[$current_filter][1];
+            if ($filter_field == 'type' && $filter_value == 'provider_link') {
+              // add an alias.
+              $or = db_or()->condition('type', 'provider_link')
+                          ->condition('type', 'provider');
+              $query->condition($or);
+            }
+            else {
+              $query->condition($filter_field, $filter_value);
+            }
+          }
+
+          if ($from) {
+            $query->condition('timestamp', $from, '>=');
+          }
+          if ($to) {
+            $query->condition('timestamp', $to, '<=');
+          }
+
+          if (!$include_logged_in) {
+            $or = db_or()->condition('uname', '')
+                          ->isNull('uname');
+            $query->condition($or);
+          }
+          
+          
+          $results = $query->execute();
+          
+          $p_by_ip = $results->fetchAllAssoc('ip');
+          //dpm($p_by_ip);
+          
+          $total_items = $results->rowCount();
+          $all_total_items += $total_items;
+          $total_items_unique = count($p_by_ip);
+          $all_total_items_unique += $total_items_unique;
+          
+          $providers_clicks[$p_nid] = array('name' => $selected_provider, 'clicks' => $total_items, 'clicks_unique' => $total_items_unique); 
+        }
+        
+        switch ($url_sort) {
+          case 'object_name':
+            if ($url_order == 'DESC') {
+              uasort($providers_clicks, 'ch_misc_sortArrayByNameReverse');
+            }
+            break;
+            
+          case 'clicks':
+            if ($url_order == 'ASC') {
+              uasort($providers_clicks, 'ch_misc_sortArrayByClicks');
+            }
+            else {
+              uasort($providers_clicks, 'ch_misc_sortArrayByClicksReverse');
+            }
+            break;
+          case 'clicks_unique':
+            if ($url_order == 'ASC') {
+              uasort($providers_clicks, 'ch_misc_sortArrayByClicksUnique');
+            }
+            else {
+              uasort($providers_clicks, 'ch_misc_sortArrayByClicksUniqueReverse');
+            }
+            break;
+        }
+        
+        
+        $form['total_results'] = array(
+          '#markup' => '<div class="total"><strong>Total clicks: </strong>' . $all_total_items . ( (!$all_total_items || $all_total_items == $all_total_items_unique) ? '' : ' (unique: ' .  $all_total_items_unique . ')') . '</div>',
+        );
+        
+        
+        // Clicks per provider.
+        
+        $form['table_start'] = array(
+          '#type' => 'markup',
+          '#markup' => 
+            '<table class="views-table track-links"><thead><tr>
+              <th>Num</th>
+              <th class="name">' . $sort_links['object_name'] . '</th>
+              <th>' . $sort_links['clicks_unique'] . '</th>
+              <th>' . $sort_links['clicks'] . '</th>
+              <th>Operations</th>
+            </tr></thead><tbody>',
+        );
+
+        $filter_temp_get['stat_type'] = 'full';
+        unset($filter_temp_get['sort'], $filter_temp_get['order']);
+        
+        $tr_class = 'even';
+        
+        
+        $count = 0;
+        foreach ($providers_clicks as $p_nid => $selected_provider) {
+          
+          $count++;
+          
+          $form['nid_' . $p_nid . '_data'] = array(
+            '#markup' => '<tr class="'. ($tr_class == 'odd' ? $tr_class = 'even' : $tr_class = 'odd') . '">
+              <td>' . $count . '</td>
+              <td class="name">' . $selected_provider['name'] . '</td>
+              <td>' . $selected_provider['clicks_unique'] . '</td>
+              <td>' . $selected_provider['clicks'] . '</td>',
+          );
+
+
+          $filter_by_provider_name_url = $filter_temp_get + array('provider' => urlencode($selected_provider['name']));
+
+          $form['nid_' . $p_nid . '_op'] = array(
+            '#markup' => 
+              '<td>' . l('Full stat for this provider', $_GET['q'], array('query' => $filter_by_provider_name_url)) . '</td>' .
+              '</tr>',
+          );
+        }
+
+        $form['table_close'] = array(
+          '#type' => 'markup',
+          '#markup' => '</tbody></table></div>',
+        );    
+        
+  } // End of elseif ($statistics_type == 'per_provider') {
+  
+
+
+
+  
+  // Datepicker.
+
+  $module_path = drupal_get_path('module', 'ch_pages');
+  //$form['#attached']['css'][] = $module_path . '/css/ch_pages.css';
+  $form['#attached']['js'][] = $module_path . '/js/ch_track_links_datepicker.js';
+  
+          
+  // http://jqueryui.com/datepicker/#date-formats
+  $form['#attached']['library'][] = array('system', 'ui.datepicker');
+  
+  
+//  
+//  http://jonthornton.github.io/jquery-timepicker/
+//  $form['#attached']['css'][] = 'sites/all/libraries/jquery.plugins/timepicker/jquery.timepicker.css';
+//  $form['#attached']['css'][] = 'sites/all/libraries/jquery.plugins/timepicker/lib/base.css';
+//  $form['#attached']['js'][] = 'sites/all/libraries/jquery.plugins/timepicker/jquery.timepicker.min.js';
+//  $form['#attached']['js'][] = 'sites/all/libraries/jquery.plugins/timepicker/lib/base.js';
+  
+  
+  //$form['actions']['submit']['#submit'][] = 'ch_pages_trackClickReport_formSubmit';
+  //$form['#submit'][] = 'ch_pages_trackClickReport_formSubmit';
+  $form['#validate'][] = 'ch_pages_trackClickReport_formValidate';
+  
+  
+  return $form;
+}
+
+
+/**
  * Custom submit of a form for a Quote Requests List page.
  *
  * Provides a filtering functionality.
@@ -253,9 +945,78 @@ function ch_pages_trackClickReport_form($form, &$form_state) {
  */
 function ch_pages_trackClickReport_formValidate(&$form, &$form_state) {
 
+  //dpm($form_state['values']);
   $get = $_GET;
   unset($get['q']);
+  if (isset($get['provider'])) {
+    unset($get['provider']);
+  }
+  
+  if (isset($get['date_from'])) {
+    unset($get['date_from']);
+  }
+  if (isset($get['date_to'])) {
+    unset($get['date_to']);
+  }
+  if (isset($get['include_logged_in'])) {
+    unset($get['include_logged_in']);
+  }
+  if (isset($get['only_featured'])) {
+    unset($get['only_featured']);
+  }
+  
+  
+  $get['stat_type'] = !empty($form_state['values']['stat_type']) ? $form_state['values']['stat_type'] : 'full';
+  $prev_stat_type = empty($_GET['stat_type']) ? 'full' : $_GET['stat_type'];
+  
+  // Reset sort option in case of changing the type of statistics.
+  if ( ($prev_stat_type == 'full' && $get['stat_type'] == 'per_provider') || ($prev_stat_type == 'per_provider' && $get['stat_type'] == 'full') ) {
+    unset($get['sort'], $get['order']);
+  }
+    
+  if (!empty($form_state['values']['include_logged_in'])) {
+    $get['include_logged_in'] = 1;
+  }
+  if (!empty($form_state['values']['only_featured'])) {
+    $get['only_featured'] = 1;
+  }
+  
   $get['filter'] = $form_state['values']['filter'];
+  
+  if (!empty($form_state['values']['provider']) && $form_state['values']['provider'] != '_none') {
+    $get['provider'] = $form_state['values']['provider'];
+  }
+  
+  if (!empty($form_state['values']['date_from'])) {
+    $from_str = $form_state['values']['date_from'];
+    if (!empty($form_state['values']['time_from'])) {
+      $from_str .= 'T' . $form_state['values']['time_from'];
+    }
+    //$from_str = str_replace('/', '-', $from_str);
+    //dpm('$from_str: ' . $from_str);
+    $get['date_from'] = strtotime($from_str);
+    
+    //dpm(date('D, d M Y H:i:s', $get['date_from']));
+  }
+
+  if (!empty($form_state['values']['date_to'])) {
+    $to_str = $form_state['values']['date_to'];
+    if (!empty($form_state['values']['time_to'])) {
+      $to_str .= 'T' . $form_state['values']['time_to'];
+    }
+    //$to_str = str_replace('/', '-', $to_str);
+    //dpm('$to_str: ' . $to_str);
+    $get['date_to'] = strtotime($to_str);
+    
+    //dpm(date('D, d M Y H:i:s', $get['date_to']));
+    if (!empty($get['date_from']) && !empty($get['date_to']) && $get['date_from'] > $get['date_to']) {
+      unset($get['date_to']);
+      drupal_set_message('Wrong Date-To value! It can\'t be less than Date-From! So the wrong Date-To date has been excluded.', 'error');
+    }
+    
+  }  
+  
+  //dpm($get);
   
   drupal_goto($_GET['q'], array('query' => $get));
 }
