@@ -961,10 +961,6 @@ function ch_pages_trackClickReport_formValidate(&$form, &$form_state) {
   if (isset($get['include_logged_in'])) {
     unset($get['include_logged_in']);
   }
-  if (isset($get['only_featured'])) {
-    unset($get['only_featured']);
-  }
-  
   
   $get['stat_type'] = !empty($form_state['values']['stat_type']) ? $form_state['values']['stat_type'] : 'full';
   $prev_stat_type = empty($_GET['stat_type']) ? 'full' : $_GET['stat_type'];
@@ -977,9 +973,8 @@ function ch_pages_trackClickReport_formValidate(&$form, &$form_state) {
   if (!empty($form_state['values']['include_logged_in'])) {
     $get['include_logged_in'] = 1;
   }
-  if (!empty($form_state['values']['only_featured'])) {
-    $get['only_featured'] = 1;
-  }
+
+  $get['only_featured'] = @$form_state['values']['only_featured'];
   
   $get['filter'] = $form_state['values']['filter'];
   
