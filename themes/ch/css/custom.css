@@ -703,18 +703,20 @@ td.views-field-php-7 a:hover {text-decoration: underline;}
 
 .views-field .count{font-size: 11px;/* padding-top: 4px;*/}
 
+.views-field-field-p-listposition-ca,
 .views-field-field-p-listposition-sh,
 .views-field-field-p-listposition-vps,
 .views-field-field-p-listposition-wb,
 .views-field-field-p-listposition-wp
 {width: 55px;}
 
+.views-field-field-p-listposition-ca div,
 .views-field-field-p-listposition-sh div, 
 .views-field-field-p-listposition-wb div, 
 .views-field-field-p-listposition-vps div,
 .views-field-field-p-listposition-wp div {font-size: 25px; font-weight: bold;}
 
-
+.views-row-first .views-field-field-p-listposition-ca div,
 .views-row-first .views-field-field-p-listposition-sh div, 
 .views-row-first .views-field-field-p-listposition-wb div, 
 .views-row-first .views-field-field-p-listposition-vps div,
