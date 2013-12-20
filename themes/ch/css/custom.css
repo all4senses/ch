@@ -2143,34 +2143,15 @@ body.sidebar-second .page-compare-providers #sidebar-second {padding: 0; margin-
 /*#breadcrumbs-dummy {height: 10px; width: 100%;}*/
 
 
-.price.crossed {
-position: relative;
-color: black;
-font-size: 16px;
-font-weight: normal;
-}
-.price.non-crossed {
-font-size: 24px;
-}
+.price.crossed {position: relative; color: black; font-size: 16px; font-weight: normal;}
+.view-display-id-block_top_ca_p_table .price.crossed {font-size: 14px;}
 
-.price.crossed .cross {
-background: url(/sites/all/themes/ch/css/images/sprite-2.png) no-repeat 0px -923px transparent;
-width: 52px;
-height: 10px;
-position: absolute;
-top: 6px;
-margin: auto;
-left: 20px;
-}
+.price.non-crossed {font-size: 24px;}
 
+.price.crossed .cross {background: url(/sites/all/themes/ch/css/images/sprite-2.png) no-repeat 0px -923px transparent; width: 52px; height: 10px; position: absolute; top: 6px; margin: auto; left: 20px;}
+.view-display-id-block_top_ca_p_table .price.crossed .cross {width: 72px; left: 28px;}
 
-.limited-time {
-background: url(/sites/all/themes/ch/css/images/sprite-2.png) no-repeat 2px -971px transparent;
-width: 135px;
-height: 30px;
-margin: 0 0 0 25px;
-color: white;
-}
+.limited-time {background: url(/sites/all/themes/ch/css/images/sprite-2.png) no-repeat 2px -971px transparent; width: 135px; height: 30px; margin: 0 0 0 25px; color: white;}
 
 
 /* Fix for the listing pages without bottom and sidebar */
