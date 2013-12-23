@@ -17,19 +17,6 @@
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
   
-  <!-- Start BounceX tag. Deploy at the beginning of document head. -->
-
-        <script>
-        (function(d) {
-            var e = d.createElement('script');
-            e.src = d.location.protocol + '//bounceexchange.com/tag/800/i.js';
-            e.async = true;
-            d.getElementsByTagName("head")[0].appendChild(e);
-        }(document));
-        </script>
-
-<!-- End BounceX Tag-->
-
 </head>
 
 <body itemscope itemtype="http://schema.org/<?php global $schema_org_type; echo $schema_org_type ? $schema_org_type : 'WebPage'; ?>" class="<?php print $classes; ?>" <?php print $attributes;?>>
