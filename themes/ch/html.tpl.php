@@ -5,6 +5,18 @@
 <!--[if gt IE 8]> <!--> <html class="" lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?>"> <!--<![endif]-->
 <head>
   <title><?php global $altered_head_title; if ($altered_head_title) {print $altered_head_title;} else {print $head_title;} ?></title>
+  <!-- Start BounceX tag. Deploy at the beginning of document head. -->
+
+        <script>
+        (function(d) {
+            var e = d.createElement('script');
+            e.src = d.location.protocol + '//bounceexchange.com/tag/800/i.js';
+            e.async = true;
+            d.getElementsByTagName("head")[0].appendChild(e);
+        }(document));
+        </script>
+
+<!-- End BounceX Tag-->
   <?php print $head; ?>
   <!-- Set the viewport width to device width for mobile -->
   <meta name="viewport" content="width=device-width" />
