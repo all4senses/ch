@@ -2046,7 +2046,7 @@ function ch_misc_addSocialShareData_toPage($node) {
   }
 
   if (!strpos($image, 'cloudhostinghq.com')) {
-    $image = 'http://www.cloudhostinghq.com/' . ltrim($image, '/');
+    $image = 'http://cloudhostinghq.com/' . ltrim($image, '/');
   }
 
   
