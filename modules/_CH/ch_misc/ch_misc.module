@@ -5459,14 +5459,14 @@ function ch_misc_getProviderQuickData($target, $data) {
 //           dpm($all_data_quick[$data['data']->nid]);
 //        }
         
-        //$out = ch_misc_getTrackingUrl($image, NULL, $data['data']->nid, NULL, NULL, $data['service_type']);
-        $out = ch_misc_getTrackingUrl($image, $all_data_quick[$data['data']->nid]['subpath'], $data['data']->nid, NULL, NULL, $data['service_type']);
-        //$out .= ch_misc_getTrackingUrl('', NULL, $data['data']->nid, NULL, 'reviews visit-site-btn', $data['service_type']);
+        //$out = ch_misc_getTrackingUrl($image, NULL, $data['data']->nid, NULL, NULL, @$data['service_type']);
+        $out = ch_misc_getTrackingUrl($image, $all_data_quick[$data['data']->nid]['subpath'], $data['data']->nid, NULL, NULL, @$data['service_type']);
+        //$out .= ch_misc_getTrackingUrl('', NULL, $data['data']->nid, NULL, 'reviews visit-site-btn', @$data['service_type']);
       }
       else {
         if (!empty($all_data_quick[$data['data']->nid]['name'])) {
-          //$out = ch_misc_getTrackingUrl($all_data_quick[$data['data']->nid]['name'], NULL, $data['data']->nid, NULL, NULL, $data['service_type']);
-          $out = ch_misc_getTrackingUrl($all_data_quick[$data['data']->nid]['name'], $all_data_quick[$data['data']->nid]['subpath'], $data['data']->nid, NULL, NULL, $data['service_type']);
+          //$out = ch_misc_getTrackingUrl($all_data_quick[$data['data']->nid]['name'], NULL, $data['data']->nid, NULL, NULL, @$data['service_type']);
+          $out = ch_misc_getTrackingUrl($all_data_quick[$data['data']->nid]['name'], $all_data_quick[$data['data']->nid]['subpath'], $data['data']->nid, NULL, NULL, @$data['service_type']);
           
         }
 //        else {
@@ -5575,7 +5575,7 @@ function ch_misc_getProviderQuickData($target, $data) {
       $out = '';
       
       if (!empty($all_data_quick[$data['data']->nid][$data['service_type']]['s-url'])) {
-        $out .= ch_misc_getTrackingUrl('Visit site', NULL, $data['data']->nid, NULL, 'site-link', $data['service_type']);
+        $out .= ch_misc_getTrackingUrl('Visit site', NULL, $data['data']->nid, NULL, 'site-link', @$data['service_type']);
       }
       elseif (!empty($all_data_quick[$data['data']->nid]['i_web'])) {
         $out .= ch_misc_getTrackingUrl('Visit site', NULL, $data['data']->nid, NULL, 'site-link');
@@ -5735,7 +5735,7 @@ function ch_misc_getProviderQuickData($target, $data) {
 //        $out = '<div class="details"><a ' . ( (isset($data['target']) && $data['target'] == 'iframe') ? 'target="_blank" ' : '') . 'href="' . url('node/' . $data['data']->nid) . '"><div>Write Review</div></a></div>';
 //      }
       
-      $out .= '<div class="p-links">' . ch_misc_getTrackingUrl('Visit Site', NULL, $data['data']->nid, NULL, 'reviews visit-site-btn', $data['service_type']) . '<a class="review-link" href="' . url('node/' . $data['data']->nid) . '">Reviews</a></div>';
+      $out .= '<div class="p-links">' . ch_misc_getTrackingUrl('Visit Site', NULL, $data['data']->nid, NULL, 'reviews visit-site-btn', @$data['service_type']) . '<a class="review-link" href="' . url('node/' . $data['data']->nid) . '">Reviews</a></div>';
       
       return $out;
       
@@ -5817,17 +5817,17 @@ function ch_misc_getProviderQuickData($target, $data) {
 //      global $user;
 //      
 //      if (!$user->uid) {
-//        //$out = ch_misc_getTrackingUrl('Visit Site', NULL, $data['data']->nid, NULL, 'reviews visit-site-btn', $data['service_type']);
-//        $out = ch_misc_getTrackingUrl('', NULL, $data['data']->nid, NULL, 'reviews visit-site-btn', $data['service_type']);
+//        //$out = ch_misc_getTrackingUrl('Visit Site', NULL, $data['data']->nid, NULL, 'reviews visit-site-btn', @$data['service_type']);
+//        $out = ch_misc_getTrackingUrl('', NULL, $data['data']->nid, NULL, 'reviews visit-site-btn', @$data['service_type']);
 //      }
 //      else 
         {
-        $out = ch_misc_getTrackingUrl('Visit Site', NULL, $data['data']->nid, NULL, 'reviews visit-site-btn', $data['service_type']);
+        $out = ch_misc_getTrackingUrl('Visit Site', NULL, $data['data']->nid, NULL, 'reviews visit-site-btn', @$data['service_type']);
       }
       
 //      if ($user->uid) 
       {
-        $out .= ch_misc_getTrackingUrl('Visit ' . $all_data_quick[$data['data']->nid]['name'], NULL, $data['data']->nid, NULL, 'visit visit-site-link', $data['service_type']);
+        $out .= ch_misc_getTrackingUrl('Visit ' . $all_data_quick[$data['data']->nid]['name'], NULL, $data['data']->nid, NULL, 'visit visit-site-link', @$data['service_type']);
       }
       
       return $out;
