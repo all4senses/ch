@@ -2045,12 +2045,10 @@ function ch_misc_addSocialShareData_toPage($node) {
     $image = '/sites/all/themes/ch/css/images/ch-logo-t.png';
   }
 
-  dpm($image);
   if (!strpos($image, 'cloudhostinghq.com')) {
     $image = 'http://www.cloudhostinghq.com/' . ltrim($image, '/');
   }
 
-  dpm($image);
   
   $tags += array(
        /*
