@@ -204,7 +204,6 @@ function ch_misc_setPagesToShow410(&$items) {
  * Return 410 gone for the current page.
  */
 function ch_misc_410gone() {
-  //return 'xxx';
   ch_misc_drupal_410_gone();
   drupal_exit();
 }
@@ -253,7 +252,6 @@ function ch_misc_drupal_410_gone() {
 
   $path = drupal_get_normal_path(variable_get('site_404', ''));
   if ($path && $path != $_GET['q']) {
-    dpm('a');
     // Custom 404 handler. Set the active item in case there are tabs to
     // display, or other dependencies on the path.
     menu_set_active_item($path);
@@ -268,16 +266,13 @@ function ch_misc_drupal_410_gone() {
     drupal_set_title('Page Is Gone');
     
     $return = ch_mics_page404CustomContent();
-
-    dpm('b');
-    
   }
 
   //drupal_set_title('Page Is Gone');
-  dpm($return);
+  //dpm($return);
   drupal_set_page_content($return);
   $page = element_info('page');
-  dpm($page);
+  //dpm($page);
   print drupal_render_page($page);
 
   // Perform end-of-request tasks.
