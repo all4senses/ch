@@ -253,6 +253,7 @@ function ch_misc_drupal_410_gone() {
 
   $path = drupal_get_normal_path(variable_get('site_404', ''));
   if ($path && $path != $_GET['q']) {
+    dpm('a');
     // Custom 404 handler. Set the active item in case there are tabs to
     // display, or other dependencies on the path.
     menu_set_active_item($path);
@@ -268,7 +269,7 @@ function ch_misc_drupal_410_gone() {
     
     $return = ch_mics_page404CustomContent();
 
-    dpm('a');
+    dpm('b');
     
   }
 
