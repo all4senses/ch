@@ -268,13 +268,15 @@ function ch_misc_drupal_410_gone() {
     
     $return = ch_mics_page404CustomContent();
 
+    dpm('a');
     
   }
 
-  drupal_set_title('Page Is Gone');
+  //drupal_set_title('Page Is Gone');
   
   drupal_set_page_content($return);
   $page = element_info('page');
+  dpm($page);
   print drupal_render_page($page);
 
   // Perform end-of-request tasks.
