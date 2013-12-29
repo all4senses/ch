@@ -204,6 +204,7 @@ function ch_misc_setPagesToShow410(&$items) {
  * Return 410 gone for the current page.
  */
 function ch_misc_410gone() {
+  return 'xxx';
   ch_misc_drupal_410_gone();
   drupal_exit();
 }
