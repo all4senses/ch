@@ -271,6 +271,7 @@ function ch_misc_drupal_410_gone() {
     
   }
 
+  drupal_set_title('Page Is Gone');
   
   drupal_set_page_content($return);
   $page = element_info('page');
