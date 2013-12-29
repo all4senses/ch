@@ -85,3 +85,6 @@ $provider_options = array(
       );
       
 define('PROVIDER_OPTIONS', serialize($provider_options));
+
+$pages410 = array('taxonomy/term/%/%/feed');
+define('PAGES_410', serialize($pages410));
