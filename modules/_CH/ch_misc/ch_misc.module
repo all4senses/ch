@@ -20,7 +20,7 @@ function ch_misc_menu() {
   
   ch_misc_setPagesToShow410($items);
  
-  dpm($items);
+  //dpm($items);
   
   $items['cc'] = array(
     'title' => 'Flush the cache and redirect to the Home page',
