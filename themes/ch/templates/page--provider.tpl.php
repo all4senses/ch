@@ -139,7 +139,7 @@
       <?php 
         
         echo render($page['footer']);
-        echo ch_blocks_get_footerLinks() . '<div class="c">© 2013 CloudHostingHQ.com | All Rights Reserved</div>';
+        echo ch_blocks_get_footerLinks() . '<div class="c">© 2014 CloudHostingHQ.com | All Rights Reserved</div>';
         
       ?>
       
@@ -148,6 +148,6 @@
   </footer> <!-- /#footer -->
   <?php /* 
   <div id="under-footer">
-    <div class="c">Copyright © 2013 Cloud Hosting HQ | All rights reserved.</div>
+    <div class="c">Copyright © 2014 Cloud Hosting HQ | All rights reserved.</div>
   </div>
   */ ?>

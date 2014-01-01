@@ -530,7 +530,7 @@ function ch_blocks_get_footerMenu() {
   else 
     {
     $menu = menu_build_tree('menu-footer-menu');
-    $out = theme('ch_misc_submenuSimple_byColumns', array('submenu' => array('below' => $menu)/*, 'class' => 'menu'*/, 'delimiter' => '<li> | </li>')); // . '<div class="c">В© 2013 cloudhostinghq.com | All Rights Reserved</div>';
+    $out = theme('ch_misc_submenuSimple_byColumns', array('submenu' => array('below' => $menu)/*, 'class' => 'menu'*/, 'delimiter' => '<li> | </li>')); // . '<div class="c">© 2014 cloudhostinghq.com | All Rights Reserved</div>';
     cache_set($cid, $out, 'cache', strtotime('+31 day'));
   } 
   
