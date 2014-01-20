@@ -242,7 +242,12 @@ ul.ch{margin-left: 0px; padding-left: 10px;}
 
 
 /*#om-menu-main-om-menu li.om-leaf{position: relative; height: 42px; z-index: 400; padding: 0 8px 3px 2px; margin: 0 2px; background: url(images/menu-devisor.png) no-repeat scroll right 11px transparent;}*/
-#om-menu-main-om-menu li.om-leaf{position: relative; z-index: 400; padding: 0 10px 0px 8px; margin: 0 30px/*70px for 3 items, 5px for 5 items in menu*/ 0 0;}
+#om-menu-main-om-menu li.om-leaf{position: relative; z-index: 400; padding: 0 10px 0px 8px; margin: 0 130px/* 30px for 4items 70px for 3 items, 5px for 5 items in menu*/ 0 0;}
+
+/* For hidden item Submit Review */
+#om-leaf-om-u1-1205284023-11 {display: none;}
+#om-leaf-om-u1-1205284023-3 {margin-right: 0 !important;}
+
 
 #om-menu-main-om-menu li.om-leaf.first {margin-left: 3px/*30px*/;}
 
