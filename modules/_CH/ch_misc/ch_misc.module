@@ -5981,7 +5981,8 @@ function ch_misc_getProviderQuickData($target, $data) {
 //      }
 //      else 
         {
-        $out = ch_misc_getTrackingUrl('Visit Site', NULL, $data['data']->nid, NULL, 'reviews visit-site-btn', @$data['service_type']);
+        //$out = ch_misc_getTrackingUrl('Visit Site', NULL, $data['data']->nid, NULL, 'reviews visit-site-btn', @$data['service_type']);
+        $out = ch_misc_getTrackingUrl('', NULL, $data['data']->nid, NULL, 'reviews visit-site-btn', @$data['service_type']);
       }
       
 //      if ($user->uid) 
