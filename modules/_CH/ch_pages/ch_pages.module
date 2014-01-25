@@ -1568,7 +1568,8 @@ function ch_pages_requestsList_form($form, &$form_state) {
   
   //$form['actions']['submit']['#submit'][] = 'ch_pages_quoteRequestsList_formSubmit';
   //$form['#submit'][] = 'ch_pages_quoteRequestsList_formSubmit';
-  $form['#validate'][] = 'ch_pages_quoteRequestsList_formValidate';
+  ////$form['#validate'][] = 'ch_pages_quoteRequestsList_formValidate';
+  $form['#validate'][] = 'ch_pages_requestsList_formValidate';
   
   
   return $form;
