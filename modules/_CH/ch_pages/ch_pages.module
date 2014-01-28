@@ -2213,6 +2213,7 @@ function ch_pages_form_alter(&$form, &$form_state, $form_id) {
               '#title' => 'Money Back Guarantee',
               '#default_value' => isset($p_data['info']['i_mbg']) ? $p_data['info']['i_mbg'] : '',
             );
+            
             $form['data_info']['i_web'] = array(
               '#type' => 'textfield',
               '#title' => 'Web Site',
@@ -2227,6 +2228,9 @@ function ch_pages_form_alter(&$form, &$form_state, $form_id) {
               '#default_value' => isset($p_data['info']['i_web_display']) ? $p_data['info']['i_web_display'] : '',
               //'#element_validate' => array('ch_misc_elementValidate_url'),
             );
+            
+            dpm($form);
+            
             $form['data_info']['i_web_hide'] = array(
               '#type' => 'checkbox',
               '#title' => 'Hide Web Site',
@@ -2512,7 +2516,7 @@ function ch_pages_form_alter(&$form, &$form_state, $form_id) {
                         
                         $form['s'][$service_type_key]['fees'][$fee_type_key] = array(
                           '#type' => 'textfield',
-                          '#title' => t($fee_type_data[0]),
+                          '#title' => $fee_type_data[0],
                           //'#field_prefix' => $fee_type_data[1],
                           '#field_prefix' => ($service_type_key == 'ca' && $fee_type_data[1] == '$') ? 'CAD$' : $fee_type_data[1],
                           '#default_value' => isset($p_data['s'][$service_type_key]['fees'][$fee_type_key]) ? $p_data['s'][$service_type_key]['fees'][$fee_type_key] : '',
