@@ -2500,6 +2500,7 @@ function ch_pages_form_alter(&$form, &$form_state, $form_id) {
                         '#type' => 'textfield',
                         '#title' => $service_description_title,
                         '#default_value' => $default_value,
+                        '#maxlength' => 400, // Allow to set a long string (mostly for a long outboubnd provider's url)
                       );
                     }
                     
