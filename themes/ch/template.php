@@ -599,8 +599,12 @@ function ch_process_page(&$variables) {
   //gv_misc_addMetatag('stylesheet', NULL, 'http://fonts.googleapis.com/css?family=Open+Sans|Ubuntu:500italic', 'NA', 'text/css');
   // Cufon's, via font-face
   //drupal_add_css(path_to_theme() . '/css/remote-fonts.css', array('group' => CSS_DEFAULT, 'every_page' => TRUE));
+  //
   ////ch_misc_addMetatag('stylesheet', NULL, 'http://fonts.googleapis.com/css?family=Open+Sans|Ubuntu:500', 'NA', 'text/css');
-  ch_misc_addMetatag('stylesheet', NULL, 'http://fonts.googleapis.com/css?family=Open+Sans:normal,bold|Ubuntu:500', 'NA', 'text/css');
+  //////ch_misc_addMetatag('stylesheet', NULL, 'http://fonts.googleapis.com/css?family=Open+Sans:normal,bold|Ubuntu:500', 'NA', 'text/css');
+  
+  // Local fonts, taken from the remote side.  
+  drupal_add_css('sites/all/libraries/fonts/google/open-sans-n-ubuntu/fonts.css', array('group' => CSS_DEFAULT, 'every_page' => TRUE)); // array('group' => CSS_THEME, 'preprocess' => FALSE)
 }
 
 
