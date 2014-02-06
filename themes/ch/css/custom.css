@@ -2149,7 +2149,7 @@ body.sidebar-second .page-compare-providers #sidebar-second {padding: 0; margin-
 #block-ch-blocks-writer-admin-links .contextual-links-wrapper {display: none;}
 
 /* Sitelock badge */
-#block-ch-blocks-sitelock-badge {position: absolute; top: 5px; right: 5px;}
+#block-ch-blocks-sitelock-badge {position: absolute; top: 5px; right: 10px;}
 
 
 /*#breadcrumbs-dummy {height: 10px; width: 100%;}*/
