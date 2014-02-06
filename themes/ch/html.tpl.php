@@ -8,6 +8,7 @@
   <?php print $head; ?>
   <!-- Set the viewport width to device width for mobile -->
   <meta name="viewport" content="width=device-width" />
+  <meta name="sitelock-site-verification" content="1227" />
   <?php print $styles; ?>
   <?php $args = arg(); 
         if ($args[0] == 'node' && ($args[1] == 'add' || isset($args[2]) && $args[2] == 'edit')) { $top = TRUE; print $scripts; } 
