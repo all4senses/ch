@@ -118,7 +118,12 @@ function ch_blocks_block_info() {
     'info' => 'Writer admin links',
     'cache' => DRUPAL_NO_CACHE,
   );
-      
+  
+  $blocks['sitelock-badge'] = array(
+    'info' => 'Sitelock badge',
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  
   return $blocks;
 }
 
@@ -209,6 +214,11 @@ function ch_blocks_block_view($delta = '') {
     case 'writer-admin-links':
       $block['subject'] = '';
       $block['content'] = ch_blocks_getWriterAdminLinks();
+      break;
+    
+    case 'sitelock-badge':
+      $block['subject'] = '';
+      $block['content'] = ch_blocks_getSitelockBadge();
       break;
     
     default:
@@ -348,6 +358,14 @@ function ch_blocks_block_save($delta = '', $edit = array()) {
       break;
   }
   
+}
+
+
+/**
+ * Block with Sitelock Badge.
+ */
+function ch_blocks_getSitelockBadge() {
+  return '<div id="sitelock_shield_logo" class="fixed_btm" style="bottom:0;position:fixed;_position:absolute;right:0;"><a href="https://www.sitelock.com/verify.php?site=cloudhostinghq.com" onclick="window.open(' . "'https://www.sitelock.com/verify.php?site=cloudhostinghq.com','SiteLock','width=600,height=600,left=160,top=170'" . ');return false;" ><img alt="PCI Compliance and Malware Removal" title="SiteLock"  src="//shield.sitelock.com/shield/cloudhostinghq.com"/></a></div>';
 }
 
 
