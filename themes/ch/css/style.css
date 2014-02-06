@@ -43,11 +43,17 @@ Equation for font sizing:
  * 1.GLOBAL
  */
 
+
+body {
+  /*font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;*/
+  font-family: Arial;
+}
+
 body {
   background: #fff;
   color: #222;
   /*font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;*/
-  font-family: 'Open Sans';/*, arial;*/
+  font-family: 'Open Sans';
   font-size: 100%;
   line-height: 1.5;
   margin: 0;
