@@ -603,8 +603,11 @@ function ch_process_page(&$variables) {
   ////ch_misc_addMetatag('stylesheet', NULL, 'http://fonts.googleapis.com/css?family=Open+Sans|Ubuntu:500', 'NA', 'text/css');
   //////ch_misc_addMetatag('stylesheet', NULL, 'http://fonts.googleapis.com/css?family=Open+Sans:normal,bold|Ubuntu:500', 'NA', 'text/css');
   
+  
+
   // Local fonts, taken from the remote side.  
-  drupal_add_css('sites/all/libraries/fonts/google/open-sans-n-ubuntu/fonts.css', array('group' => CSS_THEME/*CSS_DEFAULT*/, 'every_page' => TRUE)); // array('group' => CSS_THEME, 'preprocess' => FALSE)
+  // the code places right in the style.css, so is commented out here
+  /////drupal_add_css('sites/all/libraries/fonts/google/open-sans-n-ubuntu/fonts.css', array('group' => CSS_THEME/*CSS_DEFAULT*/, 'every_page' => TRUE)); // array('group' => CSS_THEME, 'preprocess' => FALSE)
 }
 
 
