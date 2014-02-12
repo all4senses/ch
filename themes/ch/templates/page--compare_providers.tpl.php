@@ -7,7 +7,7 @@
       
       <div id="logo-block">
         <?php 
-          dpm($_SERVER);
+          //dpm($_SERVER);
           
           if ($_SERVER['REDIRECT_URL'] == '/shared') {
             echo '<div id="logo">',
