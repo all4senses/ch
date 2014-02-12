@@ -8,9 +8,18 @@
       <div id="logo-block">
         <?php 
           dpm($_SERVER);
-          echo '<a href="', $front_page, '" title="VoIP Now Home" id="logo">';
-          echo '<img src="/sites/all/themes/ch/css/images/ch-logo-main-top.png" alt="CloudHostingHQ" title="CloudHostingHQ Home" />';
-          echo '</a>';
+          
+          if ($_SERVER['REDIRECT_URL'] == '/shared') {
+            echo '<div id="logo">',
+                  '<img src="/sites/all/themes/ch/css/images/ch-logo-main-top.png" alt="CloudHostingHQ" title="CloudHostingHQ Home" />',
+                 '</div>';
+          }
+          else {
+            echo '<a href="', $front_page, '" title="VoIP Now Home" id="logo">',
+                   '<img src="/sites/all/themes/ch/css/images/ch-logo-main-top.png" alt="CloudHostingHQ" title="CloudHostingHQ Home" />',
+                 '</a>';
+          }
+          
         ?>
         
         <?php 
