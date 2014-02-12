@@ -6,14 +6,26 @@
       <div id="header-menu-back"></div>
       
       <div id="logo-block">
+        <?php 
+          dpm($_SERVER);
+          echo '<a href="', $front_page, '" title="VoIP Now Home" id="logo">';
+          echo '<img src="/sites/all/themes/ch/css/images/ch-logo-main-top.png" alt="CloudHostingHQ" title="CloudHostingHQ Home" />';
+          echo '</a>';
+        ?>
+        
+        <?php 
+        /*
         <a href="<?php print $front_page; ?>" title="<?php print 'VoIP Now Home'; ?>" id="logo">
           <img src="<?php echo '/sites/all/themes/ch/css/images/ch-logo-main-top.png'; ?>" alt="CloudHostingHQ" title="<?php print 'CloudHostingHQ Home'; ?>" />
         </a>
+        */
+        ?>
         
       </div>
       
       <?php 
-          global $user;
+      
+          //global $user;
 
 //        if ($user->uid == 1) {
           echo /*'<a id="itexpo" href="http://cloudhostinghq.com/blog/tags/itexpo-2012"></a>',*/ render($page['header']); 
