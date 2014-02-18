@@ -2093,7 +2093,7 @@ function ch_pages_form_alter(&$form, &$form_state, $form_id) {
             );
             $form['bottom_text']['center_text'] = array(
               '#type' => 'textarea',
-              '#title' => t('Р В Р’В Р В Р вЂ№enter text'),
+              '#title' => t('Р В Р’В Р вЂ™Р’В Р В Р’В Р В РІР‚в„–enter text'),
               //'#description' => t(''),
               '#default_value' => isset($data['bottom_text']['center_text']) ? $data['bottom_text']['center_text'] : '',
             );
@@ -4048,6 +4048,12 @@ function ch_pages_addProviderPreview_form($node, &$form_state, $provider_nid) {
  *   Return nothing.
  */
 function ch_pages_node_view($node, $view_mode) {
+  
+  // Try to avoin xss vulnerability check by hackers
+  if ($view_mode == 'full') {
+    dpm($_SERVER);
+    dpm($_GET);
+  }
 
   switch ($node->type) {
     
