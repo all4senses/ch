@@ -699,7 +699,7 @@ function ch_misc_goToExternalUrl2() {
     if (@$url) {
           
             global $user;
-            if (!empty($args[2])) {
+            if (!empty($args[2]) && !empty($service_types[$args[2]])) {
               $service_types = unserialize(SERVICE_TYPES);
               $data = array('Service type' => $service_types[$args[2]]);
             }

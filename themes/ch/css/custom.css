@@ -101,7 +101,9 @@ input.blur, textarea.blur,
 #header-menu-back {background: #706e6f; height: 40px;}
 
 /* Search block */
-#block-search-form{color: lightgray; padding-bottom: 0;position: absolute; right: 0; top: 25px;}
+/*#block-search-form{color: lightgray; padding-bottom: 0;position: absolute; right: 0; top: 25px;}*/
+#block-search-form{color: lightgray; padding-bottom: 0; position: absolute; right: 160px; top: 10px;}
+
 #block-search-form .contextual-links-wrapper{display: none;}
 form#search-block-form{margin-bottom: 0;}
 #block-search-form input.form-text{-webkit-appearance: textfield; border: none; height: 25px; outline: medium none; padding-left: 5px; width: 200px; color: lightgray; border-radius: 2px;}
