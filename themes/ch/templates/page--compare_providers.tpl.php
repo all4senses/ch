@@ -15,7 +15,7 @@
                  '</div>';
           }
           else {
-            echo '<a href="', $front_page, '" title="VoIP Now Home" id="logo">',
+            echo '<a href="', $front_page, '" id="logo">',
                    '<img src="/sites/all/themes/ch/css/images/ch-logo-main-top.png" alt="CloudHostingHQ" title="CloudHostingHQ Home" />',
                  '</a>';
           }

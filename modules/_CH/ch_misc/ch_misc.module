@@ -532,7 +532,7 @@ function ch_misc_flush_caches() {
   if (!empty($view->result)) {
     foreach ($view->result as $item) {
       $url = preg_replace('/^(.*)(....)(..)$/', '$1$2/$3', $item->url);
-      $url = str_replace('http://www.cloudhostinghq.com/', '', $url);
+      $url = str_replace('http://cloudhostinghq.com/', '', $url);
       $blog_summary .= '<li><a href="/' . $url . '">' . $item->link . '</a></li>';
     }
 
@@ -825,7 +825,7 @@ function ch_misc_setReferer_ajax() {
     $post[$key] = check_plain(strip_tags($value));
   }
   
-  if (!empty($post['referer']) && strpos($post['referer'], 'http://www.cloudhostinghq.com') === FALSE) {
+  if (!empty($post['referer']) && strpos($post['referer'], 'http://cloudhostinghq.com') === FALSE) {
     $_SESSION['ch_current_http_referer'] = $post['referer'];
   }
   
@@ -1925,9 +1925,9 @@ function ch_misc_getArticleTeaserData($target, $body_full_markup, $nid, $charact
   $last_pos = strrpos($teaser, ' ');
   
   // $teaser = substr_replace ($teaser, '...' . l(t('Read More'), 'node/' . $nid, array('attributes' => array('class' => array('more')))) , $last_pos, strlen($matches[1]));
-  ////$teaser = substr_replace ($teaser, '...' . l('Read the rest of this entry Р В Р’В Р Р†Р вЂљРІвЂћСћР В РІР‚в„ўР вЂ™Р’В»', 'node/' . $nid, array('attributes' => array('class' => array('more')))), $last_pos);
+  ////$teaser = substr_replace ($teaser, '...' . l('Read the rest of this entry Р В Р’В Р вЂ™Р’В Р В Р вЂ Р В РІР‚С™Р Р†РІР‚С›РЎС›Р В Р’В Р Р†Р вЂљРІвЂћСћР В РІР‚в„ўР вЂ™Р’В»', 'node/' . $nid, array('attributes' => array('class' => array('more')))), $last_pos);
   
-  //$teaser = substr_replace ($teaser, '... ' . l('Read more Р В Р’В Р Р†Р вЂљРІвЂћСћР В РІР‚в„ўР вЂ™Р’В»', 'node/' . $nid, array('attributes' => array('class' => array('more')))), $last_pos);
+  //$teaser = substr_replace ($teaser, '... ' . l('Read more Р В Р’В Р вЂ™Р’В Р В Р вЂ Р В РІР‚С™Р Р†РІР‚С›РЎС›Р В Р’В Р Р†Р вЂљРІвЂћСћР В РІР‚в„ўР вЂ™Р’В»', 'node/' . $nid, array('attributes' => array('class' => array('more')))), $last_pos);
   $teaser = '<div class="teaser-content">' . substr_replace ($teaser, '... ' . l('Read more', 'node/' . $nid, array('attributes' => array('class' => array('more')))), $last_pos) . '</div>';
   
   
@@ -2105,8 +2105,8 @@ function ch_misc_addSocialShareData_toPage($node) {
         '#attributes' => array( 
             'rel' => 'alternate',
             'type' => 'application/rss+xml',
-            'title' => 'Articles from www.cloudhostinghq.com',
-            'href' => 'http://www.cloudhostinghq.com/rss.xml',
+            'title' => 'Articles from CloudHostinghq.com',
+            'href' => 'http://cloudhostinghq.com/rss.xml',
         ),
       ),
       'blog_rss' => array(
@@ -2114,8 +2114,8 @@ function ch_misc_addSocialShareData_toPage($node) {
         '#attributes' => array( 
             'rel' => 'alternate',
             'type' => 'application/rss+xml',
-            'title' => 'www.cloudhostinghq.com Blog',
-            'href' => 'http://www.cloudhostinghq.com/blog/rss.xml',
+            'title' => 'CloudHostinghq.com Blog',
+            'href' => 'http://cloudhostinghq.com/blog/rss.xml',
         ),
       ),
         
@@ -2194,7 +2194,7 @@ function ch_misc_addSocialShareData_toPage($node) {
     
   }
   
-  //$title = str_replace('[site:name]', 'www.cloudhostinghq.com', $title);
+  //$title = str_replace('[site:name]', 'cloudhostinghq.com', $title);
   $title = token_replace($title);
   
   
@@ -2351,8 +2351,8 @@ function ch_misc_addSocialShareData_toPage($node) {
       '#attributes' => array( 
           'rel' => 'alternate',
           'type' => 'application/rss+xml',
-          'title' => 'Latest Articles from www.cloudhostinghq.com',
-          'href' => 'http://www.cloudhostinghq.com/rss.xml',
+          'title' => 'Latest Articles from cloudhostinghq.com',
+          'href' => 'http://cloudhostinghq.com/rss.xml',
       ),
     ),
       
@@ -2652,7 +2652,7 @@ function ch_misc_makeRequestCapture_ajax() {
               'Start Submission Time' => date('Y-m-d, H:i:s', $_SESSION['ucaptured_timestamp']),
             );
             
-            if (isset($_SERVER['HTTP_REFERER']) && $_SERVER['HTTP_REFERER'] && !strpos($_SERVER['HTTP_REFERER'], '://www.cloudhostinghq.com')) {
+            if (isset($_SERVER['HTTP_REFERER']) && $_SERVER['HTTP_REFERER'] && !strpos($_SERVER['HTTP_REFERER'], '://cloudhostinghq.com')) {
               $ucaptured_data['Referrer'] = $_SERVER['HTTP_REFERER'];
             }
             
@@ -2854,7 +2854,7 @@ function ch_misc_setUcapturedVariable($post, $ucaptured = NULL, $combine_phone =
       $ucaptured['Referrer'] = $post['referrer'];
     }
     /*
-    if (isset($_SERVER['HTTP_REFERER']) && $_SERVER['HTTP_REFERER'] && !strpos($_SERVER['HTTP_REFERER'], '://www.cloudhostinghq.com')) {
+    if (isset($_SERVER['HTTP_REFERER']) && $_SERVER['HTTP_REFERER'] && !strpos($_SERVER['HTTP_REFERER'], '://cloudhostinghq.com')) {
       $ucaptured['Referrer'] = $_SERVER['HTTP_REFERER'];
     }
     */
@@ -2982,7 +2982,7 @@ function ch_misc_makeRequest_ajax() {
       }
       $save_submission['Sumbission page'] = $post['url'];
       /*
-      if (isset($_SERVER['HTTP_REFERER']) && $_SERVER['HTTP_REFERER'] && !strpos($_SERVER['HTTP_REFERER'], '://www.cloudhostinghq.com')) {
+      if (isset($_SERVER['HTTP_REFERER']) && $_SERVER['HTTP_REFERER'] && !strpos($_SERVER['HTTP_REFERER'], '://cloudhostinghq.com')) {
         $save_submission['Referrer'] = $_SERVER['HTTP_REFERER'];
       }
       */
@@ -3203,16 +3203,16 @@ function ch_misc_makeRequest_ajax() {
          
     
     if($submission['Version'] == 1) {
-      $output = '<a class="guide" href="/pdfs/VoIP-Buyers-Guide-Questions.pdf" target="_blank">Download Your Free VoIP Buyer\'s Guide<img src="/sites/all/themes/ch/css/images/click-here-button.png" /></a><div class="quote-final">' . t('<p><strong>Thank you</strong> for taking your time to complete our form. A VoIP Expert will be contacting you shortly to provide you with a personalized VoIP Service quote.</p><p>In the meantime, you can gain a great deal of VoIP information right here at <a href="http://www.cloudhostinghq.com">www.cloudhostinghq.com</a></p>') . '</div>';
+      $output = '<a class="guide" href="/pdfs/VoIP-Buyers-Guide-Questions.pdf" target="_blank">Download Your Free VoIP Buyer\'s Guide<img src="/sites/all/themes/ch/css/images/click-here-button.png" /></a><div class="quote-final">' . t('<p><strong>Thank you</strong> for taking your time to complete our form. A VoIP Expert will be contacting you shortly to provide you with a personalized VoIP Service quote.</p><p>In the meantime, you can gain a great deal of VoIP information right here at <a href="http://cloudhostinghq.com">cloudhostinghq.com</a></p>') . '</div>';
     }
     else {
-      $output = '<p><strong>Thank you</strong> for taking your time to complete our form. A VoIP Expert will be contacting you shortly to provide you with a personalized VoIP Service quote.</p><p>In the meantime, you can gain a great deal of VoIP information right here at <a href="http://www.cloudhostinghq.com">www.cloudhostinghq.com</a></p>'; 
+      $output = '<p><strong>Thank you</strong> for taking your time to complete our form. A VoIP Expert will be contacting you shortly to provide you with a personalized VoIP Service quote.</p><p>In the meantime, you can gain a great deal of VoIP information right here at <a href="http://cloudhostinghq.com">cloudhostinghq.com</a></p>'; 
     }
     
     if ($post['source'] == 'page') {
       switch ($post['version']) {
         case '1':
-          //$output .= '<script>top.location.href="http://www.cloudhostinghq.com/request-voip-phone-system-quote-final";</script>';
+          //$output .= '<script>top.location.href="http://cloudhostinghq.com/request-voip-phone-system-quote-final";</script>';
           break;
         
       }
@@ -3773,7 +3773,7 @@ $wp_tags = array (
     if (preg_match('/(.*)<!--more-->(.*)/s', $form_state['values']['body']['und'][0]['value'], $matches)) {
       //dpm($matches);
       ////$form_state['values']['body']['und'][0]['value'] = $matches[1] . /*'<span id="more"></span>' .*/ $matches[2];
-      ////////$form_state['values']['body']['und'][0]['summary'] = $matches[1] . '<p><a href="/' . $form_state['values']['url_alias'] . '#more" class="more-link">Read the rest of this entry Р В Р’В Р Р†Р вЂљРІвЂћСћР В РІР‚в„ўР вЂ™Р’В»</a></p>';
+      ////////$form_state['values']['body']['und'][0]['summary'] = $matches[1] . '<p><a href="/' . $form_state['values']['url_alias'] . '#more" class="more-link">Read the rest of this entry Р В Р’В Р вЂ™Р’В Р В Р вЂ Р В РІР‚С™Р Р†РІР‚С›РЎС›Р В Р’В Р Р†Р вЂљРІвЂћСћР В РІР‚в„ўР вЂ™Р’В»</a></p>';
       $form_state['values']['body']['und'][0]['summary'] = $matches[1];
       //$body_full_markup = preg_replace('|\[video:.*(http.*)\]|', '<a href="$1"> [Watch a video] </a>', $body_full_markup);
     }
@@ -3990,7 +3990,7 @@ To faster verify and publish your review, please click on the email verification
 
 Best Wishes,
 CloudHostingHQ Team
-', array('!url' => 'http://www.cloudhostinghq.com/approve/email/' . $params['verification_code']));
+', array('!url' => 'http://cloudhostinghq.com/approve/email/' . $params['verification_code']));
       
       break;
     
@@ -4016,7 +4016,7 @@ Please, don\'t forget to log in to access this page.
 
 Best wishes,
 CloudHostingHQ Team
-', array('!pending_reviews' => 'http://www.cloudhostinghq.com/admin/content/approve-reviews', '!provider' => $params['provider_name']));
+', array('!pending_reviews' => 'http://cloudhostinghq.com/admin/content/approve-reviews', '!provider' => $params['provider_name']));
       
       break;
     
@@ -4098,7 +4098,7 @@ function ch_misc_mail_alter(&$message){
   $default_from = variable_get('site_mail', ini_get('sendmail_from'));
   
   if($message['from'] == $default_from){
-    $message['from'] = '"'. variable_get('site_name', 'www.cloudhostinghq.com') .'" <'. $default_from .'>';
+    $message['from'] = '"'. variable_get('site_name', 'cloudhostinghq.com') .'" <'. $default_from .'>';
     $message['headers']['From'] = $message['headers']['Sender'] = $message['headers']['Return-Path'] = $message['headers']['Errors-To'] = $message['headers']['Reply-To'] = $message['from'];
   }
 }
@@ -4146,7 +4146,7 @@ function ch_misc_sendMessage($tag, $data = NULL) {
       
       global $language;
       $params['verification_code'] = $data['verification_code'];
-      drupal_mail('ch_misc', 'email_verification', $data['email'], $language, $params, 'www.cloudhostinghq.com <contact@cloudhostinghq.com>');
+      drupal_mail('ch_misc', 'email_verification', $data['email'], $language, $params, 'cloudhostinghq.com <contact@cloudhostinghq.com>');
       
       break;
     
@@ -4158,8 +4158,8 @@ function ch_misc_sendMessage($tag, $data = NULL) {
       $params['lname'] = $data['lname'];
       $params['email'] = $data['email'];
       $params['subscribed'] = $data['subscribed'];
-      drupal_mail('ch_misc', 'user_message', 'all4senses@gmail.com', $language, $params, 'www.cloudhostinghq.com <contact@cloudhostinghq.com>');
-      drupal_mail('ch_misc', 'user_message', 'ry@getvoip.com', $language, $params, 'www.cloudhostinghq.com <contact@cloudhostinghq.com>');
+      drupal_mail('ch_misc', 'user_message', 'all4senses@gmail.com', $language, $params, 'cloudhostinghq.com <contact@cloudhostinghq.com>');
+      drupal_mail('ch_misc', 'user_message', 'ry@getvoip.com', $language, $params, 'cloudhostinghq.com <contact@cloudhostinghq.com>');
       
       break;
     
@@ -4385,7 +4385,7 @@ function theme_ch_misc_image_style(array $variables) {
 
 function theme_ch_misc_image(array $variables) {
   
-//  if (!file_exists(str_replace(array('http://www.cloudhostinghq.com/', '%20'), array('', ' '), $variables['path']))) {
+//  if (!file_exists(str_replace(array('http://cloudhostinghq.com/', '%20'), array('', ' '), $variables['path']))) {
 //    return NULL;
 //  }
   
@@ -5179,7 +5179,7 @@ function ch_misc_views_pre_render(&$view) {
           '#value' => $provider_isset ? $providers[$_GET['provider']] : $providers[''],
           ////'#default_value' => 'VoIPo',
           ////'#value' => 'VoIPo',
-          '#attributes' => array('id' => 'select_provider',  'onChange' => "top.location.href='http://www.cloudhostinghq.com/" . $_GET['q'] . "?provider=' + encodeURIComponent(document.getElementById('select_provider').options[document.getElementById('select_provider').selectedIndex].value) + '$url'"),
+          '#attributes' => array('id' => 'select_provider',  'onChange' => "top.location.href='http://cloudhostinghq.com/" . $_GET['q'] . "?provider=' + encodeURIComponent(document.getElementById('select_provider').options[document.getElementById('select_provider').selectedIndex].value) + '$url'"),
 
       ); 
       
@@ -5225,7 +5225,7 @@ function ch_misc_views_pre_render(&$view) {
           '#value' => $provider_isset ? $providers[$_GET['provider']] : $providers[''],
           ////'#default_value' => 'VoIPo',
           ////'#value' => 'VoIPo',
-          '#attributes' => array('id' => 'select_provider',  'onChange' => "top.location.href='http://www.cloudhostinghq.com/" . $_GET['q'] . "?provider=' + encodeURIComponent(document.getElementById('select_provider').options[document.getElementById('select_provider').selectedIndex].value) + '$url'"),
+          '#attributes' => array('id' => 'select_provider',  'onChange' => "top.location.href='http://cloudhostinghq.com/" . $_GET['q'] . "?provider=' + encodeURIComponent(document.getElementById('select_provider').options[document.getElementById('select_provider').selectedIndex].value) + '$url'"),
 
       ); 
       
@@ -5817,7 +5817,7 @@ function ch_misc_getProviderQuickData($target, $data) {
         $out = theme('ch_misc_fivestar_static', array('rating' => $all_data_quick[$data['data']->nid]['erating'], 'stars' => 5, 'tag' => 'overall', 'widget' => array('name' => 'stars', 'css' => 'stars.css')));
       }
       
-      $out .= '<div class="link">' . l('Read review Р В Р’В Р Р†Р вЂљРІвЂћСћР В РІР‚в„ўР вЂ™Р’В»', 'node/' . $data['data']->nid) . '</div>';
+      $out .= '<div class="link">' . l('Read review Р В Р’В Р вЂ™Р’В Р В Р вЂ Р В РІР‚С™Р Р†РІР‚С›РЎС›Р В Р’В Р Р†Р вЂљРІвЂћСћР В РІР‚в„ўР вЂ™Р’В»', 'node/' . $data['data']->nid) . '</div>';
       
       return $out;
       
@@ -6266,7 +6266,7 @@ function ch_misc_sortArrayByWeight($a, $b)
  * 
  * Example of using:
  * 
- * uasort($array_with_elements_contained_key_name, 'ch_misc_sortArrayByСlicks');
+ * uasort($array_with_elements_contained_key_name, 'ch_misc_sortArrayByРЎlicks');
  */
 function ch_misc_sortArrayByClicks($a, $b) {
   if ($a['clicks'] == $b['clicks']) {
@@ -6354,7 +6354,7 @@ function ch_misc_sortArrayByNameReverse($a, $b) {
 function ch_blocks_getSocialiteButtons($url = NULL, $title = NULL) {
 
   if (!$url) {
-    $url = 'http://www.cloudhostinghq.com' . ($_GET['q'] == 'home' ? '' : $_SERVER['REQUEST_URI']);
+    $url = 'http://cloudhostinghq.com' . ($_GET['q'] == 'home' ? '' : $_SERVER['REQUEST_URI']);
   }
   
   drupal_add_js('sites/all/libraries/jquery.plugins/socialite/socialite.min.js');

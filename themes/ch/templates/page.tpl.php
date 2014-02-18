@@ -6,7 +6,7 @@
       <div id="header-menu-back"></div>
       
       <div id="logo-block">
-        <a href="<?php print $front_page; ?>" title="<?php print 'CloudHostingHQ.com'; ?>" id="logo">
+        <a href="<?php print $front_page; ?>" id="logo">
           <img src="<?php echo '/sites/all/themes/ch/css/images/ch-logo-main-top.png'; ?>" alt="CloudHostingHQ.com" title="<?php print 'CloudHostingHQ.com Home'; ?>" />
         </a>
         
