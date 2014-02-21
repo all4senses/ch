@@ -589,8 +589,8 @@ function ch_process_page(&$variables) {
   
   
   // Set a user referer.
-  //$module_path_misc = drupal_get_path('module', 'ch_misc');
-  //drupal_add_js( $module_path_misc . '/js/ch_setReferer.js'); 
+  $module_path_misc = drupal_get_path('module', 'ch_misc');
+  drupal_add_js( $module_path_misc . '/js/ch_setReferer.js'); 
   //drupal_add_js( $module_path_misc . '/js/ch_addBounceX.js'); 
   
   

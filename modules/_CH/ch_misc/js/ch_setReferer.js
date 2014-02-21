@@ -3,7 +3,10 @@
   Drupal.behaviors.ch_setReferer = {
     attach: function (context, settings) {
        
-       (jQuery).ajax({
+      $('body').one('mouseover', function() {
+          //console.log('ooooover...');
+          
+          (jQuery).ajax({
             
                 url: '/referer', 
                 data: {
@@ -26,6 +29,8 @@
                      */
             }); // end of (jQuery).ajax
         
+
+        });
 
 
 

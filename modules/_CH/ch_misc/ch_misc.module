@@ -502,8 +502,9 @@ function ch_misc_js_alter(&$javascript) {
 function ch_misc_flush_caches() {
   
   // Remove all minified files from jsmin-ch folder.
-  // Uncomment in case ov changing any js
+  // Uncomment in case of changing any js
   
+  // No need to delete files as they are deleted on rebuilding after ch_minified_js variable reset.
 //  $dir = 'f/jsmin-ch';
 //  $objects = scandir($dir);
 //  foreach ($objects as $object) {
@@ -5591,6 +5592,11 @@ function ch_misc_getProviderQuickData($target, $data) {
       
       
       return $all_data_quick[$data['data']->nid]['name'];
+      
+      
+      
+      
+      
       
 //      if (!empty($all_data_quick[$data['data']->nid]['i_web'])) {
 //        $link = $all_data_quick[$data['data']->nid]['i_web'];
