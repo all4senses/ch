@@ -51,6 +51,7 @@ Equation for font sizing:
 /* Font convert tool: http://www.font2web.com/  */
  
 /* Chrome, FF, Opera.... + IE */
+/*
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
@@ -74,7 +75,7 @@ Equation for font sizing:
   src: url(/sites/all/libraries/fonts/google/open-sans-n-ubuntu/ubuntu-500-normal.eot);
   src: local('Ubuntu Medium'), local('Ubuntu-Medium'), url(/sites/all/libraries/fonts/google/open-sans-n-ubuntu/ubuntu-500-normal.eot) format('embedded-opentype'), url(/sites/all/libraries/fonts/google/open-sans-n-ubuntu/ubuntu-500-normal.woff) format('woff');
 }
-
+*/
 
 @font-face {
   font-family: 'FaktConPro-SemiBold'; 
