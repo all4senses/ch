@@ -5591,7 +5591,7 @@ function ch_misc_getProviderQuickData($target, $data) {
       $out = '';
       
       
-      return $all_data_quick[$data['data']->nid]['name'];
+      //return $all_data_quick[$data['data']->nid]['name'];
       
       
       
