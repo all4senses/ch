@@ -748,7 +748,9 @@ body.sidebar-second #sidebar-second{float: right; margin-right: 18px; padding: 1
 .sidebar .block{overflow: hidden; margin: 12px 0; position: relative; z-index: 1; border: 1px solid lightgray;}
 
 /*.sidebar .block-title{padding: 10px 5px 10px 10px; border-bottom: 3px solid lightgray; color: white; background: url("images/main-menu-hover.png") repeat-x 0 0px; font-weight: normal; margin: 0; font-size: 16px; border-radius: 7px 7px 0 0;}*/
-.sidebar .block-title{padding: 20px 5px 5px 10px; color: gray; background: url(/sites/all/themes/ch/css/images/sprite-2.png) repeat-x 0 -703px; font-weight: normal; margin: 0; font-size: 22px; font-family: 'FaktConPro-SemiBold';} 
+
+/*.sidebar .block-title{padding: 20px 5px 5px 10px; color: gray; background: url(/sites/all/themes/ch/css/images/sprite-2.png) repeat-x 0 -703px; font-weight: normal; margin: 0; font-size: 22px; font-family: 'FaktConPro-SemiBold';} */
+.sidebar .block-title{padding: 20px 5px 5px 10px; color: gray; background: url(/sites/all/themes/ch/css/images/sprite-2.png) repeat-x 0 -703px; font-weight: 500; margin: 0; font-size: 22px; font-family: 'Roboto';} 
 
 
 .sidebar .block li{list-style: none; clear: both;}
@@ -1107,7 +1109,9 @@ margin-top: 100px;
 
 
 .block-views h2,
-.block-views h3{font-size: 25px; font-weight: normal; font-family: 'FaktConPro-SemiBold'; margin-bottom: 3px;}
+.block-views h3
+/*{font-size: 25px; font-weight: normal; font-family: 'FaktConPro-SemiBold'; margin-bottom: 3px;}*/
+{font-size: 25px; font-weight: 500; font-family: 'Roboto'; margin-bottom: 3px;}
 
 /* Chart Featured providers, Coupons */
 #block-views-providers-block_chart_featured_providers .block-title,
@@ -1369,7 +1373,8 @@ list-style: none; position: relative; top: 1px; margin: 0 .2em 1px 0; border-bot
 .node-type-provider .site a {background: url(/sites/all/themes/ch/css/images/sprite-2.png) repeat-x 0 -763px #2ab967; text-indent: 0; display: block; height: 25px; width: 260px; margin: 15px auto 20px; padding: 7px 0 8px 0; color: white; border-radius: 5px; font-size: 18px;}
 
 
-.node-type-provider #left-col .ch_votes .caption {padding: 20px 5px 2px 10px; color: gray; background: url(/sites/all/themes/ch/css/images/sprite-2.png) repeat-x 0 -703px; font-weight: normal; margin: 0; font-size: 22px; font-family: FaktConPro-SemiBold; border-radius: 0;}
+/*.node-type-provider #left-col .ch_votes .caption {padding: 20px 5px 2px 10px; color: gray; background: url(/sites/all/themes/ch/css/images/sprite-2.png) repeat-x 0 -703px; font-weight: normal; margin: 0; font-size: 22px; font-family: FaktConPro-SemiBold; border-radius: 0;}*/
+.node-type-provider #left-col .ch_votes .caption {padding: 20px 5px 2px 10px; color: gray; background: url(/sites/all/themes/ch/css/images/sprite-2.png) repeat-x 0 -703px; font-weight: 500; margin: 0; font-size: 22px; font-family: 'Roboto'; border-radius: 0;}
 .node-type-provider #left-col .ch_votes .caption span {float: left; margin-right: 5px;}
 .node-type-provider #left-col .ch_votes .ch_vote {margin-top: 4px;}
 .node-type-provider #left-col .ch_votes .ch_vote.even {background: none;}
@@ -1387,7 +1392,8 @@ list-style: none; position: relative; top: 1px; margin: 0 .2em 1px 0; border-bot
 /* Top 5 WH provider block on provider page */
 #block-views-providers-block_topwhost_small {clear: both; margin: 20px 0 0 0; border: 1px solid lightgray;}
 
-#block-views-providers-block_topwhost_small h2 {padding: 20px 5px 5px 10px; color: gray; background: url(/sites/all/themes/ch/css/images/sprite-2.png) repeat-x 0 -703px; font-weight: normal; margin: 0; font-size: 22px; font-family: FaktConPro-SemiBold;}
+/*#block-views-providers-block_topwhost_small h2 {padding: 20px 5px 5px 10px; color: gray; background: url(/sites/all/themes/ch/css/images/sprite-2.png) repeat-x 0 -703px; font-weight: normal; margin: 0; font-size: 22px; font-family: FaktConPro-SemiBold;}*/
+#block-views-providers-block_topwhost_small h2 {padding: 20px 5px 5px 10px; color: gray; background: url(/sites/all/themes/ch/css/images/sprite-2.png) repeat-x 0 -703px; font-weight: 500; margin: 0; font-size: 22px; font-family: 'Roboto';}
 .page-node #main .main-content #block-views-providers-block_topwhost_small.block-views .content {padding: /*0 10px*/0; border: none;}
 #block-views-providers-block_topwhost_small .view-providers {box-shadow: none;}
 #block-views-providers-block_topwhost_small table {border: none;}
@@ -1586,18 +1592,14 @@ h2.rcaption a, h3.rcaption a, /*.node-review*/ h3.rcaption a:hover{color: white;
 
 
 /*.page-node #main .main-content h1{color: gray; font-weight: 600; font-size: 28px;}*/
-.page-node #main .main-content h1 {font-size: 38px; line-height: 45px; font-family: 'FaktConPro-SemiBold'; margin: 10px 0 2px 0;}
+/*.page-node #main .main-content h1 {font-size: 38px; line-height: 45px; font-family: 'FaktConPro-SemiBold'; margin: 10px 0 2px 0;}*/
+.page-node #main .main-content h1 {font-size: 38px; line-height: 45px; font-family: 'Roboto'; font-weight: 500; margin: 10px 0 2px 0;}
 
 h1.preface,
 .front h1 {margin-top: 3px; padding: 0;}
 
-h1.preface, #main h2.preface {
-/*font-family: arial;*/
-font-family: 'FaktConPro-SemiBold';
-font-weight: normal;
-font-size: 25px; /*22px*/
-line-height: normal;
-}
+/*h1.preface, #main h2.preface {font-family: 'FaktConPro-SemiBold'; font-weight: normal; font-size: 25px; line-height: normal;}*/
+h1.preface, #main h2.preface {font-family: 'Roboto'; font-weight: 500; font-size: 25px; line-height: normal;}
 
 
 .front h1.preface {
@@ -1633,7 +1635,9 @@ color: #666666;
 #main .node-teaser h2 {margin-top: 10px;}
 
 /*.node-teaser h2 a, .node-teaser h3 a{color: #004286; font-size: 18px; line-height: 22px; font-weight: bold; margin: 0; border: medium none; padding: 0;}*/
-.node-teaser h2 a, .node-teaser h3 a{color: gray; font-size: 24px; line-height: 22px; font-weight: bold; margin: 0; border: medium none; padding: 0; font-family: FaktConPro-SemiBold;}
+
+/*.node-teaser h2 a, .node-teaser h3 a{color: gray; font-size: 24px; line-height: 22px; font-weight: bold; margin: 0; border: medium none; padding: 0; font-family: FaktConPro-SemiBold;}*/
+.node-teaser h2 a, .node-teaser h3 a{color: gray; font-size: 24px; line-height: 22px; font-weight: 500; margin: 0; border: medium none; padding: 0; font-family: 'Roboto';}
 
 .node-teaser h2 a {color: #333333;}
 .node-teaser h2 a:hover {color: #009ce2;}
