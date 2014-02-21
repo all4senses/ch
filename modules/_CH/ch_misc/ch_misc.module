@@ -512,7 +512,7 @@ function ch_misc_flush_caches() {
 //      unlink($dir . "/" . $object);
 //    }
 //  }
-  variable_del('ch_minified_js');
+  ////variable_del('ch_minified_js');
   
   
   // Recalculate the reviews amount.
