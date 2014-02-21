@@ -1925,9 +1925,9 @@ function ch_misc_getArticleTeaserData($target, $body_full_markup, $nid, $charact
   $last_pos = strrpos($teaser, ' ');
   
   // $teaser = substr_replace ($teaser, '...' . l(t('Read More'), 'node/' . $nid, array('attributes' => array('class' => array('more')))) , $last_pos, strlen($matches[1]));
-  ////$teaser = substr_replace ($teaser, '...' . l('Read the rest of this entry Р В Р’В Р вЂ™Р’В Р В Р вЂ Р В РІР‚С™Р Р†РІР‚С›РЎС›Р В Р’В Р Р†Р вЂљРІвЂћСћР В РІР‚в„ўР вЂ™Р’В»', 'node/' . $nid, array('attributes' => array('class' => array('more')))), $last_pos);
+  ////$teaser = substr_replace ($teaser, '...' . l('Read the rest of this entry Р В Р’В Р вЂ™Р’В Р В РІР‚в„ўР вЂ™Р’В Р В Р’В Р В РІР‚В Р В Р’В Р Р†Р вЂљРЎв„ўР В Р вЂ Р Р†Р вЂљРЎвЂєР РЋРЎвЂєР В Р’В Р вЂ™Р’В Р В Р вЂ Р В РІР‚С™Р Р†РІР‚С›РЎС›Р В Р’В Р Р†Р вЂљРІвЂћСћР В РІР‚в„ўР вЂ™Р’В»', 'node/' . $nid, array('attributes' => array('class' => array('more')))), $last_pos);
   
-  //$teaser = substr_replace ($teaser, '... ' . l('Read more Р В Р’В Р вЂ™Р’В Р В Р вЂ Р В РІР‚С™Р Р†РІР‚С›РЎС›Р В Р’В Р Р†Р вЂљРІвЂћСћР В РІР‚в„ўР вЂ™Р’В»', 'node/' . $nid, array('attributes' => array('class' => array('more')))), $last_pos);
+  //$teaser = substr_replace ($teaser, '... ' . l('Read more Р В Р’В Р вЂ™Р’В Р В РІР‚в„ўР вЂ™Р’В Р В Р’В Р В РІР‚В Р В Р’В Р Р†Р вЂљРЎв„ўР В Р вЂ Р Р†Р вЂљРЎвЂєР РЋРЎвЂєР В Р’В Р вЂ™Р’В Р В Р вЂ Р В РІР‚С™Р Р†РІР‚С›РЎС›Р В Р’В Р Р†Р вЂљРІвЂћСћР В РІР‚в„ўР вЂ™Р’В»', 'node/' . $nid, array('attributes' => array('class' => array('more')))), $last_pos);
   $teaser = '<div class="teaser-content">' . substr_replace ($teaser, '... ' . l('Read more', 'node/' . $nid, array('attributes' => array('class' => array('more')))), $last_pos) . '</div>';
   
   
@@ -3773,7 +3773,7 @@ $wp_tags = array (
     if (preg_match('/(.*)<!--more-->(.*)/s', $form_state['values']['body']['und'][0]['value'], $matches)) {
       //dpm($matches);
       ////$form_state['values']['body']['und'][0]['value'] = $matches[1] . /*'<span id="more"></span>' .*/ $matches[2];
-      ////////$form_state['values']['body']['und'][0]['summary'] = $matches[1] . '<p><a href="/' . $form_state['values']['url_alias'] . '#more" class="more-link">Read the rest of this entry Р В Р’В Р вЂ™Р’В Р В Р вЂ Р В РІР‚С™Р Р†РІР‚С›РЎС›Р В Р’В Р Р†Р вЂљРІвЂћСћР В РІР‚в„ўР вЂ™Р’В»</a></p>';
+      ////////$form_state['values']['body']['und'][0]['summary'] = $matches[1] . '<p><a href="/' . $form_state['values']['url_alias'] . '#more" class="more-link">Read the rest of this entry Р В Р’В Р вЂ™Р’В Р В РІР‚в„ўР вЂ™Р’В Р В Р’В Р В РІР‚В Р В Р’В Р Р†Р вЂљРЎв„ўР В Р вЂ Р Р†Р вЂљРЎвЂєР РЋРЎвЂєР В Р’В Р вЂ™Р’В Р В Р вЂ Р В РІР‚С™Р Р†РІР‚С›РЎС›Р В Р’В Р Р†Р вЂљРІвЂћСћР В РІР‚в„ўР вЂ™Р’В»</a></p>';
       $form_state['values']['body']['und'][0]['summary'] = $matches[1];
       //$body_full_markup = preg_replace('|\[video:.*(http.*)\]|', '<a href="$1"> [Watch a video] </a>', $body_full_markup);
     }
@@ -5589,6 +5589,9 @@ function ch_misc_getProviderQuickData($target, $data) {
       $all_data_quick = ch_misc_getProvidersDataQuick();
       $out = '';
       
+      
+      return $all_data_quick[$data['data']->nid]['name'];
+      
 //      if (!empty($all_data_quick[$data['data']->nid]['i_web'])) {
 //        $link = $all_data_quick[$data['data']->nid]['i_web'];
 //      }
@@ -5817,7 +5820,7 @@ function ch_misc_getProviderQuickData($target, $data) {
         $out = theme('ch_misc_fivestar_static', array('rating' => $all_data_quick[$data['data']->nid]['erating'], 'stars' => 5, 'tag' => 'overall', 'widget' => array('name' => 'stars', 'css' => 'stars.css')));
       }
       
-      $out .= '<div class="link">' . l('Read review Р В Р’В Р вЂ™Р’В Р В Р вЂ Р В РІР‚С™Р Р†РІР‚С›РЎС›Р В Р’В Р Р†Р вЂљРІвЂћСћР В РІР‚в„ўР вЂ™Р’В»', 'node/' . $data['data']->nid) . '</div>';
+      $out .= '<div class="link">' . l('Read review Р В Р’В Р вЂ™Р’В Р В РІР‚в„ўР вЂ™Р’В Р В Р’В Р В РІР‚В Р В Р’В Р Р†Р вЂљРЎв„ўР В Р вЂ Р Р†Р вЂљРЎвЂєР РЋРЎвЂєР В Р’В Р вЂ™Р’В Р В Р вЂ Р В РІР‚С™Р Р†РІР‚С›РЎС›Р В Р’В Р Р†Р вЂљРІвЂћСћР В РІР‚в„ўР вЂ™Р’В»', 'node/' . $data['data']->nid) . '</div>';
       
       return $out;
       
@@ -6266,7 +6269,7 @@ function ch_misc_sortArrayByWeight($a, $b)
  * 
  * Example of using:
  * 
- * uasort($array_with_elements_contained_key_name, 'ch_misc_sortArrayByРЎlicks');
+ * uasort($array_with_elements_contained_key_name, 'ch_misc_sortArrayByР РЋlicks');
  */
 function ch_misc_sortArrayByClicks($a, $b) {
   if ($a['clicks'] == $b['clicks']) {
