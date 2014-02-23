@@ -6016,8 +6016,7 @@ function ch_misc_getProviderQuickData($target, $data) {
       }
       */
       
-      global $user;
-      if ($user->uid == 1 && isset($data['view_display']) && isset($display_to_sprite[$data['view_display']])) {
+      if (isset($data['view_display']) && isset($display_to_sprite[$data['view_display']])) {
       
         if ($p_image = ch_misc_getProviderLogoFromSprite($data['data']->nid, $display_to_sprite[$data['view_display']], $all_data_quick)) {
           $out = ch_misc_getTrackingUrl($p_image, NULL, $data['data']->nid, NULL, NULL, NULL, $all_data_quick[$data['data']->nid], @$data['service_type']);
