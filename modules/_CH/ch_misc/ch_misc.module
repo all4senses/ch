@@ -5503,6 +5503,32 @@ function ch_misc_imageOptimizeOnServer($file) {
 
 
 /**
+ * Return sprite image with link for a provider from certain sprite by nid.
+ */
+function ch_misc_getProviderLogoFromSprite($nid, $sprite_name, $all_data_quick = NULL) {
+
+  $ch_providers_sprites = variable_get('ch_providers_sprites');
+  if (isset($ch_providers_sprites[$sprite_name]['data'][$nid])) {
+    $out_sprite_path = 'f/p/';
+    if (!$all_data_quick) {
+      $all_data_quick = ch_misc_getProvidersDataQuick();
+    }
+    //dpm($ch_providers_sprites[$sprite_name]['data'][$nid]);
+    
+    if ($ch_providers_sprites[$sprite_name]['data'][$nid]['h'] < 45) {
+      return '<div style="width: ' . $ch_providers_sprites[$sprite_name]['data'][$nid]['w'] . 'px; height: ' . (45 - $ch_providers_sprites[$sprite_name]['data'][$nid]['h'])/2 . 'px"></div><div title="' . $all_data_quick[$nid]['name'] . ' site" style="margin: auto; width: ' . $ch_providers_sprites[$sprite_name]['data'][$nid]['w'] . 'px; height: ' . $ch_providers_sprites[$sprite_name]['data'][$nid]['h'] . 'px; background: url('. "'/" . $out_sprite_path . $sprite_name . '.png?' . $ch_providers_sprites[$sprite_name]['time'] . "')" . ' no-repeat 0 -' . $ch_providers_sprites[$sprite_name]['data'][$nid]['y'] . 'px transparent;"></div><div style="width: ' . $ch_providers_sprites[$sprite_name]['data'][$nid]['w'] . 'px; height: ' . (45 - $ch_providers_sprites[$sprite_name]['data'][$nid]['h'])/2 . 'px"></div>';
+    }
+    else 
+      {
+      return '<div title="' . $all_data_quick[$nid]['name'] . ' site" style="margin: auto; width: ' . $ch_providers_sprites[$sprite_name]['data'][$nid]['w'] . 'px; height: ' . $ch_providers_sprites[$sprite_name]['data'][$nid]['h'] . 'px; background: url('. "'/" . $out_sprite_path . $sprite_name . '.png?' . $ch_providers_sprites[$sprite_name]['time'] . "')" . ' no-repeat 0 -' . $ch_providers_sprites[$sprite_name]['data'][$nid]['y'] . 'px transparent;"></div>';
+    }
+    
+  }
+  return NULL;
+}        
+
+
+/**
  * Rebuilds providers logos sprites.
  */
 function ch_misc_rebuildProvidersLogosSprites($listing_pos_fields = NULL, $all_data_quick = NULL) {
@@ -5915,6 +5941,80 @@ function ch_misc_getProviderQuickData($target, $data) {
       dpm(@$data['view_display']);
       //return $all_data_quick[$data['data']->nid]['name'];
     
+      
+      
+      
+      // Render a logo from sprite.
+      
+      
+      //'home_top_providers' => array('image_style' => 'logo_provider_chart_main', 'providers_views_displays' => array('block_h_top_sh_table'), 'listing_pos_fields' => array('field_p_listposition_sh')),
+      //'top_webhost_small_block' => array('image_style' => 'article_thumbnail_side_block', 'providers_views_displays' => array('block_topwhost_small'), 'listing_pos_fields' => array('field_p_listposition_sh')),
+  
+              
+      $display_to_sprite = array(
+                                  'block_h_top_sh_table' => 'home_top_providers',
+                                  'block_topwhost_small' => 'top_webhost_small_block',
+      );
+      
+      /*
+      $url_to_sprite = array( '/' => 'home_top_providers', 
+                              
+                              '/reviews' => 'all_reviews_providers', 
+          
+                              '/business' => 'top_bu_providers', 
+                              
+                              '/get/iframe/business-voip-chart' => 'top_bu_providers', 
+          
+                              '/business-voip-reviews' => 'top_bu_providers', 
+                              '/reviews/business' => 'top_bu_providers_rev', 
+          
+                              '/speed-test-tool' => 'top_bu_providers', 
+          
+                              '/hosted-pbx' => 'top_pbx_providers', 
+
+                              '/sip-trunking' => 'top_sip_providers',
+
+                              '/fax' => 'top_ifa_providers',
+
+                              '/canada' => 'top_ca_providers',
+
+                              '/residential' => 'top_re_providers', 
+                              
+                              '/residential-voip-reviews' => 'top_re_providers',
+                              '/reviews/residential' => 'top_re_providers_rev',
+                            );
+
+      $current_url = $_SERVER['REQUEST_URI'];
+      
+      if (isset($url_to_sprite[$current_url]) || $_GET['q'] == 'home') {
+      
+        if ($_GET['q'] == 'home') {
+          $sprite_name = 'home_top_providers';
+        }
+        else {
+          $sprite_name = $url_to_sprite[$current_url];
+        }
+
+        
+        if ($p_image = ch_misc_getProviderLogoFromSprite($data['data']->nid, $sprite_name, $all_data_quick)) {
+          return ch_misc_getTrackingUrl($p_image, NULL, $data['data']->nid, NULL, NULL, NULL, $all_data_quick[$data['data']->nid], @$data['service_type']);
+        }
+      
+      }
+      */
+      
+      global $user;
+      if ($user->uid == 1 && isset($data['view_display']) && isset($display_to_sprite[$data['view_display']])) {
+      
+        if ($p_image = ch_misc_getProviderLogoFromSprite($data['data']->nid, $display_to_sprite[$data['view_display']], $all_data_quick)) {
+          return ch_misc_getTrackingUrl($p_image, NULL, $data['data']->nid, NULL, NULL, NULL, $all_data_quick[$data['data']->nid], @$data['service_type']);
+        }
+      
+      }
+      
+      
+      
+      
       
       if (!empty($all_data_quick[$data['data']->nid]['i_logo_uri'])) {
         
