@@ -5912,20 +5912,9 @@ function ch_misc_getProviderQuickData($target, $data) {
       $all_data_quick = ch_misc_getProvidersDataQuick();
       $out = '';
       
-      
+      dpm(@$data['view_display']);
       //return $all_data_quick[$data['data']->nid]['name'];
-      
-      
-      
-      
-      
-      
-//      if (!empty($all_data_quick[$data['data']->nid]['i_web'])) {
-//        $link = $all_data_quick[$data['data']->nid]['i_web'];
-//      }
-//      else {
-//        $link = url('node/' . $data['data']->nid);
-//      }
+    
       
       if (!empty($all_data_quick[$data['data']->nid]['i_logo_uri'])) {
         
@@ -5949,7 +5938,7 @@ function ch_misc_getProviderQuickData($target, $data) {
 //           dpm($all_data_quick[$data['data']->nid]);
 //        }
         
-        //$out = ch_misc_getTrackingUrl($image, NULL, $data['data']->nid, NULL, NULL, @$data['service_type']);
+
         $out = ch_misc_getTrackingUrl($image, $all_data_quick[$data['data']->nid]['subpath'], $data['data']->nid, NULL, NULL, @$data['service_type']);
         //$out .= ch_misc_getTrackingUrl('', NULL, $data['data']->nid, NULL, 'reviews visit-site-btn', @$data['service_type']);
       }
