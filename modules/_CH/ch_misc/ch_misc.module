@@ -3261,7 +3261,7 @@ function ch_misc_testPage() {
   
   $out = '<div>Start test...</div>';
 
-  
+  /*
       $var_p_all_data_quick = array();
       $p_nid_to_reset = 86;
       
@@ -3287,6 +3287,13 @@ function ch_misc_testPage() {
       
       dpm($var_p_all_data_quick);
       
+      */
+     
+  $url = 'f/styles/logo_provider_chart_main/public/p/logos/iPage-logo.png?itok=vdJC0ggZ';
+  dpm($url);
+  $url = preg_replace('/^(.*)\?(*.)$/', '$1', $url);
+  dpm($url);
+  
   return $out . '<br>End of Test';
 }
 
