@@ -5570,6 +5570,7 @@ function ch_misc_rebuildProvidersLogosSprites($listing_pos_fields = NULL, $all_d
     */
   );
   
+  dpm($listing_pos_fields);
   
   // Skip refreshing sprites without selected listing fields.
   if($listing_pos_fields && $ch_providers_sprites = variable_get('ch_providers_sprites')) {
