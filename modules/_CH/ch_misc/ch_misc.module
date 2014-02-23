@@ -938,9 +938,9 @@ function ch_misc_identifyNodeType($nid) {
  */
 function ch_misc_drupal_not_found() {
   
-  // Disable boost caching for custom gv page not found pages.
+  // Disable boost caching for custom ch page not found pages.
   // First part, initialization.
-  // See the second part at gv_misc_process_html(),
+  // See the second part at ch_misc_process_html(),
   // where $_boost variable  will be corrected to prevent the current page caching.
   global $ch_page_not_found;
   $ch_page_not_found = TRUE;
@@ -4712,7 +4712,7 @@ function theme_ch_misc_fivestar_static($variables) {
 function ch_misc_getProvidersKeyedByName(&$providers, $scope = 'all', $data = NULL) {
   $providers_out = array();
   
-  //function gv_misc_getProviders(&$providers, $scope = 'all', $data = NULL, $cache_key = '', $only_featured = NULL, $no_cache = FALSE) {
+  //function ch_misc_getProviders(&$providers, $scope = 'all', $data = NULL, $cache_key = '', $only_featured = NULL, $no_cache = FALSE) {
   ch_misc_getProviders($providers, $scope, $data);
   foreach ($providers as $key => $value) {
     if ($key == '_none' || $key == '') {
@@ -5466,7 +5466,7 @@ function ch_misc_loadImage($imgname, $type = null) {
 function ch_misc_imageOptimizeOnServer($file) {
   // Code example from the image_optimize.module
   $dst = drupal_realpath($file['uri']);
-  //gv_misc_sendMessage('new_file_was_uploaded', array('report' => 'dst: ' . $dst));
+  //ch_misc_sendMessage('new_file_was_uploaded', array('report' => 'dst: ' . $dst));
   
   switch ($file['filemime']) {
     case 'image/png':
@@ -5653,17 +5653,17 @@ function ch_misc_rebuildProvidersLogosSprites($listing_pos_fields = NULL, $all_d
     imagepng($out_sprite['img'], $out_sprite['file']);
     
     // Optimize the image.
-    ////ch_misc_imageOptimizeOnServer(array('uri' => $out_sprite['uri'], 'filemime' => 'image/png'));
+    ch_misc_imageOptimizeOnServer(array('uri' => $out_sprite['uri'], 'filemime' => 'image/png'));
 
     // Show image.
     //Header("Content-type: image/png");
     //imagepng($out_sprite['img'], NULL, 0);
   }
     
-  dpm($gv_providers_sprites);
+  dpm($ch_providers_sprites);
   dpm($input_providers_data);
   
-  variable_set('ch_providers_sprites', $gv_providers_sprites);
+  variable_set('ch_providers_sprites', $ch_providers_sprites);
   
   
   //drupal_flush_all_caches();

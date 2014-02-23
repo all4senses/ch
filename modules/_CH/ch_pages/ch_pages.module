@@ -228,7 +228,7 @@ function ch_pages_trackClickReport_form_old($form, &$form_state) {
     //'#weight' => 5,
   );
   
-  //$form['actions']['submit']['#submit'][] = 'gv_pages_trackClickReport_formSubmit';
+  //$form['actions']['submit']['#submit'][] = 'ch_pages_trackClickReport_formSubmit';
   //$form['#submit'][] = 'ch_pages_trackClickReport_formSubmit';
   $form['#validate'][] = 'ch_pages_trackClickReport_formValidate';
   
@@ -393,8 +393,8 @@ function ch_pages_trackClickReport_form($form, &$form_state) {
 
   
   $providers['_none'] = '- All providers -';
-  //gv_misc_getProviders($providers);
-  // function gv_misc_getProviders(&$providers, $scope = 'all', $data = NULL, $cache_key = '', $only_featured = NULL, $no_cache = FALSE) {
+  //ch_misc_getProviders($providers);
+  // function ch_misc_getProviders(&$providers, $scope = 'all', $data = NULL, $cache_key = '', $only_featured = NULL, $no_cache = FALSE) {
 
   if (!isset($_GET['only_featured']) || $_GET['only_featured']) {
     ch_misc_getProviders($providers, 'all', NULL, 'featured');
@@ -538,7 +538,7 @@ function ch_pages_trackClickReport_form($form, &$form_state) {
         }
 
   
-        //$query = db_select('gv_track_links', 'tl')->extend('PagerDefault');
+        //$query = db_select('ch_track_links', 'tl')->extend('PagerDefault');
         $query = db_select('ch_track_links', 'tl')->extend('ChPager');
 
         $query->fields('tl');
@@ -713,13 +713,13 @@ function ch_pages_trackClickReport_form($form, &$form_state) {
     
         
         //$providers = array();
-        //gv_misc_getProviders($providers);
+        //ch_misc_getProviders($providers);
         unset($providers['_none']);
         
         
         // Find out and print total clicks for all providers
         /*
-        $query = db_select('gv_track_links', 'tl');
+        $query = db_select('ch_track_links', 'tl');
         $query->fields('tl', array('track_id'));
 
         if (@$filter_by_db[$current_filter]) {
@@ -2412,7 +2412,7 @@ function ch_pages_form_alter(&$form, &$form_state, $form_id) {
                       if ($option_type == 'textarea') {
                         $form['provider_options'][$options_set][$option_title]['#default_value'] = !empty($p_data['provider_options'][$options_set][$option_title]) ? (is_array($p_data['provider_options'][$options_set][$option_title]) ? $p_data['provider_options'][$options_set][$option_title]['value'] : $p_data['provider_options'][$options_set][$option_title]) : NULL;
                         $form['provider_options'][$options_set][$option_title]['#type'] = 'text_format';
-                        $form['provider_options'][$options_set][$option_title]['#format'] = 'full_html';//'filtered_html'; //'gv_full_html'; 
+                        $form['provider_options'][$options_set][$option_title]['#format'] = 'full_html';//'filtered_html'; //'ch_full_html'; 
                       }
                       
                       if ($option_type == 'checkbox') {
@@ -3964,7 +3964,7 @@ function ch_pages_node_update($node) {
     // Reset only a current provider data.
     $p_data_quick = ch_misc_getProvidersDataQuick('all', FALSE, FALSE, $node->nid);
     
-    // Regenerate providers logos sprites (if needed). The data was prepared in gv_pages_submitForm_provider(&$form, &$form_state)
+    // Regenerate providers logos sprites (if needed). The data was prepared in ch_pages_submitForm_provider(&$form, &$form_state)
     $p_data = unserialize($node->field_p_data['und'][0]['value']);
     ////if (!empty($p_data['last_erating_fields_different'])) 
       {
