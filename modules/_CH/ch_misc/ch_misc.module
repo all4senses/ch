@@ -5369,6 +5369,318 @@ function ch_misc_getProvidersFees($scope = 'all') {
 }
 
 
+
+/**
+ * Creates imagecache image if it doesnt exist.
+ */
+function ch_misc_createCachedImageIfNotExists($relative_path, $style_name = NULL, $force_recreate = FALSE) {
+  // Assure that the imagecache file is created already, or recreate it.
+  $relative_path = str_replace('http://cloudhostinghq.com/', '', $relative_path);
+  
+  if ($force_recreate || !file_exists($relative_path)) {
+    
+    
+    // Find out the style name from 'f/styles/logo_provider_chart_main/public/p/logos/Nextiva-Logo2.png';
+    if (!$style_name) {
+      $path_part = explode('/styles/', $relative_path);
+      $path_part = explode('/public/', $path_part[1]);
+      $style_name = $path_part[0];
+    }
+    $style = image_style_load($style_name);
+    //$styled_file_path = 'sites/default/files/styles/logo_provider_chart_main/public/p/logos/Nextiva-Logo2.png';
+    //$original_file_path = 'sites/default/files/p/logos/Nextiva-Logo.png';
+    $file_path = str_replace('styles/' . $style_name . '/public/', '', $relative_path);
+    $source = ch_misc_getStreamUriFromRelativePath($file_path);
+    $destination = image_style_path($style_name, $source);
+    if (!image_style_create_derivative($style, $source, $destination)) {
+      return FALSE;
+    }
+    
+    return 'updated';
+  }
+  
+  return TRUE;
+}
+
+
+
+/**
+ * Loads an image object from a file.
+ *
+ */
+function ch_misc_loadImage($imgname, $type = null) {
+
+    if(!$type)
+    {
+        $type = explode('.', $imgname);
+        $type = $type[count($type)-1];
+    }
+
+    switch(strtolower($type))
+    {
+
+        case 'png':
+            $im = @imagecreatefrompng($imgname);
+            break;
+
+        case 'jpg':
+        case 'jpeg':
+            $im = @imagecreatefromjpeg($imgname);
+            break;
+          
+        case 'gif':
+            $im = @imagecreatefromgif($imgname);
+            break;
+       
+       default:
+         $im = NULL;
+    }
+
+    if(!$im)
+    {
+        /*
+
+        // an image with error message
+
+        $im= imagecreate (150, 30);
+        $bgc = imagecolorallocate ($im, 255, 255, 255);
+        $tc= imagecolorallocate ($im, 0, 0, 0);
+        imagefilledrectangle ($im, 0, 0, 150, 30, $bgc);
+        imagestring ($im, 1, 5, 5, "Error loading $imgname", $tc);
+
+        */
+    }
+
+    return $im;
+}
+
+
+
+/**
+ * 
+ * Try to optimize an image with applications installed on the server.
+ * 
+ * Depends on the imageapi_optimize module.
+ * 
+ */
+function ch_misc_imageOptimizeOnServer($file) {
+  // Code example from the image_optimize.module
+  $dst = drupal_realpath($file['uri']);
+  //gv_misc_sendMessage('new_file_was_uploaded', array('report' => 'dst: ' . $dst));
+  
+  switch ($file['filemime']) {
+    case 'image/png':
+      if ($cmd = variable_get('imageapi_optimize_optipng', '')) { // /usr/bin/optipng, should be installed in system
+        exec("$cmd -o5 -quiet ". escapeshellarg($dst));
+      }
+      if ($cmd = variable_get('imageapi_optimize_pngcrush', '')) {
+        $temp = drupal_realpath(drupal_tempnam('temporary://', 'file'));
+        exec("$cmd -rem alla -reduce -brute -q ". escapeshellarg($dst) ." ". escapeshellarg($temp) ." && mv ". escapeshellarg($temp) ." ". escapeshellarg($dst));
+      }
+      if ($cmd = variable_get('imageapi_optimize_advpng', '')) {
+        exec("$cmd -z4q ". escapeshellarg($dst), $return, $output);
+      }
+      break;
+
+    case 'image/jpeg':
+      if ($cmd = variable_get('imageapi_optimize_jpegtran', '')) { // /usr/bin/jpegtran, should be installed in system
+        _imageapi_optimize_exec("$cmd -copy none -optimize -progressive ". escapeshellarg($dst), $dst);
+      }
+      if ($cmd = variable_get('imageapi_optimize_jfifremove', '')) {
+        _imageapi_optimize_exec("$cmd < ". escapeshellarg($dst), $dst);
+      }
+      break;
+  }
+
+}
+
+
+/**
+ * Rebuilds providers logos sprites.
+ */
+function ch_misc_rebuildProvidersLogosSprites($listing_pos_fields = NULL, $all_data_quick = NULL) {
+  
+  $providers_logos_sprites = array(
+    //'home_top_providers' => array('image_style' => 'logo_provider_chart_main', 'providers_views_displays' => array('block_top_business_cmp', 'block_1'), 'listing_pos_fields' => array('field_p_erating', 'field_p_erating_residential')),
+    'home_top_providers' => array('image_style' => 'logo_provider_chart_main', 'providers_views_displays' => array('block_h_top_sh_table'), 'listing_pos_fields' => array('field_p_listposition_sh')),
+  
+      
+     /* 
+    'top_bu_providers' => array('image_style' => 'logo_provider_chart_big', 'providers_views_displays' => array('block_p_bu_page', 'block_p_bu_page_cmp'), 'listing_pos_fields' => array('field_p_erating')),
+    
+    'top_re_providers' => array('image_style' => 'logo_provider_vertical_chart', 'providers_views_displays' => array('block_p_re_page'), 'listing_pos_fields' => array('field_p_erating_residential')),
+    'top_re_providers_chart_big' => array('image_style' => 'logo_provider_chart_big', 'providers_views_displays' => array('block_p_re_page'), 'listing_pos_fields' => array('field_p_erating_residential')),   
+    
+    'top_bu_providers_rev' => array('image_style' => 'logo_provider_chart_main', 'providers_views_displays' => array('bl_p_bu_rev_page_cmp'), 'listing_pos_fields' => array('field_p_erating')),
+    'top_re_providers_rev' => array('image_style' => 'logo_provider_chart_main', 'providers_views_displays' => array('bl_p_re_rev_page'), 'listing_pos_fields' => array('field_p_erating_residential')),
+    
+      
+    'top_pbx_providers' => array('image_style' => 'logo_provider_vertical_chart', 'providers_views_displays' => array('block_p_pbx_page', 'block_p_pbx_page_cmp'), 'listing_pos_fields' => array('field_p_erating_pbx')),
+   
+    'top_sip_providers' => array('image_style' => 'logo_provider_chart_big', 'providers_views_displays' => array('block_p_sip_page'), 'listing_pos_fields' => array('field_p_erating_sip')),
+    
+    'top_ifa_providers' => array('image_style' => 'logo_provider_chart_big', 'providers_views_displays' => array('block_p_ifa_page'), 'listing_pos_fields' => array('field_p_erating_ifa')),
+      
+    'top_ca_providers' => array('image_style' => 'logo_provider_chart_main', 'providers_views_displays' => array('block_p_bu_ca_page', 'block_p_bu_ca_page_cmp', 'block_p_re_ca_page'), 'listing_pos_fields' => array('field_p_erating_bu_ca', 'field_p_erating_re_ca')),
+      
+    'all_reviews_providers' => array('image_style' => 'logo_provider_chart_big', 'providers_views_displays' => array('block_top_bu_ar', 'block_top_bu_ar_cmp', 'block_top_re_ar'), 'listing_pos_fields' => array('field_p_erating', 'field_p_erating_residential')), 
+    */
+  );
+  
+  
+  // Skip refreshing sprites without selected listing fields.
+  if($listing_pos_fields && $ch_providers_sprites = variable_get('ch_providers_sprites')) {
+    foreach ($providers_logos_sprites as $providers_logos_sprite_title => $providers_logos_sprite_data) {
+      $in_array = FALSE;
+      foreach($listing_pos_fields as $listing_pos_field) {
+        if (in_array($listing_pos_field, $providers_logos_sprite_data['listing_pos_fields'])) {
+          $in_array = TRUE;
+        }
+      }
+      if (!$in_array) {
+        unset($providers_logos_sprites[$providers_logos_sprite_title]);
+      }
+    }
+  }
+  else {
+    $ch_providers_sprites = array();
+  }
+  
+  //cache_clear_all('*', 'cache_views', TRUE);
+  cache_clear_all('*', 'cache_views_data', TRUE);
+  
+  if (!$all_data_quick) {
+    $all_data_quick = ch_misc_getProvidersDataQuick();
+  }
+  
+  //$image_style_name = 'logo_provider_chart_main';
+  
+  foreach ($providers_logos_sprites as $providers_logos_sprite_name => $providers_logos_sprite) {
+    
+    // Decrease width of images for vertical charts pages.
+//    if ($providers_logos_sprite_name == 'top_bu_providers') {
+//      $image_style_name = 'logo_provider_vertical_chart';
+//      dpm('new style used');
+//    }
+    
+    $image_style_name = $providers_logos_sprite['image_style'];
+    //dpm($providers_logos_sprite_name . ' => ' . $image_style_name);
+    
+    foreach ($providers_logos_sprite['providers_views_displays'] as $providers_views_display) {
+      
+      $view = views_get_view('providers');
+      $view->execute($providers_views_display);
+      
+      if ($view->result) {
+        
+        foreach ($view->result as $provider) {
+          
+          $input_providers_data[$providers_logos_sprite_name][$provider->nid]['name'] = $all_data_quick[$provider->nid]['name'];
+          
+          $input_providers_data[$providers_logos_sprite_name][$provider->nid]['themed_image_src'] = str_replace('http://cloudhostinghq.com/', '', image_style_url($image_style_name, $all_data_quick[$provider->nid]['i_logo_uri']));
+          $input_providers_data[$providers_logos_sprite_name][$provider->nid]['themed_image_src'] = urldecode($input_providers_data[$providers_logos_sprite_name][$provider->nid]['themed_image_src']); //str_replace('%20', ' ', $input_providers_data[$providers_logos_sprite_name][$provider->nid]['themed_image_src']);
+                  
+          // Assure that the imagecache file is created already, or recreate it.
+          ch_misc_createCachedImageIfNotExists($input_providers_data[$providers_logos_sprite_name][$provider->nid]['themed_image_src']);
+          
+          $input_providers_data[$providers_logos_sprite_name][$provider->nid]['themed_image_html'] = theme('ch_misc_image_style', array('style_name' => $image_style_name, 'path' => $all_data_quick[$provider->nid]['i_logo_uri'], 'alt' =>  $all_data_quick[$provider->nid]['i_logo_alt'], 'title' =>  $all_data_quick[$provider->nid]['i_logo_title'] ));
+          
+          //$out .= $input_providers_data[$providers_logos_sprite_name][$provider->nid]['themed_image_html'];
+        }
+        
+      }
+      
+    }
+    
+  }
+  
+  $out_sprite_path = 'f/p/';
+  $out_sprite_ext = 'png';
+  
+  foreach ($input_providers_data as $providers_logos_sprite_name => $providers_logos_sprite) {
+    
+    $out_sprite['file'] = $out_sprite_path . $providers_logos_sprite_name . '.' . $out_sprite_ext;
+    $out_sprite['uri'] = 'public://p/' . $providers_logos_sprite_name . '.' . $out_sprite_ext;
+    $out_size = array();
+    
+    foreach ($providers_logos_sprite as $nid => $provider) {
+
+      if($input_image['info'] = getimagesize($provider['themed_image_src'])) {
+        // Set a height (all providers logos height + 10px between each others).
+        if (empty($out_size['h'])) {
+          $out_size['h'] = $input_image['info'][1];
+        }
+        else {
+          $out_size['h'] += 10 + $input_image['info'][1];
+        }
+        // Set once a width of the sprite by the widest one.
+        if (empty($out_size['w']) || $out_size['w'] < $input_image['info'][0]) {
+          $out_size['w'] = $input_image['info'][0];
+        }
+      }
+    }
+    
+    $out_sprite['img'] = imagecreatetruecolor($out_size['w'], $out_size['h']);
+  
+    // Make the background transparent.
+    $white = imagecolorallocate($out_sprite['img'], 255, 255, 255);
+    $transparent = imagecolortransparent($out_sprite['img'],$white);
+
+    // Set transparency for the output image.
+    imagefilledrectangle($out_sprite['img'], 0, 0, $out_size['w'], $out_size['h'], $transparent);
+  
+    $current_y = 0;
+    
+    // Reset the sprite data to avoid remaining the old data. 
+    $ch_providers_sprites[$providers_logos_sprite_name] = array();
+    
+    foreach ($providers_logos_sprite as $nid => $provider) {
+      if ($input_image['img'] = ch_misc_loadImage($provider['themed_image_src'])) {
+        //$input_image['info'] = getimagesize(str_replace('%20', ' ', $provider['themed_image_src']));
+        $input_image['info'] = getimagesize(urldecode($provider['themed_image_src']));
+        imagecopy($out_sprite['img'], $input_image['img'], 0, $current_y, 0, 0, $input_image['info'][0], $input_image['info'][1]);
+        
+        $ch_providers_sprites[$providers_logos_sprite_name]['data'][$nid]['y'] = $current_y;
+        $ch_providers_sprites[$providers_logos_sprite_name]['data'][$nid]['w'] = $input_image['info'][0];
+        $ch_providers_sprites[$providers_logos_sprite_name]['data'][$nid]['h'] = $input_image['info'][1];
+        $ch_providers_sprites[$providers_logos_sprite_name]['time'] =  time();
+        
+        $current_y += 10 + $input_image['info'][1];
+      }
+    }
+  
+    // Save a new sprite file.
+    imagepng($out_sprite['img'], $out_sprite['file']);
+    
+    // Optimize the image.
+    ////ch_misc_imageOptimizeOnServer(array('uri' => $out_sprite['uri'], 'filemime' => 'image/png'));
+
+    // Show image.
+    //Header("Content-type: image/png");
+    //imagepng($out_sprite['img'], NULL, 0);
+  }
+    
+  dpm($gv_providers_sprites);
+  dpm($input_providers_data);
+  
+  variable_set('ch_providers_sprites', $gv_providers_sprites);
+  
+  
+  //drupal_flush_all_caches();
+  // Not so hard clearing.
+  views_invalidate_cache();
+  cache_clear_all('*', 'cache_views_data', TRUE);
+  
+  drupal_set_message('Cache is flushed after the prividers logos sprites regenerating.', 'warning');
+  
+  if (!$listing_pos_fields) {
+    drupal_set_message('All providers logos sprites have been regenerated!');
+    drupal_goto();
+  }
+  
+}
+
+
 /**
  * Returns all quick data for available providers.
  */
@@ -5413,7 +5725,7 @@ function ch_misc_getProvidersDataQuick($scope = 'all', $reset = FALSE, $clear_fr
       drupal_set_message('Quick data for this provider has been reset.', 'warning');
       //dpm($var_p_all_data_quick);
       
-      return NULL;
+      return $var_p_all_data_quick;
     }
     else {
       $reset = TRUE;
