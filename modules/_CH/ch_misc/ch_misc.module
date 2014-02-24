@@ -5547,6 +5547,14 @@ function ch_misc_rebuildProvidersLogosSprites($listing_pos_fields = NULL, $all_d
       
     'top_vps_providers' => array('image_style' => 'logo_provider_chart_main', 'providers_views_displays' => array('block_top_vps_p_table'), 'listing_pos_fields' => array('field_p_listposition_vps')),
       
+    'top_wb_providers' => array('image_style' => 'logo_provider_chart_main', 'providers_views_displays' => array('block_top_wb_p_table'), 'listing_pos_fields' => array('field_p_listposition_wb')),
+      
+    'top_ca_providers' => array('image_style' => 'logo_provider_chart_main', 'providers_views_displays' => array('block_top_ca_p_table'), 'listing_pos_fields' => array('field_p_listposition_ca')),
+      
+    'top_ds_providers' => array('image_style' => 'logo_provider_chart_main', 'providers_views_displays' => array('block_top_ds_p_table'), 'listing_pos_fields' => array('field_p_listposition_ds')),
+      
+    'top_ch_providers' => array('image_style' => 'logo_provider_chart_main', 'providers_views_displays' => array('block_top_ch_p_table'), 'listing_pos_fields' => array('field_p_listposition_ch')),
+      
       
       
       
@@ -5960,6 +5968,12 @@ function ch_misc_getProviderQuickData($target, $data) {
       //'top_sh_providers' => array('image_style' => 'logo_provider_chart_main', 'providers_views_displays' => array('block_top_sh_p_table'), 'listing_pos_fields' => array('field_p_listposition_sh')),
       //'top_wp_providers' => array('image_style' => 'logo_provider_chart_main', 'providers_views_displays' => array('block_top_wp_p_table'), 'listing_pos_fields' => array('field_p_listposition_wp')),
       //'top_vps_providers' => array('image_style' => 'logo_provider_chart_main', 'providers_views_displays' => array('block_top_vps_p_table'), 'listing_pos_fields' => array('field_p_listposition_vps')), 
+      //'top_wb_providers' => array('image_style' => 'logo_provider_chart_main', 'providers_views_displays' => array('block_top_wb_p_table'), 'listing_pos_fields' => array('field_p_listposition_wb')),
+      //'top_ca_providers' => array('image_style' => 'logo_provider_chart_main', 'providers_views_displays' => array('block_top_ca_p_table'), 'listing_pos_fields' => array('field_p_listposition_ca')),
+      //'top_ds_providers' => array('image_style' => 'logo_provider_chart_main', 'providers_views_displays' => array('block_top_ds_p_table'), 'listing_pos_fields' => array('field_p_listposition_ds')),
+      //'top_ch_providers' => array('image_style' => 'logo_provider_chart_main', 'providers_views_displays' => array('block_top_ch_p_table'), 'listing_pos_fields' => array('field_p_listposition_ch')),
+    
+              
               
       $display_to_sprite = array(
                                   'block_h_top_sh_table' => 'home_top_providers',
@@ -5967,6 +5981,11 @@ function ch_misc_getProviderQuickData($target, $data) {
                                   'block_top_sh_p_table' => 'top_sh_providers',
                                   'block_top_wp_p_table' => 'top_wp_providers',
                                   'block_top_vps_p_table' => 'top_vps_providers',
+          
+                                  'block_top_wb_p_table' => 'top_wb_providers',
+                                  'block_top_ca_p_table' => 'top_ca_providers',
+                                  'block_top_ds_p_table' => 'top_ds_providers',
+                                  'block_top_ch_p_table' => 'top_ch_providers',
       );
       
       /*
