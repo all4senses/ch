@@ -3968,7 +3968,7 @@ function ch_pages_node_update($node) {
     
     // Regenerate providers logos sprites (if needed). The data was prepared in ch_pages_submitForm_provider(&$form, &$form_state)
     $p_data = unserialize($node->field_p_data['und'][0]['value']);
-    if (!empty($p_data['last_erating_fields_different'])) 
+    //if (!empty($p_data['last_erating_fields_different'])) 
       {
           ch_misc_rebuildProvidersLogosSprites($p_data['last_erating_fields_different'], $p_data_quick);
     }
