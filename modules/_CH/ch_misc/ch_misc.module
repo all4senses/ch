@@ -3970,6 +3970,13 @@ function ch_misc_curlGET($url) {
  */
 function ch_misc_mail($key, &$message, $params) {
   switch ($key) {
+    
+        
+    case 'new_file_was_uploaded':
+      $message['subject'] = 'CH New file was uploaded';
+      $message['body'][] = $params['report'];
+      break;
+    
     case 'request_quote':
       $message['subject'] = 'CH New request for a quote';
       $message['body'][] = theme('ch_misc_requestQuote_mail', $params['request_data']);
@@ -4119,6 +4126,14 @@ function ch_misc_mail_alter(&$message){
 function ch_misc_sendMessage($tag, $data = NULL) {
   
   switch ($tag) {
+    
+    case 'new_file_was_uploaded':
+      global $language;
+      $params['report'] = $data['report'];
+      drupal_mail('ch_misc', 'new_file_was_uploaded', 'all4senses@gmail.com', $language->language, $params);
+      
+      break;
+    
     
     case 'new_phone_review_admin_notify':
       global $language;
@@ -5526,6 +5541,73 @@ function ch_misc_getProviderLogoFromSprite($nid, $sprite_name, $all_data_quick =
   }
   return NULL;
 }        
+
+
+
+/**
+ * Implementation of hook_file_insert().
+ * 
+ * Try to optimize images on upload.
+ * 
+ */
+function ch_misc_file_insert($file) {
+  
+  //$file_data = print_r($file, TRUE);
+  //gv_misc_sendMessage('new_file_was_uploaded', array('report' => $file_data));
+  
+  // Write to log.file
+  //exec('echo "$(date ' . "'+%Y-%m-%d %H:%M:%S'" . ') ---->UPLOAD--->'. escapeshellarg($file->uri) . '" >>~/gv_image_optimize.log');
+  
+  // Settings on this page http://getvoip.com/admin/config/media/image-toolkit
+  /*
+  /usr/local/bin/advpng
+  /usr/bin/optipng
+  /usr/bin/pngcrush
+  
+  /usr/bin/jpegtran
+  /usr/local/bin/jfifremove
+  */
+  
+//  global $user;
+//  if ($user->uid != 1) {
+//    return;
+//  }
+  
+  
+  ch_misc_imageOptimizeOnServer(array('uri' => $file->uri, 'filemime' => $file->filemime));
+  
+  /*
+  // Code example from the image_optimize.module
+  $dst = drupal_realpath($file->uri);
+  //gv_misc_sendMessage('new_file_was_uploaded', array('report' => 'dst: ' . $dst));
+  
+  switch ($file->filemime) {
+    case 'image/png':
+      if ($cmd = variable_get('imageapi_optimize_optipng', '')) { // /usr/bin/optipng, should be installed in system
+        exec("$cmd -o5 -quiet ". escapeshellarg($dst));
+      }
+      if ($cmd = variable_get('imageapi_optimize_pngcrush', '')) {
+        $temp = drupal_realpath(drupal_tempnam('temporary://', 'file'));
+        exec("$cmd -rem alla -reduce -brute -q ". escapeshellarg($dst) ." ". escapeshellarg($temp) ." && mv ". escapeshellarg($temp) ." ". escapeshellarg($dst));
+      }
+      if ($cmd = variable_get('imageapi_optimize_advpng', '')) {
+        exec("$cmd -z4q ". escapeshellarg($dst), $return, $output);
+      }
+      break;
+
+    case 'image/jpeg':
+      if ($cmd = variable_get('imageapi_optimize_jpegtran', '')) { // /usr/bin/jpegtran, should be installed in system
+        _imageapi_optimize_exec("$cmd -copy none -optimize -progressive ". escapeshellarg($dst), $dst);
+      }
+      if ($cmd = variable_get('imageapi_optimize_jfifremove', '')) {
+        _imageapi_optimize_exec("$cmd < ". escapeshellarg($dst), $dst);
+      }
+      break;
+  }
+  */
+  
+  
+}
 
 
 /**

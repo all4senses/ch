@@ -225,11 +225,11 @@ function _imageapi_optimize_service_internal($image, $dst) {
   
   // a4s fix
   //$file_data = $dst . ': ' . print_r($image, TRUE);
-  //gv_misc_sendMessage('new_file_was_uploaded', array('report' => 'VIA IMAGE API OPTIMIZE...............' . $file_data));
+  //ch_misc_sendMessage('new_file_was_uploaded', array('report' => 'VIA IMAGE API OPTIMIZE...............' . $file_data));
   
   
   // Write to log.file
-  //exec('echo "$(date ' . "'+%Y-%m-%d %H:%M:%S'" . ') ---->API--->'. escapeshellarg($dst) . '" >>~/gv_image_optimize.log');
+  //exec('echo "$(date ' . "'+%Y-%m-%d %H:%M:%S'" . ') ---->API--->'. escapeshellarg($dst) . '" >>~/ch_image_optimize.log');
   
   // Settings on this page http://getvoip.com/admin/config/media/image-toolkit
   /*
@@ -243,7 +243,7 @@ function _imageapi_optimize_service_internal($image, $dst) {
   
   $dst = drupal_realpath($dst);
   
-  //gv_misc_sendMessage('new_file_was_uploaded', array('report' => 'VIA IMAGE API OPTIMIZE............... ' . $dst));
+  //ch_misc_sendMessage('new_file_was_uploaded', array('report' => 'VIA IMAGE API OPTIMIZE............... ' . $dst));
   
   switch ($image->info['mime_type']) {
     case 'image/png':
@@ -261,6 +261,7 @@ function _imageapi_optimize_service_internal($image, $dst) {
 
     case 'image/jpeg':
       if ($cmd = variable_get('imageapi_optimize_jpegtran', '')) {
+        // a4a fix, added -progressive
         _imageapi_optimize_exec("$cmd -copy none -optimize -progressive ". escapeshellarg($dst), $dst);
       }
       if ($cmd = variable_get('imageapi_optimize_jfifremove', '')) {
