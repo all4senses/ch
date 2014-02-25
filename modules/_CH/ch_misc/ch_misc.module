@@ -5391,7 +5391,6 @@ function ch_misc_getProvidersFees($scope = 'all') {
 }
 
 
-
 /**
  * Creates imagecache image if it doesnt exist.
  */
@@ -5531,11 +5530,13 @@ function ch_misc_getProviderLogoFromSprite($nid, $sprite_name, $all_data_quick =
     //dpm($ch_providers_sprites[$sprite_name]['data'][$nid]);
     
     if ($ch_providers_sprites[$sprite_name]['data'][$nid]['h'] < 45) {
-      return '<div style="width: ' . $ch_providers_sprites[$sprite_name]['data'][$nid]['w'] . 'px; height: ' . (45 - $ch_providers_sprites[$sprite_name]['data'][$nid]['h'])/2 . 'px"></div><div title="' . $all_data_quick[$nid]['name'] . ' site" style="margin: auto; width: ' . $ch_providers_sprites[$sprite_name]['data'][$nid]['w'] . 'px; height: ' . $ch_providers_sprites[$sprite_name]['data'][$nid]['h'] . 'px; background: url('. "'/" . $out_sprite_path . $sprite_name . '.png?' . $ch_providers_sprites[$sprite_name]['time'] . "')" . ' no-repeat 0 -' . $ch_providers_sprites[$sprite_name]['data'][$nid]['y'] . 'px transparent;"></div><div style="width: ' . $ch_providers_sprites[$sprite_name]['data'][$nid]['w'] . 'px; height: ' . (45 - $ch_providers_sprites[$sprite_name]['data'][$nid]['h'])/2 . 'px"></div>';
+      //return '<div style="width: ' . $ch_providers_sprites[$sprite_name]['data'][$nid]['w'] . 'px; height: ' . (45 - $ch_providers_sprites[$sprite_name]['data'][$nid]['h'])/2 . 'px"></div><div title="' . $all_data_quick[$nid]['name'] . ' site" style="margin: auto; width: ' . $ch_providers_sprites[$sprite_name]['data'][$nid]['w'] . 'px; height: ' . $ch_providers_sprites[$sprite_name]['data'][$nid]['h'] . 'px; background: url('. "'/" . $out_sprite_path . $sprite_name . '.png?' . $ch_providers_sprites[$sprite_name]['time'] . "')" . ' no-repeat 0 -' . $ch_providers_sprites[$sprite_name]['data'][$nid]['y'] . 'px transparent;"></div><div style="width: ' . $ch_providers_sprites[$sprite_name]['data'][$nid]['w'] . 'px; height: ' . (45 - $ch_providers_sprites[$sprite_name]['data'][$nid]['h'])/2 . 'px"></div>';
+      return '<div style="width: ' . $ch_providers_sprites[$sprite_name]['data'][$nid]['w'] . 'px; height: ' . (45 - $ch_providers_sprites[$sprite_name]['data'][$nid]['h'])/2 . 'px"></div><div style="margin: auto; width: ' . $ch_providers_sprites[$sprite_name]['data'][$nid]['w'] . 'px; height: ' . $ch_providers_sprites[$sprite_name]['data'][$nid]['h'] . 'px; background: url('. "'/" . $out_sprite_path . $sprite_name . '.png?' . $ch_providers_sprites[$sprite_name]['time'] . "')" . ' no-repeat 0 -' . $ch_providers_sprites[$sprite_name]['data'][$nid]['y'] . 'px transparent;"></div><div style="width: ' . $ch_providers_sprites[$sprite_name]['data'][$nid]['w'] . 'px; height: ' . (45 - $ch_providers_sprites[$sprite_name]['data'][$nid]['h'])/2 . 'px"></div>';
     }
     else 
       {
-      return '<div title="' . $all_data_quick[$nid]['name'] . ' site" style="margin: auto; width: ' . $ch_providers_sprites[$sprite_name]['data'][$nid]['w'] . 'px; height: ' . $ch_providers_sprites[$sprite_name]['data'][$nid]['h'] . 'px; background: url('. "'/" . $out_sprite_path . $sprite_name . '.png?' . $ch_providers_sprites[$sprite_name]['time'] . "')" . ' no-repeat 0 -' . $ch_providers_sprites[$sprite_name]['data'][$nid]['y'] . 'px transparent;"></div>';
+      //return '<div title="' . $all_data_quick[$nid]['name'] . ' site" style="margin: auto; width: ' . $ch_providers_sprites[$sprite_name]['data'][$nid]['w'] . 'px; height: ' . $ch_providers_sprites[$sprite_name]['data'][$nid]['h'] . 'px; background: url('. "'/" . $out_sprite_path . $sprite_name . '.png?' . $ch_providers_sprites[$sprite_name]['time'] . "')" . ' no-repeat 0 -' . $ch_providers_sprites[$sprite_name]['data'][$nid]['y'] . 'px transparent;"></div>';
+      return '<div style="margin: auto; width: ' . $ch_providers_sprites[$sprite_name]['data'][$nid]['w'] . 'px; height: ' . $ch_providers_sprites[$sprite_name]['data'][$nid]['h'] . 'px; background: url('. "'/" . $out_sprite_path . $sprite_name . '.png?' . $ch_providers_sprites[$sprite_name]['time'] . "')" . ' no-repeat 0 -' . $ch_providers_sprites[$sprite_name]['data'][$nid]['y'] . 'px transparent;"></div>';
     }
     
   }
