@@ -191,7 +191,8 @@ function ch_misc_menu_alter(&$items) {
  */
 function ch_misc_updatePrefacesTitlesDate() {
   
-  $current_time = date('F d, Y \a\t g:ia', time());
+  //$current_time = date('F d, Y \a\t g:ia', time());
+  $current_time = date('F d, Y', time());
   $prefaces_nids = array(80, 137);
   
   foreach ($prefaces_nids as $nid) {
@@ -211,7 +212,7 @@ function ch_misc_updatePrefacesTitlesDate() {
     $title = $query->execute()->fetchField();
   
     $title = preg_replace('|^(.*) - Last Updated (.*)$|', '$1 - Last Updated ' . $current_time, $title);
-    dpm($title);
+    //dpm($title);
     db_update('node')
       ->fields(array(
         'title' => $title,
