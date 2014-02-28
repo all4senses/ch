@@ -21,6 +21,13 @@ function ch_misc_menu() {
   ch_misc_setPagesToShow410($items);
  
   //dpm($items);
+  $items['upd-titles-date'] = array(
+    'title' => 'Update prefaces dates in titles',
+    'page callback' => 'ch_misc_updatePrefacesTitlesDate',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+  
   
   $items['cc'] = array(
     'title' => 'Flush the cache and redirect to the Home page',
@@ -176,6 +183,46 @@ function ch_misc_menu_alter(&$items) {
   //unset($items['taxonomy/term/%taxonomy_term']);
   unset($items['taxonomy/term/%taxonomy_term/view']);
   unset($items['taxonomy/term/%taxonomy_term/feed']); // If you want to hide the feed as well.
+}
+
+
+/**
+ * Update prefaces dates in titles.
+ */
+function ch_misc_updatePrefacesTitlesDate() {
+  
+  $prefaces_nids = array(80, 137);
+  
+  foreach ($prefaces_nids as $nid) {
+    $node = node_load($nid);
+    $current_time = date('F d, Y \a\t g:ia', time());
+    
+    $title = preg_replace('|^(.*) - Last Updated (.*)$|', '$1 - Last Updated ' . $current_time, $url);
+    dpm($title);
+    //drupal_set_message('Header date is updadet. Cache is flushed.', 'warning');
+  }
+  
+  
+  //drupal_flush_all_caches();
+  
+  // Not so hard reset...
+
+  // The code from function views_invalidate_cache()
+  // Clear the views cache.
+  cache_clear_all('*', 'cache_views', TRUE);
+  // Clear the page and block cache.
+  cache_clear_all();
+  // Allow modules to respond to the Views cache being cleared.
+  module_invoke_all('views_invalidate_cache');
+  
+  cache_clear_all('*', 'cache_views_data', TRUE);
+  
+  // Function from the module boost.
+  boost_flush_caches();
+  
+  
+  drupal_set_message('Header date is updadet. Cache is flushed.', 'warning');
+  drupal_goto('');
 }
 
 
