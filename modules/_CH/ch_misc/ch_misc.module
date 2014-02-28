@@ -195,12 +195,37 @@ function ch_misc_updatePrefacesTitlesDate() {
   $prefaces_nids = array(80, 137);
   
   foreach ($prefaces_nids as $nid) {
-    $node = node_load($nid);
-    $node->title = preg_replace('|^(.*) - Last Updated (.*)$|', '$1 - Last Updated ' . $current_time, $node->title);
-    dpm($node->title);
+    //$node = node_load($nid);
+    //$node->title = preg_replace('|^(.*) - Last Updated (.*)$|', '$1 - Last Updated ' . $current_time, $node->title);
+    //dpm($node->title);
     
-    dpm($node);
+    //dpm($node);
     //node_save($node);
+    
+    
+    
+    $query = db_select('node', 'n');
+    $query->fields('n', array('title'))
+        ->condition('nid', $nid);
+    
+    $title = $query->execute()->fetchField();
+  
+    $title = preg_replace('|^(.*) - Last Updated (.*)$|', '$1 - Last Updated ' . $current_time, $title);
+    dpm($title);
+    db_update('node')
+      ->fields(array(
+        'title' => $title,
+      ))
+      ->condition('nid', $nid)
+      ->execute();
+  
+    db_update('node_revision')
+      ->fields(array(
+        'title' => $title,
+      ))
+      ->condition('nid', $nid)
+      ->execute();
+  
   }
   
   
