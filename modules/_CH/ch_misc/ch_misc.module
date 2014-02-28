@@ -197,8 +197,10 @@ function ch_misc_updatePrefacesTitlesDate() {
   foreach ($prefaces_nids as $nid) {
     $node = node_load($nid);
     $node->title = preg_replace('|^(.*) - Last Updated (.*)$|', '$1 - Last Updated ' . $current_time, $node->title);
-    dpm($title);
-    node_save($node);
+    dpm($node->title);
+    
+    dpm($node);
+    //node_save($node);
   }
   
   
