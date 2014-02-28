@@ -197,7 +197,7 @@ function ch_misc_updatePrefacesTitlesDate() {
     $node = node_load($nid);
     $current_time = date('F d, Y \a\t g:ia', time());
     
-    $title = preg_replace('|^(.*) - Last Updated (.*)$|', '$1 - Last Updated ' . $current_time, $url);
+    $title = preg_replace('|^(.*) - Last Updated (.*)$|', '$1 - Last Updated ' . $current_time, $node->title);
     dpm($title);
     //drupal_set_message('Header date is updadet. Cache is flushed.', 'warning');
   }
