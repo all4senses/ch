@@ -187,7 +187,7 @@ function ch_misc_menu_alter(&$items) {
 
 
 /**
- * Update prefaces dates in titles.
+ * Update prefaces dates in titles at /upd-titles-date
  */
 function ch_misc_updatePrefacesTitlesDate() {
   
