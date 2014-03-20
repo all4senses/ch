@@ -768,6 +768,7 @@ function ch_misc_goToExternalUrl2() {
       else {
         $url = $p_data_quick['i_web'];
       }
+      
     }
     
     
@@ -820,13 +821,14 @@ function ch_misc_goToExternalUrl2() {
 /**
  * Redirect to an external url and track the data.
  */
+/*
 function ch_misc_goToExternalUrl() {
   
   //dpm($_SESSION['ch_current_http_referer']);
   //dpm($_GET);
   
   // Save a tracked redirection.
-  if (!empty($_GET['p']) /* && !empty($_GET['url'])*/) {
+  if (!empty($_GET['p']) ) { // && !empty($_GET['url'])
     
     //switch ($_GET['p']) {
       
@@ -885,6 +887,7 @@ function ch_misc_goToExternalUrl() {
   
   return '';
 }
+*/
 
 
 /**

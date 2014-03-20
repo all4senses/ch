@@ -1493,7 +1493,7 @@ h2.rcaption a, h3.rcaption a, /*.node-review*/ h3.rcaption a:hover{color: white;
 
 .node-type-review #main .main-content h1{padding: 0 10px;  display: block; font-size: 28px;}
 .node-type-review #main .main-content .submitted{display: block; padding: 0 0 10px 10px;}
-.node-type-review #main .main-content .content{margin: auto; padding: 20px 0 10px 0; position: relative; width: 720px;}
+.node-type-review #main .main-content .content{margin: auto; padding: 20px 0 10px 0; position: relative; width: 650px;}
 
 
 .node-review .ch_votes, .node-type-review .ch_votes{margin: 0; font-size: 15px; color: #333333;}
