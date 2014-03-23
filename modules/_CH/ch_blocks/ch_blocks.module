@@ -380,7 +380,7 @@ function ch_blocks_block_save($delta = '', $edit = array()) {
  */
 function ch_blocks_getLastUpdatedDateblock() {
   $date = variable_get('ch_last_updated_date');
-  return 'Last Updated <span>' . $date . '</span>';
+  return '<span>Last Updated</span> ' . $date;
 }
 
 

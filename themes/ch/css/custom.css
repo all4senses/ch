@@ -2176,3 +2176,7 @@ body.sidebar-second .page-compare-providers #sidebar-second {padding: 0; margin-
 /* Canada */
 .page-node-215 #all-content {padding: 5px 0 5px 20px; width: 980px;}
 .page-node-215 .preface .field-item {padding-right: 20px;}
+
+
+#block-ch-blocks-last-upd-date {font-size: 13px;}
+#block-ch-blocks-last-upd-date span {font-weight: bold;}
