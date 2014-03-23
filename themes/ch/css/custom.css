@@ -2167,7 +2167,10 @@ body.sidebar-second .page-compare-providers #sidebar-second {padding: 0; margin-
 
 /* Fix for the listing pages without bottom and sidebar */
 /* Shared */
-.page-node-80 #all-content {padding: 5px 0 5px 20px; width: 980px;}
+
+/* For empty bottom only */
+.not-logged-in .page-node-80 #all-content {padding: 5px 0 5px 20px; width: 980px;}
+
 .page-node-80 .preface .field-item {padding-right: 20px;}
 
 /* Canada */
