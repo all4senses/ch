@@ -193,6 +193,12 @@ function ch_misc_updatePrefacesTitlesDate() {
   
   //$current_time = date('F d, Y \a\t g:ia', time());
   $current_time = date('F j, Y', time());
+  
+  // Save a date ib the variable
+  variable_set('ch_last_updated_date', $current_time);
+  
+  
+  
   $prefaces_nids = array(80, 137);
   
   foreach ($prefaces_nids as $nid) {

@@ -124,6 +124,13 @@ function ch_blocks_block_info() {
     'cache' => DRUPAL_NO_CACHE,
   );
   
+  
+  $blocks['last_upd_date'] = array(
+    'info' => 'Last updated date',
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  
+  
   return $blocks;
 }
 
@@ -219,6 +226,11 @@ function ch_blocks_block_view($delta = '') {
     case 'sitelock-badge':
       $block['subject'] = '';
       $block['content'] = ch_blocks_getSitelockBadge();
+      break;
+    
+    case 'last_upd_date':
+      $block['subject'] = '';
+      $block['content'] = ch_blocks_getLastUpdatedDateblock();
       break;
     
     default:
@@ -358,6 +370,17 @@ function ch_blocks_block_save($delta = '', $edit = array()) {
       break;
   }
   
+}
+
+
+/**
+ * Block with last updayed date.
+ * 
+ * ch_last_updated_date is set by cron in function ch_misc_updatePrefacesTitlesDate() {
+ */
+function ch_blocks_getLastUpdatedDateblock() {
+  $date = variable_get('ch_last_updated_date');
+  return 'Last Updated <span>' . $date . '</span>';
 }
 
 
