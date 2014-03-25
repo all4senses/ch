@@ -2180,3 +2180,8 @@ body.sidebar-second .page-compare-providers #sidebar-second {padding: 0; margin-
 
 #block-ch-blocks-last-upd-date {font-size: 13px; }
 #block-ch-blocks-last-upd-date span {font-weight: bold;}
+
+
+/* Reviews on Providers by type page */
+
+#block-views-reviews-block-r-shared .node-review .links {bottom: 20px;}
