@@ -2142,7 +2142,7 @@ body.sidebar-second .page-compare-providers #sidebar-second {padding: 0; margin-
 .node-type-webform input#edit-delete {border: none; background: none; cursor: pointer;} 
 
 /* Writer menu */
-#block-ch-blocks-writer-admin-links {position: absolute; top: 40px; right: 150px; font-size: 13px;}
+#block-ch-blocks-writer-admin-links {position: absolute; top: 40px; right: /*150*/10px; font-size: 13px;}
 #block-ch-blocks-writer-admin-links .content a {color: lightgray; padding: 0 10px;}
 #block-ch-blocks-writer-admin-links .content a:hover {/*text-decoration: underline; font-weight: bold;*/ border: 1px dotted lightgray; border-radius: 5px;}
 #block-ch-blocks-writer-admin-links .contextual-links-wrapper {display: none;}
