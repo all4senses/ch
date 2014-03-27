@@ -2191,7 +2191,7 @@ body.sidebar-second .page-compare-providers #sidebar-second {padding: 0; margin-
 /* Reviews on  providers by service type page */
 #block-views-providers-block-top-sh-p-table {margin-bottom: 30px;}
 /*#block-views-reviews-block_home_latest_reviews*/
-#block-views-reviews-block-r-shared {margin-top: 20px;}
+/*#block-views-reviews-block-r-shared {margin-top: 20px;}*/
 .p-by-service-type .views-row {box-shadow: 1px 3px 10px -4px black; /*background: #f7f7f7;*/ width: 316px; float: left; border: 1px solid lightgray; height: 185px; padding: 10px; margin-bottom: 10px;}
 .p-by-service-type .views-row.views-row-odd {margin-right: 10px;}
 .p-by-service-type .header {overflow: hidden; min-height: 47px; width: inherit;}
