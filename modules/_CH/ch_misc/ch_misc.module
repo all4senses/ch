@@ -2034,6 +2034,11 @@ function ch_misc_entity_info_alter(&$entity_info) {
     'label' => t('Side block teaser'),
     'custom settings' => TRUE,
   );
+  
+  $entity_info['node']['view modes']['teaser_on_serviceTypePage'] = array(
+    'label' => t('Teaser on Servide Type Page, e.g. /shared'),
+    'custom settings' => TRUE,
+  );
 }
 
 
