@@ -2210,5 +2210,5 @@ body.sidebar-second .page-compare-providers #sidebar-second {padding: 0; margin-
 .p-by-service-type.r3in1 .rating {width: 105px;}
 .p-by-service-type.r3in1 .views-row {width: 290px; margin: 0 12px 10px 0;}
 .p-by-service-type.r3in1 .views-row.views-row-odd {margin-right: inherit;}
-.p-by-service-type.r3in1 .views-row-first {margin-right: 12px;}
+.p-by-service-type.r3in1 .views-row-first {margin-right: 12px !important;}
 .p-by-service-type.r3in1 .views-row-last {float: right; margin-right: 0;}
