@@ -2206,7 +2206,9 @@ body.sidebar-second .page-compare-providers #sidebar-second {padding: 0; margin-
 .p-by-service-type .review {color: gray; line-height: 18px; margin: 3px 0 2px 0; font-size: 13px;}
 
 /* for 3 reviews in 3 per 1 row */
+.p-by-service-type.r3in1 {margin-bottom: 10px; overflow: hidden;}
 .p-by-service-type.r3in1 .rating {width: 105px;}
 .p-by-service-type.r3in1 .views-row {width: 290px; margin: 0 12px 10px 0;}
-.p-by-service-type.r3in1 .views-row.views-row-odd {margin-right: 0;}
+.p-by-service-type.r3in1 .views-row.views-row-odd {margin-right: inherit;}
+.p-by-service-type.r3in1 .views-row-first {margin-right: 12px;}
 .p-by-service-type.r3in1 .views-row-last {float: right; margin-right: 0;}
