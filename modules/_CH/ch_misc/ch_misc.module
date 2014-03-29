@@ -199,7 +199,7 @@ function ch_misc_updatePrefacesTitlesDate() {
   
   
   
-  $prefaces_nids = array(/*80, */137); // 80 - shared
+  $prefaces_nids = array(80, 137); // 80 - shared
   
   foreach ($prefaces_nids as $nid) {
     //$node = node_load($nid);
