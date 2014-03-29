@@ -2189,6 +2189,7 @@ body.sidebar-second .page-compare-providers #sidebar-second {padding: 0; margin-
 
 
 /* Reviews on  providers by service type page */
+/* for 4 reviews in 2 per 1 row */
 #block-views-providers-block-top-sh-p-table {margin-bottom: 30px;}
 /*#block-views-reviews-block_home_latest_reviews*/
 /*#block-views-reviews-block-r-shared {margin-top: 20px;}*/
@@ -2203,3 +2204,9 @@ body.sidebar-second .page-compare-providers #sidebar-second {padding: 0; margin-
 .p-by-service-type .submitted {font-size: 11px !important; margin-top: 6px;}
 .p-by-service-type .author {font-style: italic;}
 .p-by-service-type .review {color: gray; line-height: 18px; margin: 3px 0 2px 0; font-size: 13px;}
+
+/* for 3 reviews in 3 per 1 row */
+.p-by-service-type.r3in1 .rating {width: 105px;}
+.p-by-service-type.r3in1 .views-row {width: 290px; margin: 0 12px 10px 0;}
+.p-by-service-type.r3in1 .views-row.views-row-odd {margin-right: 0;}
+.p-by-service-type.r3in1 .views-row-last {float: right; margin-right: 0;}
