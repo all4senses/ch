@@ -124,6 +124,12 @@ function ch_blocks_block_info() {
     'cache' => DRUPAL_NO_CACHE,
   );
   
+  $blocks['google_tr_badge'] = array(
+    'info' => 'Google trusted badge',
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  
+  
   
   $blocks['last_upd_date'] = array(
     'info' => 'Last updated date',
@@ -226,6 +232,11 @@ function ch_blocks_block_view($delta = '') {
     case 'sitelock-badge':
       $block['subject'] = '';
       $block['content'] = ch_blocks_getSitelockBadge();
+      break;
+    
+    case 'google_tr_badge':
+      $block['subject'] = '';
+      $block['content'] = ch_blocks_getAdBlock('google_trusted_badge');
       break;
     
     case 'last_upd_date':
@@ -489,6 +500,10 @@ function ch_blocks_get_blogArchive() {
  */
 function ch_blocks_getAdBlock($ad_name) {
   switch ($ad_name) {
+    
+    case 'google_trusted_badge':
+      return '<img src="/sites/all/themes/ch/css/images/google-trusted.png" />';
+
     
     case 'disclosure':
       $data = unserialize(variable_get('ch_disclosure_block_data', NULL));
