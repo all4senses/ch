@@ -3376,11 +3376,99 @@ function ch_misc_testPage() {
       dpm($var_p_all_data_quick);
       
       */
-     
+    /* 
   $url = 'f/styles/logo_provider_chart_main/public/p/logos/iPage-logo.png?itok=vdJC0ggZ';
   dpm($url);
   $url = preg_replace('|^(.*)\?(.*)$|', '$1', $url);
   dpm($url);
+  */
+  
+  
+  
+  //$url = 'http://getvoip.com/lead-route?phones_amt=22&q_for=zzzzz';
+  $url = 'http://getvoip.com/lead-route';
+  
+  
+  
+  
+     $post = array(
+        'source' => 'partner',
+        'version' => 'partner_name_unique_CH',
+        'goal' => 'quote',
+        'token' => 'getvoip_partner',
+        'phones_amt' => '1 - 4',
+        'q_type' => 'Both phones and service',
+        'firstname' => 'User first name',
+        'lastname' => 'User last name',
+        'email' => 'unique@user.email',
+        'phone' => '1374678736',
+      );
+     
+     
+     
+     /*
+     if (empty($post) 
+      || empty($post['source'])
+      //|| empty($post['phones_amt'])
+      || (isset($post['phones_amt']) && !$post['phones_amt'])
+      //|| !isset($post['q_for']) || !$post['q_for']
+      //|| !isset($post['buying_time']) || !$post['buying_time']
+      || ( (isset($post['firstname']) && !$post['firstname']) || (isset($post['lastname']) && !$post['lastname']) || (isset($post['name']) && !$post['name']) )
+      || ( strpos(@$post['firstname'], '/')  || strpos(@$post['lastname'], '/') || strpos(@$post['name'], '/') ) // name contains /, like in urls
+      || (empty($post['email']) || !strpos($post['email'], '@') )
+      || ( (empty($post['phone_1']) || empty($post['phone_2']) || empty($post['phone_3'])) && empty($post['phone']) )
+     ) {
+    $output = t('<div class="not-verified"><p class="error">The form is not filled!</p><p>Please, reload the page and try again.</p></div>'); 
+  }
+  */
+  
+/*
+           $submission = array(
+        'Phones needed' => isset($post['phones_amt']) ? $post['phones_amt'] : 'xxxxxxxxxxxxxxxxx',
+        'Quote for' => isset($post['q_for']) ? $post['q_for'] : 'yyyyy',
+        'Quote type' => isset($post['q_type']) ? $post['q_type'] : '',
+        'Buying Time Frame' => (isset($post['buying_time']) && $post['buying_time']) ? $post['buying_time'] : 'ASAP',
+        //'Buying Time Frame' => isset($post['buying_time']) ? $post['buying_time'] : '',
+        'Connection type' => isset($post['connection']) ? $post['connection'] : '',
+          
+        'Industry' => isset($post['industry']) ? $post['industry'] : '',
+        'Employees amount' => isset($post['employees_amt']) ? $post['employees_amt'] : '',
+        
+        'First Name' => isset($post['firstname']) ? $post['firstname'] : '',
+        'Last Name' => isset($post['lastname']) ? $post['lastname'] : '',
+        'Name' => isset($post['name']) ? $post['name'] : '', 
+          
+        'Company' => isset($post['company']) ? $post['company'] : '',
+        'Website' => isset($post['website']) ? $post['website'] : '',
+        'Email' => $post['email'],
+        'Phone #' => @$phone,
+        'Notes' => isset($post['notes']) ? $post['notes'] : '',
+          
+        'Source' => @$post['source'],
+        'Version' => @$post['version'],
+        
+        'Goal' => isset($post['goal']) ? $post['goal'] : 'quote',
+        
+        //'Sumbission page' => $post['url'],
+        'sentToRemoteProviders' => array(),
+      );   
+           */
+  
+  // GET.
+  $curl = curl_init();
+  curl_setopt($curl, CURLOPT_URL, $url);
+  curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+  curl_setopt($curl, CURLOPT_TIMEOUT, 300);
+  
+  // If POST.
+    curl_setopt($curl, CURLOPT_POST, TRUE);
+    curl_setopt($curl, CURLOPT_POSTFIELDS, $post);
+  
+  $data_from = curl_exec($curl);
+  curl_close($curl);
+  
+  dpm($data_from);
+  
   
   return $out . '<br>End of Test';
 }
@@ -6021,7 +6109,13 @@ function ch_misc_getProvidersDataQuick($scope = 'all', $reset = FALSE, $clear_fr
  */
 function ch_misc_getProviderQuickData($target, $data) {
   
-  $out = '';
+  $out = NULL;
+  global $user;
+  
+  static $all_data_quick;
+  if (!$all_data_quick) {
+    $all_data_quick = ch_misc_getProvidersDataQuick();
+  }
   
   switch($target) {
     
@@ -6029,9 +6123,6 @@ function ch_misc_getProviderQuickData($target, $data) {
       
       $details = NULL;
       
-      $all_data_quick = ch_misc_getProvidersDataQuick();
-      
-      global $user;
       if (empty($all_data_quick[$data['data']->nid]['details']) && $user->uid == 1) {
 
         $query = db_select('field_data_body', 'b')
@@ -6076,9 +6167,9 @@ function ch_misc_getProviderQuickData($target, $data) {
       
     
     
+      
     case 'coupon_offers':
       
-      $all_data_quick = ch_misc_getProvidersDataQuick();
       if (!empty($all_data_quick[$data['data']->nid]['coupon']['link'])) {
         $link = $all_data_quick[$data['data']->nid]['coupon']['link'];
       }
@@ -6093,19 +6184,19 @@ function ch_misc_getProviderQuickData($target, $data) {
       
       return !empty($all_data_quick[$data['data']->nid]['coupon']['offers']) ? l($all_data_quick[$data['data']->nid]['coupon']['offers'], $link, array('absolute' => $absolute)) : '';
       
+      
+      
     
     case 'best_deal':
-      
-      $all_data_quick = ch_misc_getProvidersDataQuick();
-      
+           
       return !empty($all_data_quick[$data['data']->nid]['best_deal']) ? $all_data_quick[$data['data']->nid]['best_deal'] : '';
     
+      
+      
+      
      
     case 'offers':
       
-      $all_data_quick = ch_misc_getProvidersDataQuick();
-      
-      $out = '';
       if (!empty($all_data_quick[$data['data']->nid]['offers'])) {
 //        foreach ($all_data_quick[$data['data']->nid]['offers'] as $offer) {
 //          $out .= '<div class="offer">' . $offer . '</div>';
@@ -6115,6 +6206,8 @@ function ch_misc_getProviderQuickData($target, $data) {
       
       return $out;
      
+      
+      
       
       
     case 'logo_chart':
@@ -6265,7 +6358,6 @@ function ch_misc_getProviderQuickData($target, $data) {
           $out .= ch_misc_getTrackingUrl('<div class="limited-time">LIMITED TIME</div>', $all_data_quick[$data['data']->nid]['subpath'], $data['data']->nid, NULL, NULL, @$data['service_type']);
         }
         
-//        global $user;
 //        if ($user->uid) 
         {
           $out .= ch_misc_getTrackingUrl('Visit ' . $all_data_quick[$data['data']->nid]['name'], NULL, $data['data']->nid, NULL, 'company visit-site-link', @$data['service_type']);
@@ -6288,11 +6380,10 @@ function ch_misc_getProviderQuickData($target, $data) {
     
       
       
+      
+      
     case 'name_n_logo_chart':
     
-      $all_data_quick = ch_misc_getProvidersDataQuick();
-      $out = '';
-      
       if (!empty($all_data_quick[$data['data']->nid]['i_web'])) {
         $link = $all_data_quick[$data['data']->nid]['i_web'];
       }
@@ -6329,10 +6420,10 @@ function ch_misc_getProviderQuickData($target, $data) {
       
       
       
+      
+      
     case 'site_link':
-      
-      $all_data_quick = ch_misc_getProvidersDataQuick();
-      
+            
       if (!empty($all_data_quick[$data['data']->nid]['i_web'])) {
         $out = ch_misc_getTrackingUrl('Visit site', NULL, $data['data']->nid, NULL, 'site-link');
         //$out = ch_misc_getTrackingUrl('', NULL, $data['data']->nid, NULL, 'site-link');
@@ -6342,9 +6433,10 @@ function ch_misc_getProviderQuickData($target, $data) {
     
       
       
-    case 'review_and_site_links':
       
-      $all_data_quick = ch_misc_getProvidersDataQuick();
+      
+      
+    case 'review_and_site_links':
       
       /*
       if (!empty($all_data_quick[$data['data']->nid]['i_web'])) {
@@ -6354,8 +6446,6 @@ function ch_misc_getProviderQuickData($target, $data) {
         $link = url('node/' . $data['data']->nid);
       }
       */
-      
-      $out = '';
       
       if (!empty($all_data_quick[$data['data']->nid][$data['service_type']]['s-url'])) {
         $out .= ch_misc_getTrackingUrl('Visit site', NULL, $data['data']->nid, NULL, 'site-link', @$data['service_type']);
@@ -6371,12 +6461,10 @@ function ch_misc_getProviderQuickData($target, $data) {
     
       
       
+      
+      
     case 'i_mbg':
       
-      
-      $out = NULL;
-      
-//      global $user;
 //      if (!$user->uid) {
 //        $all_data_quick = ch_misc_getProvidersDataQuick();
 //        $out = @$all_data_quick[$data['data']->nid][$target];
@@ -6386,11 +6474,12 @@ function ch_misc_getProviderQuickData($target, $data) {
       
       
       
+      
+      
+      
     case 'sp': // space
     case 'bw': // bandwidth
-      $out = '';
-      $all_data_quick = ch_misc_getProvidersDataQuick();
-      
+        
       $out = isset($all_data_quick[$data['data']->nid][$data['service_type']][$target]) ? $all_data_quick[$data['data']->nid][$data['service_type']][$target] : '';
       
       return $out;
@@ -6398,15 +6487,13 @@ function ch_misc_getProviderQuickData($target, $data) {
       
       
       
-    case 'features':
       
-      $out = '';
-      $all_data_quick = ch_misc_getProvidersDataQuick();
-      //dpm($all_data_quick);
+      
+    case 'features':
       
       $plan_title = isset($all_data_quick[$data['data']->nid][$data['service_type']]['plan']) ? $all_data_quick[$data['data']->nid][$data['service_type']]['plan'] : '';
       $features = isset($all_data_quick[$data['data']->nid][$data['service_type']]['feat']) ?  $all_data_quick[$data['data']->nid][$data['service_type']]['feat'] : '';
-      //dpm($features);
+
       if ($plan_title) {
         $out .= '<div class="plan">' . $plan_title . '</div>';
       }
@@ -6419,10 +6506,12 @@ function ch_misc_getProviderQuickData($target, $data) {
       return $out; // $all_data_quick[$data['data']->nid][$target];
       
     
+      
+      
+      
     
     case 'grade':
-      //$all_data_quick = ch_misc_getProvidersDataQuick();
-      $out = '';
+
       if (isset($data['data']->votingapi_cache_node_percent_overall_average_value) && $data['data']->votingapi_cache_node_percent_overall_average_value) {
         $out = ch_misc_getProviderGradeFromRating($data['data']->votingapi_cache_node_percent_overall_average_value);
       }
@@ -6432,10 +6521,9 @@ function ch_misc_getProviderQuickData($target, $data) {
       
       
       
+      
+      
     case 'erating':
-    
-      $all_data_quick = ch_misc_getProvidersDataQuick();
-      $out = '';
       
       if (!empty($all_data_quick[$data['data']->nid]['erating'])) {
         $out = theme('ch_misc_fivestar_static', array('rating' => $all_data_quick[$data['data']->nid]['erating'], 'stars' => 5, 'tag' => 'overall', 'widget' => array('name' => 'stars', 'css' => 'stars.css')));
@@ -6447,11 +6535,10 @@ function ch_misc_getProviderQuickData($target, $data) {
       
       
       
+      
     
     case 'rating':
     
-//      $all_data_quick = ch_misc_getProvidersDataQuick();
-//      $out = '';
 //      if (isset($data['data']->votingapi_cache_node_percent_overall_average_value) && $data['data']->votingapi_cache_node_percent_overall_average_value) {
 //                
 //        $out = theme('ch_misc_fivestar_static', array('rating' => $data['data']->votingapi_cache_node_percent_overall_average_value, 'stars' => 5, 'tag' => 'overall', 'widget' => array('name' => 'stars', 'css' => 'stars.css')));
@@ -6506,8 +6593,6 @@ function ch_misc_getProviderQuickData($target, $data) {
       
     case 'rating_visit_review': // For Top 5 hosting sites block on a provider page/
       
-      $all_data_quick = ch_misc_getProvidersDataQuick();
-      
       if (!empty($data['data']->votingapi_cache_node_percent_overall_average_value)) {
                 
         $out = '<div class="rating"><span>Rating:</span> ' . theme('ch_misc_fivestar_static', array('rating' => $data['data']->votingapi_cache_node_percent_overall_average_value, 'stars' => 5, 'tag' => 'overall', 'widget' => array('name' => 'stars', 'css' => 'stars.css'))) . '</div>';
@@ -6525,41 +6610,42 @@ function ch_misc_getProviderQuickData($target, $data) {
       
       
       
+      
+      
     case 'plan':
-      
-      //dpm($data); 
-      $all_data_quick = ch_misc_getProvidersDataQuick();
-      //dpm($all_data_quick);
-      
+            
       return isset($all_data_quick[$data['data']->nid][$data['service_type']]['plan']) ? $all_data_quick[$data['data']->nid][$data['service_type']]['plan'] : '';
+      
+      
       
       
       
     // Video Review from YouTube
     case 'vr-y':
       
-      $all_data_quick = ch_misc_getProvidersDataQuick();
-      
       return isset($all_data_quick[$data['data']->nid][$data['service_type']]['vr-y']) 
                 ? '<a class="yt-direct" href="http://www.youtube.com/embed/' . $all_data_quick[$data['data']->nid][$data['service_type']]['vr-y'] . '?rel=0&amp;wmode=transparent" title="' . $all_data_quick[$data['data']->nid]['name'] . ' Video Review">Watch</a>'
                 : '';
       
     
-    case 'trend':
       
-      $all_data_quick = ch_misc_getProvidersDataQuick();
-      //dpm($all_data_quick);
+      
+      
+    case 'trend':
       
       return isset($all_data_quick[$data['data']->nid][$data['service_type']]['trend']) ? $all_data_quick[$data['data']->nid][$data['service_type']]['trend'] : 0;
     
+      
+
       
       
     case 'monthly':
     case 'back':
     case 'setup':
       
-      $all_data_quick = ch_misc_getProvidersDataQuick();
       $out = isset($all_data_quick[$data['data']->nid][$data['service_type']]['fees'][$target]) ? $all_data_quick[$data['data']->nid][$data['service_type']]['fees'][$target] : '';
+      
+      
       
       
       
@@ -6575,21 +6661,23 @@ function ch_misc_getProviderQuickData($target, $data) {
       }
       return $out;
       
+      
+      
+      
     
       
     // Deprecated.
     case 'i_web':
-      
-      $all_data_quick = ch_misc_getProvidersDataQuick();
       
       $url = isset($all_data_quick[$data['data']->nid][$target]) ? $all_data_quick[$data['data']->nid][$target] : '';
 
       return $url;
       
       
-    case 'i_web2':
       
-      $all_data_quick = ch_misc_getProvidersDataQuick();
+      
+      
+    case 'i_web2':
       
       //$url = isset($all_data_quick[$data['data']->nid]['i_web']) ? $all_data_quick[$data['data']->nid]['i_web'] : '';
       //$out = l('Visit Site', $url, array('attributes' => array(/*'rel' => 'nofollow', */'target' => '_blank', 'class' => 'site')));
