@@ -201,8 +201,11 @@ class views_plugin_cache extends views_plugin {
     }
 
     // Check if the advanced mapping function of D 7.23 is available.
-    $array_mapping_func = function_exists('drupal_array_diff_assoc_recursive') ? 'drupal_array_diff_assoc_recursive' : 'array_diff_assoc';
+    $array_mapping_func = function_exists('drupal_array_diff_assoc_recursive2') ? 'drupal_array_diff_assoc_recursive2' : 'array_diff_assoc';
 
+    //drupal_array_diff_assoc_recursive();
+    //array_diff_assoc();
+    
     // Slightly less simple for CSS:
     $css = drupal_add_css();
     $css_start = isset($this->storage['css']) ? $this->storage['css'] : array();
@@ -316,3 +319,41 @@ class views_plugin_cache extends views_plugin {
 /**
  * @}
  */
+
+/**
+ * Recursively computes the difference of arrays with additional index check.
+ *
+ * This is a version of array_diff_assoc() that supports multidimensional
+ * arrays.
+ *
+ * @param array $array1
+ *   The array to compare from.
+ * @param array $array2
+ *   The array to compare to.
+ *
+ * @return array
+ *   Returns an array containing all the values from array1 that are not present
+ *   in array2.
+ */
+function drupal_array_diff_assoc_recursive2($array1, $array2) {
+  $difference = array();
+
+  foreach ($array1 as $key => $value) {
+    if (is_array($value)) {
+      if (!array_key_exists($key, $array2) || !is_array($array2[$key])) {
+        $difference[$key] = $value;
+      }
+      else {
+        $new_diff = drupal_array_diff_assoc_recursive($value, $array2[$key]);
+        if (!empty($new_diff)) {
+          $difference[$key] = $new_diff;
+        }
+      }
+    }
+    elseif (!array_key_exists($key, $array2) || $array2[$key] !== $value) {
+      $difference[$key] = $value;
+    }
+  }
+
+  return $difference;
+}
