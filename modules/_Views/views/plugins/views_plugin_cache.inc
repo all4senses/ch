@@ -344,7 +344,7 @@ function drupal_array_diff_assoc_recursive2($array1, $array2) {
         $difference[$key] = $value;
       }
       else {
-        $new_diff = drupal_array_diff_assoc_recursive($value, $array2[$key]);
+        $new_diff = drupal_array_diff_assoc_recursive2($value, $array2[$key]);
         if (!empty($new_diff)) {
           $difference[$key] = $new_diff;
         }
