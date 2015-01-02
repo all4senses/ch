@@ -3385,91 +3385,38 @@ function ch_misc_testPage() {
   
   
   
-  //$url = 'http://getvoip.com/lead-route?phones_amt=22&q_for=zzzzz';
+
   $url = 'http://getvoip.com/lead-route';
   
-  
-  
-  
-     $post = array(
-        'source' => 'partner',
-        'version' => 'partner_name_unique_CH',
-        'goal' => 'quote',
-        'token' => 'getvoip_partner',
-        'phones_amt' => '1 - 4',
-        'q_type' => 'Both phones and service',
-        'firstname' => 'User first name',
-        'lastname' => 'User last name',
-        'email' => 'unique@user.email',
-        'phone' => '1374678736',
-      );
-     
-     
-     
-     /*
-     if (empty($post) 
-      || empty($post['source'])
-      //|| empty($post['phones_amt'])
-      || (isset($post['phones_amt']) && !$post['phones_amt'])
-      //|| !isset($post['q_for']) || !$post['q_for']
-      //|| !isset($post['buying_time']) || !$post['buying_time']
-      || ( (isset($post['firstname']) && !$post['firstname']) || (isset($post['lastname']) && !$post['lastname']) || (isset($post['name']) && !$post['name']) )
-      || ( strpos(@$post['firstname'], '/')  || strpos(@$post['lastname'], '/') || strpos(@$post['name'], '/') ) // name contains /, like in urls
-      || (empty($post['email']) || !strpos($post['email'], '@') )
-      || ( (empty($post['phone_1']) || empty($post['phone_2']) || empty($post['phone_3'])) && empty($post['phone']) )
-     ) {
-    $output = t('<div class="not-verified"><p class="error">The form is not filled!</p><p>Please, reload the page and try again.</p></div>'); 
-  }
-  */
-  
-/*
-           $submission = array(
-        'Phones needed' => isset($post['phones_amt']) ? $post['phones_amt'] : 'xxxxxxxxxxxxxxxxx',
-        'Quote for' => isset($post['q_for']) ? $post['q_for'] : 'yyyyy',
-        'Quote type' => isset($post['q_type']) ? $post['q_type'] : '',
-        'Buying Time Frame' => (isset($post['buying_time']) && $post['buying_time']) ? $post['buying_time'] : 'ASAP',
-        //'Buying Time Frame' => isset($post['buying_time']) ? $post['buying_time'] : '',
-        'Connection type' => isset($post['connection']) ? $post['connection'] : '',
-          
-        'Industry' => isset($post['industry']) ? $post['industry'] : '',
-        'Employees amount' => isset($post['employees_amt']) ? $post['employees_amt'] : '',
-        
-        'First Name' => isset($post['firstname']) ? $post['firstname'] : '',
-        'Last Name' => isset($post['lastname']) ? $post['lastname'] : '',
-        'Name' => isset($post['name']) ? $post['name'] : '', 
-          
-        'Company' => isset($post['company']) ? $post['company'] : '',
-        'Website' => isset($post['website']) ? $post['website'] : '',
-        'Email' => $post['email'],
-        'Phone #' => @$phone,
-        'Notes' => isset($post['notes']) ? $post['notes'] : '',
-          
-        'Source' => @$post['source'],
-        'Version' => @$post['version'],
-        
-        'Goal' => isset($post['goal']) ? $post['goal'] : 'quote',
-        
-        //'Sumbission page' => $post['url'],
-        'sentToRemoteProviders' => array(),
-      );   
-           */
-  
-  // GET.
+  $post = array(
+     'source' => 'partner',
+     'version' => 'partner_name_unique_CH', // Unique partner name or ID
+     'goal' => 'quote',
+     'token' => 'getvoip_partner', // Security code
+     'phones_amt' => '1 - 4', // All options: "1 - 4", "5 - 10", "11 - 20", "21 - 50", "More than 50"
+     'q_type' => 'Both phones and service', // All options: "Both phones and service", "Phone system only, "Service provider only"
+     'firstname' => 'User first name',
+     'lastname' => 'User last name',
+     'email' => 'unique@user.email',
+     'phone' => '1374678736',
+  );
+    
   $curl = curl_init();
   curl_setopt($curl, CURLOPT_URL, $url);
   curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
   curl_setopt($curl, CURLOPT_TIMEOUT, 300);
-  
-  // If POST.
-    curl_setopt($curl, CURLOPT_POST, TRUE);
-    curl_setopt($curl, CURLOPT_POSTFIELDS, $post);
-  
+  curl_setopt($curl, CURLOPT_POST, TRUE);
+  curl_setopt($curl, CURLOPT_POSTFIELDS, $post);
+
   $data_from = curl_exec($curl);
   curl_close($curl);
+
+  
+  
   
   dpm($data_from);
-  
-  
+
+
   return $out . '<br>End of Test';
 }
 
@@ -3744,7 +3691,7 @@ function ch_misc_comment_save($comment) {
 
 
 /**
- * Creates a node blog_post.
+ * Creates a node provider.
  */
 function ch_misc_createNode_provider($form_state) { 
   

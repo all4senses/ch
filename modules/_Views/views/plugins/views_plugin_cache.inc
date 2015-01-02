@@ -199,26 +199,42 @@ class views_plugin_cache extends views_plugin {
     else {
       $this->storage['head'] = '';
     }
+    
+    
+    // a4s patch
+    // Check if the advanced mapping function of D 7.23 is available.
+    $array_mapping_func = (function_exists('drupal_array_diff_assoc_recursive')) ? 'drupal_array_diff_assoc_recursive' : 'array_diff_assoc';
+
 
     // Slightly less simple for CSS:
     $css = drupal_add_css();
     $css_start = isset($this->storage['css']) ? $this->storage['css'] : array();
-    $this->storage['css'] = array_diff_assoc($css, $css_start);
+    
+    
+    //$this->storage['css'] = array_diff_assoc($css, $css_start);
+    $this->storage['css'] = call_user_func_array($array_mapping_func, array($css, $css_start));
+    
 
     // Get javascript after/before views renders.
     $js = drupal_add_js();
     $js_start = isset($this->storage['js']) ? $this->storage['js'] : array();
     // If there are any differences between the old and the new javascript then
     // store them to be added later.
-    $this->storage['js'] = array_diff_assoc($js, $js_start);
+    
+    //$this->storage['js'] = array_diff_assoc($js, $js_start);
+    $this->storage['js'] = call_user_func_array($array_mapping_func, array($js, $js_start));
 
     // Special case the settings key and get the difference of the data.
     $settings = isset($js['settings']['data']) ? $js['settings']['data'] : array();
     $settings_start = isset($js_start['settings']['data']) ? $js_start['settings']['data'] : array();
-    $this->storage['js']['settings'] = array_diff_assoc($settings, $settings_start);
+    
+    
+    //$this->storage['js']['settings'] = array_diff_assoc($settings, $settings_start);
+    $this->storage['js']['settings'] = call_user_func_array($array_mapping_func, array($settings, $settings_start));
 
     // Get difference of HTTP headers.
-    $this->storage['headers'] = array_diff_assoc(drupal_get_http_header(), $this->storage['headers']);
+    //$this->storage['headers'] = array_diff_assoc(drupal_get_http_header(), $this->storage['headers']);
+    $this->storage['headers'] = call_user_func_array($array_mapping_func, array(drupal_get_http_header(), $this->storage['headers']));
   }
 
   /**
