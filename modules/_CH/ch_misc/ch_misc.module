@@ -3441,7 +3441,8 @@ function ch_misc_testPage() {
 
   global $language;
   $params['body'] = "Test mail from CH... Drupal mail, local mailserver, Trial #1";
-  drupal_mail('ch_misc', 'test_via_link', 'all4senses@gmail.com', $language->language, $params);
+  //drupal_mail('ch_misc', 'test_via_link', 'all4senses@gmail.com', $language->language, $params);
+  drupal_mail('ch_misc', 'test_via_link', 'web-30VEoF@mail-tester.com', $language->language, $params);
       
   return $out . '<br>End of Test';
 }
