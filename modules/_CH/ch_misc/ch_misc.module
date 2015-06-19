@@ -3418,6 +3418,9 @@ function ch_misc_testPage() {
 */
   
   
+  
+  /*
+   // Works: Dpm if a string contain something other than digits, spaces and ()-+.#*
   $str = '+138-7-8_40.83a87';
   if (preg_match('/[^()\d-+. \s#*]/', $str, $matches)) {
     dpm($matches);
@@ -3434,7 +3437,12 @@ function ch_misc_testPage() {
   if (preg_match('/[^()\d-+. \s#*]/', $str, $matches)) {
     dpm($matches);
   }
+  */
 
+  global $language;
+  $params['body'] = "Test mail from CH... Drupal mail, local mailserver, Trial #1";
+  drupal_mail('ch_misc', 'test_via_link', 'all4senses@gmail.com', $language->language, $params);
+      
   return $out . '<br>End of Test';
 }
 
@@ -4112,7 +4120,11 @@ function ch_misc_curlGET($url) {
 function ch_misc_mail($key, &$message, $params) {
   switch ($key) {
     
-        
+    case 'test_via_link':
+      $message['subject'] = 'CH Test appearing the "via" link';
+      $message['body'][] = $params['body'];
+      break;
+    
     case 'new_file_was_uploaded':
       $message['subject'] = 'CH New file was uploaded';
       $message['body'][] = $params['report'];
