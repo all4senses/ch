@@ -3419,15 +3419,19 @@ function ch_misc_testPage() {
   
   
   $str = '+138-7-8_40.83a87';
-  if (preg_match('/[()\d-+. \s#*]/', $str, $matches)) {
+  if (preg_match('/[^()\d-+. \s#*]/', $str, $matches)) {
     dpm($matches);
   }
   $str = '+138-7-840.8387';
-  if (preg_match('/[()\d-+. \s#*]/', $str, $matches)) {
+  if (preg_match('/[^()\d-+. \s#*]/', $str, $matches)) {
     dpm($matches);
   }
   $str = '7mx42TFu&#039;));select pg_sleep(4); --';
-  if (preg_match('/[()\d-+. \s#*]/', $str, $matches)) {
+  if (preg_match('/[^()\d-+. \s#*]/', $str, $matches)) {
+    dpm($matches);
+  }
+  $str = '+73.928-75-48 7';
+  if (preg_match('/[^()\d-+. \s#*]/', $str, $matches)) {
     dpm($matches);
   }
 
